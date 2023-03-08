@@ -26,4 +26,4 @@
 |Node-03 Raspberry Pi   |
 |Node-04 Raspberry Pi   |
 |Unifi CloudKey Gen2+ #1|
-|Unifi CloudKey Gen2+ #2|
+|Unifi CloudKey Gen2+ #2|# Script

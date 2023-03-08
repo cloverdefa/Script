@@ -13,11 +13,15 @@ cd C:/Users/clove/Github/Rule-Sets
 git pull
 
 echo "Service pull"
-cd C:/Users/clove/Github/Service
+cd C:/Users/clove/Github/Script
 git pull
 
 echo "ssh-config pull"
 cd C:/Users/clove/Github/ssh-config
+git pull
+
+echo "VPN-Service"
+cd /Users/cloverdefa/Github/VPN-Service
 git pull
 
 echo "Whosis-Sayings pull"

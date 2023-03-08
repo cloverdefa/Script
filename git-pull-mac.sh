@@ -13,11 +13,15 @@ cd /Users/cloverdefa/Github/Rule-Sets
 git pull
 
 echo "Service pull"
-cd /Users/cloverdefa/Github/Service
+cd /Users/cloverdefa/Github/Script
 git pull
 
 echo "ssh-config pull"
 cd /Users/cloverdefa/Github/ssh-config
+git pull
+
+echo "VPN-Service"
+cd /Users/cloverdefa/Github/VPN-Service
 git pull
 
 echo "Whosis-Sayings pull"

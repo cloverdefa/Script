@@ -12,12 +12,12 @@ echo "Rule-Sets pull"
 cd /Users/cloverdefa/Documents/Github/Rule-Sets
 git pull
 
-echo "Service pull"
+echo "Script pull"
 cd /Users/cloverdefa/Documents/Github/Script
 git pull
 
-echo "ssh-config pull"
-cd /Users/cloverdefa/Documents/Github/ssh-config
+echo "ssh pull"
+cd /Users/cloverdefa/Documents/Github/ssh
 git pull
 
 echo "VPN-Service"

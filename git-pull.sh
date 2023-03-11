@@ -12,12 +12,12 @@ echo "Rule-Sets pull"
 cd C:/Users/clove/Github/Rule-Sets
 git pull
 
-echo "Service pull"
+echo "Script pull"
 cd C:/Users/clove/Github/Script
 git pull
 
-echo "ssh-config pull"
-cd C:/Users/clove/Github/ssh-config
+echo "ssh pull"
+cd C:/Users/clove/Github/ssh
 git pull
 
 echo "VPN-Service"

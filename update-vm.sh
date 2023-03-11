@@ -9,6 +9,12 @@ ssh pve 'update-pve'
 echo ""
 
 echo "======================================="
+echo "更新 Nginx 反向代理主機"
+echo "======================================="
+ssh nrp 'update-nrp'
+echo ""
+
+echo "======================================="
 echo "更新 Cloudflared 代理主機"
 echo "======================================="
 ssh cf 'update-cf'
@@ -21,21 +27,15 @@ ssh agh 'update-agh'
 echo ""
 
 echo "======================================="
-echo "更新 Uptime-Kuma 主機"
-echo "======================================="
-ssh up 'update-up'
-echo ""
-
-echo "======================================="
 echo "更新 CHK-BOT 檢查網址機器人"
 echo "======================================="
 ssh ch 'update-ch'
 echo ""
 
 echo "======================================="
-echo "更新 Rustdesk-Server 遠端桌面代理主機"
+echo "更新 Uptime-Kuma 主機"
 echo "======================================="
-ssh rd 'update-rd'
+ssh up 'update-up'
 echo ""
 
 echo "======================================="
@@ -45,9 +45,9 @@ ssh wp 'update-wp'
 echo ""
 
 echo "======================================="
-echo "更新 Nginx 反向代理主機"
+echo "更新 Rustdesk-Server 遠端桌面代理主機"
 echo "======================================="
-ssh nrp 'update-nrp'
+ssh rd 'update-rd'
 echo ""
 
 echo "======================================="

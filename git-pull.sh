@@ -21,7 +21,7 @@ cd C:/Users/clove/Github/ssh
 git pull
 
 echo "VPN-Service"
-cd /Users/cloverdefa/Github/VPN-Service
+cd C:/Users/clove/Github/VPN-Service
 git pull
 
 echo "Whosis-Sayings pull"

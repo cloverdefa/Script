@@ -65,7 +65,7 @@ echo ""
 echo "======================================="
 echo "更新 Node-03"
 echo "======================================="
-ssh n3 '. ~/raspberrypi-motd/update-os/update.sh'
+ssh n3 'update-n3'
 echo ""
 
 echo "======================================="

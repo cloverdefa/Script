@@ -59,7 +59,7 @@ echo ""
 echo "======================================="
 echo "更新 Node-02"
 echo "======================================="
-ssh n2 '. ~/raspberrypi-motd/update-os/update.sh'
+ssh n2 'update-n2'
 echo ""
 
 echo "======================================="
@@ -71,7 +71,7 @@ echo ""
 echo "======================================="
 echo "更新 Node-04"
 echo "======================================="
-ssh n4 '. ~/raspberrypi-motd/update-os/update.sh'
+ssh n4 'update-n4'
 echo ""
 
 echo "======================================="

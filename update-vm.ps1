@@ -53,25 +53,25 @@ echo ""
 echo "======================================="
 echo "更新 Node-01"
 echo "======================================="
-ssh n1 '. ~/raspberrypi-motd/update-os/update.sh'
+ssh n1 'update-n1'
 echo ""
 
 echo "======================================="
 echo "更新 Node-02"
 echo "======================================="
-ssh n2 '. ~/raspberrypi-motd/update-os/update.sh'
+ssh n2 'update-n2'
 echo ""
 
 echo "======================================="
 echo "更新 Node-03"
 echo "======================================="
-ssh n3 '. ~/raspberrypi-motd/update-os/update.sh'
+ssh n3 'update-n3'
 echo ""
 
 echo "======================================="
 echo "更新 Node-04"
 echo "======================================="
-ssh n4 '. ~/raspberrypi-motd/update-os/update.sh'
+ssh n4 'update-n4'
 echo ""
 
 echo "======================================="

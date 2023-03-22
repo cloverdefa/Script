@@ -35,4 +35,9 @@ cd C:/Users/clove/Github/Whosis-Sayings
 git pull
 echo "Git Pull完成"
 
+echo "DnsChecker pull"
+cd C:/Users/clove/Github/DnsChecker
+git pull
+echo "Git Pull完成"
+
 echo "Pull 結束"

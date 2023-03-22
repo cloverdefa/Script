@@ -35,4 +35,9 @@ cd /Users/cloverdefa/Documents/Github/Whosis-Sayings
 git pull
 echo "Git Pull 完成"
 
+echo "DnsChecker pull"
+cd /Users/cloverdefa/Documents/Github/DnsChecker
+git pull
+echo "Git Pull 完成"
+
 echo "Pull 結束"

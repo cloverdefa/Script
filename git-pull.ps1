@@ -40,6 +40,6 @@ cd C:/Users/clove/Github/DnsChecker
 git pull
 echo "Git Pull完成"
 
-cd ..
+cd C:/Users/clove/Github
 
 echo "Pull 結束"

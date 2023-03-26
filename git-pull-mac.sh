@@ -40,6 +40,6 @@ cd /Users/cloverdefa/Documents/Github/DnsChecker
 git pull
 echo "Git Pull 完成"
 
-cd ..
+cd /Users/cloverdefa/Documents/Github
 
 echo "Pull 結束"

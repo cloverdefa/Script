@@ -40,6 +40,6 @@ cd ~/Github/DnsChecker
 git pull
 echo "Git Pull 完成"
 
-cd ..
+cd ~/Github
 
 echo "Pull 結束"

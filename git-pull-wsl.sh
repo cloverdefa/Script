@@ -1,45 +1,45 @@
 #!/bin/bash
 
 echo "bash pull"
-cd ~/Github/bash
+cd ~/github/bash
 git pull
 echo "Git Pull 完成"
 
 echo "Containers pull"
-cd ~/Github/Containers
+cd ~/github/Containers
 git pull
 echo "Git Pull 完成"
 
 echo "Rule-Sets pull"
-cd ~/Github/Rule-Sets
+cd ~/github/Rule-Sets
 git pull
 echo "Git Pull 完成"
 
 echo "Script pull"
-cd ~/Github/Script
+cd ~/github/Script
 git pull
 echo "Git Pull 完成"
 
 echo "ssh pull"
-cd ~/Github/ssh
+cd ~/github/ssh
 git pull
 echo "Git Pull 完成"
 
 echo "VPN-Service"
-cd ~/Github/VPN-Service
+cd ~/github/VPN-Service
 git pull
 echo "Git Pull 完成"
 
 echo "Whosis-Sayings pull"
-cd ~/Github/Whosis-Sayings
+cd ~/github/Whosis-Sayings
 git pull
 echo "Git Pull 完成"
 
 echo "DnsChecker pull"
-cd ~/Github/DnsChecker
+cd ~/github/DnsChecker
 git pull
 echo "Git Pull 完成"
 
-cd ~/Github
+cd ~/github
 
 echo "Pull 結束"

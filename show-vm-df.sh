@@ -1,6 +1,13 @@
 #!/bin/bash
 
 echo "========================="
+echo "Nginx 容量空間"
+echo "========================="
+echo ""
+ssh np 'df -h'
+echo ""
+
+echo "========================="
 echo "Cloudflared 容量空間"
 echo "========================="
 echo ""

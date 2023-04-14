@@ -8,10 +8,10 @@ ssh np 'df -h'
 echo ""
 
 echo "========================="
-echo "Cloudflared 容量空間"
+echo "Zero Trust 容量空間"
 echo "========================="
 echo ""
-ssh cf 'df -h'
+ssh zt 'df -h'
 echo ""
 
 echo "========================="

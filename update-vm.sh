@@ -15,9 +15,9 @@ ssh np 'update-np'
 echo ""
 
 echo "======================================="
-echo "更新 Cloudflared 通道主機"
+echo "更新 Zero Trust 通道主機"
 echo "======================================="
-ssh cf 'update-cf'
+ssh zt 'update-zt'
 echo ""
 
 echo "======================================="

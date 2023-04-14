@@ -9,13 +9,13 @@ ssh pve 'update-pve'
 echo ""
 
 echo "======================================="
-echo "更新 Nginx 反向代理主機"
+echo "更新 Nginx 主機"
 echo "======================================="
 ssh nr 'update-np'
 echo ""
 
 echo "======================================="
-echo "更新 Cloudflared 代理主機"
+echo "更新 Cloudflared 通道主機"
 echo "======================================="
 ssh cf 'update-cf'
 echo ""

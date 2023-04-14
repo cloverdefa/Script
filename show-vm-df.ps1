@@ -1,7 +1,14 @@
 #!/bin/bash
 
 echo "========================="
-echo "Cloudflared 容量空間"
+echo "Nginx 容量空間"
+echo "========================="
+echo ""
+ssh np 'df -h'
+echo ""
+
+echo "========================="
+echo "WARP-Tunnel 容量空間"
 echo "========================="
 echo ""
 ssh cf 'df -h'

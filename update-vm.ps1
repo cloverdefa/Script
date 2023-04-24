@@ -51,9 +51,9 @@ ssh rd 'update-rd'
 echo ""
 
 echo "======================================="
-echo "更新 IRC-Server 主機"
+echo "更新 Node-01"
 echo "======================================="
-ssh irc 'update-irc'
+ssh n1 'update-n1'
 echo ""
 
 echo "======================================="

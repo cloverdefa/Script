@@ -49,9 +49,3 @@ echo ""
 ssh rd 'df -h'
 echo ""
 
-echo "========================="
-echo "IRC Server 容量空間"
-echo "========================="
-echo ""
-ssh irc 'df -h'
-echo ""

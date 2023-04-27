@@ -27,9 +27,9 @@ ssh agh 'update-agh'
 echo ""
 
 echo "======================================="
-echo "更新 CHK-BOT 檢查網址機器人"
+echo "更新 BOT 伺服器"
 echo "======================================="
-ssh ch 'update-ch'
+ssh bot 'update-bot'
 echo ""
 
 echo "======================================="

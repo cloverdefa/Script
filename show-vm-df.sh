@@ -22,10 +22,10 @@ ssh agh 'df -h'
 echo ""
 
 echo "========================="
-echo "Chk-BOT 容量空間"
+echo "BOT伺服器 容量空間"
 echo "========================="
 echo ""
-ssh ch 'df -h'
+ssh bot 'df -h'
 echo ""
 
 echo "========================="

@@ -4,14 +4,11 @@ Repository Name
 
 Description
 
-這個repo包含了......
-
 
 Getting Started
 
 Prerequisites
 
-在使用這個repo中，需要安裝以下軟體/環境:
 
 
 
@@ -22,8 +19,6 @@ Installation
 
 
 下載repo: git clone [repo的URL]
-
-安裝相關套件: pip install -r requirements.txt
 
 
 Usage

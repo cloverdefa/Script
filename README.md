@@ -2,6 +2,8 @@
 
 Repository Name
 
+# Script
+
 Description
 
 
@@ -18,13 +20,14 @@ Prerequisites
 Installation
 
 
-下載repo: git clone [repo的URL]
+下載repo: git clone https://github.com/cloverdefa/Script.git
 
 
 Usage
 
 這裡是使用這個repo的方法
 
+複製sh至 /usr/local/bin
 
 Contributing
 

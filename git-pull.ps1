@@ -1,42 +1,50 @@
 # Windows Terminal Script run git pull
 
 echo "bash pull"
-cd C:/Users/clove/Github/bash
+z bash
+git branch main
 git pull
 echo "Git Pull完成"
 
 echo "Containers pull"
-cd C:/Users/clove/Github/Containers
+z Containers
+git branch main
 git pull
 echo "Git Pull完成"
 
 echo "Rule-Sets pull"
-cd C:/Users/clove/Github/Rule-Sets
+z Rule-Sets
+git branch main
 git pull
 echo "Git Pull完成"
 
 echo "Script pull"
-cd C:/Users/clove/Github/Script
+z Script
+git branch main
 git pull
 echo "Git Pull完成"
 
 echo "ssh pull"
-cd C:/Users/clove/Github/ssh
+z ssh
+git branch main
 git pull
 echo "Git Pull完成"
 
 echo "VPN-Service"
-cd C:/Users/clove/Github/VPN-Service
+z VPN-Service
+git branch main
 git pull
 echo "Git Pull完成"
 
 echo "Whosis-Sayings pull"
-cd C:/Users/clove/Github/Whosis-Sayings
+z Whosis-Sayings
+git branch main
 git pull
 echo "Git Pull完成"
 
 echo "DnsChecker pull"
-cd C:/Users/clove/Github/DnsChecker
+z DnsChecker
+git branch main
 git pull
 echo "Git Pull完成"
 

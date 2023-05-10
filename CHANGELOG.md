@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/cloverdefa/Script/compare/v0.1.0...v0.1.1) (2023-05-10)
+
+
+### Docs
+
+* add installation instructions to README.md ([bbb9bcb](https://github.com/cloverdefa/Script/commit/bbb9bcb1483a8f048e9b6b88f532b7030a5c26c8))
+
 ## [0.1.0](https://github.com/cloverdefa/Script/compare/0.0.2...v0.1.0) (2023-05-08)
 
 

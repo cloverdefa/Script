@@ -1,77 +1,77 @@
 #!/bin/bash
 
 echo "========================="
-echo "bash pull"
+echo "bash 拉取遠端資料"
 echo "========================="
 cd /Users/cloverdefa/Documents/Github/bash
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Containers pull"
+echo "Containers 拉取遠端資料"
 echo "========================="
 cd /Users/cloverdefa/Documents/Github/Containers
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Rule-Sets pull"
+echo "Rule-Sets 拉取遠端資料"
 echo "========================="
 cd /Users/cloverdefa/Documents/Github/Rule-Sets
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Script pull"
+echo "Script 拉取遠端資料"
 echo "========================="
 cd /Users/cloverdefa/Documents/Github/Script
 git pull
 git checkout main
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "ssh pull"
+echo "ssh 拉取遠端資料"
 echo "========================="
 cd /Users/cloverdefa/Documents/Github/ssh
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "VPN-Service"
+echo "VPN-Service 拉取遠端資料"
 echo "========================="
 cd /Users/cloverdefa/Documents/Github/VPN-Service
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Whosis-Sayings pull"
+echo "Whosis-Sayings 拉取遠端資料"
 echo "========================="
 cd /Users/cloverdefa/Documents/Github/Whosis-Sayings
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "DnsChecker pull"
+echo "DnsChecker 拉取遠端資料"
 echo "========================="
 cd /Users/cloverdefa/Documents/Github/DnsChecker
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 cd /Users/cloverdefa/Documents/Github
 
-echo "Pull 結束"
+echo "拉取遠端資料結束"

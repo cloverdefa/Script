@@ -1,77 +1,77 @@
 # Windows Terminal Script run git pull
 
 echo "========================="
-echo "bash pull"
+echo "bash 拉取遠端資料"
 echo "========================="
 z bash
 git checkout main
 git pull
-echo "Git Pull完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Containers pull"
+echo "Containers 拉取遠端資料"
 echo "========================="
 z Containers
 git checkout main
 git pull
-echo "Git Pull完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Rule-Sets pull"
+echo "Rule-Sets 拉取遠端資料"
 echo "========================="
 z Rule-Sets
 git checkout main
 git pull
-echo "Git Pull完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Script pull"
+echo "Script 拉取遠端資料"
 echo "========================="
 z Script
 git checkout main
 git pull
-echo "Git Pull完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "ssh pull"
+echo "ssh 拉取遠端資料"
 echo "========================="
 z ssh
 git checkout main
 git pull
-echo "Git Pull完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "VPN-Service"
+echo "VPN-Service 拉取遠端資料"
 echo "========================="
 z VPN-Service
 git checkout main
 git pull
-echo "Git Pull完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Whosis-Sayings pull"
+echo "Whosis-Sayings 拉取遠端資料"
 echo "========================="
 z Whosis-Sayings
 git checkout main
 git pull
-echo "Git Pull完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "DnsChecker pull"
+echo "DnsChecker 拉取遠端資料"
 echo "========================="
 z DnsChecker
 git checkout main
 git pull
-echo "Git Pull完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 cd C:/Users/clove/Github
 
-echo "Pull 結束"
+echo "拉取遠端資料結束"

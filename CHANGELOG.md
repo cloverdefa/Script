@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.2](https://github.com/cloverdefa/Script/compare/v0.1.1...v0.1.2) (2023-05-12)
+
+
+### Code Refactoring
+
+* standardize naming conventions and improve clarity ([418d4b2](https://github.com/cloverdefa/Script/commit/418d4b2d5a01bd20852b807b415085922eed321c))
+* translate echo messages to Chinese and make file paths absolute ([9db41ca](https://github.com/cloverdefa/Script/commit/9db41cad81ce910ba5cec9e784f3718309f6219e))
+* translate output messages and rename default branch ([7a77e3e](https://github.com/cloverdefa/Script/commit/7a77e3ef4b42e759e27b67ae98835d9df616badf))
+
 ## [0.1.1](https://github.com/cloverdefa/Script/compare/v0.1.0...v0.1.1) (2023-05-10)
 
 

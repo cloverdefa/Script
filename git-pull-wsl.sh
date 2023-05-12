@@ -1,77 +1,77 @@
 #!/bin/bash
 
 echo "========================="
-echo "bash pull"
+echo "bash 拉取遠端資料"
 echo "========================="
 cd ~/github/bash
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Containers pull"
+echo "Containers 拉取遠端資料"
 echo "========================="
 cd ~/github/Containers
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Rule-Sets pull"
+echo "Rule-Sets 拉取遠端資料"
 echo "========================="
 cd ~/github/Rule-Sets
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Script pull"
+echo "Script 拉取遠端資料"
 echo "========================="
 cd ~/github/Script
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "ssh pull"
+echo "ssh 拉取遠端資料"
 echo "========================="
 cd ~/github/ssh
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "VPN-Service"
+echo "VPN-Service 拉取遠端資料"
 echo "========================="
 cd ~/github/VPN-Service
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "Whosis-Sayings pull"
+echo "Whosis-Sayings 拉取遠端資料"
 echo "========================="
 cd ~/github/Whosis-Sayings
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "DnsChecker pull"
+echo "DnsChecker 拉取遠端資料"
 echo "========================="
 cd ~/github/DnsChecker
 git checkout main
 git pull
-echo "Git Pull 完成"
+echo "Git 拉取遠端資料完成"
 echo "========================="
 
 cd ~/github
 
-echo "Pull 結束"
+echo "拉取遠端資料結束"

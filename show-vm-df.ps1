@@ -48,3 +48,10 @@ echo "========================="
 echo ""
 ssh rd 'df -h'
 echo ""
+
+echo "========================="
+echo "Happy 2 You 容量空間"
+echo "========================="
+echo ""
+ssh h2y 'df -h'
+echo ""

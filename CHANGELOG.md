@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/cloverdefa/Script/compare/v0.1.2...v0.2.0) (2023-05-15)
+
+
+### Features
+
+* add SSH command for disk usage display ([9973de2](https://github.com/cloverdefa/Script/commit/9973de2c963be9b5acf4d1a36aa8d0c54646a319))
+* add SSH command to display VM disk usage ([e7ebd29](https://github.com/cloverdefa/Script/commit/e7ebd29cbd426d747e2c2b3679521ec5f225265d))
+
 ## [0.1.2](https://github.com/cloverdefa/Script/compare/v0.1.1...v0.1.2) (2023-05-12)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/cloverdefa/Script/compare/v0.2.0...v0.2.1) (2023-05-20)
+
+
+### Build System
+
+* add CodeGPT executable for Windows platform ([517e1c9](https://github.com/cloverdefa/Script/commit/517e1c94cdc62212195aae12f9a99290242c2d1d))
+
 ## [0.2.0](https://github.com/cloverdefa/Script/compare/v0.1.2...v0.2.0) (2023-05-15)
 
 

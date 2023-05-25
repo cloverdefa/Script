@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/cloverdefa/Script/compare/v0.2.1...v0.2.2) (2023-05-25)
+
+
+### Code Refactoring
+
+* standardize file names for disk usage scripts ([ddbc486](https://github.com/cloverdefa/Script/commit/ddbc486090628c9cc759437cadb6bbf94890fb81))
+
 ## [0.2.1](https://github.com/cloverdefa/Script/compare/v0.2.0...v0.2.1) (2023-05-20)
 
 

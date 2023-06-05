@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/cloverdefa/Script/compare/v0.2.2...v0.3.0) (2023-06-05)
+
+
+### Features
+
+* add support for monitoring multiple Unifi devices ([88d462a](https://github.com/cloverdefa/Script/commit/88d462a631444b96a405bd4d6d1467d5f179c2f6))
+
 ## [0.2.2](https://github.com/cloverdefa/Script/compare/v0.2.1...v0.2.2) (2023-05-25)
 
 

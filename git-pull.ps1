@@ -3,7 +3,7 @@
 echo "========================="
 echo "bash 拉取遠端資料"
 echo "========================="
-z bash
+cd c:\Users\clove\github\bash
 git checkout main
 git pull
 echo "Git 拉取遠端資料完成"
@@ -12,7 +12,7 @@ echo "========================="
 echo "========================="
 echo "Containers 拉取遠端資料"
 echo "========================="
-z Containers
+cd c:\Users\clove\github\Containers
 git checkout main
 git pull
 echo "Git 拉取遠端資料完成"
@@ -21,7 +21,7 @@ echo "========================="
 echo "========================="
 echo "Rule-Sets 拉取遠端資料"
 echo "========================="
-z Rule-Sets
+cd c:\Users\clove\github\Rule-Sets
 git checkout main
 git pull
 echo "Git 拉取遠端資料完成"
@@ -30,7 +30,7 @@ echo "========================="
 echo "========================="
 echo "Script 拉取遠端資料"
 echo "========================="
-z Script
+cd c:\Users\clove\github\Script
 git checkout main
 git pull
 echo "Git 拉取遠端資料完成"
@@ -39,7 +39,7 @@ echo "========================="
 echo "========================="
 echo "ssh 拉取遠端資料"
 echo "========================="
-z ssh
+cd c:\Users\clove\github\ssh
 git checkout main
 git pull
 echo "Git 拉取遠端資料完成"
@@ -48,7 +48,7 @@ echo "========================="
 echo "========================="
 echo "VPN-Service 拉取遠端資料"
 echo "========================="
-z VPN-Service
+cd c:\Users\clove\github\VPN-Service
 git checkout main
 git pull
 echo "Git 拉取遠端資料完成"
@@ -57,7 +57,7 @@ echo "========================="
 echo "========================="
 echo "Whosis-Sayings 拉取遠端資料"
 echo "========================="
-z Whosis-Sayings
+cd c:\Users\clove\github\Whosis-Sayings
 git checkout main
 git pull
 echo "Git 拉取遠端資料完成"
@@ -66,7 +66,7 @@ echo "========================="
 echo "========================="
 echo "DnsChecker 拉取遠端資料"
 echo "========================="
-z DnsChecker
+cd c:\Users\clove\github\DnsChecker
 git checkout main
 git pull
 echo "Git 拉取遠端資料完成"

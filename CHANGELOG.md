@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/cloverdefa/Script/compare/v0.3.0...v0.4.0) (2023-06-07)
+
+
+### Features
+
+* automate fetching remote changes in git-pull.ps1 ([d026792](https://github.com/cloverdefa/Script/commit/d026792f80275be9fc56419ca9e36bd381fea6db))
+
 ## [0.3.0](https://github.com/cloverdefa/Script/compare/v0.2.2...v0.3.0) (2023-06-05)
 
 

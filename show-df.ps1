@@ -83,3 +83,5 @@ echo "========================="
 echo ""
 ssh n4 'df -h'
 echo ""
+
+exit

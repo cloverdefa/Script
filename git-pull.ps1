@@ -75,3 +75,5 @@ echo "========================="
 cd C:/Users/clove/Github
 
 echo "拉取遠端資料結束"
+
+exit

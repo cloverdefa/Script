@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/cloverdefa/Script/compare/v0.4.0...v0.5.0) (2023-06-09)
+
+
+### Features
+
+* improve system compatibility and add new executable file ([a3d1fac](https://github.com/cloverdefa/Script/commit/a3d1faca324741b9b787454dc87a97eb0c89d9b3))
+
 ## [0.4.0](https://github.com/cloverdefa/Script/compare/v0.3.0...v0.4.0) (2023-06-07)
 
 

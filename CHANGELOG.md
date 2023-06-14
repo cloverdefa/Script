@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/cloverdefa/Script/compare/v0.5.0...v0.5.1) (2023-06-14)
+
+
+### Bug Fixes
+
+* fix shebang typo in bash scripts ([01493f6](https://github.com/cloverdefa/Script/commit/01493f6150b4fe836116f59a5e81f7ea40ef6407))
+
 ## [0.5.0](https://github.com/cloverdefa/Script/compare/v0.4.0...v0.5.0) (2023-06-09)
 
 

@@ -1,4 +1,4 @@
-f#!/bin/bash
+#!/bin/bash
 
 echo "========================="
 echo "Nginx 容量空間"

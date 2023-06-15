@@ -83,3 +83,5 @@ echo "========================="
 cd /Users/cloverdefa/Documents/Github
 
 echo "拉取遠端資料結束"
+
+exit 0

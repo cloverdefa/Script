@@ -99,7 +99,7 @@ git pull
 echo "Git 拉取遠端資料完成"
 echo "========================="
 
-cd ~/Documents/Github
+cd ~/Documents/github
 
 echo "拉取遠端資料結束"
 

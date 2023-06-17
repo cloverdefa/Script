@@ -107,7 +107,7 @@ echo "Git 拉取遠端資料完成"
 echo "========================="
 
 
-cd C:/Users/clove/Github
+cd C:/Users/clove/github
 
 echo "拉取遠端資料結束"
 

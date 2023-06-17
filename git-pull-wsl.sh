@@ -103,4 +103,4 @@ cd ~/github
 
 echo "拉取遠端資料結束"
 
-exit 0
+exit 

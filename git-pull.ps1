@@ -4,7 +4,7 @@ echo "========================="
 echo "bash 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\bash
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
@@ -15,7 +15,7 @@ echo "========================="
 echo "PowerShell 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\PowerShell
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
@@ -27,7 +27,7 @@ echo "========================="
 echo "Containers 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\Containers
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
@@ -39,7 +39,7 @@ echo "========================="
 echo "Rule-Sets 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\Rule-Sets
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
@@ -51,7 +51,7 @@ echo "========================="
 echo "Script 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\Script
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
@@ -63,7 +63,7 @@ echo "========================="
 echo "ssh 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\ssh
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
@@ -75,7 +75,7 @@ echo "========================="
 echo "VPN-Service 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\VPN-Service
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
@@ -87,7 +87,7 @@ echo "========================="
 echo "Whosis-Sayings 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\Whosis-Sayings
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
@@ -99,7 +99,7 @@ echo "========================="
 echo "DnsChecker 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\DnsChecker
-Get-Location
+Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull

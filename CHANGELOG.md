@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/cloverdefa/Script/compare/v0.6.1...v0.6.2) (2023-06-17)
+
+
+### Code Refactoring
+
+* refactor file paths and remove unnecessary exit line ([84e71ee](https://github.com/cloverdefa/Script/commit/84e71ee9c325281c8316864082fd6eec5d98a574))
+
 ## [0.6.1](https://github.com/cloverdefa/Script/compare/v0.6.0...v0.6.1) (2023-06-17)
 
 

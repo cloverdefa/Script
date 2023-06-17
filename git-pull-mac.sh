@@ -3,7 +3,7 @@
 echo "========================="
 echo "bash 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/bash
+cd ~/Documents/github/bash
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -14,7 +14,7 @@ echo "========================="
 echo "========================="
 echo "PowerShell 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/PowerShell
+cd ~/Documents/github/PowerShell
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -25,7 +25,7 @@ echo "========================="
 echo "========================="
 echo "Containers 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/Containers
+cd ~/Documents/github/Containers
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -36,7 +36,7 @@ echo "========================="
 echo "========================="
 echo "Rule-Sets 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/Rule-Sets
+cd ~/Documents/github/Rule-Sets
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -47,7 +47,7 @@ echo "========================="
 echo "========================="
 echo "Script 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/Script
+cd ~/Documents/github/Script
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -58,7 +58,7 @@ echo "========================="
 echo "========================="
 echo "ssh 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/ssh
+cd ~/Documents/github/ssh
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -69,7 +69,7 @@ echo "========================="
 echo "========================="
 echo "VPN-Service 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/VPN-Service
+cd ~/Documents/github/VPN-Service
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -80,7 +80,7 @@ echo "========================="
 echo "========================="
 echo "Whosis-Sayings 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/Whosis-Sayings
+cd ~/Documents/github/Whosis-Sayings
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -91,7 +91,7 @@ echo "========================="
 echo "========================="
 echo "DnsChecker 拉取遠端資料"
 echo "========================="
-cd ~/Documents/Github/DnsChecker
+cd ~/Documents/github/DnsChecker
 echo $(pwd)
 git checkout main
 git fetch -p

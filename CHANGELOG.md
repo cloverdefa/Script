@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/cloverdefa/Script/compare/v0.5.1...v0.6.0) (2023-06-17)
+
+
+### Features
+
+* add PowerShell script for pulling remote data and containers ([c69144e](https://github.com/cloverdefa/Script/commit/c69144ea0a56bfa1daa43242fa8ca7d9b8f62d16))
+
+
+### Code Refactoring
+
+* optimize PowerShell repository with code cleanup and git pull ([2ee1321](https://github.com/cloverdefa/Script/commit/2ee13217c1f44ac181ad12cba337c9782ed908a8))
+
 ## [0.5.1](https://github.com/cloverdefa/Script/compare/v0.5.0...v0.5.1) (2023-06-14)
 
 

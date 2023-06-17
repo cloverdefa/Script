@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/cloverdefa/Script/compare/v0.6.0...v0.6.1) (2023-06-17)
+
+
+### Code Refactoring
+
+* refactor git-pull and checkout process for consistency ([88fece4](https://github.com/cloverdefa/Script/commit/88fece4c75d60930f12854af4c0711635d69e0a0))
+
 ## [0.6.0](https://github.com/cloverdefa/Script/compare/v0.5.1...v0.6.0) (2023-06-17)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.3](https://github.com/cloverdefa/Script/compare/v0.6.2...v0.6.3) (2023-06-17)
+
+
+### Styling
+
+* fix capitalization of "Github" in file paths ([855bc92](https://github.com/cloverdefa/Script/commit/855bc925a7834b1007a0d6fc692665535126574a))
+
 ## [0.6.2](https://github.com/cloverdefa/Script/compare/v0.6.1...v0.6.2) (2023-06-17)
 
 

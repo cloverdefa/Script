@@ -3,7 +3,7 @@
 echo "========================="
 echo "bash 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/bash
+cd ~/Documents/Github/bash
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -14,7 +14,7 @@ echo "========================="
 echo "========================="
 echo "PowerShell 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/PowerShell
+cd ~/Documents/Github/PowerShell
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -25,7 +25,7 @@ echo "========================="
 echo "========================="
 echo "Containers 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/Containers
+cd ~/Documents/Github/Containers
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -36,7 +36,7 @@ echo "========================="
 echo "========================="
 echo "Rule-Sets 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/Rule-Sets
+cd ~/Documents/Github/Rule-Sets
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -47,7 +47,7 @@ echo "========================="
 echo "========================="
 echo "Script 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/Script
+cd ~/Documents/Github/Script
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -58,7 +58,7 @@ echo "========================="
 echo "========================="
 echo "ssh 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/ssh
+cd ~/Documents/Github/ssh
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -69,7 +69,7 @@ echo "========================="
 echo "========================="
 echo "VPN-Service 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/VPN-Service
+cd ~/Documents/Github/VPN-Service
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -80,7 +80,7 @@ echo "========================="
 echo "========================="
 echo "Whosis-Sayings 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/Whosis-Sayings
+cd ~/Documents/Github/Whosis-Sayings
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -91,7 +91,7 @@ echo "========================="
 echo "========================="
 echo "DnsChecker 拉取遠端資料"
 echo "========================="
-cd /Users/cloverdefa/Documents/Github/DnsChecker
+cd ~/Documents/Github/DnsChecker
 echo $(pwd)
 git checkout main
 git fetch -p
@@ -99,8 +99,8 @@ git pull
 echo "Git 拉取遠端資料完成"
 echo "========================="
 
-cd /Users/cloverdefa/Documents/Github
+cd ~/Documents/Github
 
 echo "拉取遠端資料結束"
 
-exit 0
+exit

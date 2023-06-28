@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.4](https://github.com/cloverdefa/Script/compare/v0.6.3...v0.6.4) (2023-06-28)
+
+
+### Code Refactoring
+
+* remove echo and ssh commands for updating hosts ([ddefdff](https://github.com/cloverdefa/Script/commit/ddefdff3921b4897892470811d5ebc5df92e5a5c))
+
 ## [0.6.3](https://github.com/cloverdefa/Script/compare/v0.6.2...v0.6.3) (2023-06-17)
 
 

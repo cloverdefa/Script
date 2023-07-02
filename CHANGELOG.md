@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.5](https://github.com/cloverdefa/Script/compare/v0.6.4...v0.6.5) (2023-07-02)
+
+
+### Code Refactoring
+
+* remove code displaying "Happy 2 You 容量空間" section ([ccca615](https://github.com/cloverdefa/Script/commit/ccca615f3165f442dca999bb30b7019a3d4e57dd))
+
 ## [0.6.4](https://github.com/cloverdefa/Script/compare/v0.6.3...v0.6.4) (2023-06-28)
 
 

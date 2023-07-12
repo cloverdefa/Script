@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.6](https://github.com/cloverdefa/Script/compare/v0.6.5...v0.6.6) (2023-07-12)
+
+
+### Build System
+
+* add FFmpeg executables ([8cddb1b](https://github.com/cloverdefa/Script/commit/8cddb1b892b216bc698c85f67271c27194a61fa1))
+
 ## [0.6.5](https://github.com/cloverdefa/Script/compare/v0.6.4...v0.6.5) (2023-07-02)
 
 

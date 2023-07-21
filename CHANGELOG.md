@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.7](https://github.com/cloverdefa/Script/compare/v0.6.6...v0.6.7) (2023-07-21)
+
+
+### Build System
+
+* add necessary files for Windows compatibility ([9638b25](https://github.com/cloverdefa/Script/commit/9638b255b715a394074de7f9a71727219df2ed3d))
+
 ## [0.6.6](https://github.com/cloverdefa/Script/compare/v0.6.5...v0.6.6) (2023-07-12)
 
 

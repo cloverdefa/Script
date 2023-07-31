@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.9](https://github.com/cloverdefa/Script/compare/v0.6.8...v0.6.9) (2023-07-31)
+
+
+### Build System
+
+* update `CodeGPT-windows-amd64.exe` ([767f949](https://github.com/cloverdefa/Script/commit/767f949b8827bdee80ebebeac3f987f28b792594))
+
 ## [0.6.7](https://github.com/cloverdefa/Script/compare/v0.6.6...v0.6.7) (2023-07-21)
 
 

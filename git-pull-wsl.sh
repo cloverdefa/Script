@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo "========================="
 echo "PowerShell 拉取遠端資料"

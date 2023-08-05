@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.10](https://github.com/cloverdefa/Script/compare/v0.6.9...v0.6.10) (2023-08-05)
+
+
+### Code Refactoring
+
+* refactor git-pull scripts, removing unnecessary code ([2ef4680](https://github.com/cloverdefa/Script/commit/2ef468016d796cc6c557a3de7d7dae8236d7e5c3))
+
 ## [0.6.9](https://github.com/cloverdefa/Script/compare/v0.6.8...v0.6.9) (2023-07-31)
 
 

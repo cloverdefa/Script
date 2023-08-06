@@ -1,18 +1,6 @@
 # Windows Terminal Script run git pull
 
 echo "========================="
-echo "PowerShell 拉取遠端資料"
-echo "========================="
-cd c:\Users\clove\github\PowerShell
-Get-Location | Foreach-Object { $_.Path }
-git checkout main
-git fetch -p
-git pull
-echo "Git 拉取遠端資料完成"
-echo "========================="
-
-
-echo "========================="
 echo "Containers 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\Containers

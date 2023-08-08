@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.11](https://github.com/cloverdefa/Script/compare/v0.6.10...v0.6.11) (2023-08-08)
+
+
+### Build System
+
+* switch to internal API and add new file for CodeGPT on Linux ([1091bb8](https://github.com/cloverdefa/Script/commit/1091bb8159e8ba949c19453ba29ed2185ecd9c98))
+
 ## [0.6.10](https://github.com/cloverdefa/Script/compare/v0.6.9...v0.6.10) (2023-08-05)
 
 

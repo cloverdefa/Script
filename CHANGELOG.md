@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.12](https://github.com/cloverdefa/Script/compare/v0.6.11...v0.6.12) (2023-08-09)
+
+
+### Build System
+
+* update CodeGPT executables for multiple platforms ([c4c2b20](https://github.com/cloverdefa/Script/commit/c4c2b207472fd5deabcfd30dfce3fe0ecbf34fde))
+
 ## [0.6.11](https://github.com/cloverdefa/Script/compare/v0.6.10...v0.6.11) (2023-08-08)
 
 

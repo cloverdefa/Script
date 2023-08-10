@@ -14,6 +14,9 @@ on:
   pull_request_review:
     types:
       - submitted
+  check_suite:
+    types:
+      - completed
   status: {}
 
 jobs:
@@ -26,5 +29,5 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.RELEASE_TOKEN }}'
           MERGE_LABELS: ''
-          # 只要是 cloverdefa 帳號，都進行合併
+          # 只要是 cloverdefa 帳號，都進行自動合併
           MERGE_FILTER_AUTHOR: 'cloverdefa'

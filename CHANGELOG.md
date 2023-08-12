@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.13](https://github.com/cloverdefa/Script/compare/v0.6.12...v0.6.13) (2023-08-12)
+
+
+### Build System
+
+* add support for cygwin1.dll ([895edc6](https://github.com/cloverdefa/Script/commit/895edc617ee78887d1ffd85c5d9fc0be8a0ae550))
+
 ## [0.6.12](https://github.com/cloverdefa/Script/compare/v0.6.11...v0.6.12) (2023-08-09)
 
 

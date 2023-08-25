@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.14](https://github.com/cloverdefa/Script/compare/v0.6.13...v0.6.14) (2023-08-25)
+
+
+### chore
+
+* remove unnecessary file ([ce625bb](https://github.com/cloverdefa/Script/commit/ce625bb0ff2221d0c6e3db5b312be956d91a2670))
+* remove unnecessary lines from git-pull scripts ([0407057](https://github.com/cloverdefa/Script/commit/0407057bbc05ecf373cc62d2fc68cfe0b0d99eb6))
+* update `changelog-types` to include `chore` type in release workflow ([417e732](https://github.com/cloverdefa/Script/commit/417e73222e8f26f2b840f859d7c176d882705905))
+* update CodeGPT binary files ([d15cfee](https://github.com/cloverdefa/Script/commit/d15cfee0d18cc930e244fab70edd0cabc09609c8))
+* update file paths for `yt-dlp.exe` in PowerShell scripts ([fa28e2b](https://github.com/cloverdefa/Script/commit/fa28e2bd3f297cec729b763c7d0d9a1df0162c68))
+* update git-pull script for multiple repositories ([c776026](https://github.com/cloverdefa/Script/commit/c776026be863c15d10e19536960a9d37e372e56a))
+
 ## [0.6.13](https://github.com/cloverdefa/Script/compare/v0.6.12...v0.6.13) (2023-08-12)
 
 

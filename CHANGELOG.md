@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.18](https://github.com/cloverdefa/Script/compare/v0.6.17...v0.6.18) (2023-08-26)
+
+
+### chore
+
+* add .gitignore file ([455478a](https://github.com/cloverdefa/Script/commit/455478a32de7df6c36c5f6c569c2c9b3086c3d84))
+
 ## [0.6.17](https://github.com/cloverdefa/Script/compare/v0.6.16...v0.6.17) (2023-08-26)
 
 

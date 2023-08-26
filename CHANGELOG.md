@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.16](https://github.com/cloverdefa/Script/compare/v0.6.15...v0.6.16) (2023-08-26)
+
+
+### chore
+
+* ignore specific files and folders for file tracking ([d4f058c](https://github.com/cloverdefa/Script/commit/d4f058c3056173328dfba94e25ae67f80689fb6e))
+
 ## [0.6.15](https://github.com/cloverdefa/Script/compare/v0.6.14...v0.6.15) (2023-08-26)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.17](https://github.com/cloverdefa/Script/compare/v0.6.16...v0.6.17) (2023-08-26)
+
+
+### Build System
+
+* update CodeGPT binaries for Linux and Windows ([dd70fda](https://github.com/cloverdefa/Script/commit/dd70fda7c9ca4e1f03ccb0d5b49c55d883d87771))
+
 ## [0.6.16](https://github.com/cloverdefa/Script/compare/v0.6.15...v0.6.16) (2023-08-26)
 
 

@@ -56,17 +56,6 @@ echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "python-adguardhome 拉取遠端資料"
-echo "========================="
-cd c:\Users\clove\github\python-adguardhome
-Get-Location | Foreach-Object { $_.Path }
-git checkout main
-git fetch -p
-git pull
-echo "Git 拉取遠端資料完成"
-echo "========================="
-
-echo "========================="
 echo "python-studanty 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\python-studanty

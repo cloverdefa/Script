@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.15](https://github.com/cloverdefa/Script/compare/v0.6.14...v0.6.15) (2023-08-26)
+
+
+### chore
+
+* remove git pull command for python-adguardhome in relevant scripts ([fccfcb4](https://github.com/cloverdefa/Script/commit/fccfcb47ee6ca97126051cd79ab5094d3fbff925))
+
 ## [0.6.14](https://github.com/cloverdefa/Script/compare/v0.6.13...v0.6.14) (2023-08-25)
 
 

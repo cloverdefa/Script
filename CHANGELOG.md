@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.19](https://github.com/cloverdefa/Script/compare/v0.6.18...v0.6.19) (2023-08-27)
+
+
+### chore
+
+* ignore specific files and folders ([bea5769](https://github.com/cloverdefa/Script/commit/bea57698f0801f48ad013b175fad84fec85454da))
+
 ## [0.6.18](https://github.com/cloverdefa/Script/compare/v0.6.17...v0.6.18) (2023-08-26)
 
 

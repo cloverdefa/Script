@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.20](https://github.com/cloverdefa/Script/compare/v0.6.19...v0.6.20) (2023-08-31)
+
+
+### chore
+
+* add new file `posh-linux-amd64` ([bdc98aa](https://github.com/cloverdefa/Script/commit/bdc98aa6c27e9397bb6f2b7955c651461535192d))
+
 ## [0.6.19](https://github.com/cloverdefa/Script/compare/v0.6.18...v0.6.19) (2023-08-27)
 
 

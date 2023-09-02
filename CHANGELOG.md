@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.23](https://github.com/cloverdefa/Script/compare/v0.6.22...v0.6.23) (2023-09-02)
+
+
+### chore
+
+* rename `posh-linux-amd64` to `posh-linux-arm64` ([5cee9c5](https://github.com/cloverdefa/Script/commit/5cee9c5f1e3566fef01d34e7344dd7fd055da03a))
+
 ## [0.6.22](https://github.com/cloverdefa/Script/compare/v0.6.21...v0.6.22) (2023-09-02)
 
 

@@ -4,7 +4,7 @@ echo "========================="
 echo "bash 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/bash
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -15,7 +15,7 @@ echo "========================="
 echo "Containers 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/Containers
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -26,7 +26,7 @@ echo "========================="
 echo "DnsChecker 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/DnsChecker
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -37,7 +37,7 @@ echo "========================="
 echo "hath-docker 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/hath-docker
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -48,7 +48,7 @@ echo "========================="
 echo "PowerShell 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/PowerShell
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -59,7 +59,7 @@ echo "========================="
 echo "python-studanty 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/python-studanty
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -70,7 +70,7 @@ echo "========================="
 echo "Rule-Sets 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/Rule-Sets
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -81,7 +81,7 @@ echo "========================="
 echo "Script 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/Script
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -92,7 +92,7 @@ echo "========================="
 echo "ssh 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/ssh
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -103,7 +103,7 @@ echo "========================="
 echo "VPN-Service 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/VPN-Service
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull
@@ -114,7 +114,7 @@ echo "========================="
 echo "Whosis-Sayings 拉取遠端資料"
 echo "========================="
 cd ~/Documents/github/Whosis-Sayings
-echo $(pwd)
+echo ${PWD}
 git checkout main
 git fetch -p
 git pull

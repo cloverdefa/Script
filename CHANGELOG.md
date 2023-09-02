@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.21](https://github.com/cloverdefa/Script/compare/v0.6.20...v0.6.21) (2023-09-02)
+
+
+### chore
+
+* update file paths for git-pull scripts ([0ddf69b](https://github.com/cloverdefa/Script/commit/0ddf69b9826b22e1089203b0982557ad4d26a8d6))
+
 ## [0.6.20](https://github.com/cloverdefa/Script/compare/v0.6.19...v0.6.20) (2023-08-31)
 
 

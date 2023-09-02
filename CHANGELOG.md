@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.22](https://github.com/cloverdefa/Script/compare/v0.6.21...v0.6.22) (2023-09-02)
+
+
+### Styling
+
+* add blank line at end of file ([54be69b](https://github.com/cloverdefa/Script/commit/54be69b0f692de6c7d5064adfbaf00c4e79805f8))
+
 ## [0.6.21](https://github.com/cloverdefa/Script/compare/v0.6.20...v0.6.21) (2023-09-02)
 
 

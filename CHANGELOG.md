@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.24](https://github.com/cloverdefa/Script/compare/v0.6.23...v0.6.24) (2023-09-03)
+
+
+### chore
+
+* rename and change file mode for posh-linux-arm64 ([a1c83fb](https://github.com/cloverdefa/Script/commit/a1c83fbce0ad0fe8ad6c14de0780f87387549eed))
+
 ## [0.6.23](https://github.com/cloverdefa/Script/compare/v0.6.22...v0.6.23) (2023-09-02)
 
 

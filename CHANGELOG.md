@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.27](https://github.com/cloverdefa/Script/compare/v0.6.26...v0.6.27) (2023-09-04)
+
+
+### chore
+
+* change file mode of `posh-linux-amd64` to 755 ([8b35e2b](https://github.com/cloverdefa/Script/commit/8b35e2b817facfd218b11d45d663e5c34fec1e5f))
+
 ## [0.6.26](https://github.com/cloverdefa/Script/compare/v0.6.25...v0.6.26) (2023-09-04)
 
 

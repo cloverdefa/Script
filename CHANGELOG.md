@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.28](https://github.com/cloverdefa/Script/compare/v0.6.27...v0.6.28) (2023-09-04)
+
+
+### Build System
+
+* update posh-linux-amd64 binary file ([e6b4255](https://github.com/cloverdefa/Script/commit/e6b4255bec802b3115fc07d2bc8215c0877a959b))
+
 ## [0.6.27](https://github.com/cloverdefa/Script/compare/v0.6.26...v0.6.27) (2023-09-04)
 
 

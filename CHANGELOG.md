@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.29](https://github.com/cloverdefa/Script/compare/v0.6.28...v0.6.29) (2023-09-07)
+
+
+### chore
+
+* remove unnecessary git pull commands from script files ([cb11c50](https://github.com/cloverdefa/Script/commit/cb11c50f1b1ed3e2468e428d1200fce708512714))
+
 ## [0.6.28](https://github.com/cloverdefa/Script/compare/v0.6.27...v0.6.28) (2023-09-04)
 
 

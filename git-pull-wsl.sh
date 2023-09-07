@@ -23,17 +23,6 @@ echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "DnsChecker 拉取遠端資料"
-echo "========================="
-cd ~/github/DnsChecker
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-echo "Git 拉取遠端資料完成"
-echo "========================="
-
-echo "========================="
 echo "hath-docker 拉取遠端資料"
 echo "========================="
 cd ~/github/hath-docker

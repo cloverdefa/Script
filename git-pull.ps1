@@ -23,17 +23,6 @@ echo "Git 拉取遠端資料完成"
 echo "========================="
 
 echo "========================="
-echo "DnsChecker 拉取遠端資料"
-echo "========================="
-cd c:\Users\clove\github\DnsChecker
-Get-Location | Foreach-Object { $_.Path }
-git checkout main
-git fetch -p
-git pull
-echo "Git 拉取遠端資料完成"
-echo "========================="
-
-echo "========================="
 echo "hath-docker 拉取遠端資料"
 echo "========================="
 cd c:\Users\clove\github\hath-docker

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.31](https://github.com/cloverdefa/Script/compare/v0.6.30...v0.6.31) (2023-09-08)
+
+
+### chore
+
+* update shebangs in shell and PowerShell scripts ([a94357d](https://github.com/cloverdefa/Script/commit/a94357d12b1f5ddc312c6afcce46d545e0b64c79))
+
 ## [0.6.30](https://github.com/cloverdefa/Script/compare/v0.6.29...v0.6.30) (2023-09-08)
 
 

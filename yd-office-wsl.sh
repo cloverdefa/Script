@@ -6,7 +6,15 @@ read -p '輸入影片網址:' domain
 yt-dlp -P "/mnt/c/Users/clove/Desktop" "$domain" -S "ext:mp4:m4a" -o "%(title)s.%(ext)s"
 
 # Done
-if [ @? -ne 0 ]; then
-    echo "======下載完成======"
-    exit
+if [ $? -ne 0 ]
+then
+{
+    echo "==== 更新 $1 出現錯誤 ===="
+}
+else
+{
+    echo "==== 更新全部設備完成 ===="
+} 
 fi
+
+exit

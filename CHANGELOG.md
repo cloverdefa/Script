@@ -1,5 +1,35 @@
 # Changelog
 
+## [0.9.0](https://github.com/cloverdefa/Script/compare/v0.8.9...v0.9.0) (2023-09-08)
+
+
+### chore
+
+* update error checking in shell script ([467d0f2](https://github.com/cloverdefa/Script/commit/467d0f2ff01f93197398ff5620653bfc558b3a92))
+* update error message for device updates ([487db31](https://github.com/cloverdefa/Script/commit/487db31455d758933525070ef19042534d7eb331))
+
+
+### Features
+
+* update video download process ([ebd7f78](https://github.com/cloverdefa/Script/commit/ebd7f7855937138bb6ea5e4873218dc8e4276923))
+
+
+### Bug Fixes
+
+* update error message condition ([7c1b7a9](https://github.com/cloverdefa/Script/commit/7c1b7a9e068be54037af6fae958c8c65c7863e52))
+
+
+### Styling
+
+* remove unnecessary new line after if statement ([f4580a2](https://github.com/cloverdefa/Script/commit/f4580a28b8397f7347dda57adea0bb6a05c3534a))
+
+
+### Code Refactoring
+
+* refactor `Git-Pull-Repo` function to remove code duplication ([6561dd9](https://github.com/cloverdefa/Script/commit/6561dd9e48d27acb75c9dd61ba79882e6dec5e7d))
+* refactor if statement to use one-liner syntax ([eb74a05](https://github.com/cloverdefa/Script/commit/eb74a05516cb770d03a5dc49f70b321308b1e006))
+* remove unnecessary if statement ([9c5d4d6](https://github.com/cloverdefa/Script/commit/9c5d4d68e8ffc25f38cecd4459ed1eaeb3e119ee))
+
 ## [0.8.9](https://github.com/cloverdefa/Script/compare/v0.8.8...v0.8.9) (2023-09-08)
 
 

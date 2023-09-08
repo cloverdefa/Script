@@ -10,11 +10,11 @@ yt-dlp -P "/Users/cloverdefa/Desktop" "$domain" -S "ext:mp4:m4a" -o "%(title)s.%
 if [ $? -ne 0 ]
 then
 {
-    echo "==== 更新 $1 出現錯誤 ===="
+    echo "==== 影片下載出現錯誤 ===="
 }
 else
 {
-    echo "==== 更新全部設備完成 ===="
+    echo "==== 影片下載完成 ===="
 } 
 fi
 

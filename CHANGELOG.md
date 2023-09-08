@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.7.2](https://github.com/cloverdefa/Script/compare/v0.7.1...v0.7.2) (2023-09-08)
+
+
+### chore
+
+* refactor update commands and add error handling ([8e9cd94](https://github.com/cloverdefa/Script/commit/8e9cd94b7751a26a09aaf54efb7ff19523f39536))
+* update command to use variable arguments ([991d823](https://github.com/cloverdefa/Script/commit/991d8239ce63c308957e3c5f64dd9060b54f176e))
+* update message for VE host ([a567a8c](https://github.com/cloverdefa/Script/commit/a567a8c93ed24350002356c0554ccb262eaacdab))
+
+
+### Code Refactoring
+
+* refactor Update-VM function and error message formatting ([b915172](https://github.com/cloverdefa/Script/commit/b9151725707ac270b5e3d1b612d3de3fc177f93e))
+* update command in Update-VM function to use 'update-vm' in ssh call ([caf0b6a](https://github.com/cloverdefa/Script/commit/caf0b6a53455e2fb6afdf8540518a21e6d5b9322))
+
 ## [0.7.1](https://github.com/cloverdefa/Script/compare/v0.7.0...v0.7.1) (2023-09-08)
 
 

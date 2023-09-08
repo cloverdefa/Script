@@ -8,10 +8,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -22,10 +26,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -36,10 +44,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -50,10 +62,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -64,10 +80,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -78,10 +98,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -92,10 +116,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -106,10 +134,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -120,10 +152,14 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 echo "========================="
 
 echo "========================="
@@ -134,15 +170,17 @@ Get-Location | Foreach-Object { $_.Path }
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if ('@? -ne 0')
+{
     echo "Git 拉取遠端資料完成"
-    exit
-fi
-echo "========================="
+    echo "全部遠端資料拉取同步結束"
+    cd
 
-echo "全部遠端資料拉取同步結束"
-
-cd
+    Exit
+    }
+else
+{
+    echo "拉取遠端資料出現錯誤"
+}    
 
 # Done
-Exit

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.1](https://github.com/cloverdefa/Script/compare/v0.8.0...v0.8.1) (2023-09-08)
+
+
+### Bug Fixes
+
+* add error messages for various function and script failures ([0d6cddb](https://github.com/cloverdefa/Script/commit/0d6cddbc1508f051772d60dd1a7698339d88eda3))
+
 ## [0.8.0](https://github.com/cloverdefa/Script/compare/v0.7.5...v0.8.0) (2023-09-08)
 
 

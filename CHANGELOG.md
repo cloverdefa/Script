@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.34](https://github.com/cloverdefa/Script/compare/v0.6.33...v0.6.34) (2023-09-08)
+
+
+### Styling
+
+* update script to use double quotes in if statements ([5f720b0](https://github.com/cloverdefa/Script/commit/5f720b0ab37026b1a9e5692408d45debde48c1d5))
+
+
+### Code Refactoring
+
+* improve numeric exit code comparison ([2eb300e](https://github.com/cloverdefa/Script/commit/2eb300e628bf4a3fdcfcdb03ef7e037e854c9630))
+* refactor and improve the `git-pull-wsl.sh` script ([7b817fd](https://github.com/cloverdefa/Script/commit/7b817fdc7102d0b5db1fa906af5d9c0d0375e430))
+
 ## [0.6.33](https://github.com/cloverdefa/Script/compare/v0.6.32...v0.6.33) (2023-09-08)
 
 

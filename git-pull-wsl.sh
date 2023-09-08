@@ -157,11 +157,9 @@ if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料出現錯誤"
 else
-    echo "Git 拉取遠端資料完成"
+    echo "全部 Git 遠端資料拉取同步結束"
 fi
 echo "========================="
-
-echo "全部遠端資料拉取同步結束"
 
 # Done
 exit 0

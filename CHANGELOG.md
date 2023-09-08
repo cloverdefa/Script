@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.2](https://github.com/cloverdefa/Script/compare/v0.8.1...v0.8.2) (2023-09-08)
+
+
+### Styling
+
+* increase script's line count in diff range ([b63bda6](https://github.com/cloverdefa/Script/commit/b63bda6a264f1f4332fd4a609db7222ea6b4d4d4))
+
 ## [0.8.1](https://github.com/cloverdefa/Script/compare/v0.8.0...v0.8.1) (2023-09-08)
 
 

@@ -156,9 +156,9 @@ git fetch -p
 git pull
 if [ @? -ne 0 ]
 then
-    echo "全部 Git 遠端資料拉取同步結束"
+    echo "Git 拉取遠端資料出現錯誤"
 else
-    echo "Git 拉取遠端資料完成"
+    echo "全部 Git 遠端資料拉取同步結束"
 fi
 echo "========================="
 

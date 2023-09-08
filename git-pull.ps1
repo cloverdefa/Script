@@ -12,11 +12,9 @@ function Git-Pull-Repo
     git fetch -p
     git pull
     if ($Return -eq 0) {
-        Write-Output "拉取 $args 遠端資料出現錯誤" 
-    }
+        Write-Output "拉取 $args 遠端資料出現錯誤" }
     else {
-        Write-Output "$args 拉取遠端 Git 資料完成" 
-    }
+        Write-Output "$args 拉取遠端 Git 資料完成" }
     Write-Output "========================="
 }
 

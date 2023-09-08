@@ -8,13 +8,8 @@ yt-dlp -P "/mnt/c/Users/clove/Desktop" "$domain" -S "ext:mp4:m4a" -o "%(title)s.
 # Done
 if [ $? -ne 0 ]
 then
-{
     echo "==== 影片下載出現錯誤 ===="
-}
 else
-{
     echo "==== 影片下載完成 ===="
-} 
 fi
-
 exit

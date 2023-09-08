@@ -23,13 +23,10 @@ Show-df n3
 Show-df n4
 
 # Done
-if ($Return -eq 0)
-{
+if ($Return -eq 0) {
     echo "讀取空間出現錯誤"
-}
-else
-{
+    }
+else {
     echo "讀取空間資料完成"
-} 
-
+    }
 Exit

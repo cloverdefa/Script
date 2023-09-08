@@ -9,13 +9,13 @@ function Git-Pull-Repo {
     git checkout main
     git fetch -p
     git pull
-    if ($method -eq 'Exit 0')
+    if ($Return -eq 0)
     {
-        echo "$args 拉取遠端 Git 資料完成"
+        echo "拉取 $args 遠端資料出現錯誤"
     }
     else
     {
-        echo "拉取 $args 遠端資料出現錯誤"
+        echo "$args 拉取遠端 Git 資料完成"
     }    
     echo "========================="
 }
@@ -30,5 +30,6 @@ Git-Pull-Repo Script
 Git-Pull-Repo ssh
 Git-Pull-Repo VPN-Service
 Git-Pull-Repo Whosis-Sayings
+cd
 
 Exit

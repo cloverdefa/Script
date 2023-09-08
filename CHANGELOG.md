@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.36](https://github.com/cloverdefa/Script/compare/v0.6.35...v0.6.36) (2023-09-08)
+
+
+### Docs
+
+* fix typo in git-pull-wsl.sh script ([b462b2d](https://github.com/cloverdefa/Script/commit/b462b2dffce6e422a062ffe0d380bc742dc68c7e))
+
 ## [0.6.35](https://github.com/cloverdefa/Script/compare/v0.6.34...v0.6.35) (2023-09-08)
 
 

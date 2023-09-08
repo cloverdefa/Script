@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.10.0](https://github.com/cloverdefa/Script/compare/v0.9.0...v0.10.0) (2023-09-08)
+
+
+### chore
+
+* refactor data processing logic for improved efficiency ([0e6c8f8](https://github.com/cloverdefa/Script/commit/0e6c8f8ca755e6d2c5cc2127c287b0e56fc684d0))
+* refactor database queries for improved performance ([c39bc54](https://github.com/cloverdefa/Script/commit/c39bc5406a256ea3c5c135fb80a9cc2b05c74e3b))
+* remove FFmpeg executables ([df74d06](https://github.com/cloverdefa/Script/commit/df74d06f94ea7a8484d6f56f5688a0dd1298514c))
+
+
+### Features
+
+* refactor calculateAverage function and add calculateTotal function ([f9a40af](https://github.com/cloverdefa/Script/commit/f9a40af9714ec4df36958e42a17f7ddf26fc58dd))
+
+
+### Code Refactoring
+
+* refactor code to use single-line `if` statement ([016083e](https://github.com/cloverdefa/Script/commit/016083e5f34df18133a040603553d835adb2b2a3))
+
 ## [0.9.0](https://github.com/cloverdefa/Script/compare/v0.8.9...v0.9.0) (2023-09-08)
 
 

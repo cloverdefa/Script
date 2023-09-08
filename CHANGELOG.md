@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.44](https://github.com/cloverdefa/Script/compare/v0.6.43...v0.6.44) (2023-09-08)
+
+
+### Code Refactoring
+
+* refactor script to improve readability and consistency ([156c74d](https://github.com/cloverdefa/Script/commit/156c74d8dd27e2f01af51d3743b1bd2dab215a26))
+
 ## [0.6.43](https://github.com/cloverdefa/Script/compare/v0.6.42...v0.6.43) (2023-09-08)
 
 

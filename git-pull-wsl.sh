@@ -8,7 +8,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -19,7 +22,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -30,7 +36,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -41,7 +50,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -52,7 +64,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -63,7 +78,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -74,7 +92,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -85,7 +106,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -96,7 +120,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "========================="
@@ -107,7 +134,10 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-echo "Git 拉取遠端資料完成"
+if [ @? -ne 0 ]; then
+    echo "Git 拉取遠端資料完成"
+    exit
+fi
 echo "========================="
 
 echo "全部遠端資料拉取同步結束"

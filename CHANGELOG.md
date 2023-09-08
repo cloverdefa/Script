@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.37](https://github.com/cloverdefa/Script/compare/v0.6.36...v0.6.37) (2023-09-08)
+
+
+### Bug Fixes
+
+* fix error message when pulling remote data ([83734f3](https://github.com/cloverdefa/Script/commit/83734f34549e50301d3e5b3d0bf2d8a4eab9c14d))
+
 ## [0.6.36](https://github.com/cloverdefa/Script/compare/v0.6.35...v0.6.36) (2023-09-08)
 
 

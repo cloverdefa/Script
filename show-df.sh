@@ -77,4 +77,8 @@ echo ""
 ssh n4 'df -h'
 echo ""
 
-exit 0
+# Done
+if [ @? -ne 0 ]; then
+    echo "======顯示全部容量完成======"
+    exit
+fi

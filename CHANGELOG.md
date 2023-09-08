@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.5](https://github.com/cloverdefa/Script/compare/v0.8.4...v0.8.5) (2023-09-08)
+
+
+### chore
+
+* refactor function and update repository path ([7b9a60f](https://github.com/cloverdefa/Script/commit/7b9a60f698560cabcf1db8f7d6744b2726e1a0da))
+
 ## [0.8.4](https://github.com/cloverdefa/Script/compare/v0.8.3...v0.8.4) (2023-09-08)
 
 

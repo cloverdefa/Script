@@ -1,6 +1,6 @@
 # Windows Terminal Script run git pull
 
-function Get-Update {
+function Git-Pull-Repo {
     echo "========================="
     echo "$args 拉取遠端資料"
     echo "========================="
@@ -20,15 +20,15 @@ function Get-Update {
     echo "========================="
 }
 
-Get-Update bash
-Get-Update Containers
-Get-Update hath-docker
-Get-Update PowerShell
-Get-Update python-studanty
-Get-Update Rule-Sets
-Get-Update Script
-Get-Update ssh
-Get-Update VPN-Service
-Get-Update Whosis-Sayings
+Git-Pull-Repo bash
+Git-Pull-Repo Containers
+Git-Pull-Repo hath-docker
+Git-Pull-Repo PowerShell
+Git-Pull-Repo python-studanty
+Git-Pull-Repo Rule-Sets
+Git-Pull-Repo Script
+Git-Pull-Repo ssh
+Git-Pull-Repo VPN-Service
+Git-Pull-Repo Whosis-Sayings
 
 Exit

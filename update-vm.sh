@@ -1,6 +1,7 @@
 #!/bin/bash
 
-function Update-VM {
+function Update-VM
+{
     echo "======================================="
     echo "      更新 $1 主機"
     echo "======================================="

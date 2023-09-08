@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.9](https://github.com/cloverdefa/Script/compare/v0.8.8...v0.8.9) (2023-09-08)
+
+
+### Code Refactoring
+
+* refactor conditional statement syntax ([d3fcb14](https://github.com/cloverdefa/Script/commit/d3fcb14bd62bbac9e21220d32209aabb88cab1b2))
+
 ## [0.8.8](https://github.com/cloverdefa/Script/compare/v0.8.7...v0.8.8) (2023-09-08)
 
 

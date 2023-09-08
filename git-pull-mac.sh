@@ -1,12 +1,11 @@
 #!/bin/zsh
 
-function Git-Pull-Repo() {
-    var $1 = ()
+func Git-Pull-Repo() {
     echo "========================="
     echo "$1 拉取遠端資料"
     echo "========================="
-    cd ~/github/$1
-    echo ${PWD}
+    cd ~/Documents/github/$1
+    echo "目前路徑位於 ${PWD} "
     git checkout main
     git fetch -p
     git pull

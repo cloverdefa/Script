@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.42](https://github.com/cloverdefa/Script/compare/v0.6.41...v0.6.42) (2023-09-08)
+
+
+### Code Refactoring
+
+* refactor function names and remove print statements ([43ceaa1](https://github.com/cloverdefa/Script/commit/43ceaa1f3d2252dbff2abed25f136269ed2e6c17))
+
 ## [0.6.41](https://github.com/cloverdefa/Script/compare/v0.6.40...v0.6.41) (2023-09-08)
 
 

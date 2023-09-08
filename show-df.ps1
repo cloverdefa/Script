@@ -3,13 +3,13 @@
 
 function Show-df
 {
-echo "========================="
-echo "    $args 容量空間"
-echo "========================="
-echo ""
-ssh $args 'df -h'
-echo ""
-sleep 2
+    echo "========================="
+    echo "    $args 容量空間"
+    echo "========================="
+    echo ""
+    ssh $args 'df -h'
+    echo ""
+    sleep 2
 }
 
 Show-df np

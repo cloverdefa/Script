@@ -1,14 +1,15 @@
 #!/bin/bash
 set -e  # 程式出錯即停止運行
 
-function Show-df {
-echo "========================="
-echo "    $1 容量空間"
-echo "========================="
-echo ""
-ssh $1 'df -h'
-echo ""
-sleep 2
+function Show-df
+{
+    echo "========================="
+    echo "    $1 容量空間"
+    echo "========================="
+    echo ""
+    ssh $1 'df -h'
+    echo ""
+    sleep 2
 }
 
 Show-df np

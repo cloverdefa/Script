@@ -1,7 +1,8 @@
 # Windows Terminal Script run git pull
 
 
-function Show-df {
+function Show-df
+{
 echo "========================="
 echo "    $args 容量空間"
 echo "========================="

@@ -5,7 +5,7 @@ func Git-Pull-Repo() {
     echo "$1 拉取遠端資料"
     echo "========================="
     cd ~/Documents/github/$1
-    echo "目前路徑位於 ${PWD} "
+    echo "目前路徑位於 ${PWD}"
     git checkout main
     git fetch -p
     git pull

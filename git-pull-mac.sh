@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 function Git-Pull-Repo() {
+    var = $1
     echo "========================="
     echo "$1 拉取遠端資料"
     echo "========================="
@@ -16,7 +17,7 @@ function Git-Pull-Repo() {
         echo echo "$1 拉取遠端 Git 資料完成"
     fi
     echo "========================="
-}
+    }
 
 Git-Pull-Repo bash
 Git-Pull-Repo Containers

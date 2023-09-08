@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.4](https://github.com/cloverdefa/Script/compare/v0.8.3...v0.8.4) (2023-09-08)
+
+
+### Code Refactoring
+
+* fix variable declaration and syntax error ([95d9be3](https://github.com/cloverdefa/Script/commit/95d9be34c625b49359c228b877dc17f9349d3e1c))
+
 ## [0.8.3](https://github.com/cloverdefa/Script/compare/v0.8.2...v0.8.3) (2023-09-08)
 
 

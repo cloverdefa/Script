@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.35](https://github.com/cloverdefa/Script/compare/v0.6.34...v0.6.35) (2023-09-08)
+
+
+### chore
+
+* remove debug flag from script ([650d918](https://github.com/cloverdefa/Script/commit/650d9188e966de0ec9c642a4e1aa6c57153503ff))
+
 ## [0.6.34](https://github.com/cloverdefa/Script/compare/v0.6.33...v0.6.34) (2023-09-08)
 
 

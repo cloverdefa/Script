@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.1](https://github.com/cloverdefa/Script/compare/v0.11.0...v0.11.1) (2023-09-08)
+
+
+### Docs
+
+* fix typos and remove extra quotation marks in PowerShell files ([2f1fbe0](https://github.com/cloverdefa/Script/commit/2f1fbe08e6b60f5b1307737f2dcd2b04b4c1a381))
+
 ## [0.11.0](https://github.com/cloverdefa/Script/compare/v0.10.0...v0.11.0) (2023-09-08)
 
 

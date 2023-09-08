@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.7.0](https://github.com/cloverdefa/Script/compare/v0.6.46...v0.7.0) (2023-09-08)
+
+
+### chore
+
+* add exit command at end of file ([4f97f7a](https://github.com/cloverdefa/Script/commit/4f97f7a8f072e0ce27765fad2dac9ddf9b23fd93))
+
+
+### Features
+
+* refactor capacity information display for servers ([20f26ce](https://github.com/cloverdefa/Script/commit/20f26ce533734130154e43b498ead34e0d40fa99))
+
+
+### Bug Fixes
+
+* improve error handling and completion messaging for space data reading ([769e64e](https://github.com/cloverdefa/Script/commit/769e64e9cd453ccda0b57983ac0b5aa67a428168))
+
+
+### Docs
+
+* update output message to include variable value ([82ea4c1](https://github.com/cloverdefa/Script/commit/82ea4c169c55eaf9ef40db4486693a82208bba42))
+
+
+### Code Refactoring
+
+* improve command execution and error messaging ([8429a91](https://github.com/cloverdefa/Script/commit/8429a9131168f3be45bbd39f8286492a62c37c7a))
+
 ## [0.6.46](https://github.com/cloverdefa/Script/compare/v0.6.45...v0.6.46) (2023-09-08)
 
 

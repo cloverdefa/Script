@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.32](https://github.com/cloverdefa/Script/compare/v0.6.31...v0.6.32) (2023-09-08)
+
+
+### chore
+
+* update file headers and shebang lines ([dad2f9a](https://github.com/cloverdefa/Script/commit/dad2f9af8810b0a0f1c02dc2aea15e46c1241940))
+
 ## [0.6.31](https://github.com/cloverdefa/Script/compare/v0.6.30...v0.6.31) (2023-09-08)
 
 

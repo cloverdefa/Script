@@ -1,5 +1,25 @@
 # Changelog
 
+## [0.6.45](https://github.com/cloverdefa/Script/compare/v0.6.44...v0.6.45) (2023-09-08)
+
+
+### chore
+
+* refactor Git-Pull-Repo commands ([5772248](https://github.com/cloverdefa/Script/commit/5772248ca55aab81a6058e95aab0941c4d7605dc))
+
+
+### Docs
+
+* fix typo in if statement ([a6f4495](https://github.com/cloverdefa/Script/commit/a6f4495317169517a58c1268ae4b1c9d0eaa606f))
+
+
+### Code Refactoring
+
+* change conditional statement to use square brackets ([abf2025](https://github.com/cloverdefa/Script/commit/abf2025a6a96fad67be3b23f4aa4bd2205530247))
+* refactor function arguments and remove unnecessary parentheses ([e9e25f3](https://github.com/cloverdefa/Script/commit/e9e25f3f09cd32848d1456f4200bd11b1f303fc1))
+* refactor Git-Pull-Repo function and remove unnecessary echo statements ([2e8681c](https://github.com/cloverdefa/Script/commit/2e8681c8a95b900b7005d8d49157132456c3edf1))
+* refactor Git-Pull-Repo function to accept repository name as argument ([bb9d77f](https://github.com/cloverdefa/Script/commit/bb9d77fd49afc143ba79e16cb770ce96e50c921a))
+
 ## [0.6.44](https://github.com/cloverdefa/Script/compare/v0.6.43...v0.6.44) (2023-09-08)
 
 

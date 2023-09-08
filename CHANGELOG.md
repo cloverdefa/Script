@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.6](https://github.com/cloverdefa/Script/compare/v0.8.5...v0.8.6) (2023-09-08)
+
+
+### chore
+
+* add echo message for completion of remote Git data retrieval ([ec45d4f](https://github.com/cloverdefa/Script/commit/ec45d4f5da375b1c587e13653741641a1ad76219))
+
 ## [0.8.5](https://github.com/cloverdefa/Script/compare/v0.8.4...v0.8.5) (2023-09-08)
 
 

@@ -1,166 +1,31 @@
-#!/bin/bash
-set -e  # 程式出錯即停止運行
+function Git-Pull-Repo() {
+    echo "========================="
+    echo "$1 拉取遠端資料"
+    echo "========================="
+    cd ~/github/$1
+    echo ${PWD}
+    git checkout main
+    git fetch -p
+    git pull
+    if [ $? -ne 0 ]
+    then
+        echo "拉取 $1 遠端資料出現錯誤"
+    else
+        echo echo "$1 拉取遠端 Git 資料完成"
+    fi
+echo "========================="
+}
 
-
-echo "========================="
-echo "bash 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/bash
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "Containers 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/Containers
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "hath-docker 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/hath-docker
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "PowerShell 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/PowerShell
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "python-studanty 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/python-studanty
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "Rule-Sets 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/Rule-Sets
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "Script 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/Script
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "ssh 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/ssh
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "VPN-Service 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/VPN-Service
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "Git 拉取遠端資料完成"
-fi
-echo "========================="
-
-echo "========================="
-echo "Whosis-Sayings 拉取遠端資料"
-echo "========================="
-cd ~/Documents/github/Whosis-Sayings
-echo ${PWD}
-git checkout main
-git fetch -p
-git pull
-if [ @? -ne 0 ]
-then
-    echo "Git 拉取遠端資料出現錯誤"
-else
-    echo "全部 Git 遠端資料拉取同步結束"
-fi
-echo "========================="
+Git-Pull-Repo bash
+Git-Pull-Repo Containers
+Git-Pull-Repo hath-docker
+Git-Pull-Repo PowerShell
+Git-Pull-Repo python-studanty
+Git-Pull-Repo Rule-Sets
+Git-Pull-Repo Script
+Git-Pull-Repo ssh
+Git-Pull-Repo VPN-Service
+Git-Pull-Repo Whosis-Sayings
 
 # Done
-exit 0
+exit

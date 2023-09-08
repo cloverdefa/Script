@@ -22,7 +22,12 @@ Show-df n3
 Show-df n4
 
 # Done
-if [ @? -ne 0 ]; then
-    echo "======顯示全部容量完成======"
-    exit
+if ($Return -eq 0)
+{
+    echo "讀取 $args 空間出現錯誤"
+}
+else
+{
+    echo "$讀取 args 空間資料完成"
+} 
 fi

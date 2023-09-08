@@ -1,94 +1,36 @@
 # Windows Terminal Script run VMs and Pis update
 
-echo "======================================="
-echo "更新 Proxmox VE 主機"
-echo "======================================="
-ssh pve 'update-pve'
-echo ""
+function Update-VM {
+    echo "======================================="
+    echo "更新 $args VE 主機"
+    echo "======================================="
+    ssh $args 'update-pve'
+    echo ""
+}
 
-echo "======================================="
-echo "更新 Nginx 主機"
-echo "======================================="
-ssh np 'update-np'
-echo ""
-
-echo "======================================="
-echo "更新 Zero Trust 通道主機"
-echo "======================================="
-ssh zt 'update-zt'
-echo ""
-
-echo "======================================="
-echo "更新 AdGuard Home DNS主機"
-echo "======================================="
-ssh agh 'update-agh'
-echo ""
-
-echo "======================================="
-echo "更新 BOT 伺服器"
-echo "======================================="
-ssh bot 'update-bot'
-echo ""
-
-echo "======================================="
-echo "更新 Uptime-Kuma 主機"
-echo "======================================="
-ssh up 'update-up'
-echo ""
-
-echo "======================================="
-echo "更新 WordPress 主機"
-echo "======================================="
-ssh wp 'update-wp'
-echo ""
-
-echo "======================================="
-echo "更新 Rustdesk-Server 遠端桌面代理主機"
-echo "======================================="
-ssh rd 'update-rd'
-echo ""
-
-echo "======================================="
-echo "更新 Node-01"
-echo "======================================="
-ssh n1 'update-n1'
-echo ""
-
-echo "======================================="
-echo "更新 Node-02"
-echo "======================================="
-ssh n2 'update-n2'
-echo ""
-
-echo "======================================="
-echo "更新 Node-03"
-echo "======================================="
-ssh n3 'update-n3'
-echo ""
-
-echo "======================================="
-echo "更新 Node-04"
-echo "======================================="
-ssh n4 'update-n4'
-echo ""
-
-echo "======================================="
-echo "更新 住家 Unifi CloudKey Gen2 +"
-echo "======================================="
-ssh uckh 'update-uckh'
-echo ""
-
-echo "======================================="
-echo "更新 辦公室 Unifi CloudKey Gen2 +"
-echo "======================================="
-ssh ucko 'update-ucko'
-echo ""
-
-echo " 更新完成 "
-echo "======================================"
+Update-VM pve
+Update-VM np
+Update-VM zt
+Update-VM agh
+Update-VM bot
+Update-VM up
+Update-VM wp
+Update-VM rd
+Update-VM n1
+Update-VM n2
+Update-VM n3
+Update-VM n4
+Update-VM uckh
+Update-VM ucko
 
 # Done
-if [ @? -ne 0 ]; then
-    echo "======全部更新完成======"
-    exit
-fi
+if ($Return -eq 0)
+{
+    echo "更新 $args 出現錯誤"
+}
+else
+{
+    echo "更新全部設備完成"
+} 
+
+Exit

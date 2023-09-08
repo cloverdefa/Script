@@ -2,7 +2,7 @@
 
 function Update-VM {
     echo "======================================="
-    echo "更新 $args 主機"
+    echo "          更新 $args 主機"
     echo "======================================="
     ssh $args 'update-vm'
     echo ""

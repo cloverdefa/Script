@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.4](https://github.com/cloverdefa/Script/compare/v0.11.3...v0.11.4) (2023-09-08)
+
+
+### Code Refactoring
+
+* add separator lines to the output of Show-df function ([fd860ea](https://github.com/cloverdefa/Script/commit/fd860eaa19ce088e25f4e3b549ef8f5b4e59db2c))
+* refactor Update-VM function and improve code readability ([487211b](https://github.com/cloverdefa/Script/commit/487211b7b7e46c072dc5765c6c2ffd8119706abc))
+
 ## [0.11.3](https://github.com/cloverdefa/Script/compare/v0.11.2...v0.11.3) (2023-09-08)
 
 

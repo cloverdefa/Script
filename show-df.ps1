@@ -28,6 +28,6 @@ if ($Return -eq 0)
 }
 else
 {
-    echo "$讀取 args 空間資料完成"
+    echo "讀取 $args 空間資料完成"
 } 
 fi

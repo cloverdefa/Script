@@ -9,9 +9,7 @@ C:\Users\clove\OneDrive\文件\yt-dlp_win\yt-dlp.exe -P "C:\Users\clove\OneDrive
 
 # Done
 if ($Return -eq 0) {
-    echo "影片下載出現錯誤"
-    }
+    echo "影片下載出現錯誤"}
 else {
-    echo "影片下載完成"
-    }
+    echo "影片下載完成"}
 Exit

@@ -1,4 +1,5 @@
 #!/bin/bash -x
+set -e  # 程式出錯即停止運行
 
 echo "========================="
 echo "bash 拉取遠端資料"
@@ -8,9 +9,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -22,9 +25,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -36,9 +41,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -50,9 +57,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -64,9 +73,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -78,9 +89,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -92,9 +105,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -106,9 +121,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -120,9 +137,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 
@@ -134,9 +153,11 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ @? -ne 0 ]; then
+if [ $? -ne 0 ]
+then
     echo "Git 拉取遠端資料完成"
-    exit
+else
+    echo "拉取遠端資料出現錯誤"
 fi
 echo "========================="
 

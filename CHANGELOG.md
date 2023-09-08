@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.39](https://github.com/cloverdefa/Script/compare/v0.6.38...v0.6.39) (2023-09-08)
+
+
+### Docs
+
+* update git pull messages ([cde70f8](https://github.com/cloverdefa/Script/commit/cde70f8f7273964445194e8da045238a6eadc4e5))
+
 ## [0.6.38](https://github.com/cloverdefa/Script/compare/v0.6.37...v0.6.38) (2023-09-08)
 
 

@@ -1,6 +1,4 @@
-#!/bin/bash
-# Update all packages of operating system to latest.
-# for displaying upgradeable package count at startup
+# Windows Terminal Script run VMs and Pis update
 
 echo "======================================="
 echo "更新 Proxmox VE 主機"

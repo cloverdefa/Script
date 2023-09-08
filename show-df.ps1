@@ -1,4 +1,4 @@
-#!/bin/bash
+# Windows Terminal Script run git pull
 
 echo "========================="
 echo "Nginx 容量空間"

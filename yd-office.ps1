@@ -1,4 +1,4 @@
-# yt-dlp Script
+# Windows Terminal Script run youtube-dlp download
 
 echo "影片下載工具 yd-dlp"
 echo "輸入 Ctrl+C 取消下載"

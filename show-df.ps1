@@ -8,6 +8,7 @@ echo "========================="
 echo ""
 ssh $args 'df -h'
 echo ""
+sleep 2
 }
 
 Show-df np
@@ -24,11 +25,11 @@ Show-df n4
 # Done
 if ($Return -eq 0)
 {
-    echo "讀取 $args 空間出現錯誤"
+    echo "讀取空間出現錯誤"
 }
 else
 {
-    echo "讀取 $args 空間資料完成"
+    echo "讀取空間資料完成"
 } 
 
 Exit

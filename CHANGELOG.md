@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.6](https://github.com/cloverdefa/Script/compare/v0.11.5...v0.11.6) (2023-09-08)
+
+
+### Code Refactoring
+
+* refactor function name and add line break before declaration ([ef60f5e](https://github.com/cloverdefa/Script/commit/ef60f5eb96448a62c3ddb4ec9c7150ec7043256f))
+
 ## [0.11.5](https://github.com/cloverdefa/Script/compare/v0.11.4...v0.11.5) (2023-09-08)
 
 

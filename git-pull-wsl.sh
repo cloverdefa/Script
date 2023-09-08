@@ -6,7 +6,7 @@ function Git-Pull-Repo() {
     echo "$1 拉取遠端資料"
     echo "========================="
     cd ~/github/$1
-    echo ${PWD}
+    echo "目前路徑位於 ${PWD}"
     git checkout main
     git fetch -p
     git pull

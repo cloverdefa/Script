@@ -5,7 +5,7 @@ function Git-Pull-Repo {
     echo "$args 拉取遠端資料"
     echo "========================="
     cd c:\Users\clove\github\$args
-    Get-Location | Foreach-Object { $_.Path }
+    echo "目前路徑位於 Get-Location | Foreach-Object { $_.Path }"
     git checkout main
     git fetch -p
     git pull

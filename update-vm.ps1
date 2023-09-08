@@ -1,6 +1,7 @@
 # Windows Terminal Script run VMs and Pis update
 
-function Update-VM {
+function Update-VM
+{
     echo "======================================="
     echo "          更新 $args 主機"
     echo "======================================="

@@ -20,15 +20,15 @@ echo "========================="
 }
 
 Git-Pull-Repo bash
-#Git-Pull-Repo "Containers"
-#Git-Pull-Repo "hath-docker"
-#Git-Pull-Repo "PowerShell"
-#Git-Pull-Repo "python-studanty"
-#Git-Pull-Repo "Rule-Sets"
-#Git-Pull-Repo "Script"
-#Git-Pull-Repo "ssh"
-#Git-Pull-Repo "VPN-Service"
-#Git-Pull-Repo "Whosis-Sayings"
+Git-Pull-Repo Containers
+Git-Pull-Repo hath-docker
+Git-Pull-Repo PowerShell
+Git-Pull-Repo python-studanty
+Git-Pull-Repo Rule-Sets
+Git-Pull-Repo Script
+Git-Pull-Repo ssh
+Git-Pull-Repo VPN-Service
+Git-Pull-Repo Whosis-Sayings
 
 # Done
 exit

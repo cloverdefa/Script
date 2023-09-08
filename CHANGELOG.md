@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.9](https://github.com/cloverdefa/Script/compare/v0.11.8...v0.11.9) (2023-09-08)
+
+
+### Code Refactoring
+
+* remove unnecessary if-else statement ([b8be152](https://github.com/cloverdefa/Script/commit/b8be1521d72f4c3bdfdddceb86f580bb1fede34e))
+
 ## [0.11.8](https://github.com/cloverdefa/Script/compare/v0.11.7...v0.11.8) (2023-09-08)
 
 

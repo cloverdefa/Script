@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.46](https://github.com/cloverdefa/Script/compare/v0.6.45...v0.6.46) (2023-09-08)
+
+
+### Code Refactoring
+
+* refactor code and update Git pull script ([fa263e3](https://github.com/cloverdefa/Script/commit/fa263e3562ef1f3aab38b3af2ab5bb5655f1af6c))
+
 ## [0.6.45](https://github.com/cloverdefa/Script/compare/v0.6.44...v0.6.45) (2023-09-08)
 
 

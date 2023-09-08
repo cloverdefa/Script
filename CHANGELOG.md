@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.30](https://github.com/cloverdefa/Script/compare/v0.6.29...v0.6.30) (2023-09-08)
+
+
+### chore
+
+* update git-pull scripts for cross-platform compatibility ([8705b2a](https://github.com/cloverdefa/Script/commit/8705b2af76121e583ccf3a6152b9360bd2e2d7e8))
+
 ## [0.6.29](https://github.com/cloverdefa/Script/compare/v0.6.28...v0.6.29) (2023-09-07)
 
 

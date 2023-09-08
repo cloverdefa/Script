@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.7](https://github.com/cloverdefa/Script/compare/v0.8.6...v0.8.7) (2023-09-08)
+
+
+### chore
+
+* modify git-pull scripts to improve directory path handling ([a9fdaa2](https://github.com/cloverdefa/Script/commit/a9fdaa2bdaf68aa9f006cdae4e109f169d50054b))
+
 ## [0.8.6](https://github.com/cloverdefa/Script/compare/v0.8.5...v0.8.6) (2023-09-08)
 
 

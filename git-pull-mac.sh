@@ -13,7 +13,7 @@ func Git-Pull-Repo() {
     then
         echo "拉取 $1 遠端資料出現錯誤"
     else
-        echo echo "$1 拉取遠端 Git 資料完成"
+        echo "$1 拉取遠端 Git 資料完成"
     fi
     echo "========================="
     }

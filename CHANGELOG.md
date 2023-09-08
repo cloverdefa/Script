@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.43](https://github.com/cloverdefa/Script/compare/v0.6.42...v0.6.43) (2023-09-08)
+
+
+### chore
+
+* update condition for `$method` from 'nothing' to 'Exit 0' ([abcb8ac](https://github.com/cloverdefa/Script/commit/abcb8ac7cce8aa9440769ff53758225ed4a7354f))
+
 ## [0.6.42](https://github.com/cloverdefa/Script/compare/v0.6.41...v0.6.42) (2023-09-08)
 
 

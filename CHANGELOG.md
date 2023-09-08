@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.3](https://github.com/cloverdefa/Script/compare/v0.8.2...v0.8.3) (2023-09-08)
+
+
+### Code Refactoring
+
+* refactor variable naming conventions ([79bac71](https://github.com/cloverdefa/Script/commit/79bac710b0cc0fe801da1935f80d82f7d857fe24))
+
 ## [0.8.2](https://github.com/cloverdefa/Script/compare/v0.8.1...v0.8.2) (2023-09-08)
 
 

@@ -9,7 +9,7 @@ function Get-Update {
     git checkout main
     git fetch -p
     git pull
-    if ('@? -ne 0')
+    if ($method -eq 'nothing')
     {
         echo "$args 拉取遠端 Git 資料完成"
     }

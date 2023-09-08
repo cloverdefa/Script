@@ -9,7 +9,7 @@ function Git-Pull-Repo {
     git checkout main
     git fetch -p
     git pull
-    if ($method -eq 'nothing')
+    if ($method -eq 'Exit 0')
     {
         echo "$args 拉取遠端 Git 資料完成"
     }

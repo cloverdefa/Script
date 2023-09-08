@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/cloverdefa/Script/compare/v0.7.2...v0.7.3) (2023-09-08)
+
+
+### Code Refactoring
+
+* modify script to handle long file names and improve error handling ([41cbc73](https://github.com/cloverdefa/Script/commit/41cbc734666347911b3813e03bc65ec2376b5b01))
+
 ## [0.7.2](https://github.com/cloverdefa/Script/compare/v0.7.1...v0.7.2) (2023-09-08)
 
 

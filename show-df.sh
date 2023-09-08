@@ -25,13 +25,8 @@ Show-df n4
 # Done
 if [ $? -ne 0 ]
 then
-{
     echo "讀取空間出現錯誤"
-}
 else
-{
     echo "讀取空間資料完成"
-} 
 fi
-
 exit

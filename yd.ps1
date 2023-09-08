@@ -8,12 +8,10 @@ C:\Users\clove\OneDrive\文件\yt-dlp_win\yt-dlp.exe -P "C:\Users\clove\OneDrive
 #若出現檔案名稱超出長度限制 將參數 -o "%(title)s.%(ext)s" 修改為 -o "%(id)s.%(ext)s"
 
 # Done
-if ($Return -eq 0)
-{
+if ($Return -eq 0) {
     echo "影片下載出現錯誤"
-}
-else
-{
+    }
+else {
     echo "影片下載完成"
-}
+    }
 Exit

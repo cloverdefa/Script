@@ -26,11 +26,11 @@ Update-VM ucko
 # Done
 if ($Return -eq 0)
 {
-    echo "更新 $args 出現錯誤"
+    echo "==== 更新 $args 出現錯誤 ===="
 }
 else
 {
-    echo "更新全部設備完成"
+    echo "==== 更新全部設備完成 ===="
 } 
 
 Exit

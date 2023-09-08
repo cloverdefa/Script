@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.8](https://github.com/cloverdefa/Script/compare/v0.8.7...v0.8.8) (2023-09-08)
+
+
+### chore
+
+* update git-pull script and add location echo statement ([0e79ff7](https://github.com/cloverdefa/Script/commit/0e79ff737075ee310b1d1c257baa8cfb232a73d7))
+
 ## [0.8.7](https://github.com/cloverdefa/Script/compare/v0.8.6...v0.8.7) (2023-09-08)
 
 

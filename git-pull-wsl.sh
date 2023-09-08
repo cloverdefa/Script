@@ -19,16 +19,16 @@ function Git-Pull-Repo() {
 echo "========================="
 }
 
-Git-Pull-Repo(bash)
-Git-Pull-Repo(Containers)
-Git-Pull-Repo(hath-docker)
-Git-Pull-Repo(PowerShell)
-Git-Pull-Repo(python-studanty)
-Git-Pull-Repo(Rule-Sets)
-Git-Pull-Repo(Script)
-Git-Pull-Repo(ssh)
-Git-Pull-Repo(VPN-Service)
-Git-Pull-Repo(Whosis-Sayings)
+Git-Pull-Repo(bash) bash
+Git-Pull-Repo(Containers) Containers
+Git-Pull-Repo(hath-docker) hath-docker
+Git-Pull-Repo(PowerShell) PowerShell
+Git-Pull-Repo(python-studanty) python-studanty
+Git-Pull-Repo(Rule-Sets) Rule-Sets
+Git-Pull-Repo(Script) Script
+Git-Pull-Repo(ssh) ssh
+Git-Pull-Repo(VPN-Service) VPN-Service
+Git-Pull-Repo(Whosis-Sayings) Whosis-Sayings
 
 # Done
 exit 0

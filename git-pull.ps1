@@ -2,7 +2,7 @@
 
 function Git-Pull-Repo {
     echo "========================="
-    echo "$args 拉取遠端資料"
+    echo "    $args 拉取遠端資料"
     echo "========================="
     cd c:\Users\clove\github\$args
     echo "目前路徑位於"

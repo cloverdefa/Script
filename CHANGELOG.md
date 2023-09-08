@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.7.5](https://github.com/cloverdefa/Script/compare/v0.7.4...v0.7.5) (2023-09-08)
+
+
+### chore
+
+* update video download functionality ([39da4fc](https://github.com/cloverdefa/Script/commit/39da4fc932b9c82b57ba52ffcf64aa7881b891d3))
+
+
+### Code Refactoring
+
+* update error and success messages for video downloads ([940c614](https://github.com/cloverdefa/Script/commit/940c614137f1befe495b51e2f82e97d039587b9a))
+
 ## [0.7.4](https://github.com/cloverdefa/Script/compare/v0.7.3...v0.7.4) (2023-09-08)
 
 

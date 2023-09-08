@@ -3,10 +3,10 @@ set -e  # 程式出錯即停止運行
 
 function Show-df {
 echo "========================="
-echo "$args 容量空間"
+echo "$1 容量空間"
 echo "========================="
 echo ""
-ssh $args 'df -h'
+ssh $1 'df -h'
 echo ""
 sleep 2
 }
@@ -23,7 +23,7 @@ Show-df n3
 Show-df n4
 
 # Done
-if ($Return -eq 0)
+if [ $? -ne 0 ]
 {
     echo "讀取空間出現錯誤"
 }

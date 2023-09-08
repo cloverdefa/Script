@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.5](https://github.com/cloverdefa/Script/compare/v0.11.4...v0.11.5) (2023-09-08)
+
+
+### Code Refactoring
+
+* update function declaration for Update-VM ([9cfb6c9](https://github.com/cloverdefa/Script/commit/9cfb6c9d9e306c4c0d803d381e6be665b9bb4cf3))
+* update function name to match convention ([08465f8](https://github.com/cloverdefa/Script/commit/08465f819dfa07846a226b1274ea8daba1a34cad))
+
 ## [0.11.4](https://github.com/cloverdefa/Script/compare/v0.11.3...v0.11.4) (2023-09-08)
 
 

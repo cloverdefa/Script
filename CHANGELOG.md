@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.7](https://github.com/cloverdefa/Script/compare/v0.11.6...v0.11.7) (2023-09-08)
+
+
+### Code Refactoring
+
+* refactor function name and formatting ([56c2d01](https://github.com/cloverdefa/Script/commit/56c2d01defdb0c512b0ca61b16b7d255dbc907b1))
+
 ## [0.11.6](https://github.com/cloverdefa/Script/compare/v0.11.5...v0.11.6) (2023-09-08)
 
 

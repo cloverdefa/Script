@@ -16,4 +16,4 @@ else
 {
     echo "影片下載完成"
 }
-exit
+Exit

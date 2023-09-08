@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.40](https://github.com/cloverdefa/Script/compare/v0.6.39...v0.6.40) (2023-09-08)
+
+
+### Bug Fixes
+
+* update error message for git pull operation ([7fdc8d7](https://github.com/cloverdefa/Script/commit/7fdc8d78db4ee9ac4b8cefd234fb693f77bf11f2))
+
 ## [0.6.39](https://github.com/cloverdefa/Script/compare/v0.6.38...v0.6.39) (2023-09-08)
 
 

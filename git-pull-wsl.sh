@@ -9,7 +9,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -25,7 +25,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -41,7 +41,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -57,7 +57,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -73,7 +73,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -89,7 +89,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -105,7 +105,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -121,7 +121,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -137,7 +137,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else
@@ -153,7 +153,7 @@ echo ${PWD}
 git checkout main
 git fetch -p
 git pull
-if [ $? -ne 0 ]
+if [ @? -ne 0 ]
 then
     echo "Git 拉取遠端資料完成"
 else

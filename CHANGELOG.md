@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.0](https://github.com/cloverdefa/Script/compare/v0.10.0...v0.11.0) (2023-09-08)
+
+
+### Features
+
+* refactor function names and remove unused variable ([a4991a7](https://github.com/cloverdefa/Script/commit/a4991a795ac6505bbdb29eaa37dfa9cae216cae1))
+
 ## [0.10.0](https://github.com/cloverdefa/Script/compare/v0.9.0...v0.10.0) (2023-09-08)
 
 

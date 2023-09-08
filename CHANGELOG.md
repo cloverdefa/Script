@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/cloverdefa/Script/compare/v0.7.5...v0.8.0) (2023-09-08)
+
+
+### Features
+
+* refactor video download and output file naming ([e0da535](https://github.com/cloverdefa/Script/commit/e0da53509e39536a63aa396c4d3e3d4933829117))
+
 ## [0.7.5](https://github.com/cloverdefa/Script/compare/v0.7.4...v0.7.5) (2023-09-08)
 
 

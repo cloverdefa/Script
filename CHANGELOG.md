@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.4](https://github.com/cloverdefa/Script/compare/v0.7.3...v0.7.4) (2023-09-08)
+
+
+### chore
+
+* update completion echo statements ([1a5157a](https://github.com/cloverdefa/Script/commit/1a5157aee0c69e612fca7f95a23167326fdbb461))
+
 ## [0.7.3](https://github.com/cloverdefa/Script/compare/v0.7.2...v0.7.3) (2023-09-08)
 
 

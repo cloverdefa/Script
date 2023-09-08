@@ -30,4 +30,5 @@ else
 {
     echo "讀取 $args 空間資料完成"
 } 
-fi
+
+Exit

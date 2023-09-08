@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.38](https://github.com/cloverdefa/Script/compare/v0.6.37...v0.6.38) (2023-09-08)
+
+
+### Code Refactoring
+
+* simplify shell script by removing unnecessary statements ([67bd0b5](https://github.com/cloverdefa/Script/commit/67bd0b50514ab321e936b13f04997cca91f88554))
+
 ## [0.6.37](https://github.com/cloverdefa/Script/compare/v0.6.36...v0.6.37) (2023-09-08)
 
 

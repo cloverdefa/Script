@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 function Git-Pull-Repo() {
     echo "========================="
     echo "$1 拉取遠端資料"
@@ -13,7 +15,7 @@ function Git-Pull-Repo() {
     else
         echo echo "$1 拉取遠端 Git 資料完成"
     fi
-echo "========================="
+    echo "========================="
 }
 
 Git-Pull-Repo bash

@@ -7,7 +7,15 @@ yt-dlp -P "/mnt/c/Users/clove/OneDrive/桌面" "$domain" -S "ext:mp4:m4a" -o "%(
 #若出現檔案名稱超出長度限制 將參數 -o "%(title)s.%(ext)s" 修改為 -o "%(id)s.%(ext)s"
 
 # Done
-if [ @? -ne 0 ]; then
-    echo "======下載完成======"
-    exit
+if [ $? -ne 0 ]
+then
+{
+    echo "==== 更新 $1 出現錯誤 ===="
+}
+else
+{
+    echo "==== 更新全部設備完成 ===="
+} 
 fi
+
+exit

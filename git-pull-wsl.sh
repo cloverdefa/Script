@@ -10,7 +10,7 @@ function Git-Pull-Repo() {
     git checkout main
     git fetch -p
     git pull
-    if ( @? -ne 0 )
+    if [ @? -ne 0 ]
     then
         echo "拉取 $1 遠端資料出現錯誤"
     else

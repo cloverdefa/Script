@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.1](https://github.com/cloverdefa/Script/compare/v0.7.0...v0.7.1) (2023-09-08)
+
+
+### Bug Fixes
+
+* add error message for failed space reading ([77e1db5](https://github.com/cloverdefa/Script/commit/77e1db5f583d132da87bea984d3d3747bb7832e6))
+
+
+### Code Refactoring
+
+* refactor disk space script for better readability and performance ([5373fbd](https://github.com/cloverdefa/Script/commit/5373fbd778a7b48507368e561724fef077ee02c8))
+* refactor Show-df function and improve error handling ([e07bb97](https://github.com/cloverdefa/Script/commit/e07bb9764da130dde59b7289393a27056d9f69d0))
+
 ## [0.7.0](https://github.com/cloverdefa/Script/compare/v0.6.46...v0.7.0) (2023-09-08)
 
 

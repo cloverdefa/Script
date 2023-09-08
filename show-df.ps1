@@ -3,7 +3,7 @@
 
 function Show-df {
 echo "========================="
-echo "$args 容量空間"
+echo "    $args 容量空間"
 echo "========================="
 echo ""
 ssh $args 'df -h'

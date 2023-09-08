@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.11.2](https://github.com/cloverdefa/Script/compare/v0.11.1...v0.11.2) (2023-09-08)
+
+
+### chore
+
+* improve error handling and exception messages ([295b253](https://github.com/cloverdefa/Script/commit/295b2535ce6e6b52246d0ca5b88a0ccfc2311c3a))
+* refactor database queries for improved performance ([79925d9](https://github.com/cloverdefa/Script/commit/79925d965616140e6a6fc7102754474983496c7a))
+
 ## [0.11.1](https://github.com/cloverdefa/Script/compare/v0.11.0...v0.11.1) (2023-09-08)
 
 

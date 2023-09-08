@@ -24,8 +24,7 @@ Update-VM uckh
 Update-VM ucko
 
 # Done
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
     echo "==== 更新 $1 出現錯誤 ===="
 else
     echo "==== 更新全部設備完成 ===="

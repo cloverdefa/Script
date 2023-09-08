@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.41](https://github.com/cloverdefa/Script/compare/v0.6.40...v0.6.41) (2023-09-08)
+
+
+### Code Refactoring
+
+* change condition for if statement to use specific method ([073e220](https://github.com/cloverdefa/Script/commit/073e2207c6db7332b00b9a9dbdcbeb1b22133bdf))
+* refactor Get-Update function to support multiple repositories ([9c00324](https://github.com/cloverdefa/Script/commit/9c003241e30bddea7fbbbb21732f601434a3042d))
+
 ## [0.6.40](https://github.com/cloverdefa/Script/compare/v0.6.39...v0.6.40) (2023-09-08)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.11](https://github.com/cloverdefa/Script/compare/v0.11.10...v0.11.11) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor script files to use `Write-Output` instead of `echo` ([d145a39](https://github.com/cloverdefa/Script/commit/d145a398fec1915e46a91f042e549d74a40e4933))
+
 ## [0.11.10](https://github.com/cloverdefa/Script/compare/v0.11.9...v0.11.10) (2023-09-09)
 
 

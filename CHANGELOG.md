@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.12](https://github.com/cloverdefa/Script/compare/v0.13.11...v0.13.12) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor file paths and conditional statements ([489e02c](https://github.com/cloverdefa/Script/commit/489e02c82ce403757f0da14a5cc9a735bbdeb95e))
+
 ## [0.13.11](https://github.com/cloverdefa/Script/compare/v0.13.10...v0.13.11) (2023-09-09)
 
 

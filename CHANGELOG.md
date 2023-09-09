@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.4](https://github.com/cloverdefa/Script/compare/v0.12.3...v0.12.4) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor shell scripts for Git pull operations ([adae3fe](https://github.com/cloverdefa/Script/commit/adae3fe2082a259c48e6d652840fbebe473dcd6d))
+
 ## [0.12.3](https://github.com/cloverdefa/Script/compare/v0.12.2...v0.12.3) (2023-09-09)
 
 

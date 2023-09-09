@@ -28,6 +28,8 @@ function Git-Pull-Repo() {
     else
         text="GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：$repo_name"
     fi
+
+    echo "$text"
 }
 
 for repo in "${repos[@]}"; do

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.1](https://github.com/cloverdefa/Script/compare/v0.15.0...v0.15.1) (2023-09-09)
+
+
+### chore
+
+* refactor repository directory handling ([b062e88](https://github.com/cloverdefa/Script/commit/b062e88196213ac80f2c04e16377be8cc24be348))
+
 ## [0.15.0](https://github.com/cloverdefa/Script/compare/v0.14.0...v0.15.0) (2023-09-09)
 
 

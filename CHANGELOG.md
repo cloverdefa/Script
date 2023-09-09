@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.7](https://github.com/cloverdefa/Script/compare/v0.18.6...v0.18.7) (2023-09-09)
+
+
+### chore
+
+* add exit command to git-pull.ps1 file ([3a89e31](https://github.com/cloverdefa/Script/commit/3a89e316b352d169cf7881ac08f5dbde13270a1e))
+
 ## [0.18.6](https://github.com/cloverdefa/Script/compare/v0.18.5...v0.18.6) (2023-09-09)
 
 

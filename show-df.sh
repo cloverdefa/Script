@@ -1,3 +1,7 @@
+#!/bin/bash
+
+$servers = "np", "zt", "agh", "up", "wp", "rd", "n1", "n2", "n3", "n4"
+
 function Show-DiskSpace {
     param (
         [string]$server
@@ -26,8 +30,6 @@ function Show-DiskSpace {
         Write-Output "讀取 $server 空間出現錯誤: $_"
     }
 }
-
-$servers = "np", "zt", "agh", "up", "wp", "rd", "n1", "n2", "n3", "n4"
 
 foreach ($server in $servers) {
     Show-DiskSpace -server $server

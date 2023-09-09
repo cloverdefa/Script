@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.6](https://github.com/cloverdefa/Script/compare/v0.12.5...v0.12.6) (2023-09-09)
+
+
+### Docs
+
+* fix typo in repository name ([0ce70e6](https://github.com/cloverdefa/Script/commit/0ce70e60adeaf1b0957f6ee8668487d273e9e452))
+
 ## [0.12.5](https://github.com/cloverdefa/Script/compare/v0.12.4...v0.12.5) (2023-09-09)
 
 

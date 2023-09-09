@@ -8,6 +8,7 @@ $ytDlpPath = "C:\Users\clove\OneDrive\文件\yt-dlp\yt-dlp.exe"
 $outputDir = "C:\Users\clove\OneDrive\桌面"
 $format = "ext:mp4:m4a"
 
+# 使用 yt-dlp.exe 命令下載影片
 & $ytDlpPath -P $outputDir "$Video" -S $format -o "%(title)s.%(ext)s"
 $downloadStatus = if ($LASTEXITCODE -eq 0) { "完成" } else { "出現錯誤" }
 Write-Output "影片下載$downloadStatus"

@@ -9,7 +9,7 @@ function Show-DiskSpace {
     echo "    $server 容量空間"
     echo "========================="
 
-    if ping -c 1 "$server" &>/dev/null; then
+    if ssh "$server" 'exit 0'; then
         dfOutput=$(ssh "$server" 'LC_ALL=C df -h')
 
         if [[ "$dfOutput" == *"No route to host"* ]]; then

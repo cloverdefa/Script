@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.20](https://github.com/cloverdefa/Script/compare/v0.13.19...v0.13.20) (2023-09-09)
+
+
+### chore
+
+* update required PowerShell version to 6 in multiple scripts ([1eb537b](https://github.com/cloverdefa/Script/commit/1eb537b05621a80233b2ad9ad8668f1bde2bd2d4))
+
 ## [0.13.19](https://github.com/cloverdefa/Script/compare/v0.13.18...v0.13.19) (2023-09-09)
 
 

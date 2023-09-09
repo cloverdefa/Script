@@ -12,8 +12,8 @@ function Git-Pull-Repo() {
     cd "$repo_path" || exit 1
 
     # 切換到主分支
-    if git checkout main; then
-        echo "已成功切換到主分支"
+    if git checkout main >/dev/null 2>&1; then
+        :
     else
         echo "切換到主分支時出現錯誤"
         exit 1 # 如果切換失敗，退出腳本，並返回退出碼1

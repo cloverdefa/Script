@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.18.4](https://github.com/cloverdefa/Script/compare/v0.18.3...v0.18.4) (2023-09-09)
+
+
+### chore
+
+* remove unnecessary version requirement for PowerShell scripts ([1f057b8](https://github.com/cloverdefa/Script/commit/1f057b85163ac6ba229b31b0c70ddd44b800933d))
+* update `hostnames` variable with additional values ([2c49dbb](https://github.com/cloverdefa/Script/commit/2c49dbb8fc67499e80357acfdda7f05b79945a6d))
+
 ## [0.18.3](https://github.com/cloverdefa/Script/compare/v0.18.2...v0.18.3) (2023-09-09)
 
 

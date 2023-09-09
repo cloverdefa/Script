@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.4](https://github.com/cloverdefa/Script/compare/v0.13.3...v0.13.4) (2023-09-09)
+
+
+### Code Refactoring
+
+* standardize output and improve performance ([f12ea0b](https://github.com/cloverdefa/Script/commit/f12ea0b6e9b8345c67144759989e03ce6168c92b))
+
 ## [0.13.3](https://github.com/cloverdefa/Script/compare/v0.13.2...v0.13.3) (2023-09-09)
 
 

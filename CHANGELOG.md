@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.11.10](https://github.com/cloverdefa/Script/compare/v0.11.9...v0.11.10) (2023-09-09)
+
+
+### chore
+
+* update posh-linux-amd64 file ([cf4cd21](https://github.com/cloverdefa/Script/commit/cf4cd21076454ab3788d59d7dfd071c669a25807))
+
 ## [0.11.9](https://github.com/cloverdefa/Script/compare/v0.11.8...v0.11.9) (2023-09-08)
 
 

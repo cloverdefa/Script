@@ -13,9 +13,9 @@ function Git-Pull-Repo() {
     echo "目前路徑位於 ${PWD}"
 
     if git checkout main && git fetch -p && git pull; then
-        echo "$text 完成"
+        echo "拉取 $repo_name 遠端資料完成"
     else
-        echo "$text 出現錯誤"
+        echo "拉取 $repo_name 遠端資料出現錯誤"
     fi
 }
 

@@ -2,7 +2,7 @@
 
 function Git-Pull-Repo() {
     local repo_name="$1"
-    local repo_path=~/github/"$repo_name"
+    local repo_path="$HOME/github/$repo_name"
 
     echo "========================="
     echo "$repo_name 拉取遠端資料"
@@ -21,7 +21,7 @@ function Git-Pull-Repo() {
     git fetch -p
     git pull
 
-    if [ $? -ne 0 ]; then
+    if [[ $? -ne 0 ]]; then
         echo "拉取 $repo_name 遠端資料出現錯誤"
     else
         echo "$repo_name 拉取遠端 Git 資料完成"

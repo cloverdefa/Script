@@ -20,9 +20,9 @@ function Git-Pull-Repo() {
 
     if git remote update -p && git status -uno | grep -q '您的分支落後'; then
         if git pull; then
-            echo "$拉取遠端資料完成，存儲庫名稱：${repo_name}"
+            echo "拉取遠端資料完成，存儲庫名稱：${repo_name}"
         else
-            echo "$拉取遠端資料出現錯誤，存儲庫名稱：${repo_name}"
+            echo "拉取遠端資料出現錯誤，存儲庫名稱：${repo_name}"
         fi
     else
         echo "GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：${repo_name}"

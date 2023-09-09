@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.15](https://github.com/cloverdefa/Script/compare/v0.13.14...v0.13.15) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor variable declaration and initialization ([77237b0](https://github.com/cloverdefa/Script/commit/77237b045e07d0533e6ed988a8be1a1db95f8807))
+
 ## [0.13.14](https://github.com/cloverdefa/Script/compare/v0.13.13...v0.13.14) (2023-09-09)
 
 

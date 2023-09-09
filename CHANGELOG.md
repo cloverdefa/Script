@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.14.0](https://github.com/cloverdefa/Script/compare/v0.13.21...v0.14.0) (2023-09-09)
+
+
+### Features
+
+* improve error handling and output in download script ([39b058f](https://github.com/cloverdefa/Script/commit/39b058ff87c0fcf307cd1564f1c7bc0e688386c1))
+* increase the amount of returned recordings and improve code organization ([7e02391](https://github.com/cloverdefa/Script/commit/7e0239121f813c8fc7e6bbd7b59df60a2471e167))
+* switch to `yt-dlp` for video downloads and improve error handling ([7f5f6f5](https://github.com/cloverdefa/Script/commit/7f5f6f5bff13456e30c3e7d9c43bfb9350f553bd))
+
+
+### Docs
+
+* add comment explaining use of `yt-dlp.exe` for video downloads ([a50da83](https://github.com/cloverdefa/Script/commit/a50da831213b261ac77b69f08d19e5ae1bc417ab))
+
 ## [0.13.21](https://github.com/cloverdefa/Script/compare/v0.13.20...v0.13.21) (2023-09-09)
 
 

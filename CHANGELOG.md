@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.0](https://github.com/cloverdefa/Script/compare/v0.14.0...v0.15.0) (2023-09-09)
+
+
+### Features
+
+* refactor video download process ([dfa9e53](https://github.com/cloverdefa/Script/commit/dfa9e53c01faf9af022f66c8bc82ab1e50d829bf))
+
 ## [0.14.0](https://github.com/cloverdefa/Script/compare/v0.13.21...v0.14.0) (2023-09-09)
 
 

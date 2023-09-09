@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.3](https://github.com/cloverdefa/Script/compare/v0.18.2...v0.18.3) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor ping and df commands in shell script ([eea4a70](https://github.com/cloverdefa/Script/commit/eea4a7083600726f4268a616bb667530af024411))
+
 ## [0.18.2](https://github.com/cloverdefa/Script/compare/v0.18.1...v0.18.2) (2023-09-09)
 
 

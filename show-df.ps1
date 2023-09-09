@@ -10,7 +10,7 @@ function Show-DiskSpace {
     Write-Host "=========================`n"
 
     try {
-        ssh $server 'df -h' | ForEach-Object { Write-Host $_ }
+        ssh $server 'df -h' | ForEach-Object { Write-Host $_ -Encoding UTF8 }
         Start-Sleep -Seconds 2
     } catch {
         Write-Host "讀取 $server 空間出現錯誤: $_"

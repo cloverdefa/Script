@@ -9,7 +9,7 @@ function Git-Pull-Repo() {
     local repo_path="$HOME/github/$repo_name" # 使用$HOME環境變數
     local text="$repo_name 拉取遠端資料"
 
-    cd "$repo_path" || exit 1
+    cd "$repo_path" || exit 1 # 切換到存儲庫目錄
 
     # 切換到主分支
     if git checkout main; then

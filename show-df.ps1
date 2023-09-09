@@ -25,7 +25,7 @@ foreach ($server in $servers) {
 }
 
 # Done
-if ($?) {
+if ($LASTEXITCODE -eq 0) {
     Write-Output "讀取空間資料完成"
 } else {
     Write-Output "讀取空間出現錯誤"

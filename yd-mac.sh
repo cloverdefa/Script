@@ -1,13 +1,17 @@
 #!/bin/zsh
 
 output_dir="/Users/cloverdefa/Desktop"
-format="ext:mp4:m4a"
+format="best[ext=mp4]/best"
 
 echo "影片下載工具 yd-dlp"
-read -p '輸入影片網址: ' domain
+echo -n '輸入影片網址: '
+read domain
 
 # 使用 yt-dlp 命令下載影片
-if yt-dlp -P "$output_dir" "$domain" -S "$format" -o "%(title)s.%(ext)s"; then
+if yt-dlp -o "%(title)s.%(ext)s" \
+    -f "$format" \
+    -o "$output_dir/%(title)s.%(ext)s" \
+    "$domain"; then
     echo "==== 影片下載完成 ===="
 else
     exit_code=$?

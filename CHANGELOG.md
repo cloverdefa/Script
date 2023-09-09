@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.6](https://github.com/cloverdefa/Script/compare/v0.18.5...v0.18.6) (2023-09-09)
+
+
+### chore
+
+* update repository path environment variable ([ca38d3f](https://github.com/cloverdefa/Script/commit/ca38d3fb65f79d33adcdf9c16c2fac3e72443cd8))
+
 ## [0.18.5](https://github.com/cloverdefa/Script/compare/v0.18.4...v0.18.5) (2023-09-09)
 
 

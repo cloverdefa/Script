@@ -30,6 +30,7 @@ function Git-Pull-Repo() {
     fi
 
     echo "$text"
+    echo "----------------------------------------"
 }
 
 for repo in "${repos[@]}"; do

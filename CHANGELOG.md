@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.3](https://github.com/cloverdefa/Script/compare/v0.17.2...v0.17.3) (2023-09-09)
+
+
+### Code Refactoring
+
+* update output message for reading space data ([b2c05b6](https://github.com/cloverdefa/Script/commit/b2c05b6fa684065379b4fb09628688772bb60e78))
+
 ## [0.17.2](https://github.com/cloverdefa/Script/compare/v0.17.1...v0.17.2) (2023-09-09)
 
 

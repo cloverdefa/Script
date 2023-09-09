@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.1](https://github.com/cloverdefa/Script/compare/v0.18.0...v0.18.1) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor disk space checking and error handling ([7ca0f2a](https://github.com/cloverdefa/Script/commit/7ca0f2a550342b82edc0ccc275b009d2d9cdd1a5))
+
 ## [0.18.0](https://github.com/cloverdefa/Script/compare/v0.17.5...v0.18.0) (2023-09-09)
 
 

@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study" "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
+repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study"
+    "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

@@ -16,9 +16,20 @@ function Update-VM {
 
 $hostnames = "pve", "np", "zt", "agh", "bot", "up", "wp", "rd", "n1", "n2", "n3", "n4", "uckh", "ucko"
 
+$success = $true
+
 $hostnames | ForEach-Object {
     Update-VM -hostname $_
+    if ($LASTEXITCODE -ne 0) {
+        $success = $false
+    }
 }
 
 # Done
-Exit
+if ($success) {
+    Write-Host "更新完成"
+} else {
+    Write-Host "更新出現錯誤"
+}
+
+Exit $success

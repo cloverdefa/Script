@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.18.9](https://github.com/cloverdefa/Script/compare/v0.18.8...v0.18.9) (2023-09-09)
+
+
+### chore
+
+* add separator line before repository pull output ([7d07631](https://github.com/cloverdefa/Script/commit/7d07631d4375449a97c9d993e165b97b43fac772))
+* improve success message for `git checkout main` command ([fd1ec1a](https://github.com/cloverdefa/Script/commit/fd1ec1aa2927096b804751bf83c0dfc8d3d9db75))
+* update output separator in Git-Pull-Repo function ([877d4e0](https://github.com/cloverdefa/Script/commit/877d4e010ebd610a17398adad8bc798c8bac144b))
+
+
+### Code Refactoring
+
+* improve status message for Git-Pull-Repo function ([b7a9dcc](https://github.com/cloverdefa/Script/commit/b7a9dcc18a0a06a92c34a7517cd6b7b14534d988))
+
 ## [0.18.8](https://github.com/cloverdefa/Script/compare/v0.18.7...v0.18.8) (2023-09-09)
 
 

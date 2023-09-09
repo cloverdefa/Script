@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.10](https://github.com/cloverdefa/Script/compare/v0.18.9...v0.18.10) (2023-09-09)
+
+
+### Docs
+
+* improve code readability and comments ([3ec1680](https://github.com/cloverdefa/Script/commit/3ec1680f2932dbd4b8734c1d3742aa032667250a))
+
 ## [0.18.9](https://github.com/cloverdefa/Script/compare/v0.18.8...v0.18.9) (2023-09-09)
 
 

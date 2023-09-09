@@ -1,6 +1,4 @@
-#REQUIRES -Version 6
-
-$hostnames = "pve", "np", "zt", "agh", "bot", "up", "wp", \
+$hostnames = "pve", "np", "zt", "agh", "bot", "up", "wp",
     "rd", "n1", "n2", "n3", "n4", "uckh", "ucko"
 
 function Update-VM {

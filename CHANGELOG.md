@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.3](https://github.com/cloverdefa/Script/compare/v0.15.2...v0.15.3) (2023-09-09)
+
+
+### chore
+
+* change error message language in git-pull-mac.sh ([2ea23aa](https://github.com/cloverdefa/Script/commit/2ea23aa3b954f9de252210bbb315a02f4dbca1f8))
+
 ## [0.15.2](https://github.com/cloverdefa/Script/compare/v0.15.1...v0.15.2) (2023-09-09)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.16.1](https://github.com/cloverdefa/Script/compare/v0.16.0...v0.16.1) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor code for improved variable usage and message formatting ([e5edee3](https://github.com/cloverdefa/Script/commit/e5edee3611775b8a9752b784064b9a5019804d5b))
+
 ## [0.16.0](https://github.com/cloverdefa/Script/compare/v0.15.4...v0.16.0) (2023-09-09)
 
 

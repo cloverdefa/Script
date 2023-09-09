@@ -2,11 +2,11 @@
 
 function Update-VM
 {
-    echo "======================================="
-    echo "          更新 $args 主機"
-    echo "======================================="
+    Write-Output "======================================="
+    Write-Output "          更新 $args 主機"
+    Write-Output "======================================="
     ssh $args 'update-vm'
-    echo ""
+    Write-Output ""
 }
 
 Update-VM pve
@@ -26,7 +26,7 @@ Update-VM ucko
 
 # Done
 if ($Return -eq 0) {
-    echo "==== 更新 $args 出現錯誤 ====" }
+    Write-Output "==== 更新 $args 出現錯誤 ====" }
 else {
-    echo "==== 更新全部設備完成 ====" }
+    Write-Output "==== 更新全部設備完成 ====" }
 Exit

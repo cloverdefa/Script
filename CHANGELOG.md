@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.19](https://github.com/cloverdefa/Script/compare/v0.13.18...v0.13.19) (2023-09-09)
+
+
+### Code Refactoring
+
+* remove duplicate initialization of `$reposToPull` variable ([7660ffa](https://github.com/cloverdefa/Script/commit/7660ffae7f9bbb47e427711d10c400b1652156d0))
+
 ## [0.13.18](https://github.com/cloverdefa/Script/compare/v0.13.17...v0.13.18) (2023-09-09)
 
 

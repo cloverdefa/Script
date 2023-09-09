@@ -1,40 +1,42 @@
-$reposToPull = @(
-    "bash", "Containers", "hath-docker", "PowerShell", "python-study",
-    "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings"
-)
+# 定義要檢查的儲存庫列表
+$repositories = @("bash", "Containers", "hath-docker", "PowerShell", 
+    "python-study", "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings")
 
-function Git-Pull-Repo {
-    param (
-        [string]$repoName,
-        [switch]$force
-    )
+# 新的本地存儲庫根目錄路徑
+$localRepositoryRoot = "C:\Users\clove\github"
 
-    $repoPath = "$Env:USERPROFILE\github\$repoName"
-    Write-Host "拉取GitHub遠端資料庫 $repoName 位於 $repoPath"
-
-    if (Test-Path -Path $repoPath) {
-        Set-Location $repoPath
+# 遍歷每個儲存庫並執行Git操作
+foreach ($repository in $repositories) {
+    Write-Host "檢查儲存庫: $repository"
+    
+    # 構建完整的本地存儲庫路徑
+    $localRepositoryPath = Join-Path -Path $localRepositoryRoot -ChildPath $repository
+    
+    # 進入儲存庫目錄
+    Set-Location -Path $localRepositoryPath
+    
+    # 檢查是否需要切換到main分支
+    $currentBranch = git rev-parse --abbrev-ref HEAD
+    if ($currentBranch -ne "main") {
+        Write-Host "切換到main分支中..."
         git checkout main
-
-        if ($force) {
-            git remote update -p
-            git status -uno | Select-String 'Your branch is behind' | Out-Null
-            if ($?) {
-                git pull
-            }
-        }
-
-        $statusMsg = if ($LASTEXITCODE -eq 0) { "成功完成" } else { "拉取失敗" }
-        Write-Host "拉取GitHub遠端資料庫 $repoName $statusMsg"
-    } else {
-        Write-Host "資料夾 $repoName 不存在"
-        return 1
     }
+    
+    # 檢查是否有更新需要拉取
+    $result = git pull
+    if ($result -match "Already up to date.") {
+        Write-Host "儲存庫已經是最新的。"
+    } elseif ($result -match "Updating") {
+        Write-Host "儲存庫已經更新。"
+    } else {
+        Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。"
+    }
+    
+    # 返回上一級目錄
+    Set-Location -Path $localRepositoryRoot
+    
+    Write-Host "---------------------------------------------"
 }
 
-$reposToPull | ForEach-Object {
-    Git-Pull-Repo -repoName $_ -force
-}
-
-Set-Location $Env:USERPROFILE
-Exit
+# 返回到原始目錄
+Set-Location -Path $PSScriptRoot

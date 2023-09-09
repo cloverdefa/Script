@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e  # 程式出錯即停止運行
 
 function Show-df
 {

@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.12.0](https://github.com/cloverdefa/Script/compare/v0.11.11...v0.12.0) (2023-09-09)
+
+
+### chore
+
+* update file paths and download command ([83eb731](https://github.com/cloverdefa/Script/commit/83eb73102f8f92c1014a715a59972ac165ba5675))
+
+
+### Features
+
+* update yd-office.ps1 script with improved functionality ([a0ba098](https://github.com/cloverdefa/Script/commit/a0ba0984fb1f898fe39648ac5ff5b9348fe3bd1d))
+
 ## [0.11.11](https://github.com/cloverdefa/Script/compare/v0.11.10...v0.11.11) (2023-09-09)
 
 

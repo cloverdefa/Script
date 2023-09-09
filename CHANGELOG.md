@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.2](https://github.com/cloverdefa/Script/compare/v0.13.1...v0.13.2) (2023-09-09)
+
+
+### Styling
+
+* refactor output and error messages ([405bdbd](https://github.com/cloverdefa/Script/commit/405bdbd2b991e4ae83ba98033deb025bb974c5fc))
+
 ## [0.13.1](https://github.com/cloverdefa/Script/compare/v0.13.0...v0.13.1) (2023-09-09)
 
 

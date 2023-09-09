@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.11](https://github.com/cloverdefa/Script/compare/v0.13.10...v0.13.11) (2023-09-09)
+
+
+### chore
+
+* update hardcoded paths to use environment variables ([789e806](https://github.com/cloverdefa/Script/commit/789e806584ee7da224f01f3bd0b9c9b90a188850))
+
 ## [0.13.10](https://github.com/cloverdefa/Script/compare/v0.13.9...v0.13.10) (2023-09-09)
 
 

@@ -2,9 +2,10 @@
 
 function Git-Pull-Repo() {
     local repo_name="$1"
-    echo "========================="
+    local equals="="*25 # 產生等號（=）的25個重複字符
+    echo "$equals"
     echo "$repo_name 拉取遠端資料"
-    echo "========================="
+    echo "$equals"
     cd ~/Documents/github/"$repo_name"
     echo "目前路徑位於 ${PWD}"
     git checkout main
@@ -15,7 +16,7 @@ function Git-Pull-Repo() {
     else
         echo "$repo_name 拉取遠端 Git 資料完成"
     fi
-    echo "========================="
+    echo "$equals"
 }
 
 repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study" "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")

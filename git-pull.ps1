@@ -41,7 +41,7 @@ $reposToPull = @(
     "Containers",
     "hath-docker",
     "PowerShell",
-    "python-studenty",
+    "python-studanty",
     "Rule-Sets",
     "Script",
     "ssh",

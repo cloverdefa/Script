@@ -1,4 +1,4 @@
-#REQUIRES -Version 2
+#REQUIRES -Version 6
 
 $reposToPull = @(
     "bash", "Containers", "hath-docker", "PowerShell", "python-study",

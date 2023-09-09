@@ -1,4 +1,4 @@
-#REQUIRES -Version 2
+#REQUIRES -Version 6
 
 "影片下載工具 yd-dlp", "輸入 Ctrl+C 取消下載" | Write-Host
 $Server = Read-Host -Prompt '請輸入下載影片網址'

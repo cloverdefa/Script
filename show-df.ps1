@@ -1,4 +1,4 @@
-#REQUIRES -Version 2
+#REQUIRES -Version 6
 
 function Show-DiskSpace {
     param (

@@ -1,7 +1,12 @@
 #!/bin/bash
 
 function Show-df() {
-    ssh "$1" 'df -h'
+    local server="$1"
+    local equals="="
+
+    printf "%s\n    %s 容量空間\n%s\n" "${equals//?/=}" "$server" "${equals//?/=}"
+    ssh "$server" 'df -h'
+    printf "\n"
     sleep 2
 }
 

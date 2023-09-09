@@ -7,7 +7,6 @@ repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study"
 function Git-Pull-Repo() {
     local repo_name="$1"
     local repo_path="$HOME/Documents/github/$repo_name" # 使用$HOME環境變數
-    local text="$repo_name 拉取遠端資料"
 
     cd "$repo_path" # 切換到存儲庫目錄
 
@@ -15,15 +14,12 @@ function Git-Pull-Repo() {
 
     if git remote update -p && git status -uno | grep -q '您的分支落後'; then
         if git pull; then
-            text="$text 完成"
-            echo "$text，存儲庫名稱：$repo_name"
+            echo "${repo_name} 拉取遠端資料完成，存儲庫名稱：${repo_name}"
         else
-            text="$text 出現錯誤"
-            echo "$text，存儲庫名稱：$repo_name"
+            echo "${repo_name} 拉取遠端資料出現錯誤，存儲庫名稱：${repo_name}"
         fi
     else
-        text="GitHub 遠端資料庫無變更或本地資料不需要更新"
-        echo "$text，存儲庫名稱：$repo_name"
+        echo "GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：${repo_name}"
     fi
 }
 

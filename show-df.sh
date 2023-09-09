@@ -36,10 +36,9 @@ foreach ($server in $servers) {
 }
 
 # Done
-if ($?) {
-    Write-Output "讀取空間資料完成"
-} else {
-    Write-Output "讀取空間出現錯誤"
-}
-
-Exit
+if [ $? -ne 0 ]; then
+    printf "讀取空間出現錯誤\n"
+else
+    printf "讀取空間資料完成\n"
+fi
+exit

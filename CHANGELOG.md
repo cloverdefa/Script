@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.13.16](https://github.com/cloverdefa/Script/compare/v0.13.15...v0.13.16) (2023-09-09)
+
+
+### Styling
+
+* improve readability of `repos` array initialization ([6b09c27](https://github.com/cloverdefa/Script/commit/6b09c2712ea8bd36b4344b0eea1f8ba66b568fda))
+* refactor git-pull-wsl.sh for improved readability ([4cff1bc](https://github.com/cloverdefa/Script/commit/4cff1bc1b0bef040bfa884dd6abdd35c932fec34))
+
 ## [0.13.15](https://github.com/cloverdefa/Script/compare/v0.13.14...v0.13.15) (2023-09-09)
 
 

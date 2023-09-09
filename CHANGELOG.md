@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.2](https://github.com/cloverdefa/Script/compare/v0.17.1...v0.17.2) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor error handling and remove unused code ([215ede0](https://github.com/cloverdefa/Script/commit/215ede06a295ee55f2cc2a9b4f1ca270d2a76db4))
+
 ## [0.17.1](https://github.com/cloverdefa/Script/compare/v0.17.0...v0.17.1) (2023-09-09)
 
 

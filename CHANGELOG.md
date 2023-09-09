@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.4](https://github.com/cloverdefa/Script/compare/v0.17.3...v0.17.4) (2023-09-09)
+
+
+### Code Refactoring
+
+* update syntax and command names in script ([767d83f](https://github.com/cloverdefa/Script/commit/767d83facd149b6a83721957c76fad5f13e4fdca))
+
 ## [0.17.3](https://github.com/cloverdefa/Script/compare/v0.17.2...v0.17.3) (2023-09-09)
 
 

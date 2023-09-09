@@ -1,8 +1,8 @@
 #REQUIRES -Version 2
 
 
-function Show-df
-{
+function Show-df {
+
     Write-Output "========================="
     Write-Output "    $args 容量空間"
     Write-Output "========================="

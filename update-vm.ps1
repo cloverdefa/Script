@@ -1,7 +1,7 @@
 #REQUIRES -Version 2
 
-function Update-VM
-{
+function Update-VM {
+
     Write-Output "======================================="
     Write-Output "          更新 $args 主機"
     Write-Output "======================================="

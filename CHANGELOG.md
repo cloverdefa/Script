@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.4](https://github.com/cloverdefa/Script/compare/v0.15.3...v0.15.4) (2023-09-09)
+
+
+### chore
+
+* standardize output messages and branch checkout order in git-pull scripts ([0a00b65](https://github.com/cloverdefa/Script/commit/0a00b65e7a26d1f3c1fa9822bf89897e0d743e7e))
+
 ## [0.15.3](https://github.com/cloverdefa/Script/compare/v0.15.2...v0.15.3) (2023-09-09)
 
 

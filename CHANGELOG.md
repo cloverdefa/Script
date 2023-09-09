@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.12.2](https://github.com/cloverdefa/Script/compare/v0.12.1...v0.12.2) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor function declaration and remove empty line ([db7475b](https://github.com/cloverdefa/Script/commit/db7475b003c59f2432b531ed68fb7373777f780b))
+* refactor Git-Pull-Repo function declaration and remove unnecessary Exit command ([2acb1ad](https://github.com/cloverdefa/Script/commit/2acb1ad92d2e21830e2b2dbd4103d1f7285efcd9))
+* refactor Update-VM function to use function keyword and add host update message ([77317ba](https://github.com/cloverdefa/Script/commit/77317ba616cc047d3c0114f73dfb862bf031d159))
+* update `show-df` function in `show-df.ps1` ([a9601c5](https://github.com/cloverdefa/Script/commit/a9601c547098ed5459fe7de0754899a814808bfc))
+
 ## [0.12.1](https://github.com/cloverdefa/Script/compare/v0.12.0...v0.12.1) (2023-09-09)
 
 

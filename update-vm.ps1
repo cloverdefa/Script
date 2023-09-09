@@ -27,7 +27,7 @@ $hostnames | ForEach-Object {
 
 # Done
 if ($success) {
-    Write-Host "更新完成"
+    Write-Host "全部更新作業完成"
 } else {
     Write-Host "更新出現錯誤"
 }

@@ -12,8 +12,16 @@ function Git-Pull-Repo() {
     cd "$repo_path" || exit 1
     echo "目前路徑位於 ${PWD}"
 
+    # 切換到主分支
+    if git checkout main; then
+        echo "已成功切換到主分支"
+    else
+        echo "切換到主分支時出現錯誤"
+        exit 1 # 如果切換失敗，退出腳本，並返回退出碼1
+    fi
+
     if git remote update -p && git status -uno | grep -q 'Your branch is behind'; then
-        if git checkout main && git pull; then
+        if git pull; then
             text="$text 完成"
         else
             text="$text 出現錯誤"

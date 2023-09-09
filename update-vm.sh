@@ -1,5 +1,8 @@
 #!/bin/bash
 
+hostnames=("pve" "np" "zt" "agh" "bot" "up" "wp"
+    "rd" "n1" "n2" "n3" "n4" "uckh" "ucko")
+
 function Update-VM() {
     echo "======================================="
     echo "      更新 $1 主機"
@@ -7,8 +10,6 @@ function Update-VM() {
     ssh $1 'update-vm'
     echo ""
 }
-
-hostnames=("pve" "np" "zt" "agh" "bot" "up" "wp" "rd" "n1" "n2" "n3" "n4" "uckh" "ucko")
 
 for hostname in "${hostnames[@]}"; do
     Update-VM "$hostname"

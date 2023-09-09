@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.12.1](https://github.com/cloverdefa/Script/compare/v0.12.0...v0.12.1) (2023-09-09)
+
+
+### chore
+
+* update file paths for yt-dlp ([13dd14b](https://github.com/cloverdefa/Script/commit/13dd14bbb327449f32070ba2891fc980d53dbc2e))
+
+
+### Code Refactoring
+
+* refactor file handling and naming conventions ([819345a](https://github.com/cloverdefa/Script/commit/819345ae87fd5984ecfb2ecacd24b718ceb9a4b7))
+
 ## [0.12.0](https://github.com/cloverdefa/Script/compare/v0.11.11...v0.12.0) (2023-09-09)
 
 

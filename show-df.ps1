@@ -17,14 +17,7 @@ function Show-DiskSpace {
         if ($pingResult.StatusCode -eq 0) {
             Write-Output "$server 伺服器不存在"
         } else {
-            $dfOutput = ssh $server 'LC_ALL=C df -h'
-            
-            if ($dfOutput -match "No route to host") {
-                Write-Output "$server 伺服器不存在"
-            } else {
-                $dfOutput | ForEach-Object { Write-Output $_ }
-                Start-Sleep -Seconds 2
-            }
+            ssh "$server" 'LC_ALL=C df -h'
         }
     } catch {
         Write-Output "讀取 $server 空間出現錯誤: $_"

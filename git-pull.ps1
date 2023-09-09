@@ -1,15 +1,15 @@
 # 定義要檢查的儲存庫列表
-$repositories = @("bash", "Containers", "hath-docker", "PowerShell", 
-    "python-study", "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings")
+$repositories = @("bash", "Containers", "hath-docker", "PowerShell",
+     "python-study", "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings")
 
-# 新的本地存儲庫根目錄路徑
-$localRepositoryRoot = "C:\Users\clove\github"
+# 使用環境變量來設定本地儲存庫根目錄路徑
+$localRepositoryRoot = $env:USERPROFILE + "\github"
 
 # 遍歷每個儲存庫並執行Git操作
 foreach ($repository in $repositories) {
     Write-Host "檢查儲存庫: $repository"
     
-    # 構建完整的本地存儲庫路徑
+    # 構建完整的本地儲存庫路徑
     $localRepositoryPath = Join-Path -Path $localRepositoryRoot -ChildPath $repository
     
     # 進入儲存庫目錄

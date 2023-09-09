@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.18.8](https://github.com/cloverdefa/Script/compare/v0.18.7...v0.18.8) (2023-09-09)
+
+
+### chore
+
+* remove unnecessary echo statement ([1daf543](https://github.com/cloverdefa/Script/commit/1daf543cfd4ebfad9ad343fe36910463de4f852d))
+
+
+### Code Refactoring
+
+* improve git-checkout command and remove unnecessary echo statement ([9712165](https://github.com/cloverdefa/Script/commit/97121655d223658f78ec5af8529713074ba60b8b))
+
 ## [0.18.7](https://github.com/cloverdefa/Script/compare/v0.18.6...v0.18.7) (2023-09-09)
 
 

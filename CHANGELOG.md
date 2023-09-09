@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.8](https://github.com/cloverdefa/Script/compare/v0.13.7...v0.13.8) (2023-09-09)
+
+
+### chore
+
+* update file paths and use yt-dlp for video downloading ([181b5ae](https://github.com/cloverdefa/Script/commit/181b5aebacfb89deefed6e33ec8cc78ba09e9367))
+
 ## [0.13.7](https://github.com/cloverdefa/Script/compare/v0.13.6...v0.13.7) (2023-09-09)
 
 

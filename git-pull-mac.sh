@@ -13,7 +13,7 @@ function Git-Pull-Repo() {
 
     git checkout main # 切換到主分支
 
-    if git remote update -p && git status -uno | grep -q 'Your branch is behind'; then
+    if git remote update -p && git status -uno | grep -q '您的分支落後'; then
         if git pull; then
             echo "拉取 $repo_name 遠端資料完成"
         else

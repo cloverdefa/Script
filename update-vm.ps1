@@ -1,20 +1,18 @@
 #REQUIRES -Version 2
 
+$hostnames = "pve", "np", "zt", "agh", "bot", "up", "wp", \
+    "rd", "n1", "n2", "n3", "n4", "uckh", "ucko"
+
 function Update-VM {
     param (
         [string]$hostname
     )
-
-    Write-Host "======================================="
-    Write-Host "          更新 $hostname 主機"
-    Write-Host "======================================="
+    Write-Host "更新 $hostname 主機"
 
     ssh $hostname 'update-vm'
 
     Write-Host ""
 }
-
-$hostnames = "pve", "np", "zt", "agh", "bot", "up", "wp", "rd", "n1", "n2", "n3", "n4", "uckh", "ucko"
 
 $success = $true
 

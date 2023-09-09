@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.16.2](https://github.com/cloverdefa/Script/compare/v0.16.1...v0.16.2) (2023-09-09)
+
+
+### chore
+
+* refactor branch switching and remote data handling ([42520a2](https://github.com/cloverdefa/Script/commit/42520a220691ec22d9073012f7ab3498b1c7813d))
+
 ## [0.16.1](https://github.com/cloverdefa/Script/compare/v0.16.0...v0.16.1) (2023-09-09)
 
 

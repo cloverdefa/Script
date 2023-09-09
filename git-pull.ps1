@@ -40,3 +40,4 @@ foreach ($repository in $repositories) {
 
 # 返回到原始目錄
 Set-Location -Path $PSScriptRoot
+Exit

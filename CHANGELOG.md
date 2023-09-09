@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.6](https://github.com/cloverdefa/Script/compare/v0.13.5...v0.13.6) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor conditional check in script ([170cb37](https://github.com/cloverdefa/Script/commit/170cb374eef6c1041585b08e5da70fb39fed45a8))
+
 ## [0.13.5](https://github.com/cloverdefa/Script/compare/v0.13.4...v0.13.5) (2023-09-09)
 
 

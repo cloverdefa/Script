@@ -1,3 +1,5 @@
+#REQUIRES -Version 2
+
 function Show-DiskSpace {
     param (
         [string]$server

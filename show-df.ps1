@@ -11,8 +11,14 @@ function Show-DiskSpace {
 
     try {
         $dfOutput = ssh $server 'LC_ALL=C df -h'
-        $dfOutput | ForEach-Object { Write-Output $_ }
-        Start-Sleep -Seconds 2
+        
+        # 檢查 SSH 命令的輸出是否包含 "No route to host" 錯誤消息
+        if ($dfOutput -match "No route to host") {
+            Write-Output "$server 伺服器不存在"
+        } else {
+            $dfOutput | ForEach-Object { Write-Output $_ }
+            Start-Sleep -Seconds 2
+        }
     } catch {
         Write-Output "讀取 $server 空間出現錯誤: $_"
     }

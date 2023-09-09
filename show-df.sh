@@ -1,25 +1,43 @@
-#!/bin/bash
+function Show-DiskSpace {
+    param (
+        [string]$server
+    )
 
-function Show-df() {
-    local server="$1"
-    local equals="="
+    Write-Output ("=" * 25)
+    Write-Output "    $server 容量空間"
+    Write-Output ("=" * 25)
 
-    printf "%s\n    %s 容量空間\n%s\n" "$(printf '=%.0s' {1..25})" "$server" "$(printf '=%.0s' {1..25})"
-    ssh "$server" 'df -h'
-    printf "\n"
-    sleep 2
+    try {
+        $pingResult = Test-Connection -ComputerName $server -Count 1 -ErrorAction Stop
+
+        if ($pingResult.StatusCode -eq 0) {
+            Write-Output "$server 伺服器不存在"
+        } else {
+            $dfOutput = ssh $server 'LC_ALL=C df -h'
+            
+            if ($dfOutput -match "No route to host") {
+                Write-Output "$server 伺服器不存在"
+            } else {
+                $dfOutput | ForEach-Object { Write-Output $_ }
+                Start-Sleep -Seconds 2
+            }
+        }
+    } catch {
+        Write-Output "讀取 $server 空間出現錯誤: $_"
+    }
 }
 
-servers=("np" "zt" "agh" "up" "wp" "rd" "n1" "n2" "n3" "n4")
+$servers = "np", "zt", "agh", "up", "wp", "rd", "n1", "n2", "n3", "n4"
 
-for server in "${servers[@]}"; do
-    Show-df "$server"
-done
+foreach ($server in $servers) {
+    Show-DiskSpace -server $server
+}
 
 # Done
-if [ $? -ne 0 ]; then
-    printf "讀取空間出現錯誤\n"
-else
-    printf "讀取空間資料完成\n"
-fi
-exit
+if ($?) {
+    Write-Output "讀取空間資料完成"
+} else {
+    Write-Output "讀取空間出現錯誤"
+}
+
+Exit

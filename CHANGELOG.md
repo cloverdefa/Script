@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.13.13](https://github.com/cloverdefa/Script/compare/v0.13.12...v0.13.13) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor code for displaying repository name and completion message ([70c3165](https://github.com/cloverdefa/Script/commit/70c3165ac14438253f63d265678ebb1c9cf77000))
+* refactor function to remove unnecessary lines ([a1bfa7c](https://github.com/cloverdefa/Script/commit/a1bfa7cdfbf4f4ada0defc958c9deb2dd50520bf))
+
 ## [0.13.12](https://github.com/cloverdefa/Script/compare/v0.13.11...v0.13.12) (2023-09-09)
 
 

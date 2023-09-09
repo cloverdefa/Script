@@ -9,7 +9,8 @@ function Show-DiskSpace {
     echo "    $server 容量空間"
     echo "========================="
 
-    if ssh "$server" 'exit 0'; then
+    # 使用 -o ConnectTimeout 設置連接超時為5秒
+    if ssh -o ConnectTimeout=5 "$server" 'exit 0'; then
         dfOutput=$(ssh "$server" 'LC_ALL=C df -h')
 
         if [[ "$dfOutput" == *"No route to host"* ]]; then
@@ -19,7 +20,7 @@ function Show-DiskSpace {
             sleep 2
         fi
     else
-        echo "$server 伺服器不存在"
+        echo "$server 伺服器不存在或連接超時"
     fi
 }
 

@@ -1,7 +1,7 @@
 #REQUIRES -Version 2
 
-function Git-Pull-Repo
-{
+function Git-Pull-Repo {
+
     Write-Output "========================="
     Write-Output "    $args 拉取遠端資料"
     Write-Output "========================="
@@ -29,4 +29,5 @@ Git-Pull-Repo ssh
 Git-Pull-Repo VPN-Service
 Git-Pull-Repo Whosis-Sayings
 Set-Location $Env:USERPROFILE
+
 Exit

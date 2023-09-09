@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.13.5](https://github.com/cloverdefa/Script/compare/v0.13.4...v0.13.5) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor server capacity display and improve code duplication ([70ea8a3](https://github.com/cloverdefa/Script/commit/70ea8a3f9cdfd86300a7804986fe3eae67bfc15e))
+* refactor variable `equals` to an array with 25 elements ([ba8457a](https://github.com/cloverdefa/Script/commit/ba8457aa8d8db2c028cceea01d13cb84bde7a6a4))
+* remove unnecessary print statement from `Show-df` function ([52b383a](https://github.com/cloverdefa/Script/commit/52b383af14a01ffeb92593b95e47f4070d833f65))
+
 ## [0.13.4](https://github.com/cloverdefa/Script/compare/v0.13.3...v0.13.4) (2023-09-09)
 
 

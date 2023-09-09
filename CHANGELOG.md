@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.13.0](https://github.com/cloverdefa/Script/compare/v0.12.8...v0.13.0) (2023-09-09)
+
+
+### Features
+
+* add disk space function to script ([d2c5bbd](https://github.com/cloverdefa/Script/commit/d2c5bbde83c2126258e7e52340b39f96edba2d09))
+
+
+### Code Refactoring
+
+* refactor disk space information display ([e20f275](https://github.com/cloverdefa/Script/commit/e20f2750398176149ffad0c9933cbbc83125b4bc))
+
 ## [0.12.8](https://github.com/cloverdefa/Script/compare/v0.12.7...v0.12.8) (2023-09-09)
 
 

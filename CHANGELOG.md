@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.8](https://github.com/cloverdefa/Script/compare/v0.12.7...v0.12.8) (2023-09-09)
+
+
+### Docs
+
+* fix variable name typo and update git-pull scripts ([925116f](https://github.com/cloverdefa/Script/commit/925116f6532c76bdcbfb4cc6d6fa1b1b0cc32f23))
+
 ## [0.12.7](https://github.com/cloverdefa/Script/compare/v0.12.6...v0.12.7) (2023-09-09)
 
 

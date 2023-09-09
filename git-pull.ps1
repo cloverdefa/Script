@@ -1,5 +1,3 @@
-#REQUIRES -Version 6
-
 $reposToPull = @(
     "bash", "Containers", "hath-docker", "PowerShell", "python-study",
     "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings"
@@ -19,8 +17,11 @@ function Git-Pull-Repo {
         git checkout main
 
         if ($force) {
-            git fetch -p
-            git pull
+            git remote update -p
+            git status -uno | Select-String 'Your branch is behind' | Out-Null
+            if ($?) {
+                git pull
+            }
         }
 
         $statusMsg = if ($LASTEXITCODE -eq 0) { "completed" } else { "failed" }

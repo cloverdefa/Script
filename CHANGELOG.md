@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.16.0](https://github.com/cloverdefa/Script/compare/v0.15.4...v0.16.0) (2023-09-09)
+
+
+### Features
+
+* update output messages for pulling remote data ([474ea85](https://github.com/cloverdefa/Script/commit/474ea85eab44617e8b8d52713bfac5f5e26f8840))
+
+
+### Code Refactoring
+
+* refactor code and improve pull operation status messaging ([194ac55](https://github.com/cloverdefa/Script/commit/194ac55eecb4d4133f369f628cfd7f940fe2e9cd))
+
 ## [0.15.4](https://github.com/cloverdefa/Script/compare/v0.15.3...v0.15.4) (2023-09-09)
 
 

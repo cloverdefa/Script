@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Git-Pull-Repo() {
+function Git-Pull-Repo() {
 
     echo "========================="
     echo "$1 拉取遠端資料"

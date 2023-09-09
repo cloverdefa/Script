@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Show-df() {
+function Show-df() {
 
     echo "========================="
     echo "    $1 容量空間"

@@ -22,17 +22,14 @@ foreach ($repository in $repositories) {
         git checkout main
     }
     
-    # 拉取最新的遠程分支
-    git pull
-    
-    # 檢查是否同步成功
-    $result = git status
-    if ($result -match "Your branch is up to date") {
+    # 檢查是否有更新需要拉取
+    $result = git pull
+    if ($result -match "Already up to date.") {
         Write-Host "儲存庫已經是最新的。"
-    } elseif ($result -match "Untracked files present") {
-        Write-Host "儲存庫有未追蹤的檔案。請檢查。"
+    } elseif ($result -match "Updating") {
+        Write-Host "儲存庫已經更新。"
     } else {
-        Write-Host "儲存庫同步失敗。請檢查是否有變更或問題。"
+        Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。"
     }
     
     # 返回上一級目錄

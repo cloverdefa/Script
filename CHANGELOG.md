@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.5](https://github.com/cloverdefa/Script/compare/v0.12.4...v0.12.5) (2023-09-09)
+
+
+### chore
+
+* rename functions in shell scripts ([a7332ee](https://github.com/cloverdefa/Script/commit/a7332eee631184442670bac8833dc18e2bb4dffb))
+
 ## [0.12.4](https://github.com/cloverdefa/Script/compare/v0.12.3...v0.12.4) (2023-09-09)
 
 

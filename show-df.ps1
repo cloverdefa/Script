@@ -3,12 +3,12 @@
 
 function Show-df
 {
-    echo "========================="
-    echo "    $args 容量空間"
-    echo "========================="
-    echo ""
+    Write-Output "========================="
+    Write-Output "    $args 容量空間"
+    Write-Output "========================="
+    Write-Output ""
     ssh $args 'df -h'
-    echo ""
+    Write-Output ""
     sleep 2
 }
 
@@ -25,7 +25,7 @@ Show-df n4
 
 # Done
 if ($Return -eq 0) {
-    echo "讀取空間出現錯誤" }
+    Write-Output "讀取空間出現錯誤" }
 else {
-    echo "讀取空間資料完成" }
+    Write-Output "讀取空間資料完成" }
 Exit

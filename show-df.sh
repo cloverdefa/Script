@@ -1,9 +1,7 @@
 #!/bin/bash
 
 function Show-df() {
-    printf "=========================\n    %s 容量空間\n=========================\n\n" "$1"
     ssh "$1" 'df -h'
-    printf "\n"
     sleep 2
 }
 

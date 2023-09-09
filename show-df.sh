@@ -2,9 +2,9 @@
 
 function Show-df() {
     local server="$1"
-    local equals=("=" * 25)
+    local equals="="
 
-    printf "%s\n    %s 容量空間\n%s\n" "${equals//?/=}" "$server" "${equals//?/=}"
+    printf "%s\n    %s 容量空間\n%s\n" "$(printf '=%.0s' {1..25})" "$server" "$(printf '=%.0s' {1..25})"
     ssh "$server" 'df -h'
     printf "\n"
     sleep 2

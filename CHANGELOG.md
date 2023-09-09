@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.15.2](https://github.com/cloverdefa/Script/compare/v0.15.1...v0.15.2) (2023-09-09)
+
+
+### chore
+
+* improve git pull command and messages ([28a2982](https://github.com/cloverdefa/Script/commit/28a29822007ba4d3e77742f38b09dd8580ebcd11))
+
 ## [0.15.1](https://github.com/cloverdefa/Script/compare/v0.15.0...v0.15.1) (2023-09-09)
 
 

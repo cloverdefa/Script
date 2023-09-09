@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.1](https://github.com/cloverdefa/Script/compare/v0.17.0...v0.17.1) (2023-09-09)
+
+
+### Docs
+
+* update console output messages for internationalization ([2f043ef](https://github.com/cloverdefa/Script/commit/2f043efbec35ab5a02f49620eb57addbe6a45317))
+
 ## [0.17.0](https://github.com/cloverdefa/Script/compare/v0.16.2...v0.17.0) (2023-09-09)
 
 

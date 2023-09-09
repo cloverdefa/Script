@@ -18,7 +18,7 @@ function Git-Pull-Repo() {
     echo "========================="
 }
 
-repos=("bash" "Containers" "hath-docker" "PowerShell" "python-studanty" "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
+repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study" "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
 
 for repo in "${repos[@]}"; do
     Git-Pull-Repo "$repo"

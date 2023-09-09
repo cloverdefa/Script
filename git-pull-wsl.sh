@@ -9,13 +9,17 @@ function Git-Pull-Repo() {
     local repo_path="$HOME/github/$repo_name" # 使用$HOME環境變數
     local text="$repo_name 拉取遠端資料"
 
-    cd "$repo_path"
+    cd "$repo_path" || exit 1
     echo "目前路徑位於 ${PWD}"
 
-    if git checkout main && git fetch -p && git pull; then
-        echo "拉取 $repo_name 遠端資料完成"
+    if git remote update -p && git status -uno | grep -q 'Your branch is behind'; then
+        if git checkout main && git pull; then
+            echo "拉取 $repo_name 遠端資料完成"
+        else
+            echo "拉取 $repo_name 遠端資料出現錯誤"
+        fi
     else
-        echo "拉取 $repo_name 遠端資料出現錯誤"
+        echo "GitHub 遠端資料庫無變更或本地資料不需要更新"
     fi
 }
 
@@ -24,4 +28,4 @@ for repo in "${repos[@]}"; do
 done
 
 # 完成
-exit
+exit 0

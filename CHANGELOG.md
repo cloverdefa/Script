@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.13.17](https://github.com/cloverdefa/Script/compare/v0.13.16...v0.13.17) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor Git-Pull-Repo function ([14776ea](https://github.com/cloverdefa/Script/commit/14776ea024e6ae550b1699ea0704cca5c55cd360))
+* update output message when pulling remote data ([d2c26dc](https://github.com/cloverdefa/Script/commit/d2c26dc568edb9e34932a8eeaec60913b6f69c59))
+
 ## [0.13.16](https://github.com/cloverdefa/Script/compare/v0.13.15...v0.13.16) (2023-09-09)
 
 

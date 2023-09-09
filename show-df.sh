@@ -1,32 +1,22 @@
 #!/bin/bash
 
 function Show-df() {
-
-    echo "========================="
-    echo "    $1 容量空間"
-    echo "========================="
-    echo ""
-    ssh $1 'df -h'
-    echo ""
+    printf "=========================\n    %s 容量空間\n=========================\n\n" "$1"
+    ssh "$1" 'df -h'
+    printf "\n"
     sleep 2
-
 }
 
-Show-df np
-Show-df zt
-Show-df agh
-Show-df up
-Show-df wp
-Show-df rd
-Show-df n1
-Show-df n2
-Show-df n3
-Show-df n4
+servers=("np" "zt" "agh" "up" "wp" "rd" "n1" "n2" "n3" "n4")
+
+for server in "${servers[@]}"; do
+    Show-df "$server"
+done
 
 # Done
 if [ $? -ne 0 ]; then
-    echo "讀取空間出現錯誤"
+    printf "讀取空間出現錯誤\n"
 else
-    echo "讀取空間資料完成"
+    printf "讀取空間資料完成\n"
 fi
 exit

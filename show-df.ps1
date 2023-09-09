@@ -1,31 +1,30 @@
 #REQUIRES -Version 2
 
-function Show-df {
+function Show-DiskSpace {
+    param (
+        [string]$server
+    )
 
-    Write-Output "========================="
-    Write-Output "    $args 容量空間"
-    Write-Output "========================="
-    Write-Output ""
-    ssh $args 'df -h'
-    Write-Output ""
-    sleep 2
+    Write-Host "========================="
+    Write-Host "$server 容量空間"
+    Write-Host "========================`n"
+    
+    try {
+        $dfOutput = ssh $server 'df -h'
+        Write-Host $dfOutput
+        Write-Host "`n讀取空間資料完成"
+    } catch {
+        Write-Host "讀取 $server 空間出現錯誤: $_"
+    }
 
+    Start-Sleep -Seconds 2
 }
 
-Show-df np
-Show-df zt
-Show-df agh
-Show-df up
-Show-df wp
-Show-df rd
-Show-df n1
-Show-df n2
-Show-df n3
-Show-df n4
+$servers = "np", "zt", "agh", "up", "wp", "rd", "n1", "n2", "n3", "n4"
+
+$servers | ForEach-Object {
+    Show-DiskSpace -server $_
+}
 
 # Done
-if ($Return -eq 0) {
-    Write-Output "讀取空間出現錯誤" }
-else {
-    Write-Output "讀取空間資料完成" }
 Exit

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.2](https://github.com/cloverdefa/Script/compare/v0.18.1...v0.18.2) (2023-09-09)
+
+
+### chore
+
+* refactor SSH command in script ([fbb90a3](https://github.com/cloverdefa/Script/commit/fbb90a3d9daa9a7dc6c7b45dcee25d53d01f9c64))
+
 ## [0.18.1](https://github.com/cloverdefa/Script/compare/v0.18.0...v0.18.1) (2023-09-09)
 
 

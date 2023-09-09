@@ -14,8 +14,6 @@ function Git-Pull-Repo() {
     else
         echo "$text 出現錯誤"
     fi
-
-    printf '+%-*s+\n' "$((box_width - 2))" | tr ' ' '-'
 }
 
 repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study" "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")

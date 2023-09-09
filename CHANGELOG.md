@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.13.7](https://github.com/cloverdefa/Script/compare/v0.13.6...v0.13.7) (2023-09-09)
+
+
+### chore
+
+* change output message to include all completed tasks ([a26ffd9](https://github.com/cloverdefa/Script/commit/a26ffd9ab75b5bc9b05adae40ab9b4ca7a12fac4))
+
+
+### Code Refactoring
+
+* refactor Update-VM function and add exit code based on update success ([3d0546a](https://github.com/cloverdefa/Script/commit/3d0546a3a8ce9345782e23e49bfeb77902f8ecbb))
+
 ## [0.13.6](https://github.com/cloverdefa/Script/compare/v0.13.5...v0.13.6) (2023-09-09)
 
 

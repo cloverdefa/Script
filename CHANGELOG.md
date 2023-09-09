@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.3](https://github.com/cloverdefa/Script/compare/v0.13.2...v0.13.3) (2023-09-09)
+
+
+### Code Refactoring
+
+* change encoding of output to UTF8 ([3ced5d4](https://github.com/cloverdefa/Script/commit/3ced5d48f805b23d11b305f03e017bbf50c2cbbb))
+
 ## [0.13.2](https://github.com/cloverdefa/Script/compare/v0.13.1...v0.13.2) (2023-09-09)
 
 

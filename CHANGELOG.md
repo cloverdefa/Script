@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.21](https://github.com/cloverdefa/Script/compare/v0.13.20...v0.13.21) (2023-09-09)
+
+
+### chore
+
+* rename `yd.ps1` to `yd-home.ps1` ([d49531c](https://github.com/cloverdefa/Script/commit/d49531cb59a86662d8d3bb477ec0f72e17acae4e))
+
 ## [0.13.20](https://github.com/cloverdefa/Script/compare/v0.13.19...v0.13.20) (2023-09-09)
 
 

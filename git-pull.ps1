@@ -5,7 +5,7 @@ function Git-Pull-Repo
     Write-Output "========================="
     Write-Output "    $args 拉取遠端資料"
     Write-Output "========================="
-    Set-Location C:\Users\clove\github\$args
+    Set-Location $Env:USERPROFILE\github\$args
     Write-Output "目前路徑位於"
     Get-Location | Foreach-Object { $_.Path }
     git checkout main
@@ -28,5 +28,5 @@ Git-Pull-Repo Script
 Git-Pull-Repo ssh
 Git-Pull-Repo VPN-Service
 Git-Pull-Repo Whosis-Sayings
-Set-Location C:\Users\clove\
+Set-Location $Env:USERPROFILE
 Exit

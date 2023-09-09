@@ -6,16 +6,11 @@ function Git-Pull-Repo {
         [switch]$force
     )
 
-    Write-Output "========================="
-    Write-Output "$repoName 拉取遠端資料"
-    Write-Output "========================="
-
-    $repoPath = Join-Path $Env:USERPROFILE "github\$repoName"
-    Set-Location $repoPath
+    $repoPath = "$Env:USERPROFILE\github\$repoName"
+    Write-Host "Pulling remote data for $repoName at $repoPath"
 
     if (Test-Path -Path $repoPath) {
-        Write-Output "目前路徑位於 $repoPath"
-
+        Set-Location $repoPath
         git checkout main
 
         if ($force) {
@@ -23,36 +18,22 @@ function Git-Pull-Repo {
             git pull
         }
 
-        if ($LASTEXITCODE -eq 0) {
-            Write-Output "$repoName 拉取遠端 Git 資料完成"
-        } else {
-            Write-Output "拉取 $repoName 遠端資料出現錯誤"
-        }
-
-        Write-Output "========================="
+        $statusMsg = if ($LASTEXITCODE -eq 0) { "completed" } else { "failed" }
+        Write-Host "Pulling remote Git data for $repoName $statusMsg"
     } else {
-        Write-Output "資料夾 $repoName 不存在"
+        Write-Host "Folder $repoName does not exist"
         return 1
     }
 }
 
 $reposToPull = @(
-    "bash",
-    "Containers",
-    "hath-docker",
-    "PowerShell",
-    "python-study",
-    "Rule-Sets",
-    "Script",
-    "ssh",
-    "VPN-Service",
-    "Whosis-Sayings"
+    "bash", "Containers", "hath-docker", "PowerShell", "python-study",
+    "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings"
 )
 
-foreach ($repo in $reposToPull) {
-    Git-Pull-Repo -repoName $repo -force
+$reposToPull | ForEach-Object {
+    Git-Pull-Repo -repoName $_ -force
 }
 
 Set-Location $Env:USERPROFILE
-
 Exit

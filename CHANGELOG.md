@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.10](https://github.com/cloverdefa/Script/compare/v0.13.9...v0.13.10) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor file handling and error handling ([72a2b36](https://github.com/cloverdefa/Script/commit/72a2b360a9f161770616d3187a7d526c075e6ded))
+
 ## [0.13.9](https://github.com/cloverdefa/Script/compare/v0.13.8...v0.13.9) (2023-09-09)
 
 

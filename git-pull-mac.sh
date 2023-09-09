@@ -3,7 +3,7 @@
 # 函數來執行Git操作
 function Git-Pull-Repo() {
     local repo_name="$1"
-    local repo_path="~/Documents/github/$repo_name"
+    local repo_path="$HOME/Documents/github/$repo_name" # 使用$HOME環境變數
 
     echo "========================="
     echo "$repo_name 拉取遠端資料"

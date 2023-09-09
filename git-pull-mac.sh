@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study" "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
+
 # 函數來執行Git操作
 function Git-Pull-Repo() {
     local repo_name="$1"
@@ -15,8 +17,6 @@ function Git-Pull-Repo() {
         echo "$text 出現錯誤"
     fi
 }
-
-repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study" "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
 
 for repo in "${repos[@]}"; do
     Git-Pull-Repo "$repo"

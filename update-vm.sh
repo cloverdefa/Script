@@ -1,12 +1,13 @@
 #!/bin/bash
 
-function Update-VM
-{
+Update-VM() {
+
     echo "======================================="
     echo "      更新 $1 主機"
     echo "======================================="
     ssh $1 'update-vm'
     echo ""
+
 }
 
 Update-VM pve

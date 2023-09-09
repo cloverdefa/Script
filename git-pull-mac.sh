@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-func Git-Pull-Repo()
-{
+Git-Pull-Repo() {
+
     echo "========================="
     echo "$1 拉取遠端資料"
     echo "========================="
@@ -16,6 +16,7 @@ func Git-Pull-Repo()
         echo "$1 拉取遠端 Git 資料完成"
     fi
     echo "========================="
+
 }
 
 Git-Pull-Repo bash

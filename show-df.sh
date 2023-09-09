@@ -1,7 +1,7 @@
 #!/bin/bash
 
-function Show-df
-{
+Show-df() {
+
     echo "========================="
     echo "    $1 容量空間"
     echo "========================="
@@ -9,6 +9,7 @@ function Show-df
     ssh $1 'df -h'
     echo ""
     sleep 2
+
 }
 
 Show-df np

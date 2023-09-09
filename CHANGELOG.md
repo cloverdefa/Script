@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.0](https://github.com/cloverdefa/Script/compare/v0.17.5...v0.18.0) (2023-09-09)
+
+
+### Features
+
+* improve connection timeout and error messaging ([b688d8c](https://github.com/cloverdefa/Script/commit/b688d8cee380e97a6c6ffc04d39f8a9668b42332))
+
 ## [0.17.5](https://github.com/cloverdefa/Script/compare/v0.17.4...v0.17.5) (2023-09-09)
 
 

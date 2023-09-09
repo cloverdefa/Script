@@ -1,6 +1,7 @@
 #!/bin/bash
 
-repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study" "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
+repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study" "Rule-Sets"
+    "Script" "ssh" "VPN-Service" "Whosis-Sayings")
 
 function Git-Pull-Repo() {
     local repo_name="$1"
@@ -12,11 +13,11 @@ function Git-Pull-Repo() {
     fi
 
     (
-        cd "$repo_path" && \
-        echo "目前路徑位於 ${PWD}" && \
-        git checkout main && \
-        git fetch -p && \
-        git pull
+        cd "$repo_path" &&
+            echo "目前路徑位於 ${PWD}" &&
+            git checkout main &&
+            git fetch -p &&
+            git pull
     )
 
     if [[ $? -ne 0 ]]; then

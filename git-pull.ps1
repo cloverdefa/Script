@@ -10,7 +10,7 @@ function Git-Pull-Repo {
     )
 
     $repoPath = "$Env:USERPROFILE\github\$repoName"
-    Write-Host "Pulling remote data for $repoName at $repoPath"
+    Write-Host "拉取GitHub遠端資料庫 $repoName 位於 $repoPath"
 
     if (Test-Path -Path $repoPath) {
         Set-Location $repoPath
@@ -24,10 +24,10 @@ function Git-Pull-Repo {
             }
         }
 
-        $statusMsg = if ($LASTEXITCODE -eq 0) { "completed" } else { "failed" }
-        Write-Host "Pulling remote Git data for $repoName $statusMsg"
+        $statusMsg = if ($LASTEXITCODE -eq 0) { "成功完成" } else { "拉取失敗" }
+        Write-Host "拉取GitHub遠端資料庫 $repoName $statusMsg"
     } else {
-        Write-Host "Folder $repoName does not exist"
+        Write-Host "資料夾 $repoName 不存在"
         return 1
     }
 }

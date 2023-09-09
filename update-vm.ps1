@@ -7,6 +7,7 @@ function Update-VM {
     Write-Output "======================================="
     ssh $args 'update-vm'
     Write-Output ""
+
 }
 
 Update-VM pve

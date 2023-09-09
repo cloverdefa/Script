@@ -1,4 +1,4 @@
-# Windows Terminal Script run VMs and Pis update
+#REQUIRES -Version 2
 
 function Update-VM
 {

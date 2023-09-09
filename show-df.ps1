@@ -1,4 +1,4 @@
-# Windows Terminal Script run git pull
+#REQUIRES -Version 2
 
 
 function Show-df

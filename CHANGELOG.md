@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.17.0](https://github.com/cloverdefa/Script/compare/v0.16.2...v0.17.0) (2023-09-09)
+
+
+### chore
+
+* simplify branch switching and update process ([5625b12](https://github.com/cloverdefa/Script/commit/5625b1278456a0ea12d162b308b61910e0ad159e))
+
+
+### Features
+
+* add Chinese translation to echo message ([3a5a6f7](https://github.com/cloverdefa/Script/commit/3a5a6f77286f96b6705b40ebf580324052b3f5cd))
+
 ## [0.16.2](https://github.com/cloverdefa/Script/compare/v0.16.1...v0.16.2) (2023-09-09)
 
 

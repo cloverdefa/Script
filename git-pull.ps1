@@ -1,5 +1,10 @@
 #REQUIRES -Version 2
 
+$reposToPull = @(
+    "bash", "Containers", "hath-docker", "PowerShell", "python-study",
+    "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings"
+)
+
 function Git-Pull-Repo {
     param (
         [string]$repoName,
@@ -25,11 +30,6 @@ function Git-Pull-Repo {
         return 1
     }
 }
-
-$reposToPull = @(
-    "bash", "Containers", "hath-docker", "PowerShell", "python-study",
-    "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings"
-)
 
 $reposToPull | ForEach-Object {
     Git-Pull-Repo -repoName $_ -force

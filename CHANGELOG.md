@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.18.5](https://github.com/cloverdefa/Script/compare/v0.18.4...v0.18.5) (2023-09-09)
+
+
+### chore
+
+* update git-pull.ps1 to improve update process ([0d2babb](https://github.com/cloverdefa/Script/commit/0d2babb6f2ba1ac30694def94f5ea3a55ce4c349))
+* update repository path handling ([7d4ce94](https://github.com/cloverdefa/Script/commit/7d4ce94a90f209d7fa1421cf5698d7f5dc93f314))
+
+
+### Code Refactoring
+
+* refactor Git-Pull-Repo function for improved efficiency ([3a6fd27](https://github.com/cloverdefa/Script/commit/3a6fd27b1b4f9dc3ccae597364af8c3fd5004dd3))
+
 ## [0.18.4](https://github.com/cloverdefa/Script/compare/v0.18.3...v0.18.4) (2023-09-09)
 
 

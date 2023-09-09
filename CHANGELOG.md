@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.18](https://github.com/cloverdefa/Script/compare/v0.13.17...v0.13.18) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor update-vm scripts to remove unnecessary metadata and duplicate code ([6e7b1af](https://github.com/cloverdefa/Script/commit/6e7b1af9506b589a4b119557e47af3d5ca105a21))
+
 ## [0.13.17](https://github.com/cloverdefa/Script/compare/v0.13.16...v0.13.17) (2023-09-09)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.17.5](https://github.com/cloverdefa/Script/compare/v0.17.4...v0.17.5) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor server connectivity to use SSH for `Show-DiskSpace` function ([a4145be](https://github.com/cloverdefa/Script/commit/a4145beb656b7c44910caee15015c07fcb38f84c))
+
 ## [0.17.4](https://github.com/cloverdefa/Script/compare/v0.17.3...v0.17.4) (2023-09-09)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.12.3](https://github.com/cloverdefa/Script/compare/v0.12.2...v0.12.3) (2023-09-09)
+
+
+### chore
+
+* update PowerShell scripts for improved functionality ([0323932](https://github.com/cloverdefa/Script/commit/0323932568f0e22cd81332c51e66d11cd448dc08))
+
 ## [0.12.2](https://github.com/cloverdefa/Script/compare/v0.12.1...v0.12.2) (2023-09-09)
 
 

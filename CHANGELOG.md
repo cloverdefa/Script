@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.13.14](https://github.com/cloverdefa/Script/compare/v0.13.13...v0.13.14) (2023-09-09)
+
+
+### Code Refactoring
+
+* refactor git diff for improved readability ([57dd6ff](https://github.com/cloverdefa/Script/commit/57dd6ffd8cabf585d2caed8e8fb8fdfbd8884ec6))
+
 ## [0.13.13](https://github.com/cloverdefa/Script/compare/v0.13.12...v0.13.13) (2023-09-09)
 
 

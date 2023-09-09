@@ -2,7 +2,7 @@
 
 function Show-df() {
     local server="$1"
-    local equals="="
+    local equals=("=" * 25)
 
     printf "%s\n    %s 容量空間\n%s\n" "${equals//?/=}" "$server" "${equals//?/=}"
     ssh "$server" 'df -h'

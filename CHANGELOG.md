@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.12](https://github.com/cloverdefa/Script/compare/v0.18.11...v0.18.12) (2023-09-10)
+
+
+### Styling
+
+* update separator line to improve readability ([c2ab4d1](https://github.com/cloverdefa/Script/commit/c2ab4d155bfa46a96ef212eb83e8b8eaeeafecc1))
+
 ## [0.18.11](https://github.com/cloverdefa/Script/compare/v0.18.10...v0.18.11) (2023-09-10)
 
 

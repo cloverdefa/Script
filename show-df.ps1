@@ -1,6 +1,7 @@
 #REQUIRES -Version 6
 
-$servers = "np", "zt", "agh", "up", "wp", "rd", "n1", "n2", "n3", "n4"
+$servers = "np", "zt", "agh", "up", "wp",
+     "rd", "n1", "n2", "n3", "n4"
 
 function Show-DiskSpace {
     param (

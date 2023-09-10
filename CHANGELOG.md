@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.11](https://github.com/cloverdefa/Script/compare/v0.18.10...v0.18.11) (2023-09-10)
+
+
+### chore
+
+* increase compatibility with Linux systems ([51f7ac1](https://github.com/cloverdefa/Script/commit/51f7ac18d58a1ec5b543576e0ecb16a38fb24b43))
+
 ## [0.18.10](https://github.com/cloverdefa/Script/compare/v0.18.9...v0.18.10) (2023-09-09)
 
 

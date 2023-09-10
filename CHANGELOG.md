@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.18.13](https://github.com/cloverdefa/Script/compare/v0.18.12...v0.18.13) (2023-09-10)
+
+
+### Code Refactoring
+
+* update echo statement message ([7c44c09](https://github.com/cloverdefa/Script/commit/7c44c095d3e55e4e4b38908d34365f961ebd3bb7))
+
 ## [0.18.12](https://github.com/cloverdefa/Script/compare/v0.18.11...v0.18.12) (2023-09-10)
 
 

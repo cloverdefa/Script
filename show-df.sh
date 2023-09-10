@@ -1,6 +1,7 @@
 #!/bin/bash
 
-servers=("np" "zt" "agh" "up" "wp" "rd" "n1" "n2" "n3" "n4")
+servers=("np" "zt" "agh" "up" "wp"
+     "rd" "n1" "n2" "n3" "n4")
 
 function Show-DiskSpace {
     local server="$1"

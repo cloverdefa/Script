@@ -1,15 +1,30 @@
-#REQUIRES -Version 6
+# 設定輸出目錄為桌面
+$outputDir = [System.IO.Path]::Combine($env:USERPROFILE, 'OneDrive', '桌面')
 
-Write-Output "影片下載工具 yd-dlp"
-Write-Output "輸入 Ctrl+C 取消下載"
-$Video = Read-Host -Prompt '請輸入下載影片網址'
-
-$ytDlpPath = "C:\Users\clove\OneDrive\文件\yt-dlp\yt-dlp.exe"
-$outputDir = "C:\Users\clove\OneDrive\桌面"
+# 設定影片格式
 $format = "ext:mp4:m4a"
 
-# 使用 yt-dlp.exe 命令下載影片
-& $ytDlpPath -P $outputDir "$Video" -S $format -o "%(title)s.%(ext)s"
-$downloadStatus = if ($LASTEXITCODE -eq 0) { "完成" } else { "出現錯誤" }
-Write-Output "影片下載$downloadStatus"
-Exit $LASTEXITCODE
+# 設定 yt-dlp 的路徑
+$ytDlpPath = [System.IO.Path]::Combine(
+    $env:USERPROFILE, 'OneDrive', '文件', 'yt-dlp', 'yt-dlp.exe')
+
+# 顯示提示信息
+"影片下載工具 yd-dlp"
+"輸入 Ctrl+C 取消下載" | Write-Host
+
+# 輸入影片網址
+$Server = Read-Host -Prompt '請輸入下載影片網址'
+
+# 建立 yt-dlp 命令字串
+$command = "$ytDlpPath -P `"$outputDir`" `"$Server`" -S $format -o `"%(title)s.%(ext)s`" --newline --progress"
+
+# 開始 yt-dlp 進程並顯示輸出
+try {
+    Invoke-Expression $command
+    "影片下載完成" | Write-Host
+} catch {
+    "影片下載出現錯誤" | Write-Host
+}
+
+# 結束程式
+Exit

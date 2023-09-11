@@ -7,8 +7,6 @@ $format = "ext:mp4:m4a"
 # 設定 yt-dlp 的路徑
 $ytDlpPath = [System.IO.Path]::Combine(
     $env:USERPROFILE, 'OneDrive', '文件', 'yt-dlp', 'yt-dlp.exe')
-$ytDlpPath = [System.IO.Path]::Combine(
-    $env:USERPROFILE, 'OneDrive', '文件', 'yt-dlp','yt-dlp.exe')
 
 # 顯示提示信息
 "影片下載工具 yd-dlp"

@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+# 定義要檢查的儲存庫列表
 repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study"
     "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
 

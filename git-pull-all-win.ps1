@@ -1,3 +1,6 @@
+# 存儲最初目錄
+$originalLocation = Get-Location
+
 # 定義要檢查的儲存庫列表
 $repositories = @("bash", "Containers", "hath-docker", "PowerShell",
      "python-study", "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings")
@@ -39,5 +42,5 @@ foreach ($repository in $repositories) {
 }
 
 # 返回到原始目錄
-Set-Location -Path $PSScriptRoot
+Set-Location -Path $originalLocation
 Exit

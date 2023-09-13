@@ -7,10 +7,11 @@ echo "影片下載工具 yd-dlp"
 echo -n '輸入影片網址: '
 read domain
 
-# 使用 yt-dlp 命令下載影片
+# 使用 yt-dlp 命令下載影片和字幕
 if yt-dlp -o "%(title)s.%(ext)s" \
     -f "$format" \
     -o "$output_dir/%(title)s.%(ext)s" \
+    --write-sub --sub-lang zh-TW,zh-CN,en \
     "$domain"; then
     echo "==== 影片下載完成 ===="
 else

@@ -1,5 +1,5 @@
 # 設定影片格式
-$format = "ext:mp4:m4a"
+$format = "ext:mp4+m4a"
 
 # 設定 yt-dlp 的路徑
 $ytDlpPath = [System.IO.Path]::Combine(
@@ -34,8 +34,8 @@ if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
     $outputDir = $validOutputDirs[0]  # 使用預設目錄
 }
 
-# 建立 yt-dlp 命令字串
-$command = "$ytDlpPath -P `"$outputDir`" `"$Server`" -S $format -o `"%(title)s.%(ext)s`" --newline --progress"
+# 建立 yt-dlp 命令字串，包括下載影片和字幕
+$command = "$ytDlpPath -P `"$outputDir`" `"$Server`" -S $format --write-sub --sub-lang zh-Hant -o `"%(title)s.%(ext)s`" --newline --progress"
 
 # 開始 yt-dlp 進程並顯示輸出
 try {

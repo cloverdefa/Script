@@ -35,7 +35,9 @@ if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
 }
 
 # 建立 yt-dlp 命令字串，包括下載影片和字幕
-$command = "$ytDlpPath -P `"$outputDir`" `"$Server`" -S $format --write-sub --sub-lang zh-Hant -o `"%(title)s.%(ext)s`" --newline --progress"
+# 建立 yt-dlp 命令字串，包括下載影片和字幕
+$command = "$ytDlpPath -P `"$outputDir`" `"$Server`" -S $format --write-sub `
+           --sub-lang zh-Hant -o `"%(title)s.%(ext)s`" --newline --progress"
 
 # 開始 yt-dlp 進程並顯示輸出
 try {

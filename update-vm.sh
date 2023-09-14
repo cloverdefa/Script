@@ -4,7 +4,7 @@
 hostnames=("pve" "snell" "zero-trust" "agh" "bot" 
     "uptime-kuma" "wordpress" "rustdesk-server" 
     "Node-01" "Node-02" "Node-03" "Node-04" 
-    "Unifi-CLoudKey-Home" "Unifi-CLoudKey-Office")
+    "unifi-cloudkey-home" "unifi-cloudkey-office")
 
 # 定義更新虛擬機的函數
 function Update-VM() {

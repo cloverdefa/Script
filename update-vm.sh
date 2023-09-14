@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # 定義要更新的主機名稱列表
-hostnames=("pve" "snell" "zero-trust" "agh" "bot" "uptime-kuma" "wordpress"
-    "rustdesk-server" "n1" "n2" "n3" "n4" "uckh" "ucko")
+hostnames=("pve" "snell" "zero-trust" "agh" "bot" 
+    "uptime-kuma" "wordpress" "rustdesk-server" 
+    "Node-01" "Node-02" "Node-03" "Node-04" 
+    "Unifi-CLoudKey-Home" "Unifi-CLoudKey-Office")
 
 # 定義更新虛擬機的函數
 function Update-VM() {

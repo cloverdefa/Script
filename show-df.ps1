@@ -1,7 +1,7 @@
 # 定義要查詢的伺服器名稱列表
 $servers = "snell", "zero-trust", "agh", "bot", 
     "uptime-kuma", "wordpress", "rustdesk-server", 
-    "Node-01", "nNode-02", "Node-03", "Node-04"
+    "Node-01", "Node-02", "Node-03", "Node-04"
 
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {

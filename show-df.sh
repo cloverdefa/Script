@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # 定義要查詢的伺服器名稱列表
-servers=("np" "zt" "agh" "up" "wp"
-     "rd" "n1" "n2" "n3" "n4")
+servers=("snell" "zero-trust" "agh" "bot" 
+    "uptime-kuma" "wordpress" "rustdesk-server" "Node-01" "Node-02" "Node-03" "Node-04")
 
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {

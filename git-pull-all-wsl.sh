@@ -10,7 +10,7 @@ function Git-Pull-Repo() {
     local repo_path="$HOME/github/$repo_name" # 使用$HOME環境變數
     local text="$repo_name 拉取遠端資料"
 
-    cd "$repo_path" || exit 1 # 切換到存儲庫目錄
+    cd "$repo_path" || exit 1 # 切換到存儲庫目錄如果切換失敗，退出腳本，並返回退出碼1
 
     # 切換到主分支
     if git checkout main; then

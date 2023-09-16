@@ -8,11 +8,19 @@ hostnames=("pve" "snell" "zero-trust" "agh" "bot"
 
 # 定義更新虛擬機的函數
 function Update-VM() {
+    local hostname="$1"
+    local update_command="$2"
     echo "======================================="
-    echo "      更新 $1 主機"
+    echo "      更新 $hostname 主機"
     echo "======================================="
     # 使用 SSH 命令執行虛擬機更新作業
-    ssh $1 'update-vm'
+    ssh "$hostname" "update-vm"
+    local exit_code="$?"
+    if [ "$exit_code" -ne 0 ]; then
+        echo "==== 更新 $hostname 出現錯誤 ===="
+    else
+        echo "==== 更新 $hostname 完成 ===="
+    fi
     echo ""
 }
 

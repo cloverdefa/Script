@@ -7,7 +7,7 @@ $hostnames = "pve", "snell", "zero-trust", "agh", "bot",
 # 定義更新虛擬機的函數
 function Update-VM {
     param (
-        [string]$hostname,
+        [string]$hostname
     )
     # 顯示正在更新的主機名稱
     Write-Host "更新 $hostname 主機"
@@ -23,7 +23,7 @@ function Update-VM {
 $success = $true
 
 # 遍歷主機名稱列表並呼叫 Update-VM 函數以執行更新作業，並傳遞更新命令
-$updateCommand = "/path/to/your/new/update-vm-script.sh"  # 替換為實際的更新命令路徑
+$updateCommand = "update-vm"  # 替換為實際的更新命令路徑
 $hostnames | ForEach-Object {
     Update-VM -hostname $_ -updateCommand 'update-vm'
     # 檢查是否有更新錯誤，如果有，將成功標誌設置為 false

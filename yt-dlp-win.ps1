@@ -4,6 +4,7 @@
 
 # 輸入影片網址
 $Server = Read-Host -Prompt '請輸入下載影片網址:'
+$format="best[ext=mp4]/best"
 
 # 提供輸出影片目錄選項
 $validOutputDirs = @(
@@ -28,7 +29,7 @@ if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
 }
 
 # 建立 yt-dlp 命令行，包括下载影片和字幕
-$command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
+$command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`"  -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
 
 # 開始執行 yt-dlp 並起顯示輸出畫面
 try {

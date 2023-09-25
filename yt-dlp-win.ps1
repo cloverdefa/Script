@@ -1,5 +1,5 @@
 # 顯示提示訊息
-"影片下载工具 yt-dlp"
+"影片下載工具 yt-dlp"
 "輸入 Ctrl+C 取消下載:" | Write-Host
 
 # 輸入影片網址
@@ -20,8 +20,15 @@ for ($i = 0; $i -lt $validOutputDirs.Count; $i++) {
 
 $choice = Read-Host -Prompt '請輸入選擇的目錄編號'
 
+# 嘗試將用戶輸入轉換為整數
+if (-not [int]::TryParse($choice, [ref]$null)) {
+    "無效的選擇。使用預設輸出目錄。" | Write-Host
+    $outputDir = $validOutputDirs[0]  # 使用默认目录
+    Exit
+}
+
 # 驗證選擇是否有效
-if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count -and $choice -is [int]) {
+if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
     $outputDir = $validOutputDirs[$choice]
 } else {
     "無效的選擇。使用預設輸出目錄。" | Write-Host
@@ -34,15 +41,12 @@ $command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`"  -f `"$format`" `"$Se
 # 執行 yt-dlp 並顯示輸出畫面，處理錯誤
 try {
     Invoke-Expression $command
-    "影片下载完成" | Write-Host
+    "影片下載完成" | Write-Host
 } catch {
     $errorMessage = $_.Exception.Message
     "影片下載出現錯誤: $errorMessage" | Write-Host
-    throw  # 重新引發異常已終止腳本
+    throw  # 重新引發異常以終止腳本
 }
-
-# 清理代碼，如果有需要的話
-# ...
 
 # 結束腳本
 Exit

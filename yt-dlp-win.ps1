@@ -23,7 +23,7 @@ $choice = Read-Host -Prompt '請輸入選擇的目錄編號'
 # 嘗試將用戶輸入轉換為整數
 if (-not [int]::TryParse($choice, [ref]$null)) {
     "無效的選擇。使用預設輸出目錄。" | Write-Host
-    $outputDir = $validOutputDirs[0]  # 使用默认目录
+    $outputDir = $validOutputDirs[0]  # 使用默認目錄0輸出檔案
     Exit
 }
 
@@ -32,10 +32,10 @@ if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
     $outputDir = $validOutputDirs[$choice]
 } else {
     "無效的選擇。使用預設輸出目錄。" | Write-Host
-    $outputDir = $validOutputDirs[0]  # 使用默认目录
+    $outputDir = $validOutputDirs[0]  # 使用默認目錄0輸出檔案
 }
 
-# 建立 yt-dlp 命令行，包括下载影片和字幕
+# 建立 yt-dlp 命令列，包括下载影片和字幕
 $command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`"  -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
 
 # 執行 yt-dlp 並顯示輸出畫面，處理錯誤

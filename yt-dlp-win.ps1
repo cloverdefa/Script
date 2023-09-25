@@ -36,7 +36,9 @@ try {
     Invoke-Expression $command
     "影片下载完成" | Write-Host
 } catch {
-    "影片下載出現錯誤" | Write-Host
+    $errorMessage = $_.Exception.Message
+    "影片下載出現錯誤: $errorMessage" | Write-Host
+    throw  # 重新引發異常已終止腳本
 }
 
 # 结束脚本

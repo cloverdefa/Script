@@ -4,7 +4,7 @@
 
 # 輸入影片網址
 $Server = Read-Host -Prompt '請輸入下載影片網址:'
-$format="best[ext=mp4]/best"
+$format = "best[ext=mp4]/best"
 
 # 提供輸出影片目錄選項
 $validOutputDirs = @(
@@ -20,8 +20,8 @@ for ($i = 0; $i -lt $validOutputDirs.Count; $i++) {
 
 $choice = Read-Host -Prompt '請輸入選擇的目錄編號'
 
-# 验证选择是否有效
-if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
+# 驗證選擇是否有效
+if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count -and $choice -is [int]) {
     $outputDir = $validOutputDirs[$choice]
 } else {
     "無效的選擇。使用預設輸出目錄。" | Write-Host
@@ -31,13 +31,16 @@ if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
 # 建立 yt-dlp 命令行，包括下载影片和字幕
 $command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`"  -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
 
-# 開始執行 yt-dlp 並起顯示輸出畫面
+# 執行 yt-dlp 並顯示輸出畫面，處理錯誤
 try {
     Invoke-Expression $command
     "影片下载完成" | Write-Host
 } catch {
-    "影片下載出現錯誤" | Write-Host
+    "影片下載出現錯誤: $($_.Exception.Message)" | Write-Host
 }
 
-# 结束脚本
+# 清理代碼，如果有需要的話
+# ...
+
+# 結束腳本
 Exit

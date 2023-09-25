@@ -20,8 +20,15 @@ for ($i = 0; $i -lt $validOutputDirs.Count; $i++) {
 
 $choice = Read-Host -Prompt '請輸入選擇的目錄編號'
 
+# 嘗試將用戶輸入轉換為整數
+if (-not [int]::TryParse($choice, [ref]$null)) {
+    "無效的選擇。使用預設輸出目錄。" | Write-Host
+    $outputDir = $validOutputDirs[0]  # 使用默认目录
+    Exit
+}
+
 # 驗證選擇是否有效
-if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count -and $choice -is [int]) {
+if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
     $outputDir = $validOutputDirs[$choice]
 } else {
     "無效的選擇。使用預設輸出目錄。" | Write-Host
@@ -38,7 +45,7 @@ try {
 } catch {
     $errorMessage = $_.Exception.Message
     "影片下載出現錯誤: $errorMessage" | Write-Host
-    throw  # 重新引發異常已終止腳本
+    throw  # 重新引發異常以終止腳本
 }
 
 # 結束腳本

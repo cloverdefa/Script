@@ -1,5 +1,5 @@
 # 顯示提示訊息
-"影片下载工具 yt-dlp"
+"影片下載工具 yt-dlp"
 "輸入 Ctrl+C 取消下載:" | Write-Host
 
 # 輸入影片網址
@@ -34,15 +34,12 @@ $command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`"  -f `"$format`" `"$Se
 # 執行 yt-dlp 並顯示輸出畫面，處理錯誤
 try {
     Invoke-Expression $command
-    "影片下载完成" | Write-Host
+    "影片下載完成" | Write-Host
 } catch {
     $errorMessage = $_.Exception.Message
     "影片下載出現錯誤: $errorMessage" | Write-Host
     throw  # 重新引發異常已終止腳本
 }
-
-# 清理代碼，如果有需要的話
-# ...
 
 # 結束腳本
 Exit

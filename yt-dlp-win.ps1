@@ -8,7 +8,7 @@ $format = "best[ext=mp4]/best"
 
 # 提供輸出影片目錄選項
 $validOutputDirs = @(
-    [System.IO.Path]::Combine($env:USERPROFILE, '桌面'),
+    [System.IO.Path]::Combine($env:USERPROFILE, 'Desktop'),
     [System.IO.Path]::Combine($env:USERPROFILE, 'OneDrive', '桌面')
 )
 

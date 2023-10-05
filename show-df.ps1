@@ -1,5 +1,5 @@
 # 定義要查詢的伺服器名稱列表
-$servers = "snell", "zero-trust", "agh", "bot", 
+$servers = "snell", "zero-trust", "agh", 
     "uptime-kuma", "wordpress", "rustdesk-server", 
     "node-01", "node-02", "node-03", "node-04"
 

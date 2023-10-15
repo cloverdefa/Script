@@ -2,7 +2,7 @@
 
 # 定義要更新的主機名稱列表
 hostnames=("pve" "snell" "zero-trust" "agh" 
-    "rustdesk-server" "uptime-kuma" "wordpress" 
+    "rustdesk-server" "wordpress" 
     "node-01" "node-02" "node-03" "node-04" 
     "unifi-cloudkey-home" "unifi-cloudkey-office")
 

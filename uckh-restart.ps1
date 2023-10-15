@@ -1,0 +1,1 @@
+ssh switch-core '(echo "enable" ; echo "configure" ; echo "interface 0/1" ; echo "poe opmode shutdown" ; echo  "poe opmode auto" ; echo "exit" ; echo "exit"; echo "exit"  ) | telnet localhost 23 ; exit;'

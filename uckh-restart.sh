@@ -26,4 +26,10 @@ ssh -i "$SSH_KEY" "$SSH_USER"@"$SSH_HOST" << EOF
     exit
 EOF
 
+# 檢查SSH連接的退出狀態
+if [ $? -ne 0 ]; then
+    echo "無法建立SSH連接。"
+    exit 1
+fi
+
 echo "Unifi Cloudkey Home 重新PoE送電啟動完成."

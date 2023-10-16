@@ -10,7 +10,9 @@ function Update-VM {
         [string]$hostname
     )
     # 顯示正在更新的主機名稱
+    Write-Host "=============================="
     Write-Host "更新 $hostname 主機"
+    Write-Host "=============================="
 
     # 使用 SSH 命令執行虛擬機更新作業
     ssh $hostname 'update-vm'

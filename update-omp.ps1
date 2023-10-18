@@ -27,7 +27,7 @@ $success = $true
 # 遍歷主機名稱列表並呼叫 Update-VM 函數以執行更新作業，並傳遞更新命令
 $updateCommand = "ompu"  # 替換為實際的更新命令路徑
 $hostnames | ForEach-Object {
-    Update-VM -hostname $_ -updateCommand 'ompu'
+    Update-OMP -hostname $_ -updateCommand 'ompu'
     # 檢查是否有更新錯誤，如果有，將成功標誌設置為 false
     if ($LASTEXITCODE -ne 0) {
         $success = $false

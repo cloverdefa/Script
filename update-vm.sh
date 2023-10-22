@@ -1,7 +1,10 @@
 #!/bin/bash
 
 # 從 server_list.txt 文件中讀取主機名稱列表
-mapfile -t hostnames < "$HOME/Documents/github/Script/update_server_list.txt"
+hostnames=()
+while IFS= read -r line; do
+  hostnames+=("$line")
+done < "$HOME/Documents/github/Script/update_server_list.txt"
 
 # 定義更新虛擬機的函數
 function Update-VM() {
@@ -25,7 +28,7 @@ for hostname in "${hostnames[@]}"; do
     Update-VM "$hostname"
 done
 
-# 顯示完成訊息
+# 檢查上一個命令的退出狀態
 if [ $? -ne 0 ]; then
     echo "==== 更新 $1 出现错误 ===="
 else

@@ -1,7 +1,7 @@
 pve
 snell
 zero-trust
-agh 
+agh
 rustdesk-server
 wordpress
 node-01

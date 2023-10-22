@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # 定義要檢查的儲存庫列表
 repos=()

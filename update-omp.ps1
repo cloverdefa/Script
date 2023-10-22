@@ -1,10 +1,7 @@
-# 定義要更新的主機名稱列表
-$hostnames = "snell", "zero-trust", "agh", 
-    "rustdesk-server", "wordpress", 
-    "node-01", "node-02", "node-03", "node-04", 
-    "unifi-cloudkey-home", "unifi-cloudkey-office"
+# 從 update_omp_list.txt 檔案中讀取主機名單
+$hostnames = Get-Content -Path "update_omp_list.txt"
 
-# 定義更新虛擬機的函數
+# 定義更新 OMP 的函數
 function Update-OMP {
     param (
         [string]$hostname
@@ -14,7 +11,7 @@ function Update-OMP {
     Write-Host "更新 $hostname 主機 oh my posh"
     Write-Host "=============================="
 
-    # 使用 SSH 命令執行虛擬機更新作業
+    # 使用 SSH 命令執行虛擬機更新操作
     ssh $hostname 'ompu'
 
     # 顯示空行
@@ -24,7 +21,7 @@ function Update-OMP {
 # 初始化成功標誌
 $success = $true
 
-# 遍歷主機名稱列表並呼叫 Update-VM 函數以執行更新作業，並傳遞更新命令
+# 遍歷主機名單並呼叫 Update-OMP 函數以執行更新作業，同時傳遞更新命令
 $updateCommand = "ompu"  # 替換為實際的更新命令路徑
 $hostnames | ForEach-Object {
     Update-OMP -hostname $_ -updateCommand 'ompu'

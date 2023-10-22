@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 从 server_list.txt 文件中读取主机名列表
-mapfile -t hostnames < "~/Documents/github/Script/server_list.txt"
+mapfile -t hostnames < "$Home/Documents/github/Script/update_server_list.txt"
 
 # 定义更新虚拟机的函数
 function Update-VM() {

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 從 server_list.txt 文件中讀取主機名稱列表
-mapfile -t hostnames < "$Home/Documents/github/Script/update_server_list.txt"
+mapfile -t hostnames < "$HOME/Documents/github/Script/update_server_list.txt"
 
 # 定義更新虛擬機的函數
 function Update-VM() {

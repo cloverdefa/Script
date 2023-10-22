@@ -1,40 +1,36 @@
 #!/bin/bash
 
-# 定義要更新的主機名稱列表
-hostnames=("pve" "snell" "zero-trust" "agh" 
-    "rustdesk-server" "wordpress" 
-    "node-01" "node-02" "node-03" "node-04" 
-    "unifi-cloudkey-home" "unifi-cloudkey-office")
+# 从 server_list.txt 文件中读取主机名列表
+mapfile -t hostnames < "server_list.txt"
 
-# 定義更新虛擬機的函數
+# 定义更新虚拟机的函数
 function Update-VM() {
     local hostname="$1"
-    local update_command="$2"
     echo "======================================="
-    echo "      更新 $hostname 主機"
+    echo "      更新 $hostname 主机"
     echo "======================================="
-    # 使用 SSH 命令執行虛擬機更新作業
+    # 使用 SSH 命令执行虚拟机更新操作
     ssh "$hostname" "update-vm"
     local exit_code="$?"
     if [ "$exit_code" -ne 0 ]; then
-        echo "==== 更新 $hostname 出現錯誤 ===="
+        echo "==== 更新 $hostname 出现错误 ===="
     else
         echo "==== 更新 $hostname 完成 ===="
     fi
     echo ""
 }
 
-# 遍歷主機名稱列表並呼叫 Update-VM 函數以執行更新作業
+# 遍历主机名列表并调用 Update-VM 函数执行更新操作
 for hostname in "${hostnames[@]}"; do
     Update-VM "$hostname"
 done
 
-# 顯示完成訊息
+# 显示完成消息
 if [ $? -ne 0 ]; then
-    echo "==== 更新 $1 出現錯誤 ===="
+    echo "==== 更新 $1 出现错误 ===="
 else
-    echo "==== 更新全部設備完成 ===="
+    echo "==== 更新全部设备完成 ===="
 fi
 
-# 結束程式
+# 结束脚本
 exit

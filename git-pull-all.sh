@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 定義要檢查的儲存庫列表
-hostnames=()
+repos=()
 while IFS= read -r line; do
   hostnames+=("$line")
 done < "$HOME/Documents/github/Script/repositories.txt"

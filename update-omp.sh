@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 定義要更新的主機名稱列表
-mapfile -t hostnames < "$Home/Documents/github/Script/update_omp_list.txt"
+mapfile -t hostnames < "$Home/Documents/github/Script/omp_list.txt"
 
 # 定義更新虛擬機的函數
 function Update-OMP() {

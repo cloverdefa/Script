@@ -1,5 +1,5 @@
 # 從 update_omp_list.txt 檔案中讀取主機名單
-$hostnames = Get-Content -Path "$HOME\github\Script\update_omp_list.txt"
+$hostnames = Get-Content -Path "$HOME\github\Script\omp_list.txt"
 
 # 定義更新 OMP 的函數
 function Update-OMP {

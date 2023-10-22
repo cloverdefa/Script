@@ -4,7 +4,7 @@
 hostnames=()
 while IFS= read -r line; do
   hostnames+=("$line")
-done < "$HOME/Documents/github/Script/update_server_list.txt"
+done < "$HOME/Documents/github/Script/server_list.txt"
 
 # 定義更新虛擬機的函數
 function Update-VM() {

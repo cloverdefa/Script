@@ -1,10 +1,7 @@
 #!/bin/bash
 
 # 定義要檢查的儲存庫列表
-repos=()
-while IFS= read -r line; do
-  repos+=("$line")
-done < "$HOME/Documents/github/Script/repositories.txt"
+mapfile -t hostnames < "$HOME/Documents/github/Script/update_server_list.txt"
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

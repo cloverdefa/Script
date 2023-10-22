@@ -22,7 +22,7 @@ function Git-Pull-Repo() {
         exit 1 # 如果切換失敗，退出腳本，並返回退出碼1
     fi
 
-    if git remote update -p && git status -uno | grep -q '你的分支落後'; then
+    if git remote update -p && git status -uno | grep -q '您的分支落後'; then
         if git pull; then
             text="$text 完成"
         else

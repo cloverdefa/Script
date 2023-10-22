@@ -1,11 +1,9 @@
 # 存儲最初目錄
 $originalLocation = Get-Location
 
-# 讀取.env檔案並解析為陣列
-$envContent = Get-Content -Path ".env" | Out-String
-$envContent = $envContent -replace "[\r\n]+", " "  # 移除換行符
-$envContent = $envContent -replace '"', ""  # 移除雙引號
-$repositories = Invoke-Expression $envContent
+# 定義要檢查的儲存庫列表
+$repositories = @("bash", "Containers", "hath-docker", "PowerShell",
+     "python-study", "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings")
 
 # 使用環境變量來設定本地儲存庫根目錄路徑
 $localRepositoryRoot = $env:USERPROFILE + "\github"

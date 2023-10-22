@@ -1,12 +1,8 @@
 #!/bin/zsh
 
-# 載入.env檔案
-if [ -f .env ]; then
-    source .env
-else
-    echo ".env檔案不存在"
-    exit 1
-fi
+# 定義要檢查的儲存庫列表
+repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study"
+    "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

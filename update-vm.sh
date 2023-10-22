@@ -4,7 +4,7 @@
 hostnames=()
 while IFS= read -r line; do
   hostnames+=("$line")
-done < "server.list"
+done < ".server.list"
 
 # 定義更新虛擬機的函數
 function Update-VM() {

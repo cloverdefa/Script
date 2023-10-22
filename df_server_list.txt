@@ -1,9 +1,0 @@
-snell
-zero-trust
-agh
-rustdesk-server
-wordpress
-node-01
-node-02
-node-03
-node-04

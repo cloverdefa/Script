@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # 定義要檢查的儲存庫列表
-repos=("bash" "Containers" "hath-docker" "PowerShell" "python-study"
-    "Rule-Sets" "Script" "ssh" "VPN-Service" "Whosis-Sayings")
+mapfile -t repos < $HOME/github/Script/repositories.txt
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

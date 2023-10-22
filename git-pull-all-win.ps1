@@ -1,9 +1,9 @@
 # 存儲最初目錄
 $originalLocation = Get-Location
 
-# 定義要檢查的儲存庫列表
-$repositories = @("bash", "Containers", "hath-docker", "PowerShell",
-     "python-study", "Rule-Sets", "Script", "ssh", "VPN-Service", "Whosis-Sayings")
+# 讀取儲存庫列表從檔案
+$repositoryFile = "$HOME\github\Script\repositories.txt"
+$repositories = Get-Content $repositoryFile
 
 # 使用環境變量來設定本地儲存庫根目錄路徑
 $localRepositoryRoot = $env:USERPROFILE + "\github"

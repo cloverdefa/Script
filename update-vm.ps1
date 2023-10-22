@@ -1,8 +1,5 @@
-# 定義要更新的主機名稱列表
-$hostnames = "pve", "snell", "zero-trust", "agh", 
-    "rustdesk-server", "wordpress", 
-    "node-01", "node-02", "node-03", "node-04", 
-    "unifi-cloudkey-home", "unifi-cloudkey-office"
+# 從 server_list.txt 檔案中讀取主機名稱列表
+$hostnames = Get-Content -Path "server_list.txt"
 
 # 定義更新虛擬機的函數
 function Update-VM {

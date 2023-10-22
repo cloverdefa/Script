@@ -2,7 +2,7 @@
 $originalLocation = Get-Location
 
 # 讀取儲存庫列表從檔案
-$repositoryFile = "C:\Users\clove\github\Script\repositories.txt"
+$repositoryFile = "$HOME\github\Script\repositories.txt"
 $repositories = Get-Content $repositoryFile
 
 # 使用環境變量來設定本地儲存庫根目錄路徑

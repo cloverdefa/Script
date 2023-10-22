@@ -10,13 +10,13 @@ done < "$HOME/Documents/github/Script/update_server_list.txt"
 function Update-VM() {
     local hostname="$1"
     echo "======================================="
-    echo "      更新 $hostname 主机"
+    echo "      更新 $hostname 主機"
     echo "======================================="
-    # 使用 SSH 命令执行虚拟机更新操作
+    # 使用 SSH 命令執行虛擬機更新作業
     ssh "$hostname" "update-vm"
     local exit_code="$?"
     if [ "$exit_code" -ne 0 ]; then
-        echo "==== 更新 $hostname 出现错误 ===="
+        echo "==== 更新 $hostname 出現錯誤 ===="
     else
         echo "==== 更新 $hostname 完成 ===="
     fi
@@ -30,9 +30,9 @@ done
 
 # 檢查上一個命令的退出狀態
 if [ $? -ne 0 ]; then
-    echo "==== 更新 $1 出现错误 ===="
+    echo "==== 更新 $1 出現錯誤 ===="
 else
-    echo "==== 更新全部设备完成 ===="
+    echo "==== 更新全部主機完成 ===="
 fi
 
 # 结束脚本

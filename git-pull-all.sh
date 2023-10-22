@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 定義要檢查的儲存庫列表
-mapfile -t repos < "$HOME/Documents/github/Script/repositories.txt"
+mapfile -t repos < "repositories.list"
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

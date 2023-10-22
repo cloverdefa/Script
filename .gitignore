@@ -4,6 +4,7 @@
 .env
 .log
 .md
+*.list
 *.code-workspace
 *.spec
 pyproject.toml

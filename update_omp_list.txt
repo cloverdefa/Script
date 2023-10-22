@@ -1,11 +1,11 @@
 snell
 zero-trust
-agh 
+agh
 rustdesk-server
 wordpress
 node-01
 node-02
 node-03
-node-04 
+node-04
 unifi-cloudkey-home
 unifi-cloudkey-office

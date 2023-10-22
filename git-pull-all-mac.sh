@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # 定義要檢查的儲存庫列表
-repos=($(cat $HOME/Documents/github/Script/repositories.txt))
+repos=($(cat repositories.list))
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

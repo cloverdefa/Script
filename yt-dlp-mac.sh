@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-output_dir="/Users/cloverdefa/Desktop"
+output_dir="$HOME/Desktop"
 format="best[ext=mp4]/best"
 
 echo "影片下載工具 yd-dlp"

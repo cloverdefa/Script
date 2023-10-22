@@ -3,7 +3,7 @@
 # 定義要檢查的儲存庫列表
 repos=()
 while IFS= read -r line; do
-  hostnames+=("$line")
+  repos+=("$line")
 done < "$HOME/Documents/github/Script/repositories.txt"
 
 # 函數來執行Git操作

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# 从 server_list.txt 文件中读取主机名列表
+# 從 server_list.txt 文件中讀取主機名稱列表
 mapfile -t hostnames < "$Home/Documents/github/Script/update_server_list.txt"
 
-# 定义更新虚拟机的函数
+# 定義更新虛擬機的函數
 function Update-VM() {
     local hostname="$1"
     echo "======================================="
@@ -20,12 +20,12 @@ function Update-VM() {
     echo ""
 }
 
-# 遍历主机名列表并调用 Update-VM 函数执行更新操作
+# 歷遍主機名稱列表並調用 Update-VM 函數執行更新操作
 for hostname in "${hostnames[@]}"; do
     Update-VM "$hostname"
 done
 
-# 显示完成消息
+# 顯示完成訊息
 if [ $? -ne 0 ]; then
     echo "==== 更新 $1 出现错误 ===="
 else

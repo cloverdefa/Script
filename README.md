@@ -1,7 +1,3 @@
-### Script   
-   
-Repository Name   
-   
 # Script   
    
 Description   

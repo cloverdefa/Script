@@ -3,7 +3,7 @@
 # 從 .server.list 文件中讀取主機名稱列表
 servers=()
 while IFS= read -r line; do
-  hostnames+=("$line")
+  servers+=("$line")
 done < ".server.list"
 
 # 定義顯示磁碟空間的函數

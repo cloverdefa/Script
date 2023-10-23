@@ -4,7 +4,7 @@
 servers=()
 while IFS= read -r line; do
   servers+=("$line")
-done < ".server.list"
+done < "$HOME/.server.list"
 
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {

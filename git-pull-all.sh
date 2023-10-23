@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 從 .repositories.list 檔案中讀取主機名稱列表
-mapfile -t repos < ".repositories.list"
+mapfile -t repos < "$HOME/.repositories.list"
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

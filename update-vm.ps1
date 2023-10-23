@@ -1,5 +1,5 @@
 # 從 .server.list 檔案中讀取主機名稱列表
-$hostnames = Get-Content -Path ".server.list"
+$hostnames = Get-Content -Path "$HOME\.server.list"
 
 # 定義更新虛擬機的函數
 function Update-VM {

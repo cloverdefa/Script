@@ -1,4 +1,4 @@
-# 從 server_list.txt 檔案中讀取主機名稱列表
+# 從 .server.list 檔案中讀取主機名稱列表
 $servers = Get-Content -Path ".server.list"
 
 # 定義顯示磁碟空間的函數

@@ -6,7 +6,7 @@ $repositoryFile = "$HOME\.repositories.list"
 $repositories = Get-Content $repositoryFile
 
 # 使用環境變量來設定本地儲存庫根目錄路徑
-$localRepositoryRoot = $env:USERPROFILE + "\Documents\github"
+$localRepositoryRoot = $env:USERPROFILE + "\github"
 
 # 遍歷每個儲存庫並執行Git操作
 foreach ($repository in $repositories) {

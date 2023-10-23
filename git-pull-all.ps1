@@ -1,7 +1,7 @@
 # 存儲最初目錄
 $originalLocation = Get-Location
 
-# 讀取儲存庫列表從檔案
+# 從 .repositories.list 檔案中讀取主機名稱列表
 $repositoryFile = ".repositories.list"
 $repositories = Get-Content $repositoryFile
 

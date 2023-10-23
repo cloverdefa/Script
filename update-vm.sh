@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 從 server_list.txt 文件中讀取主機名稱列表
+# 從 .server.list 文件中讀取主機名稱列表
 hostnames=()
 while IFS= read -r line; do
   hostnames+=("$line")

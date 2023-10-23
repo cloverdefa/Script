@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# 定義要檢查的儲存庫列表
-mapfile -t hostnames < ".server.list"
+# 從 .server.list 文件中讀取主機名稱列表
+servers=()
+while IFS= read -r line; do
+  servers+=("$line")
+done < ".server.list"
 
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {

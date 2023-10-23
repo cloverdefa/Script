@@ -1,4 +1,4 @@
-# 從 update_omp_list.txt 檔案中讀取主機名單
+# 從 .omp.list 檔案中讀取主機名單
 $hostnames = Get-Content -Path ".omp.list"
 
 # 定義更新 OMP 的函數

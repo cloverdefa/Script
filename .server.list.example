@@ -1,4 +1,4 @@
-# put .server.list in $Home localtation
+# 放置 .server.list 檔案到 $HOME 家目錄下
 server1
 server2
 server3

@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# 定義要檢查的儲存庫列表
+# 從 .repositories.list 檔案中讀取主機名稱列表
 repos=($(cat ".repositories.list"))
 
 # 函數來執行Git操作

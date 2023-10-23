@@ -3,8 +3,9 @@
 # 從 .server.list 文件中讀取主機名稱列表
 hostnames=()
 while IFS= read -r line; do
-  hostnames+=("$line")
-done < "$HOME/.config/list/.omp.list"
+  if [ -n "$line" ]; then
+    hostnames+=("$line")
+done < "$HOME/.config/list/.server.list"
 
 # 定義更新虛擬機的函數
 function Update-VM() {

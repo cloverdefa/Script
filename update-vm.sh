@@ -5,6 +5,7 @@ hostnames=()
 while IFS= read -r line; do
   if [ -n "$line" ]; then
     hostnames+=("$line")
+  fi
 done < "$HOME/.config/list/.server.list"
 
 # 定義更新虛擬機的函數

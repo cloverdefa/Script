@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 定義要檢查的儲存庫列表
-mapfile -t hostnames < ".server.list"
+mapfile -t servers < ".server.list"
 
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {

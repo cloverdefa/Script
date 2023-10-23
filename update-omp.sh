@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 定義要更新的主機名稱列表
+# 從 .omp.list 檔案中讀取主機名單
 mapfile -t hostnames < ".omp.list"
 
 # 定義更新虛擬機的函數

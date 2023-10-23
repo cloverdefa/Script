@@ -1,10 +1,7 @@
 #!/bin/bash
 
 # 從 .omp.list 檔案中讀取主機名單
-servers=()
-while IFS= read -r line; do
-  hostnames+=("$line")
-done < ".omp.list"
+mapfile -t hostnames < ".omp.list"
 
 # 定義更新虛擬機的函數
 function Update-OMP() {

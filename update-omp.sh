@@ -3,7 +3,10 @@
 # 從 .omp.list 檔案中讀取主機名單
 hostnames=()
 while IFS= read -r line; do
-  hostnames+=("$line")
+  # 忽略空白行
+  if [ -n "$line" ]; then
+    hostnames+=("$line")
+  fi
 done < "$HOME/.config/list/.omp.list"
 
 # 定義更新虛擬機的函數

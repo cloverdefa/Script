@@ -25,30 +25,25 @@ function Update-OMP() {
     else
         echo "==== 未提供有效的更新命令 ===="
     fi
-    return "$exit_code"
 }
-
-# 創建一個陣列來存儲每次更新的退出狀態
-exit_codes=()
 
 # 遍歷主機名稱列表並呼叫 Update-OMP 函數以執行更新作業
 for hostname in "${hostnames[@]}"; do
     Update-OMP "$hostname" "ompu"
-    exit_codes+=("$?")
 done
 
-# 檢查每次更新的退出狀態
+# 顯示完成訊息
 error_occurred=false
-for ((i=0; i<${#hostnames[@]}; i++)); do
-    if [ "${exit_codes[i]}" -ne 0 ]; then
-        echo "==== 更新 ${hostnames[i]} 出現錯誤 ===="
+for hostname in "${hostnames[@]}"; do
+    if [ "$?" -ne 0 ]; then
+        echo "==== 更新 $hostname 出現錯誤 ===="
         error_occurred=true
     fi
 done
 
-# 顯示完成訊息
+# 檢查是否發生錯誤
 if [ "$error_occurred" = true ]; then
-    echo "==== 更新全部設備出現錯誤 ===="
+    echo "==== 更新至少一個設備出現錯誤 ===="
 else
     echo "==== 更新全部設備完成 ===="
 fi

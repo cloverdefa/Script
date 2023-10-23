@@ -1,4 +1,4 @@
-# put .omp.list in $HOME localtation
+# 放置 .omp.list 檔案到 $HOME 家目錄下
 server1
 server2
 server3

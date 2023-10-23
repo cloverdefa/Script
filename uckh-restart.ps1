@@ -1,7 +1,7 @@
 # 遠程設備的SSH設定
 $SSH_HOST = "switch-core"  # 設定SSH主機名稱或IP地址
 $SSH_USER = "cloverdefa"  # 設定SSH用戶名
-$SSH_KEY_PATH = "C:\Users\clove\.ssh\id_rsa"  # 設定私鑰文件的路徑
+$SSH_KEY_PATH = "$HOME\.ssh\id_rsa"  # 設定私鑰文件的路徑
 
 # 設置命令
 $CONFIG_COMMANDS = @(

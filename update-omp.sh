@@ -13,13 +13,17 @@ function Update-OMP() {
     echo "======================================="
     echo "      更新 $hostname 主機 oh my posh"
     echo "======================================="
-    # 使用 SSH 命令執行虛擬機更新作業
-    ssh "$hostname" "$update_command"
-    local exit_code="$?"
-    if [ "$exit_code" -ne 0 ]; then
-        echo "==== 更新 $hostname 出現錯誤 ===="
+    if [ -n "$update_command" ]; then
+        # 使用 SSH 命令執行虛擬機更新作業
+        ssh "$hostname" "$update_command"
+        local exit_code="$?"
+        if [ "$exit_code" -ne 0 ]; then
+            echo "==== 更新 $hostname 出現錯誤 ===="
+        else
+            echo "==== 更新 $hostname 完成 ===="
+        fi
     else
-        echo "==== 更新 $hostname 完成 ===="
+        echo "==== 未提供有效的更新命令 ===="
     fi
     return "$exit_code"
 }

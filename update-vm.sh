@@ -1,10 +1,7 @@
 #!/bin/bash
 
-# 從 server_list.txt 文件中讀取主機名稱列表
-hostnames=()
-while IFS= read -r line; do
-  hostnames+=("$line")
-done < ".server.list"
+# 定義要檢查的儲存庫列表
+mapfile -t hostnames < ".server.list"
 
 # 定義更新虛擬機的函數
 function Update-VM() {

@@ -2,7 +2,7 @@
 $originalLocation = Get-Location
 
 # 從 .repositories.list 檔案中讀取主機名稱列表
-$repositoryFile = ".repositories.list"
+$repositoryFile = "$HOME\.repositories.list"
 $repositories = Get-Content $repositoryFile
 
 # 使用環境變量來設定本地儲存庫根目錄路徑

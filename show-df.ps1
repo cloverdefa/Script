@@ -1,5 +1,5 @@
 # 從 .server.list 檔案中讀取主機名稱列表
-$servers = Get-Content -Path "$HOME\.server.list"
+$servers = Get-Content -Path "$HOME\.config\list\.server.list"
 
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {

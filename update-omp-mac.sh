@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # 從 .omp.list 檔案中讀取主機名單
-hostnamesgh =($(cat "$HOME/.omp.list"))
+hostnamesgh =($(cat "$HOME/.config/list/.omp.list"))
 
 # 定義更新虛擬機的函數
 function Update-OMP() {

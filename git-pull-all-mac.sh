@@ -1,7 +1,7 @@
 #!/bin/zsh
 
-# 從 .repositories.list 檔案中讀取主機名稱列表
-repos=($(cat "$HOME/.config/list/.repositories.list"))
+# 從 .repositories.list 檔案中讀取主機名稱列表，過濾掉空白行和註解行
+repos=($(cat "$HOME/.config/list/.repositories.list" | grep -E -v '^\s*(#|$)'))
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

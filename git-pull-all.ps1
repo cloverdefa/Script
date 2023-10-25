@@ -1,9 +1,9 @@
 # 存儲最初目錄
 $originalLocation = Get-Location
 
-# 從 .repositories.list 檔案中讀取主機名稱列表
+# 從 .repositories.list 檔案中讀取主機名稱列表，過濾掉空白行和註解行
 $repositoryFile = "$HOME\.config\list\.repositories.list"
-$repositories = Get-Content $repositoryFile
+$repositories = Get-Content $repositoryFile | Where-Object { $_ -match '^\s*[^#].*' }
 
 # 使用環境變量來設定本地儲存庫根目錄路徑
 $localRepositoryRoot = $env:USERPROFILE + "\github"

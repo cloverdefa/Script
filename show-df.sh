@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# 從 .server.list 文件中讀取主機名稱列表
+# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行
 servers=()
 while IFS= read -r line; do
-  # 檢查行是否為空行，並只添加非空行到伺服器列表
-  if [[ -n "$line" ]]; then
+  # 使用 grep 過濾空白行和註釋行
+  if [[ -n "$line" && ! "$line" =~ ^\s*# ]]; then
     servers+=("$line")
   fi
 done < "$HOME/.config/list/.server.list"

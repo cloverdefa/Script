@@ -19,14 +19,15 @@ elseif ($desktopPath -eq [System.IO.Path]::Combine($env:USERPROFILE, "OneDrive",
     Write-Host "當前桌面路徑為 $env:USERPROFILE\OneDrive\桌面"
     $outputDir = $desktopPath  # 設定 $outputDir 為桌面路徑
 }
-# 如果無法確定桌面路徑
-else {
-    Write-Host "無法確定當前桌面路徑"
-    $outputDir = $desktopPath  # 設定 $outputDir 為桌面路徑（預設情況）
+
+# 如果無法確定當前用戶桌面，設定預設下載路徑為 $HOME
+if (-not $desktopPath) {
+    Write-Host "無法確定當前桌面路徑，使用預設下載路徑 $env:USERPROFILE"
+    $desktopPath = $env:USERPROFILE
 }
 
 # 建立 yt-dlp 命令列，包括下载影片和字幕
-$command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`" -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
+$command = "yt-dlp.exe -o `"$desktopPath\%(title)s.%(ext)s`" -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
 
 # 執行 yt-dlp 並顯示輸出畫面，處理錯誤
 try {

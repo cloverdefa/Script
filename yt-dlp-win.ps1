@@ -6,37 +6,27 @@
 $Server = Read-Host -Prompt '請輸入下載影片網址:'
 $format = "best[ext=mp4]/best"
 
-# 提供輸出影片目錄選項
-$validOutputDirs = @(
-    [System.IO.Path]::Combine($env:USERPROFILE, 'Desktop'),
-    [System.IO.Path]::Combine($env:USERPROFILE, 'OneDrive', '桌面')
-)
+# 獲取當前用戶帳號的桌面路徑
+$desktopPath = [System.Environment]::GetFolderPath("Desktop")
 
-# 輸出目錄選單
-Write-Host "請選擇輸出目錄："
-for ($i = 0; $i -lt $validOutputDirs.Count; $i++) {
-    Write-Host "$i. $($validOutputDirs[$i])"
+# 檢查桌面路徑是否為 $HOME\Desktop
+if ($desktopPath -eq [System.IO.Path]::Combine($env:USERPROFILE, "Desktop")) {
+    Write-Host "當前桌面路徑為 $env:USERPROFILE\Desktop"
+    $outputDir = $desktopPath  # 設定 $outputDir 為桌面路徑
 }
-
-$choice = Read-Host -Prompt '請輸入選擇的目錄編號'
-
-# 嘗試將用戶輸入轉換為整數
-if (-not [int]::TryParse($choice, [ref]$null)) {
-    "無效的選擇。使用預設輸出目錄。" | Write-Host
-    $outputDir = $validOutputDirs[0]  # 使用默認目錄0輸出檔案
-    Exit
+# 檢查桌面路徑是否為 $HOME\OneDrive\桌面
+elseif ($desktopPath -eq [System.IO.Path]::Combine($env:USERPROFILE, "OneDrive", "桌面")) {
+    Write-Host "當前桌面路徑為 $env:USERPROFILE\OneDrive\桌面"
+    $outputDir = $desktopPath  # 設定 $outputDir 為桌面路徑
 }
-
-# 驗證選擇是否有效
-if ($choice -ge 0 -and $choice -lt $validOutputDirs.Count) {
-    $outputDir = $validOutputDirs[$choice]
-} else {
-    "無效的選擇。使用預設輸出目錄。" | Write-Host
-    $outputDir = $validOutputDirs[0]  # 使用默認目錄0輸出檔案
+# 如果無法確定桌面路徑
+else {
+    Write-Host "無法確定當前桌面路徑"
+    $outputDir = $desktopPath  # 設定 $outputDir 為桌面路徑（預設情況）
 }
 
 # 建立 yt-dlp 命令列，包括下载影片和字幕
-$command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`"  -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
+$command = "yt-dlp.exe -o `"$outputDir\%(title)s.%(ext)s`" -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
 
 # 執行 yt-dlp 並顯示輸出畫面，處理錯誤
 try {

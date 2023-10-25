@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# 從 .omp.list 檔案中讀取主機名單
+# 從 .omp.list 檔案中讀取主機名單，過濾掉空白行和註釋行
 hostnames=()
 while IFS= read -r line; do
-  # 忽略空白行
-  if [ -n "$line" ]; then
+  # 使用 grep 過濾空白行和註釋行
+  if [[ -n "$line" && ! "$line" =~ ^\s*# ]]; then
     hostnames+=("$line")
   fi
 done < "$HOME/.config/list/.omp.list"

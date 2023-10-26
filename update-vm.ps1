@@ -33,9 +33,10 @@ function 更新虛擬機 {
     Write-Host ""
 }
 
-$主機名稱 = @("host1", "host2", "host3")  # 替換為您的主機名稱列表
-
-$錯誤 = 0
+if (-not (Test-Path C:\Windows\System32\OpenSSH\ssh.exe)) {
+    Write-Host "SSH 命令未找到，請確保已安裝SSH並添加到系統PATH。" -ForegroundColor Red
+    exit 1
+}
 
 foreach ($本機 in $主機名稱) {
     更新虛擬機 -本機 $本機

@@ -2,7 +2,7 @@
 
 # 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行
 主機名稱=()
-錯誤=0  # 初始化錯誤計數
+error=0  # 初始化錯誤計數
 
 while IFS= read -r 行; do
   # 使用 grep 過濾掉空白行和註釋行
@@ -35,7 +35,7 @@ for 本機 in "${主機名稱[@]}"; do
 done
 
 # 檢查錯誤計數
-if [ $錯誤 -ne 0 ]; then
+if [ $error -ne 0 ]; then
     echo "==== 更新出現錯誤 ===="
 else
     echo "==== 更新全部主機完成 ===="

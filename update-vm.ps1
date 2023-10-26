@@ -25,10 +25,10 @@ function 更新虛擬機 {
     $output = Invoke-Expression -Command $sshCommand
 
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "==== 更新 $本機 出現錯誤 ===="
+        Write-Host "==== 更新 $本機 出現錯誤 ====" -ForegroundColor Red
         $global:錯誤++
     } else {
-        Write-Host "==== 更新 $本機 完成 ===="
+        Write-Host "==== 更新 $本機 完成 ====" -ForegroundColor Green
     }
     Write-Host ""
 }

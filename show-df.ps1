@@ -1,6 +1,17 @@
 <# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
-$servers = Get-Content -Path "$HOME\.config\list\.server.list" |
-           Where-Object { $_ -match '^\s*[^#].*' }
+$主機名稱 = @()
+
+<# 讀取服務器列表文件 #>
+$serverListPath = "$env:USERPROFILE\.config\list\.server.list"
+if (Test-Path -Path $serverListPath) {
+    $内容 = Get-Content -Path $serverListPath
+
+    <# 過濾掉空白行和註釋行 #>
+    $主機名稱 = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
+} else {
+    Write-Host "服務器列表文件不存在: $serverListPath" -ForegroundColor Red
+    exit 1
+}
 
 <# 定義顯示磁碟空間的函數 #>
 function Show-DiskSpace {

@@ -58,3 +58,6 @@ if [ $update_error -eq 0 ]; then
 else
   echo -e "${RED}更新過程發生錯誤${NC}"
 fi
+
+# 結束程式
+exit

@@ -1,6 +1,6 @@
 <# 顯示提示訊息 #>
-"影片下載工具 yt-dlp"
-"輸入 Ctrl+C 取消下載:" | Write-Host
+Write-Host "影片下載工具 yt-dlp"
+Write-Host "輸入 Ctrl+C 取消下載:"
 
 <# 輸入影片網址 #>
 $Server = Read-Host -Prompt '請輸入下載影片網址:'
@@ -27,9 +27,7 @@ if (-not $desktopPath) {
 }
 
 <# 建立 yt-dlp 命令列，包括下载影片和字幕 #>
-$command = "yt-dlp.exe -o `"$desktopPath\%(title)s.%(ext)s`" `
-           -f `"$format`" `
-           `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
+$command = "yt-dlp.exe -o `"$desktopPath\%(title)s.%(ext)s`" -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
 
 <# 執行 yt-dlp 並顯示輸出畫面，處理錯誤 #>
 try {

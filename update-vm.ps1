@@ -1,6 +1,5 @@
 <# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
-$主機名稱 = @()
-$錯誤 = 0  <# 初始化錯誤計數器 #>
+$hostnames = $()
 
 <# 讀取服務器列表文件 #>
 $serverListPath = "$env:USERPROFILE\.config\list\.server.list"
@@ -8,69 +7,48 @@ if (Test-Path -Path $serverListPath) {
     $内容 = Get-Content -Path $serverListPath
 
     <# 過濾掉空白行和註釋行 #>
-    $主機名稱 = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
+    $hostnames = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
 } else {
     Write-Host "服務器列表文件不存在: $serverListPath" -ForegroundColor Red
     exit 1
 }
 
-function 更新虛擬機 {
+<# 定義更新虛擬機的函數 #>
+function Update-VM {
     param (
-        [string]$本機
+        [string]$hostname
     )
-    
-    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-    
-    Write-Host "開始更新 $本機 主機" -ForegroundColor Yellow
-    $sshCommand = "ssh $本機 update-vm"
-    
-    $processInfo = New-Object System.Diagnostics.ProcessStartInfo
-    $processInfo.FileName = "ssh"
-    $processInfo.Arguments = "$本機 update-vm"
-    $processInfo.RedirectStandardInput = $true  <# 添加以接受輸入 #>
-    $processInfo.RedirectStandardError = $true
-    $processInfo.RedirectStandardOutput = $true
-    $processInfo.UseShellExecute = $false
-    $processInfo.CreateNoWindow = $true
-    
-    $process = New-Object System.Diagnostics.Process
-    $process.StartInfo = $processInfo
-    $process.Start() | Out-Null
-    
-    $stdout = $process.StandardOutput.ReadToEnd()
-    $stderr = $process.StandardError.ReadToEnd()
-    
-    $process.StandardInput.WriteLine("Y")  <# 在此處輸入 "Y" 或其他回答 #>
-    $process.WaitForExit()
-    
-    if ($process.ExitCode -ne 0) {
-        Write-Host "==== 更新 $本機 出現錯誤 ====" -ForegroundColor Red
-        Write-Host "錯誤訊息:"
-        Write-Host $stderr
-        $global:錯誤++
-    } else {
-        Write-Host "==== 更新 $本機 完成 ====" -ForegroundColor Green
-        Write-Host "輸出訊息:"
-        Write-Host $stdout
-    }
+    <# 顯示正在更新的主機名稱 #>
+    Write-Host "=============================="
+    Write-Host "更新 $hostname 主機"
+    Write-Host "=============================="
+
+    <# 使用 SSH 命令執行虛擬機更新作業 #>
+    ssh $hostname 'update-vm'
+
+    <# 顯示空行 #>
     Write-Host ""
 }
 
+<# 初始化成功標誌 #>
+$success = $true
 
-if (-not (Test-Path C:\Windows\System32\OpenSSH\ssh.exe)) {
-    Write-Host "SSH 命令未找到，請確保已安裝SSH並添加到系統PATH。" -ForegroundColor Red
-    exit 1
+<# 遍歷主機名稱列表並呼叫 Update-VM 函數以執行更新作業，並傳遞更新命令 #>
+$updateCommand = "update-vm"  # 替換為實際的更新命令路徑
+$hostnames | ForEach-Object {
+    Update-VM -hostname $_ -updateCommand 'update-vm'
+    <# 檢查是否有更新錯誤，如果有，將成功標誌設置為 false #>
+    if ($LASTEXITCODE -ne 0) {
+        $success = $false
+    }
 }
 
-foreach ($本機 in $主機名稱) {
-    更新虛擬機 -本機 $本機
-}
-
-if ($錯誤 -ne 0) {
-    Write-Host "==== 更新出現錯誤 ====" -ForegroundColor Red
-} else {
+<# 顯示完成訊息 #>
+if ($success) {
     Write-Host "==== 更新全部主機完成 ====" -ForegroundColor Green
+} else {
+    Write-Host "==== 更新出現錯誤 ====" -ForegroundColor Red
 }
 
-<# 結束腳本 #>
-exit
+<# 結束程式，並根據成功標誌設置退出代碼 #>
+Exit $success

@@ -1,45 +1,46 @@
-#!/bin/bash
+<# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
+$主機名稱 = @()
+$錯誤 = 0  <# 初始化錯誤計數器 #>
 
-# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行
-主機名稱=()
-錯誤=0  # 初始化錯誤計數
+<# 讀取服務器列表文件 #>
+$serverListPath = "$env:HOME\.config\list\.server.list"
+if (Test-Path -Path $serverListPath) {
+    $内容 = Get-Content -Path $serverListPath
 
-while IFS= read -r 行; do
-  # 使用 grep 過濾掉空白行和註釋行
-  if [[ -n "$行" && ! "$行" =~ ^\s*# ]]; then
-    主機名稱+=("$行")
-  fi
-done < "$HOME/.config/list/.server.list"
+    過濾掉空白行和註釋行
+    $主機名稱 = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
+} else {
+    Write-Host "服務器列表文件不存在: $serverListPath"
+    exit 1
+}
 
-# 定義更新虛擬機的函數
+<# 定義更新虛擬機的函數 #>
 function 更新虛擬機() {
     本機="$1"
-    echo "======================================="
-    echo "      更新 $本機 主機"
-    echo "======================================="
-    # 使用 SSH 命令執行虛擬機更新作業
-    ssh "$本機" "update-vm"
+    echo "更新 $本機 主機"
+    <# 使用 SSH 命令執行虛擬機更新作業 #>
+    ssh "$本機" "update-vm" -ForegroundColor Yellow
     離開碼="$?"
     if [ "$離開碼" -ne 0 ]; then
         echo "==== 更新 $本機 出現錯誤 ===="
-        錯誤=1  # 如果有錯誤，設置錯誤計數為 1
+        錯誤=1  <# 如果有錯誤，錯誤計數器添加計數1 #>
     else
         echo "==== 更新 $本機 完成 ===="
     fi
     echo ""
 }
 
-# 歷遍主機名稱列表並調用更新虛擬機函數執行更新操作
+<# 歷遍主機名稱列表並調用更新虛擬機函數執行更新操作 #>
 for 本機 in "${主機名稱[@]}"; do
     更新虛擬機 "$本機"
 done
 
-# 檢查錯誤計數
+<# 檢查錯誤計數 #>
 if [ $錯誤 -ne 0 ]; then
     echo "==== 更新出現錯誤 ===="
 else
     echo "==== 更新全部主機完成 ===="
 fi
 
-# 結束腳本
+<# 結束腳本 #>
 exit

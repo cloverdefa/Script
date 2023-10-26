@@ -27,6 +27,7 @@ function 更新虛擬機 {
     $processInfo = New-Object System.Diagnostics.ProcessStartInfo
     $processInfo.FileName = "ssh"
     $processInfo.Arguments = "$本機 update-vm"
+    $processInfo.RedirectStandardInput = $true  <# 添加以接受輸入 #>
     $processInfo.RedirectStandardError = $true
     $processInfo.RedirectStandardOutput = $true
     $processInfo.UseShellExecute = $false
@@ -39,6 +40,7 @@ function 更新虛擬機 {
     $stdout = $process.StandardOutput.ReadToEnd()
     $stderr = $process.StandardError.ReadToEnd()
     
+    $process.StandardInput.WriteLine("Y")  <# 在此處輸入 "Y" 或其他回答 #>
     $process.WaitForExit()
     
     if ($process.ExitCode -ne 0) {

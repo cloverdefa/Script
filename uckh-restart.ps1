@@ -19,7 +19,9 @@ $CONFIG_COMMANDS = @(
 Add-SshKey -Path $SSH_KEY_PATH
 
 <# 通過SSH連接和配置遠程設備 #>
-$session = New-SSHSession -ComputerName $SSH_HOST -KeyFile $SSH_KEY_PATH -UserName $SSH_USER
+$session = New-SSHSession -ComputerName $SSH_HOST `
+                        -KeyFile $SSH_KEY_PATH `
+                        -UserName $SSH_USER
 if ($session) {
     $shell = New-SSHShellStream -SSHSession $session
     foreach ($cmd in $CONFIG_COMMANDS) {

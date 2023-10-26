@@ -1,5 +1,6 @@
 <# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
-$hostnames = Get-Content -Path "$HOME\.config\list\.server.list" | Where-Object { $_ -match '^\s*[^#].*' }
+$hostnames = Get-Content -Path "$HOME\.config\list\.server.list" | 
+             Where-Object { $_ -match '^\s*[^#].*' }
 
 <# 定義更新虛擬機的函數 #>
 function Update-VM {

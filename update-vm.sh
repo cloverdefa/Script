@@ -48,7 +48,7 @@ fi
 update_error=0
 
 # 使用迴圈循環對伺服器清單內的每一台機器調用函數執行命令
-for server in $(cat "$server_list"); do
+for server in $(grep -v '^\s*#' "$server_list" | grep -v '^\s*$'); do
   update_vm_on_server "$server"
 done
 

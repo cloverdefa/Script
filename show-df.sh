@@ -1,14 +1,5 @@
 #!/bin/bash
 
-# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行
-servers=()
-while IFS= read -r line; do
-  # 使用 grep 過濾空白行和註釋行
-  if [[ -n "$line" && ! "$line" =~ ^\s*# ]]; then
-    servers+=("$line")
-  fi
-done < "$HOME/.config/list/.server.list"
-
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {
     local server="$1"
@@ -38,9 +29,18 @@ function Show-DiskSpace {
     fi
 }
 
+# 讀取伺服器清單文件
+server_list="$HOME/.config/list/.server.list"
+
+# 檢查清單列表文件是否存在
+if [ ! -f "$server_list" ]; then
+  echo "服务器列表文件不存在: $server_list"
+  exit 1
+fi
+
 # 遍歷伺服器列表並呼叫 Show-DiskSpace 函數以顯示磁碟空間
 error_occurred=false
-for server in "${servers[@]}"; do
+for server in $(grep -v '^\s*#' "$server_list" | grep -v '^\s*$'); do
     Show-DiskSpace "$server" || error_occurred=true
 done
 

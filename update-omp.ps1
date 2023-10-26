@@ -1,6 +1,17 @@
-<# 從 .omp.list 檔案中讀取主機名單，過濾掉空白行和註釋行 #>
-$hostnames = Get-Content -Path "$HOME\.config\list\.omp.list" |
-            Where-Object { $_ -match '^\s*[^#].*' }
+<# 從 .omp.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
+$hostnames = @()
+
+<# 讀取服務器列表文件 #>
+$serverListPath = "$env:USERPROFILE\.config\list\.omp.list"
+if (Test-Path -Path $serverListPath) {
+    $内容 = Get-Content -Path $serverListPath
+
+    <# 過濾掉空白行和註釋行 #>
+    $hostnames = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
+} else {
+    Write-Host "服務器列表文件不存在: $serverListPath" -ForegroundColor Red
+    exit 1
+}
 
 <# 定義更新 OMP 的函數 #>
 function Update-OMP {
@@ -13,7 +24,7 @@ function Update-OMP {
     Write-Host "=============================="
 
     <# 使用 SSH 命令執行虛擬機更新操作 #>
-    ssh $hostname 'ompu'
+    ssh $hostname $updateCommand
 
     <# 顯示空行 #>
     Write-Host ""
@@ -25,7 +36,7 @@ $success = $true
 <# 遍歷主機名單並呼叫 Update-OMP 函數以執行更新作業，同時傳遞更新命令 #>
 $updateCommand = "ompu"  <# 替換為實際的更新命令路徑 #>
 $hostnames | ForEach-Object {
-    Update-OMP -hostname $_ -updateCommand 'ompu'
+    Update-OMP -hostname $_ -updateCommand $updateCommand
     <# 檢查是否有更新錯誤，如果有，將成功標誌設置為 false #>
     if ($LASTEXITCODE -ne 0) {
         $success = $false

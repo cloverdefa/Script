@@ -40,7 +40,7 @@ server_list="$HOME/.config/list/.server.list"
 
 # 檢查清單列表文件是否存在
 if [ ! -f "$server_list" ]; then
-  echo "服务器列表文件不存在: $server_list"
+  echo "伺服器清單文件不存在: $server_list"
   exit 1
 fi
 

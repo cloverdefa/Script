@@ -19,6 +19,9 @@ function 更新虛擬機 {
         [string]$本機
     )
     
+    # 設置字符編碼為 UTF-8
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    
     Write-Host "開始更新 $本機 主機"
     $sshCommand = "ssh $本機 update-vm"
     

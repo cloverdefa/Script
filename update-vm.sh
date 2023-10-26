@@ -1,45 +1,50 @@
-#!/bin/bash
+#!/bin/zsh
 
-# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行
-主機名稱=()
-error=0  # 初始化錯誤計數
+# 定义颜色代码
+RED='\033[0;31m' # 红色
+NC='\033[0m'     # 重置颜色
 
-while IFS= read -r 行; do
-  # 使用 grep 過濾掉空白行和註釋行
-  if [[ -n "$行" && ! "$行" =~ ^\s*# ]]; then
-    主機名稱+=("$行")
+# 建立函數用於執行SSH連接和執行update-vm命令
+function update_vm_on_server {
+  local server="$1"
+  echo -e "${RED}連接到 $server${NC}"
+  
+  # 執行 SSH 連接和 update-vm 命令
+  ssh "$server" 'update-vm'
+  ssh_result=$?
+  
+  # 檢查 SSH 連接結果
+  if [ $ssh_result -eq 0 ]; then
+    echo "SSH 連接到 $server 成功"
+  else
+    echo "SSH 連接到 $server 失敗"
   fi
-done < "$HOME/.config/list/.server.list"
 
-# 定義更新虛擬機的函數
-function 更新虛擬機() {
-    本機="$1"
-    echo "======================================="
-    echo "      更新 $本機 主機"
-    echo "======================================="
-    # 使用 SSH 命令執行虛擬機更新作業
-    ssh "$本機" "update-vm"
-    離開碼="$?"
-    if [ "$離開碼" -ne 0 ]; then
-        echo "==== 更新 $本機 出現錯誤 ===="
-        錯誤=1  # 如果有錯誤，設置錯誤計數為 1
+  # 檢查命令執行結果
+  if [ $ssh_result -eq 0 ]; then
+    if [ $? -eq 0 ]; then
+      echo "在 $server 上執行 update-vm 成功"
     else
-        echo "==== 更新 $本機 完成 ===="
+      echo "在 $server 上執行 update-vm 失敗"
     fi
-    echo ""
+  else
+    echo "無法執行 update-vm 因為SSH連接失敗"
+  fi
 }
 
-# 歷遍主機名稱列表並調用更新虛擬機函數執行更新操作
-for 本機 in "${主機名稱[@]}"; do
-    更新虛擬機 "$本機"
-done
+# 讀取伺服器清單文件
+server_list="$HOME/.config/list/.server.list"
 
-# 檢查錯誤計數
-if [ $error -ne 0 ]; then
-    echo "==== 更新出現錯誤 ===="
-else
-    echo "==== 更新全部主機完成 ===="
+# 檢查清單列表文件是否存在
+if [ ! -f "$server_list" ]; then
+  echo "服务器列表文件不存在: $server_list"
+  exit 1
 fi
 
-# 結束腳本
-exit
+# 使用迴圈循環對伺服器清單內的每一台機器調用函數執行命令
+while IFS= read -r server; do
+  # 忽略空白行和注释行
+  if [[ -n "$server" && ! "$server" == \#* ]]; then
+    update_vm_on_server "$server"
+  fi
+done < "$server_list"

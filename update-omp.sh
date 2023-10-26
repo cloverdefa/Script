@@ -1,47 +1,44 @@
 #!/bin/bash
 
-# 從 .omp.list 檔案中讀取主機名單，過濾掉空白行和註釋行
-hostnames=()
-while IFS= read -r line; do
-  # 使用 grep 過濾空白行和註釋行
-  if [[ -n "$line" && ! "$line" =~ ^\s*# ]]; then
-    hostnames+=("$line")
-  fi
-done < "$HOME/.config/list/.omp.list"
+# 讀取伺服器清單文件
+server_list="$HOME/.config/list/.omp.list"
 
-# 定義更新虛擬機的函數
+# 檢查清單列表文件是否存在
+if [ ! -f "$server_list" ]; then
+  echo "伺服器清單文件不存在: $server_list"
+  exit 1
+fi
+
+# 定義更新 oh-my-posh 的函數
 function Update-OMP() {
-    local hostname="$1"
+    local server="$1"
     local update_command="$2"
     echo "======================================="
-    echo "      更新 $hostname 主機 oh my posh"
+    echo "      更新 $server 主機 oh my posh"
     echo "======================================="
     if [ -n "$update_command" ]; then
-        # 使用 SSH 命令執行虛擬機更新作業
-        ssh "$hostname" "$update_command"
+        # 使用 SSH 命令執行 oh-my-posh 更新作業
+        ssh "$server" "$update_command"
         local exit_code="$?"
         if [ "$exit_code" -ne 0 ]; then
-            echo "==== 更新 $hostname 出現錯誤 ===="
+            echo "==== 更新 $server 出現錯誤 ===="
+            exit 1
         else
-            echo "==== 更新 $hostname 完成 ===="
+            echo "==== 更新 $server 完成 ===="
         fi
     else
         echo "==== 未提供有效的更新命令 ===="
+        exit 1
     fi
 }
 
-# 遍歷主機名稱列表並呼叫 Update-OMP 函數以執行更新作業
-for hostname in "${hostnames[@]}"; do
-    Update-OMP "$hostname" "ompu"
-done
-
-# 顯示完成訊息
+# 使用迴圈循環對伺服器清單內的每一台機器調用函數執行命令
 error_occurred=false
-for hostname in "${hostnames[@]}"; do
-    if [ "$?" -ne 0 ]; then
-        echo "==== 更新 $hostname 出現錯誤 ===="
-        error_occurred=true
-    fi
+for server in $(grep -v '^\s*#' "$server_list" | grep -v '^\s*$'); do
+  Update-OMP "$server" 'ompu'
+  if [ "$?" -ne 0 ]; then
+    error_occurred=true
+  fi
 done
 
 # 檢查是否發生錯誤

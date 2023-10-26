@@ -1,5 +1,6 @@
 <# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
 $主機名稱 = @()
+$錯誤 = 0  <# 初始化錯誤計數器 #>
 
 <# 讀取服務器列表文件 #>
 $serverListPath = "$env:USERPROFILE\.config\list\.server.list"
@@ -19,41 +20,46 @@ function Show-DiskSpace {
         [string]$server
     )
 
-    <# 顯示分隔線 #>
-    Write-Output ("=" * 25)
-    
-    <# 顯示伺服器容量空間的標題 #>
-    Write-Output "    $server 容量空間"
-    
-    <# 顯示分隔線 #>
-    Write-Output ("=" * 25)
+    # 顯示伺服器名稱和時間戳記
+    $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
+    Write-Output "[$timestamp] 連接到 $server 並查詢容量空間"
 
     try {
-        <# 使用 SSH 連接到伺服器並查詢磁碟空間 #>
-        $dfOutput = ssh $server 'LC_ALL=C df -h'
-        
-        <# 逐行顯示 df 命令輸出 #>
-        $dfOutput | ForEach-Object { Write-Output $_ }
-        
-        <# 等待 2 秒 #>
+        # 使用 SSH 連接到伺服器並查詢磁碟空間
+        $sshCommand = "ssh $本機 'LC_ALL=C df -h'"
+        $sshOutput = Invoke-Expression -Command $sshCommand
+
+        # 顯示分隔線
+        Write-Output ("=" * 25)
+
+        # 顯示伺服器容量空間的標題
+        Write-Output "    $本機 容量空間"
+
+        # 顯示分隔線
+        Write-Output ("=" * 25)
+
+        # 逐行顯示 df 命令輸出
+        $sshOutput | ForEach-Object { Write-Output $_ }
+
+        # 等待 2 秒
         Start-Sleep -Seconds 2
     } catch {
-        <# 顯示讀取伺服器空間出現錯誤 #>
-        Write-Output "讀取 $server 空間出現錯誤: $_"
+        # 顯示讀取伺服器空間出現錯誤
+        $errorMessage = "讀取 $本機 空間出現錯誤: $_"
+        Write-Output $errorMessage
     }
 }
 
-<# 遍歷伺服器列表並呼叫 Show-DiskSpace 函數以顯示磁碟空間 #>
-foreach ($server in $servers) {
-    Show-DiskSpace -server $server
+foreach ($本機 in $主機名稱) {
+    Show-DiskSpace -本機 $本機
 }
 
-<# 完成訊息 #>
+# 完成訊息
 if ($LASTEXITCODE -eq 0) {
     Write-Output "讀取空間資料完成"
 } else {
     Write-Output "讀取空間出現錯誤"
 }
 
-<# 結束程式 #>
+# 結束程式
 Exit

@@ -26,14 +26,14 @@ function Show-DiskSpace {
 
     try {
         # 使用 SSH 連接到伺服器並查詢磁碟空間
-        $sshCommand = "ssh $server 'LC_ALL=C df -h'"
+        $sshCommand = "ssh $本機 'LC_ALL=C df -h'"
         $sshOutput = Invoke-Expression -Command $sshCommand
 
         # 顯示分隔線
         Write-Output ("=" * 25)
 
         # 顯示伺服器容量空間的標題
-        Write-Output "    $server 容量空間"
+        Write-Output "    $本機 容量空間"
 
         # 顯示分隔線
         Write-Output ("=" * 25)
@@ -45,22 +45,21 @@ function Show-DiskSpace {
         Start-Sleep -Seconds 2
     } catch {
         # 顯示讀取伺服器空間出現錯誤
-        $errorMessage = "讀取 $server 空間出現錯誤: $_"
+        $errorMessage = "讀取 $本機 空間出現錯誤: $_"
         Write-Output $errorMessage
     }
 }
 
-
-
 foreach ($本機 in $主機名稱) {
     Show-DiskSpace -本機 $本機
+}
 
-<# 完成訊息 #>
+# 完成訊息
 if ($LASTEXITCODE -eq 0) {
     Write-Output "讀取空間資料完成"
 } else {
     Write-Output "讀取空間出現錯誤"
 }
 
-<# 結束程式 #>
+# 結束程式
 Exit

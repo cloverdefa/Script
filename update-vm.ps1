@@ -1,7 +1,7 @@
-<# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
+<# 從 .server.list 檔案中讀取伺服器清單，過濾掉空白行和註釋行 #>
 $hostnames = $()
 
-<# 讀取服務器列表文件 #>
+<# 讀取伺服器清單文件 #>
 $serverListPath = "$env:USERPROFILE\.config\list\.server.list"
 if (Test-Path -Path $serverListPath) {
     $内容 = Get-Content -Path $serverListPath
@@ -9,20 +9,28 @@ if (Test-Path -Path $serverListPath) {
     <# 過濾掉空白行和註釋行 #>
     $hostnames = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
 } else {
-    Write-Host "服務器列表文件不存在: $serverListPath" -ForegroundColor Red
+    Write-Host "伺服器清單文件不存在: $serverListPath" -ForegroundColor Red
     exit 1
 }
 
-<# 定義更新虛擬機的函數 #>
+<# 定義更新伺服器的函數 #>
 function Update-VM {
     param (
         [string]$hostname
     )
-    <# 顯示正在更新的主機名稱 #>
-    Write-Host "更新 $hostname 主機" -ForegroundColor Yellow
+    <# 顯示正在更新的伺服器名稱 #>
+    Write-Host "更新 $hostname 伺服器" -ForegroundColor Yellow
 
-    <# 使用 SSH 命令執行虛擬機更新作業 #>
+    <# 使用 SSH 命令執行伺服器更新作業 #>
     ssh $hostname 'update-vm'
+
+    <# 檢查是否有更新錯誤，如果有，顯示錯誤訊息 #>
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "更新 $hostname 伺服器時出現錯誤" -ForegroundColor Red
+    }
+    else {
+        Write-Host "更新 $hostname 伺服器完成" -ForegroundColor Green
+    }
 
     <# 顯示空行 #>
     Write-Host ""
@@ -31,7 +39,7 @@ function Update-VM {
 <# 初始化成功標誌 #>
 $success = $true
 
-<# 遍歷主機名稱列表並呼叫 Update-VM 函數以執行更新作業，並傳遞更新命令 #>
+<# 遍歷伺服器名稱列表並呼叫 Update-VM 函數以執行更新作業，並傳遞更新命令 #>
 $updateCommand = "update-vm"  # 替換為實際的更新命令路徑
 $hostnames | ForEach-Object {
     Update-VM -hostname $_ -updateCommand 'update-vm'
@@ -43,10 +51,10 @@ $hostnames | ForEach-Object {
 
 <# 顯示完成訊息 #>
 if ($success) {
-    Write-Host "==== 更新全部主機完成 ====" -ForegroundColor Green
+    Write-Host "==== 更新全部伺服器完成 ====" -ForegroundColor Green
 } else {
-    Write-Host "==== 更新出現錯誤 ====" -ForegroundColor Red
+    Write-Host "==== 更新伺服器出現錯誤 ====" -ForegroundColor Red
 }
 
 <# 結束程式，並根據成功標誌設置退出代碼 #>
-Exit $success
+Exit ([int]$success)

@@ -45,3 +45,4 @@ fi
 for server in $(cat "$server_list"); do
   update_vm_on_server "$server"
 done
+

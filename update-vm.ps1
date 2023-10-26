@@ -19,10 +19,9 @@ function 更新虛擬機 {
         [string]$本機
     )
     
-    # 設置字符編碼為 UTF-8
     [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
     
-    Write-Host "開始更新 $本機 主機"
+    Write-Host "開始更新 $本機 主機" -ForegroundColor Red
     $sshCommand = "ssh $本機 update-vm"
     
     $processInfo = New-Object System.Diagnostics.ProcessStartInfo
@@ -43,7 +42,7 @@ function 更新虛擬機 {
     $process.WaitForExit()
     
     if ($process.ExitCode -ne 0) {
-        Write-Host "==== 更新 $本機 出現錯誤 ===="
+        Write-Host "==== 更新 $本機 出現錯誤 ====" -ForegroundColor Red
         Write-Host "錯誤訊息:"
         Write-Host $stderr
         $global:錯誤++

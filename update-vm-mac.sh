@@ -1,9 +1,13 @@
 #!/bin/zsh
 
+# 定义颜色代码
+RED='\033[0;31m' # 红色
+NC='\033[0m'     # 重置颜色
+
 # 建立函數用於執行SSH連接和執行update-vm命令
 function update_vm_on_server {
   local server="$1"
-  echo "連接到 $server"
+  echo -e "${RED}連接到 $server${NC}"
   
   # 執行 SSH 連接和 update-vm 命令
   ssh "$server" 'update-vm'

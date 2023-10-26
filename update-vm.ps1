@@ -21,7 +21,7 @@ function 更新虛擬機 {
     
     [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
     
-    Write-Host "開始更新 $本機 主機" -ForegroundColor Red
+    Write-Host "開始更新 $本機 主機" -ForegroundColor Yellow
     $sshCommand = "ssh $本機 update-vm"
     
     $processInfo = New-Object System.Diagnostics.ProcessStartInfo
@@ -49,7 +49,7 @@ function 更新虛擬機 {
         Write-Host $stderr
         $global:錯誤++
     } else {
-        Write-Host "==== 更新 $本機 完成 ===="
+        Write-Host "==== 更新 $本機 完成 ====" -ForegroundColor Green
         Write-Host "輸出訊息:"
         Write-Host $stdout
     }

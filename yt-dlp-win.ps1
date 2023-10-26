@@ -27,9 +27,7 @@ if (-not $desktopPath) {
 }
 
 <# 建立 yt-dlp 命令列，包括下载影片和字幕 #>
-$command = "yt-dlp.exe -o `"$desktopPath\%(title)s.%(ext)s`" `
-           -f `"$format`" `
-           `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
+$command = "yt-dlp.exe -o `"$desktopPath\%(title)s.%(ext)s`" -f `"$format`" `"$Server`" --write-sub --sub-lang zh-Hant,zh-CN"
 
 <# 執行 yt-dlp 並顯示輸出畫面，處理錯誤 #>
 try {

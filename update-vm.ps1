@@ -1,43 +1,45 @@
-<# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
-$hostnames = Get-Content -Path "$HOME\.config\list\.server.list" | 
-             Where-Object { $_ -match '^\s*[^#].*' }
+#!/bin/bash
 
-<# 定義更新虛擬機的函數 #>
-function Update-VM {
-    param (
-        [string]$hostname
-    )
-    <# 顯示正在更新的主機名稱 #>
-    Write-Host "=============================="
-    Write-Host "更新 $hostname 主機"
-    Write-Host "=============================="
+# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行
+主機名稱=()
+錯誤=0  # 初始化錯誤計數
 
-    <# 使用 SSH 命令執行虛擬機更新作業 #>
-    ssh $hostname 'update-vm'
+while IFS= read -r 行; do
+  # 使用 grep 過濾掉空白行和註釋行
+  if [[ -n "$行" && ! "$行" =~ ^\s*# ]]; then
+    主機名稱+=("$行")
+  fi
+done < "$HOME/.config/list/.server.list"
 
-    <# 顯示空行 #>
-    Write-Host ""
+# 定義更新虛擬機的函數
+function 更新虛擬機() {
+    本機="$1"
+    echo "======================================="
+    echo "      更新 $本機 主機"
+    echo "======================================="
+    # 使用 SSH 命令執行虛擬機更新作業
+    ssh "$本機" "update-vm"
+    離開碼="$?"
+    if [ "$離開碼" -ne 0 ]; then
+        echo "==== 更新 $本機 出現錯誤 ===="
+        錯誤=1  # 如果有錯誤，設置錯誤計數為 1
+    else
+        echo "==== 更新 $本機 完成 ===="
+    fi
+    echo ""
 }
 
-<# 初始化成功標誌 #>
-$success = $true
+# 歷遍主機名稱列表並調用更新虛擬機函數執行更新操作
+for 本機 in "${主機名稱[@]}"; do
+    更新虛擬機 "$本機"
+done
 
-<# 遍歷主機名稱列表並呼叫 Update-VM 函數以執行更新作業，並傳遞更新命令 #>
-$updateCommand = "update-vm"  # 替換為實際的更新命令路徑
-$hostnames | ForEach-Object {
-    Update-VM -hostname $_ -updateCommand 'update-vm'
-    <# 檢查是否有更新錯誤，如果有，將成功標誌設置為 false #>
-    if ($LASTEXITCODE -ne 0) {
-        $success = $false
-    }
-}
+# 檢查錯誤計數
+if [ $錯誤 -ne 0 ]; then
+    echo "==== 更新出現錯誤 ===="
+else
+    echo "==== 更新全部主機完成 ===="
+fi
 
-<# 顯示完成訊息 #>
-if ($success) {
-    Write-Host "全部更新作業完成"
-} else {
-    Write-Host "更新出現錯誤"
-}
-
-<# 結束程式，並根據成功標誌設置退出代碼 #>
-Exit $success
+# 結束腳本
+exit

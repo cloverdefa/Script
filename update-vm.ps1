@@ -25,17 +25,18 @@ function 更新虛擬機 {
     $output = Invoke-Expression -Command $sshCommand
 
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "==== 更新 $本機 出現錯誤 ===="
+        Write-Host "==== 更新 $本機 出現錯誤 ====" -ForegroundColor Red
         $global:錯誤++
     } else {
-        Write-Host "==== 更新 $本機 完成 ===="
+        Write-Host "==== 更新 $本機 完成 ====" -ForegroundColor Green
     }
     Write-Host ""
 }
 
-$主機名稱 = @("host1", "host2", "host3")  # 替換為您的主機名稱列表
-
-$錯誤 = 0
+if (-not (Test-Path C:\Windows\System32\OpenSSH\ssh.exe)) {
+    Write-Host "SSH 命令未找到，請確保已安裝SSH並添加到系統PATH。" -ForegroundColor Red
+    exit 1
+}
 
 foreach ($本機 in $主機名稱) {
     更新虛擬機 -本機 $本機

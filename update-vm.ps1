@@ -14,33 +14,38 @@ if (Test-Path -Path $serverListPath) {
     exit 1
 }
 
-<# 定義更新虛擬機的函數 #>
-function 更新虛擬機() {
-    本機="$1"
-    echo "更新 $本機 主機"
-    <# 使用 SSH 命令執行虛擬機更新作業 #>
-    ssh "$本機" "update-vm" -ForegroundColor Yellow
-    離開碼="$?"
-    if [ "$離開碼" -ne 0 ]; then
-        echo "==== 更新 $本機 出現錯誤 ===="
-        錯誤=1  <# 如果有錯誤，錯誤計數器添加計數1 #>
-    else
-        echo "==== 更新 $本機 完成 ===="
-    fi
-    echo ""
+function 更新虛擬機 {
+    param (
+        [string]$本機
+    )
+    
+    Write-Host "更新 $本機 主機"
+    # 使用 SSH 命令執行虛擬機更新作業
+    $sshCommand = "ssh $本機 update-vm"
+    $output = Invoke-Expression -Command $sshCommand
+
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "==== 更新 $本機 出現錯誤 ===="
+        $global:錯誤++
+    } else {
+        Write-Host "==== 更新 $本機 完成 ===="
+    }
+    Write-Host ""
 }
 
-<# 歷遍主機名稱列表並調用更新虛擬機函數執行更新操作 #>
-for 本機 in "${主機名稱[@]}"; do
-    更新虛擬機 "$本機"
-done
+$主機名稱 = @("host1", "host2", "host3")  # 替換為您的主機名稱列表
 
-<# 檢查錯誤計數 #>
-if [ $錯誤 -ne 0 ]; then
-    echo "==== 更新出現錯誤 ===="
-else
-    echo "==== 更新全部主機完成 ===="
-fi
+$錯誤 = 0
+
+foreach ($本機 in $主機名稱) {
+    更新虛擬機 -本機 $本機
+}
+
+if ($錯誤 -ne 0) {
+    Write-Host "==== 更新出現錯誤 ====" -ForegroundColor Red
+} else {
+    Write-Host "==== 更新全部主機完成 ====" -ForegroundColor Green
+}
 
 <# 結束腳本 #>
 exit

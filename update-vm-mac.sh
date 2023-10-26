@@ -31,6 +31,7 @@ function update_vm_on_server {
     fi
   else
     echo "無法執行 update-vm 因為SSH連接失敗"
+    update_error=1  # 標記更新錯誤
   fi
 }
 

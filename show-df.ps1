@@ -1,5 +1,6 @@
 <# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
-$servers = Get-Content -Path "$HOME\.config\list\.server.list" | Where-Object { $_ -match '^\s*[^#].*' }
+$servers = Get-Content -Path "$HOME\.config\list\.server.list" |
+           Where-Object { $_ -match '^\s*[^#].*' }
 
 <# 定義顯示磁碟空間的函數 #>
 function Show-DiskSpace {

@@ -1,5 +1,6 @@
 <# 從 .omp.list 檔案中讀取主機名單，過濾掉空白行和註釋行 #>
-$hostnames = Get-Content -Path "$HOME\.config\list\.omp.list" | Where-Object { $_ -match '^\s*[^#].*' }
+$hostnames = Get-Content -Path "$HOME\.config\list\.omp.list" |
+            Where-Object { $_ -match '^\s*[^#].*' }
 
 <# 定義更新 OMP 的函數 #>
 function Update-OMP {

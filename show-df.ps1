@@ -1,5 +1,5 @@
 <# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
-$主機名稱 = @()
+$server = @()
 
 <# 讀取服務器列表文件 #>
 $serverListPath = "$env:USERPROFILE\.config\list\.server.list"
@@ -7,7 +7,7 @@ if (Test-Path -Path $serverListPath) {
     $内容 = Get-Content -Path $serverListPath
 
     <# 過濾掉空白行和註釋行 #>
-    $主機名稱 = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
+    $server = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
 } else {
     Write-Host "服務器列表文件不存在: $serverListPath" -ForegroundColor Red
     exit 1

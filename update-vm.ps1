@@ -19,19 +19,43 @@ function 更新虛擬機 {
         [string]$本機
     )
     
-    Write-Host "更新 $本機 主機"
-    <# 使用 SSH 命令執行虛擬機更新作業 #>
+    [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+    
+    Write-Host "開始更新 $本機 主機" -ForegroundColor Yellow
     $sshCommand = "ssh $本機 update-vm"
-    $output = Invoke-Expression -Command $sshCommand
-
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "==== 更新 $本機 出現錯誤 ===="
+    
+    $processInfo = New-Object System.Diagnostics.ProcessStartInfo
+    $processInfo.FileName = "ssh"
+    $processInfo.Arguments = "$本機 update-vm"
+    $processInfo.RedirectStandardInput = $true  <# 添加以接受輸入 #>
+    $processInfo.RedirectStandardError = $true
+    $processInfo.RedirectStandardOutput = $true
+    $processInfo.UseShellExecute = $false
+    $processInfo.CreateNoWindow = $true
+    
+    $process = New-Object System.Diagnostics.Process
+    $process.StartInfo = $processInfo
+    $process.Start() | Out-Null
+    
+    $stdout = $process.StandardOutput.ReadToEnd()
+    $stderr = $process.StandardError.ReadToEnd()
+    
+    $process.StandardInput.WriteLine("Y")  <# 在此處輸入 "Y" 或其他回答 #>
+    $process.WaitForExit()
+    
+    if ($process.ExitCode -ne 0) {
+        Write-Host "==== 更新 $本機 出現錯誤 ====" -ForegroundColor Red
+        Write-Host "錯誤訊息:"
+        Write-Host $stderr
         $global:錯誤++
     } else {
-        Write-Host "==== 更新 $本機 完成 ===="
+        Write-Host "==== 更新 $本機 完成 ====" -ForegroundColor Green
+        Write-Host "輸出訊息:"
+        Write-Host $stdout
     }
     Write-Host ""
 }
+
 
 if (-not (Test-Path C:\Windows\System32\OpenSSH\ssh.exe)) {
     Write-Host "SSH 命令未找到，請確保已安裝SSH並添加到系統PATH。" -ForegroundColor Red

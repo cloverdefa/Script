@@ -20,13 +20,13 @@ function update_vm_on_server {
     ssh "$server" 'update-vm'
     update_vm_result=$?
     if [ $update_vm_result -eq 0 ]; then
-      echo "${GREEN}在 $server 上執行 update-vm 成功${NC}"
+      echo -e "${GREEN}在 $server 上執行 update-vm 成功${NC}"
     else
-      echo "${RED}在 $server 上執行 update-vm 失敗${NC}"
+      echo -e "${RED}在 $server 上執行 update-vm 失敗${NC}"
       update_error=1  # 標記更新錯誤
     fi
   else
-    echo "無法執行 update-vm 因為SSH連接失敗"
+    echo -e "${RED}無法執行 update-vm 因為SSH連接失敗${NC}"
     update_error=1  # 標記更新錯誤
   fi
 }
@@ -36,7 +36,7 @@ server_list="$HOME/.config/list/.server.list"
 
 # 檢查清單列表文件是否存在
 if [ ! -f "$server_list" ]; then
-  echo "${RED}伺服器清單文件不存在: $server_list${NC}"
+  echo -e "${RED}伺服器清單文件不存在: $server_list${NC}"
   exit 1
 fi
 

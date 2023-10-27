@@ -36,3 +36,5 @@ if ($session) {
 } else {
     Write-Host "無法建立SSH會話。"  <# 顯示錯誤消息，無法建立SSH會話 #>
 }
+
+Exit

@@ -1,11 +1,11 @@
 <# PowerShell Script Youtube Downloading #>
 
 <# 顯示提示訊息 #>
-Write-Host "影片下載工具 yt-dlp"
-Write-Host "輸入 Ctrl+C 取消下載:"
+Write-Host "影片下載工具 yt-dlp" -ForegroundColor Yellow
+Write-Host "輸入 Ctrl+C 取消下載" -ForegroundColor Yellow
 
 <# 輸入影片網址 #>
-$Server = Read-Host -Prompt '請輸入下載影片網址:'
+$Server = Read-Host -Prompt '請輸入下載影片網址:' -ForegroundColor Yellow
 $format = "best[ext=mp4]/best"
 
 <# 獲取當前用戶帳號的桌面路徑 #>

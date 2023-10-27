@@ -29,6 +29,8 @@ function update_vm_on_server {
     echo -e "${RED}無法執行 update-vm 因為SSH連接失敗${NC}"
     update_error=1  # 標記更新錯誤
   fi
+  # 顯示空行
+  echo ""
 }
 
 # 讀取伺服器清單文件

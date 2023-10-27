@@ -17,9 +17,9 @@ function update_vm_on_server {
   
   # 檢查 SSH 連接結果
   if [ $ssh_result -eq 0 ]; then
-    echo "SSH 連接到 $server 成功"
+    echo "${GREEN}SSH 連接到 $server 成功${NC}"
   else
-    echo "SSH 連接到 $server 失敗"
+    echo "${RED}SSH 連接到 $server 失敗${NC}"
   fi
 
   # 檢查命令執行結果

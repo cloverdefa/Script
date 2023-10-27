@@ -1,5 +1,5 @@
-<# 從 .server.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
-$主機名稱 = @()
+<# 從 .server.list 檔案中讀取伺服器名稱列表，並過濾掉空白行和註釋行 #>
+$伺服器名稱 = @()
 $錯誤 = 0  <# 初始化錯誤計數器 #>
 
 <# 讀取服務器列表文件 #>
@@ -8,7 +8,7 @@ if (Test-Path -Path $serverListPath) {
     $内容 = Get-Content -Path $serverListPath
 
     <# 過濾掉空白行和註釋行 #>
-    $主機名稱 = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
+    $伺服器名稱 = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
 } else {
     Write-Host "服務器列表文件不存在: $serverListPath" -ForegroundColor Red
     exit 1
@@ -50,15 +50,15 @@ function Show-DiskSpace {
     }
 }
 
-foreach ($本機 in $主機名稱) {
+foreach ($本機 in $伺服器名稱) {
     Show-DiskSpace -本機 $本機
 }
 
 # 完成訊息
 if ($LASTEXITCODE -eq 0) {
-    Write-Output "讀取空間資料完成"
+    Write-Output "讀取空間資料完成" -ForegroundColor Green
 } else {
-    Write-Output "讀取空間出現錯誤"
+    Write-Output "讀取空間出現錯誤" -ForegroundColor Red
 }
 
 # 結束程式

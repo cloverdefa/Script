@@ -1,3 +1,5 @@
+<# PowerShell Script rebooting UCKH #>
+
 <# 遠程設備的SSH設定 #>
 $SSH_HOST = "switch-core"  <# 設定SSH主機名稱或IP地址 #>
 $SSH_USER = "cloverdefa"  <# 設定SSH用戶名 #>

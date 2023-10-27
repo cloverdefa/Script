@@ -1,3 +1,5 @@
+<# PowerShell Script Updateing Oh My Posh #>
+
 <# 從 .omp.list 檔案中讀取主機名稱列表，過濾掉空白行和註釋行 #>
 $hostnames = @()
 

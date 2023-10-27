@@ -1,3 +1,5 @@
+<# PowerShell Script Youtube Downloading #>
+
 <# 顯示提示訊息 #>
 Write-Host "影片下載工具 yt-dlp"
 Write-Host "輸入 Ctrl+C 取消下載:"

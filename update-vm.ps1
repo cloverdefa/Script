@@ -1,3 +1,5 @@
+<# PowerShell Script APT Updateing #>
+
 <# 從 .server.list 檔案中讀取伺服器清單，過濾掉空白行和註釋行 #>
 $hostnames = $()
 

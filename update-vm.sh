@@ -2,8 +2,8 @@
 
 # 定義顏色代碼
 RED='\033[0;31m' # 红色
-YELLOW='\033[0;33m' # 黄色[內碼] 
 GREEN='\033[0;32m' # 绿色
+YELLOW='\033[0;33m' # 黄色 
 NC='\033[0m'     # 重置颜色
 
 # 建立函數用於執行SSH連接和執行update-vm命令
@@ -17,21 +17,16 @@ function update_vm_on_server {
   
   # 檢查 SSH 連接結果
   if [ $ssh_result -eq 0 ]; then
-    echo "SSH 連接到 $server 成功"
-  else
-    echo "SSH 連接到 $server 失敗"
-  fi
-
-  # 檢查命令執行結果
-  if [ $ssh_result -eq 0 ]; then
-    if [ $? -eq 0 ]; then
-      echo "在 $server 上執行 update-vm 成功"
+    ssh "$server" 'update-vm'
+    update_vm_result=$?
+    if [ $update_vm_result -eq 0 ]; then
+      echo -e "${GREEN}在 $server 上執行 update-vm 成功${NC}"
     else
-      echo "在 $server 上執行 update-vm 失敗"
+      echo -e "${RED}在 $server 上執行 update-vm 失敗${NC}"
       update_error=1  # 標記更新錯誤
     fi
   else
-    echo "無法執行 update-vm 因為SSH連接失敗"
+    echo -e "${RED}無法執行 update-vm 因為SSH連接失敗${NC}"
     update_error=1  # 標記更新錯誤
   fi
 }
@@ -41,7 +36,7 @@ server_list="$HOME/.config/list/.server.list"
 
 # 檢查清單列表文件是否存在
 if [ ! -f "$server_list" ]; then
-  echo "伺服器清單文件不存在: $server_list"
+  echo -e "${RED}伺服器清單文件不存在: $server_list${NC}"
   exit 1
 fi
 

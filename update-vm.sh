@@ -25,9 +25,9 @@ function update_vm_on_server {
   # 檢查命令執行結果
   if [ $ssh_result -eq 0 ]; then
     if [ $? -eq 0 ]; then
-      echo "在 $server 上執行 update-vm 成功"
+      echo "${GREEN}在 $server 上執行 update-vm 成功${NC}"
     else
-      echo "在 $server 上執行 update-vm 失敗"
+      echo "${RED}在 $server 上執行 update-vm 失敗${NC}"
       update_error=1  # 標記更新錯誤
     fi
   else
@@ -41,7 +41,7 @@ server_list="$HOME/.config/list/.server.list"
 
 # 檢查清單列表文件是否存在
 if [ ! -f "$server_list" ]; then
-  echo "伺服器清單文件不存在: $server_list"
+  echo "${RED}伺服器清單文件不存在: $server_list${NC}"
   exit 1
 fi
 

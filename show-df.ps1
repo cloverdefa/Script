@@ -24,7 +24,7 @@ function Show-DiskSpace {
 
     # 顯示伺服器名稱和時間戳記
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Write-Output "[$timestamp] 連接到 $伺服器 並查詢容量空間"
+    Write-Output "[$timestamp] 連接到 $本機 並查詢容量空間"
 
     try {
         # 使用 SSH 連接到伺服器並查詢磁碟空間

@@ -1,3 +1,5 @@
+<# PowerShell Script git pull all #>
+
 <# 存儲最初目錄 #>
 $originalLocation = Get-Location
 

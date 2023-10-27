@@ -1,7 +1,7 @@
 <# PowerShell Script show df -h #>
 
-<# 從 .server.list 檔案中讀取伺服器名稱列表，並過濾掉空白行和註釋行 #>
-$伺服器名稱 = @()
+<# 從 .server.list 檔案中讀取伺服器列表，並過濾掉空白行和註釋行 #>
+$伺服器 = @()
 $錯誤 = 0  <# 初始化錯誤計數器 #>
 
 <# 讀取服務器列表文件 #>
@@ -10,7 +10,7 @@ if (Test-Path -Path $serverListPath) {
     $内容 = Get-Content -Path $serverListPath
 
     <# 過濾掉空白行和註釋行 #>
-    $伺服器名稱 = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
+    $伺服器 = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
 } else {
     Write-Host "服務器列表文件不存在: $serverListPath" -ForegroundColor Red
     exit 1
@@ -24,7 +24,7 @@ function Show-DiskSpace {
 
     # 顯示伺服器名稱和時間戳記
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Write-Output "[$timestamp] 連接到 $server 並查詢容量空間"
+    Write-Output "[$timestamp] 連接到 $本機 並查詢容量空間"
 
     try {
         # 使用 SSH 連接到伺服器並查詢磁碟空間
@@ -52,7 +52,7 @@ function Show-DiskSpace {
     }
 }
 
-foreach ($本機 in $伺服器名稱) {
+foreach ($本機 in $伺服器) {
     Show-DiskSpace -本機 $本機
 }
 

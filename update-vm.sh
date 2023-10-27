@@ -2,13 +2,14 @@
 
 # 定義顏色代碼
 RED='\033[0;31m' # 红色
+YELLOW='\033[0;33m' # 黄色[內碼] 
 GREEN='\033[0;32m' # 绿色
 NC='\033[0m'     # 重置颜色
 
 # 建立函數用於執行SSH連接和執行update-vm命令
 function update_vm_on_server {
   local server="$1"
-  echo -e "${RED}連接到 $server${NC}"
+  echo -e "${YELLOW}連接到 $server${NC}"
   
   # 執行 SSH 連接和 update-vm 命令
   ssh "$server" 'update-vm'

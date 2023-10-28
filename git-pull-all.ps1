@@ -27,20 +27,6 @@ foreach ($repository in $repositories) {
         git checkout main
     }
     
-    <# 檢查是否有更新需要拉取 #>
-    $gitPullCommand = { 
-        param($timeoutSeconds)
-        $ErrorActionPreference = 'Stop'
-        try {
-            git pull -Timeout $timeoutSeconds
-        } catch {
-            Write-Host "連接超時，跳過此儲存庫。"
-            continue
-        }
-    }
-    
-    $result = & $gitPullCommand -timeoutSeconds 5
-
     if ($result -match "Already up to date.") {
         Write-Host "儲存庫已經是最新的。"
     } elseif ($result -match "Updating") {

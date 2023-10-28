@@ -19,14 +19,11 @@ function Git-Pull-Repo() {
         exit 1 # 如果切換失敗，退出，並返回結束碼1
     fi
 
-    if git remote update -p && git status -uno | grep -q '您的分支落後'; then
-        if git pull; then
-            text="$text 完成"
-        else
-            text="$text 更新出現錯誤"
-        fi
+    # 设置超时时间为 5 秒来执行 git pull 命令
+    if timeout 5 git pull; then
+        text="$text 完成"
     else
-        text="GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：$repo_name"
+        text="$text 更新超時"
     fi
 
     echo "$text"

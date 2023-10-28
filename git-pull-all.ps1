@@ -1,5 +1,4 @@
 <# PowerShell Script git pull all #>
-
 <# 存儲最初目錄 #>
 $originalLocation = Get-Location
 
@@ -9,7 +8,6 @@ $repositories = Get-Content $repositoryFile | Where-Object { $_ -match '^\s*[^#]
 
 <# 使用環境變量來設定本地儲存庫根目錄路徑 #>
 $localRepositoryRoot = $env:USERPROFILE + "\github"
-
 <# 遍歷每個儲存庫並執行Git操作 #>
 foreach ($repository in $repositories) {
     Write-Host "檢查儲存庫: $repository"
@@ -28,19 +26,7 @@ foreach ($repository in $repositories) {
     }
     
     <# 檢查是否有更新需要拉取 #>
-    $gitPullCommand = { 
-        param($timeoutSeconds)
-        $ErrorActionPreference = 'Stop'
-        try {
-            git pull -Timeout $timeoutSeconds
-        } catch {
-            Write-Host "連接超時，跳過此儲存庫。"
-            continue
-        }
-    }
-    
-    $result = & $gitPullCommand -timeoutSeconds 5
-
+    $result = git pull
     if ($result -match "Already up to date.") {
         Write-Host "儲存庫已經是最新的。"
     } elseif ($result -match "Updating") {
@@ -54,7 +40,6 @@ foreach ($repository in $repositories) {
     
     Write-Host "---------------------------------------------"
 }
-
 <# 返回到原始目錄 #>
 Set-Location -Path $originalLocation
 Exit

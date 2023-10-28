@@ -1,11 +1,11 @@
 <# PowerShell Script git pull all #>
+
 <# 存儲最初目錄 #>
 $originalLocation = Get-Location
 
 <# 從 .repositories.list 檔案中讀取存儲庫名稱列表，並過濾掉空白以及注釋行 #>
 $repositoryFile = "$env:USERPROFILE\.config\list\.repositories.list"
 $repositories = Get-Content $repositoryFile | Where-Object { $_ -match '^\s*[^#].*' }
-
 <# 使用環境變量來設定本地儲存庫根目錄路徑 #>
 $localRepositoryRoot = $env:USERPROFILE + "\github"
 <# 遍歷每個儲存庫並執行Git操作 #>
@@ -25,6 +25,8 @@ foreach ($repository in $repositories) {
         git checkout main
     }
     
+    <# 檢查是否有更新需要拉取 #>
+    $result = git pull
     if ($result -match "Already up to date.") {
         Write-Host "儲存庫已經是最新的。"
     } elseif ($result -match "Updating") {

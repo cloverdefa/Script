@@ -17,7 +17,7 @@ function update_vm_on_server {
     sudo apt-get update
 
     { echo -e "\e[5;37;40m Dist Upgrade Packages \e[0m"; } 2> /dev/null
-    sudo pveupgrade
+    sudo apt-get dist-upgrade
 
     { echo -e "\e[5;37;40m Remove Dependency Packages That Are No Longer Needed \e[0m"; } 2> /dev/null
     sudo apt-get --purge autoremove

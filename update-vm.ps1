@@ -29,7 +29,7 @@ function Update-VM {
         { Write-Host "Update Packages" } 2>$null
         { sudo apt-get update } 2>$null
         { Write-Host "Dist Upgrade Packages" } 2>$null
-        { sudo pveupgrade } 2>$null
+        { sudo apt-get dist-upgrade } 2>$null
         { Write-Host "Remove Dependency Packages" } 2>$null
         { sudo apt-get --purge autoremove } 2>$null
         { Write-Host "Clean apt Cache" } 2>$null

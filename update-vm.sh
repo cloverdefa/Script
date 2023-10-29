@@ -6,27 +6,35 @@ GREEN='\033[0;32m' # 绿色
 YELLOW='\033[0;33m' # 黄色 
 NC='\033[0m'     # 重置颜色
 
-# 建立函數用於執行SSH連接和執行update-vm命令
+# 建立函數用於執行SSH連接和執行更新命令
 function update_vm_on_server {
   local server="$1"
   echo -e "${YELLOW}連接到 $server${NC}"
   
-  # 執行 SSH 連接和 update-vm 命令
-  ssh "$server" 'update-vm'
+  # 透過 SSH 連接至遠端伺服器，執行一系列指令
+  ssh "$server" 'bash -s' << 'ENDSSH'
+    { echo -e "\e[5;37;40m Update Packages \e[0m"; } 2> /dev/null
+    sudo apt-get update
+
+    { echo -e "\e[5;37;40m Dist Upgrade Packages \e[0m"; } 2> /dev/null
+    sudo pveupgrade
+
+    { echo -e "\e[5;37;40m Remove Dependency Packages That Are No Longer Needed \e[0m"; } 2> /dev/null
+    sudo apt-get --purge autoremove
+
+    { echo -e "\e[5;37;40m Clean apt Cache \e[0m"; } 2> /dev/null
+    sudo apt-get clean
+
+    exit
+ENDSSH
+
   ssh_result=$?
   
   # 檢查 SSH 連接結果
   if [ $ssh_result -eq 0 ]; then
-    ssh "$server" 'update-vm'
-    update_vm_result=$?
-    if [ $update_vm_result -eq 0 ]; then
-      echo -e "${GREEN}在 $server 上執行 update-vm 成功${NC}"
-    else
-      echo -e "${RED}在 $server 上執行 update-vm 失敗${NC}"
-      update_error=1  # 標記更新錯誤
-    fi
+    echo -e "${GREEN}在 $server 上執行更新指令成功${NC}"
   else
-    echo -e "${RED}無法執行 update-vm 因為SSH連接失敗${NC}"
+    echo -e "${RED}在 $server 上執行更新指令失敗${NC}"
     update_error=1  # 標記更新錯誤
   fi
   # 顯示空行

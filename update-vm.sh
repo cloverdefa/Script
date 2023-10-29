@@ -12,21 +12,7 @@ function update_vm_on_server {
   echo -e "${YELLOW}連接到 $server${NC}"
   
   # 透過 SSH 連接至遠端伺服器，執行一系列指令
-  ssh "$server" 'bash -s' << 'ENDSSH'
-    { echo -e "\e[5;37;40m Update Packages \e[0m"; } 2> /dev/null
-    sudo apt-get update
-
-    { echo -e "\e[5;37;40m Dist Upgrade Packages \e[0m"; } 2> /dev/null
-    sudo apt-get dist-upgrade
-
-    { echo -e "\e[5;37;40m Remove Dependency Packages That Are No Longer Needed \e[0m"; } 2> /dev/null
-    sudo apt-get --purge autoremove
-
-    { echo -e "\e[5;37;40m Clean apt Cache \e[0m"; } 2> /dev/null
-    sudo apt-get clean
-
-    exit
-ENDSSH
+  ssh "$server" 'update-vm'
 
   ssh_result=$?
   
@@ -34,7 +20,7 @@ ENDSSH
   if [ $ssh_result -eq 0 ]; then
     echo -e "${GREEN}在 $server 上執行更新指令成功${NC}"
   else
-    echo -e "${RED}在 $server 上執行更新指令失敗${NC}"
+    echo -e "${RED}無法執行 update 因為SSH連接失敗${NC}"
     update_error=1  # 標記更新錯誤
   fi
   # 顯示空行

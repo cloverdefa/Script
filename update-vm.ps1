@@ -7,7 +7,6 @@ $hostnames = $()
 $serverListPath = "$env:USERPROFILE\.config\list\.server.list"
 if (Test-Path -Path $serverListPath) {
     $内容 = Get-Content -Path $serverListPath
-
     <# 過濾掉空白行和註釋行 #>
     $hostnames = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
 } else {
@@ -24,18 +23,8 @@ function Update-VM {
     Write-Host "更新 $hostname 伺服器" -ForegroundColor Yellow
 
     <# 使用 SSH 命令執行伺服器更新作業 #>
-    Invoke-Command -ComputerName $hostname -ScriptBlock {
-        <# 在這裡執行需要在遠端伺服器上更新的命令 #>
-        { Write-Host "Update Packages" } 2>$null
-        { sudo apt-get update } 2>$null
-        { Write-Host "Dist Upgrade Packages" } 2>$null
-        { sudo apt-get dist-upgrade } 2>$null
-        { Write-Host "Remove Dependency Packages" } 2>$null
-        { sudo apt-get --purge autoremove } 2>$null
-        { Write-Host "Clean apt Cache" } 2>$null
-        { sudo apt-get clean } 2>$null
-    }
-    
+    ssh $hostname 'update-vm'
+
     <# 檢查是否有更新錯誤，如果有，顯示錯誤訊息 #>
     if ($LASTEXITCODE -ne 0) {
         Write-Host "更新 $hostname 伺服器時出現錯誤" -ForegroundColor Red

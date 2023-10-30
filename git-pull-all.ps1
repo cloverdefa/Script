@@ -8,6 +8,7 @@ $repositoryFile = "$env:USERPROFILE\.config\list\.repositories.list"
 $repositories = Get-Content $repositoryFile | Where-Object { $_ -match '^\s*[^#].*' }
 <# 使用環境變量來設定本地儲存庫根目錄路徑 #>
 $localRepositoryRoot = "$env:USERPROFILE\github"
+$mainBranch = "main"
 <# 遍歷每個儲存庫並執行Git操作 #>
 foreach ($repository in $repositories) {
     Write-Host "檢查儲存庫: $repository"
@@ -20,9 +21,12 @@ foreach ($repository in $repositories) {
     
     <# 檢查是否需要切換到main分支 #>
     $currentBranch = `git rev-parse --abbrev-ref HEAD`
-    if ($currentBranch -ne "main") {
-        Write-Host "切換到main分支中..."
-        `git checkout main`
+    if ($currentBranch -ne $mainBranch) {
+        Write-Host "切換到 $mainBranch 分支中..."
+        `git checkout $mainBranch`
+    }
+    elseif ($currentBranch -eq $mainBranch) {
+        Write-Host "已於 $mainBranch 分支"
     }
     
     <# 檢查是否有更新需要拉取 #>

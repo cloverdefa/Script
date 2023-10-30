@@ -31,7 +31,7 @@ foreach ($repository in $repositories) {
     }
     
     <# 檢查是否有更新需要拉取 #>
-    $result = `git pull
+    $result = 'git pull'
     if ($result.Contains("Already up to date.")) {
         Write-Host "儲存庫已經是最新的。"
     } elseif ($result.Contains("Updating")) {

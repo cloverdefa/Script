@@ -6,10 +6,8 @@ $originalLocation = Get-Location
 <# 從 .repositories.list 檔案中讀取存儲庫名稱列表，並過濾掉空白以及注釋行 #>
 $repositoryFile = "$env:USERPROFILE\.config\list\.repositories.list"
 $repositories = Get-Content $repositoryFile | Where-Object { $_ -match '^\s*[^#].*' }
-
 <# 使用環境變量來設定本地儲存庫根目錄路徑 #>
 $localRepositoryRoot = "$env:USERPROFILE\github"
-
 <# 遍歷每個儲存庫並執行Git操作 #>
 foreach ($repository in $repositories) {
     Write-Host "檢查儲存庫: $repository"

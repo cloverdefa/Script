@@ -30,13 +30,16 @@ foreach ($repository in $repositories) {
     <# 檢查是否有更新需要拉取 #>
     $result = git pull
     if ($result -match "Already up to date.") {
-         Write-Host "儲存庫已經是最新的。"
+         Write-Host "儲存庫已經是最新的。儲存庫名稱：$repository"
     } elseif ($result -match "Updating") {
-        Write-Host "儲存庫已經更新。"
+        Write-Host "儲存庫已經更新。儲存庫名稱：$repository"
     } else {
-        Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。"
+        Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。儲存庫名稱：$repository"
     }
     
+    <# 返回上一級目錄 #>
+    Set-Location -Path $localRepositoryRoot
+
     <# 顯示分隔線 #>
     Write-Output ("-" * 25)
 }

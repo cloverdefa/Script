@@ -13,6 +13,7 @@ $localRepositoryRoot = $env:USERPROFILE + "\github"
 <# 遍歷每個儲存庫並執行Git操作 #>
 foreach ($repository in $repositories) {
     Write-Host "檢查儲存庫: $repository"
+    Set-Location -Path $localRepositoryPath
 
     <# 檢查是否需要切換到main分支 #>
     $currentBranch = git rev-parse --abbrev-ref HEAD

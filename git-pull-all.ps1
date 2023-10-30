@@ -30,6 +30,8 @@ foreach ($repository in $repositories) {
         Write-Host "儲存庫已經更新。"
     } else {
         Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。"
+    }
+}
 
 <# 返回到原始目錄 #>
 Set-Location -Path $originalLocation

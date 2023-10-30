@@ -12,7 +12,7 @@ $localRepositoryRoot = "$env:USERPROFILE\github"
 
 <# 遍歷每個儲存庫並執行Git操作 #>
 foreach ($repository in $repositories) {
-    Write-Host "檢查儲存庫: $repository"
+    Write-Host "檢查儲存庫: $repository" -ForegroundColor Yellow
 
     <# 構建完整的儲存庫路徑 #>
     $localRepositoryPath = Join-Path -Path $localRepositoryRoot -ChildPath $repository
@@ -30,18 +30,18 @@ foreach ($repository in $repositories) {
     <# 檢查是否有更新需要拉取 #>
     $result = git pull
     if ($result -match "Already up to date.") {
-         Write-Host "儲存庫已經是最新的。儲存庫名稱：$repository"
+         Write-Host "儲存庫已經是最新的。儲存庫名稱：$repository" -ForegroundColor Green
     } elseif ($result -match "Updating") {
-        Write-Host "儲存庫已經更新。儲存庫名稱：$repository"
+        Write-Host "儲存庫已經更新。儲存庫名稱：$repository" -ForegroundColor Green
     } else {
-        Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。儲存庫名稱：$repository"
+        Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。儲存庫名稱：$repository" -ForegroundColor Red
     }
     
     <# 返回上一級目錄 #>
     Set-Location -Path $localRepositoryRoot
 
     <# 顯示分隔線 #>
-    Write-Output ("-" * 25)
+    Write-Output ("-" * 50)
 }
 
 <# 返回到原始目錄 #>

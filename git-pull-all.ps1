@@ -21,6 +21,7 @@ foreach ($repository in $repositories) {
     Set-Location -Path $localRepositoryPath
     
     <# 檢查是否需要切換到main分支 #>
+    mainBranch = main
     $currentBranch = `git rev-parse --abbrev-ref HEAD`
     if ($currentBranch -ne $mainBranch) {
         Write-Host "切換到 $mainBranch 分支中..."

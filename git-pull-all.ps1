@@ -6,8 +6,10 @@ $originalLocation = Get-Location
 <# 從 .repositories.list 檔案中讀取存儲庫名稱列表，並過濾掉空白以及注釋行 #>
 $repositoryFile = "$env:USERPROFILE\.config\list\.repositories.list"
 $repositories = Get-Content $repositoryFile | Where-Object { $_ -match '^\s*[^#].*' }
+
 <# 使用環境變量來設定本地儲存庫根目錄路徑 #>
-$localRepositoryRoot = $env:USERPROFILE + "\github"
+$localRepositoryRoot = "$env:USERPROFILE\github"
+
 <# 遍歷每個儲存庫並執行Git操作 #>
 foreach ($repository in $repositories) {
     Write-Host "檢查儲存庫: $repository"
@@ -19,17 +21,17 @@ foreach ($repository in $repositories) {
     Set-Location -Path $localRepositoryPath
     
     <# 檢查是否需要切換到main分支 #>
-    $currentBranch = git rev-parse --abbrev-ref HEAD
+    $currentBranch = `git rev-parse --abbrev-ref HEAD`
     if ($currentBranch -ne "main") {
         Write-Host "切換到main分支中..."
-        git checkout main
+        `git checkout main`
     }
     
     <# 檢查是否有更新需要拉取 #>
-    $result = git pull
-    if ($result -match "Already up to date.") {
+    $result = `git pull
+    if ($result.Contains("Already up to date.")) {
         Write-Host "儲存庫已經是最新的。"
-    } elseif ($result -match "Updating") {
+    } elseif ($result.Contains("Updating")) {
         Write-Host "儲存庫已經更新。"
     } else {
         Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。"

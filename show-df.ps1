@@ -2,7 +2,6 @@
 
 <# 從 .server.list 檔案中讀取伺服器列表，並過濾掉空白行和註釋行 #>
 $伺服器 = @()
-$錯誤 = 0  <# 初始化錯誤計數器 #>
 
 <# 讀取服務器列表文件 #>
 $serverListPath = "$env:USERPROFILE\.config\list\.server.list"

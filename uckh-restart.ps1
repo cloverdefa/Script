@@ -34,7 +34,7 @@ if ($session) {
     Remove-SSHSession -SSHSession $session
     Write-Host "Unifi Cloudkey Home 重新PoE送電啟動完成。"  <# 顯示配置完成的消息 #>
 } else {
-    Write-Host "無法建立SSH會話。"  <# 顯示錯誤消息，無法建立SSH會話 #>
+    Write-Host "無法建立SSH連線。"  <# 顯示錯誤消息，無法建立SSH連線 #>
 }
 
 Exit

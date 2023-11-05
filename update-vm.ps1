@@ -52,8 +52,10 @@ $hostnames | ForEach-Object {
 
 <# 顯示完成訊息 #>
 if ($success) {
+    Write-Output ("-" * 50)
     Write-Host "==== 更新全部伺服器完成 ====" -ForegroundColor Green
 } else {
+    Write-Output ("-" * 50)
     Write-Host "==== 更新伺服器出現錯誤 ====" -ForegroundColor Red
 }
 

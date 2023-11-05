@@ -1,6 +1,6 @@
 <# PowerShell Script git pull all #>
 
-<# 記錄當下路徑 #>
+<# 記錄當下原始路徑 #>
 $originalLocation = Get-Location
 
 <# 定義儲存庫清單文件路徑 #>
@@ -45,14 +45,14 @@ foreach ($repository in $repositories) {
         Write-Host "無法確定儲存庫狀態。請檢查是否有變更或問題。儲存庫名稱：$repository" -ForegroundColor Red
     }
 
-    <# 返回上一级目录 #>
+    <# 返回上一層目錄 #>
     Set-Location -Path $localRepositoryRoot
 
     <# 顯示分隔線 #>
     Write-Output ("-" * 50)
 }
 
-<# 返回到原始目录 #>
+<# 返回原始目錄 #>
 Set-Location -Path $originalLocation
 
 Exit

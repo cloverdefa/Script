@@ -23,7 +23,7 @@ function Show-DiskSpace {
 
     <# 顯示伺服器名稱和時間戳記 #>
     $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    Write-Output "[$timestamp] 連接到 $本機 並查詢容量空間"
+    Write-Host "[$timestamp] 連接到 $本機 並查詢容量空間" -ForegroundColor Yellow
 
     try {
         <# 使用 SSH 連接到伺服器並查詢磁碟空間 #>
@@ -31,13 +31,13 @@ function Show-DiskSpace {
         $sshOutput = Invoke-Expression -Command $sshCommand
 
         <# 顯示分隔線 #>
-        Write-Output ("=" * 25)
+        Write-Host ("=" * 25)
 
         <# 顯示伺服器容量空間的標題 #>
-        Write-Output "    $本機 容量空間"
+        Write-Host "    $本機 容量空間" -ForegroundColor Yellow
 
         <# 顯示分隔線 #>
-        Write-Output ("=" * 25)
+        Write-Host ("=" * 25)
 
         <# 逐行顯示 df 命令輸出 #>
         $sshOutput | ForEach-Object { Write-Output $_ }
@@ -57,9 +57,9 @@ foreach ($本機 in $伺服器) {
 
 <# 完成訊息 #>
 if ($LASTEXITCODE -eq 0) {
-    Write-Output "讀取空間資料完成" -ForegroundColor Green
+    Write-Host "讀取空間資料完成" -ForegroundColor Green
 } else {
-    Write-Output "讀取空間出現錯誤" -ForegroundColor Red
+    Write-Host "讀取空間出現錯誤" -ForegroundColor Red
 }
 
 <# 結束程式 #>

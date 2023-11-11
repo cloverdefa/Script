@@ -1,7 +1,14 @@
 #!/bin/zsh
 
+# 檢查 .repositories.list 檔案是否存在
+repositories_list="$HOME/.config/list/.repositories.list"
+if [ ! -f "$repositories_list" ]; then
+    echo "錯誤：檔案 $repositories_list 不存在。請確保檔案存在並重新執行腳本。"
+    exit 1
+fi
+
 # 從 .repositories.list 檔案中讀伺服器名稱列表，並過濾掉空白以及注釋行
-repos=($(cat "$HOME/.config/list/.repositories.list" | grep -E -v '^\s*(#|$)'))
+repos=($(cat "$repositories_list" | grep -E -v '^\s*(#|$)'))
 
 # 使用函數來執行操作更新
 function Git-Pull-Repo() {

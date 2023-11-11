@@ -1,7 +1,14 @@
 #!/bin/bash
 
+# 檢查 .repositories.list 檔案是否存在
+repositories_list="$HOME/.config/list/.repositories.list"
+if [ ! -f "$repositories_list" ]; then
+    echo "錯誤：檔案 $repositories_list 不存在。請確保檔案存在並重新執行腳本。"
+    exit 1
+fi
+
 # 從 .repositories.list 檔案中讀取儲存庫名稱列表，並過濾掉空白行和註解行
-mapfile -t repos < <(grep -E -v '^\s*(#|$)' "$HOME/.config/list/.repositories.list")
+mapfile -t repos < <(grep -E -v '^\s*(#|$)' "$repositories_list")
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {

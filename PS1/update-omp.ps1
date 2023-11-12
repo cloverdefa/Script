@@ -18,14 +18,19 @@ if (Test-Path -Path $serverListPath) {
 <# 定義更新 Oh My Posh 的函式 #>
 function Update-OMP {
     param (
-        [string]$hostname
+        [string]$hostname,
+        [string]$updateCommand
     )
+
     <# 顯示正在更新的伺服器主機名稱 #>
     Write-Host "更新 $hostname 主機 oh my posh"
 
     try {
         <# 使用 SSH 命令執行 oh-my-posh 更新操作 #>
         ssh $hostname $updateCommand
+        if ($LASTEXITCODE -ne 0) {
+            throw "SSH 命令執行失敗，退出代碼：$LASTEXITCODE"
+        }
     } catch {
         <# 捕獲錯誤訊息並且顯示 #>
         Write-Host "==== 更新 $hostname 出現錯誤 ===="
@@ -59,4 +64,4 @@ if ($success) {
 }
 
 <# 结束程序，並根據成功標籤設置退出代碼 #>
-Exit $success
+return $success

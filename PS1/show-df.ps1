@@ -52,7 +52,7 @@ function Show-DiskSpace {
 }
 
 foreach ($本機 in $伺服器) {
-    Show-DiskSpace -本機 $本機
+    Show-DiskSpace -server $本機
 }
 
 <# 完成訊息 #>

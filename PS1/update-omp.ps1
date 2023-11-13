@@ -1,39 +1,39 @@
-<# PowerShell Script Updating Oh My Posh #>
+<# PowerShell 腳本更新 Oh My Posh #>
 
-<# 從 .omp.list 文件中讀取伺服器主機名稱清單，並過濾掉空白行以及注釋行 #>
-$hostnames = @()
+<# 從 .omp.list 文件中讀取伺服器主機名稱清單，並過濾掉空白行以及註解行 #>
+$主機名稱清單 = @()
 
 <# 讀取伺服器清單文件 #>
-$serverListPath = "$env:USERPROFILE\.config\list\.omp.list"
-if (Test-Path -Path $serverListPath) {
-    $内容 = Get-Content -Path $serverListPath
+$伺服器清單路徑 = "$env:USERPROFILE\.config\list\.omp.list"
+if (Test-Path -Path $伺服器清單路徑) {
+    $內容 = Get-Content -Path $伺服器清單路徑
 
-    <# 過濾掉空白行和注釋行 #>
-    $hostnames = $内容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
+    <# 過濾掉空白行和註解行 #>
+    $主機名稱清單 = $內容 | Where-Object { $_ -match '\S' -and $_ -notmatch '^\s*#' }
 } else {
-    Write-Host "伺服器清單文件不存在: $serverListPath" -ForegroundColor Red
+    Write-Host "伺服器清單文件不存在: $伺服器清單路徑" -ForegroundColor Red
     exit 1
 }
 
 <# 定義更新 Oh My Posh 的函式 #>
-function Update-OMP {
+function 更新-OMP {
     param (
-        [string]$hostname,
-        [string]$updateCommand
+        [string]$主機名稱,
+        [string]$更新命令
     )
 
     <# 顯示正在更新的伺服器主機名稱 #>
-    Write-Host "更新 $hostname 主機 oh my posh"
+    Write-Host "更新 $主機名稱 主機 oh my posh"
 
     try {
         <# 使用 SSH 命令執行 oh-my-posh 更新操作 #>
-        ssh $hostname $updateCommand
+        ssh $主機名稱 $更新命令
         if ($LASTEXITCODE -ne 0) {
             throw "SSH 命令執行失敗，退出代碼：$LASTEXITCODE"
         }
     } catch {
         <# 捕獲錯誤訊息並且顯示 #>
-        Write-Host "==== 更新 $hostname 出現錯誤 ===="
+        Write-Host "==== 更新 $主機名稱 出現錯誤 ===="
         Write-Host $_.Exception.Message
         return $false
     }
@@ -44,24 +44,24 @@ function Update-OMP {
 }
 
 <# 初始化成功標籤 #>
-$success = $true
+$成功 = $true
 
-<# 歷遍主機清單並且調用 Update-OMP 函式以執行更新操作，同時傳遞更新命令 #>
-$updateCommand = "ompu"  <# 替換為實際的更新命令路徑 #>
-$hostnames | ForEach-Object {
-    $result = Update-OMP -hostname $_ -updateCommand $updateCommand
+<# 歷遍主機清單並且調用 更新-OMP 函式以執行更新操作，同時傳遞更新命令 #>
+$更新命令 = "ompu"  <# 替換為實際的更新命令路徑 #>
+$主機名稱清單 | ForEach-Object {
+    $結果 = 更新-OMP -主機名稱 $_ -更新命令 $更新命令
     <# 檢查是否有更新錯誤，如果有，將成功標籤設置為 false #>
-    if (-not $result) {
-        $success = $false
+    if (-not $結果) {
+        $成功 = $false
     }
 }
 
 <# 顯示完成訊息 #>
-if ($success) {
+if ($成功) {
     Write-Host "全部更新操作完成"
 } else {
     Write-Host "更新出現錯誤"
 }
 
 <# 结束程序，並根據成功標籤設置退出代碼 #>
-return $success
+return $成功

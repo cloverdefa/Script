@@ -23,7 +23,7 @@ function Show-DiskSpace {
             return 1
         else
             # 顯示 df 命令輸出
-            echo -e "${YELLOW}$dfOutput${NC}"
+            echo "$dfOutput"
             sleep 1
         fi
     else

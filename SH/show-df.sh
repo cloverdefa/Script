@@ -1,13 +1,17 @@
 #!/bin/bash
 
+# 定義顏色代碼
+RED='\033[0;31m' # 红色
+GREEN='\033[0;32m' # 绿色
+YELLOW='\033[0;33m' # 黄色 
+NC='\033[0m'     # 重置颜色
+
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {
     local server="$1"
 
     # 顯示伺服器容量空間的標題
-    echo "=========================" 
-    echo "    $server 容量空間"
-    echo "========================="
+    echo -e "${YELLOW}$server 容量空間${NC}"
 
     # 使用 -o ConnectTimeout 設置連接超時為5秒
     if ssh -o ConnectTimeout=5 "$server" 'exit 0'; then
@@ -15,16 +19,16 @@ function Show-DiskSpace {
 
         if [[ "$dfOutput" == *"No route to host"* ]]; then
             # 顯示伺服器不存在的訊息
-            echo "$server 伺服器不存在"
+            echo -e "${RED}$server 伺服器不存在${NC}"
             return 1
         else
             # 顯示 df 命令輸出
-            echo "$dfOutput"
+            echo -e "${YELLOW}$dfOutput${NC}"
             sleep 1
         fi
     else
         # 顯示伺服器不存在或連接超時的訊息
-        echo "$server 伺服器不存在或連接超時"
+        echo -e "${RED}$server 伺服器不存在或連接超時${NC}"
         return 1
     fi
 }
@@ -34,7 +38,7 @@ server_list="$HOME/.config/list/.server.list"
 
 # 檢查清單列表文件是否存在
 if [ ! -f "$server_list" ]; then
-  echo "服务器列表文件不存在: $server_list"
+  echo -e "${RED}服务器列表文件不存在: $server_list${NC}"
   exit 1
 fi
 
@@ -46,9 +50,9 @@ done
 
 # 完成訊息
 if [ "$error_occurred" = true ]; then
-    echo "讀取空間出現錯誤"
+    echo -e "${RED}讀取空間出現錯誤${NC}"
 else
-    echo "讀取空間資料完成"
+    echo -e "${GREEN}讀取空間資料完成${NC}"
 fi
 
 # 結束程式

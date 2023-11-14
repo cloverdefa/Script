@@ -1,9 +1,15 @@
 #!/bin/zsh
 
+# 定義顏色代碼
+RED='\033[0;31m' # 红色
+GREEN='\033[0;32m' # 绿色
+YELLOW='\033[0;33m' # 黄色 
+NC='\033[0m'     # 重置颜色
+
 # 檢查 .repositories.list 檔案是否存在
 repositories_list="$HOME/.config/list/.repositories.list"
 if [ ! -f "$repositories_list" ]; then
-    echo "錯誤：檔案 $repositories_list 不存在。請確保檔案存在並重新執行腳本。"
+    echo -e "${RED}錯誤：檔案 $repositories_list 不存在。請確保檔案存在並重新執行腳本。${NC}"
     exit 1
 fi
 
@@ -20,20 +26,20 @@ function Git-Pull-Repo() {
 
     # 切換到主分支
     if git checkout main; then
-        echo "已成功切換到主分支"
+        echo -e "${GREEN}已成功切換到主分支${NC}"
     else
-        echo "切換到主分支時出現錯誤"
+        echo -e "${RED}切換到主分支時出現錯誤${NC}"
         exit 1 # 如果切換失敗，退出，並返回結束碼1
     fi
 
     if git remote update -p && git status -uno | grep -q '您的分支落後'; then
         if git pull; then
-            text="$text 完成，存儲庫名稱：$repo_name$"
+            echo -e "$text 完成，存儲庫名稱：${YELLOW}$repo_name ${NC}"
         else
-            text="$text 更新出現錯誤，存儲庫名稱：$repo_name"
+            echo -e "$text ${RED}更新出現錯誤，存儲庫名稱：$repo_name ${NC}"
         fi
     else
-        text="GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：$repo_name"
+        echo -e "GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：${YELLOW} $repo_name ${NC}"
     fi
 
     echo "$text"

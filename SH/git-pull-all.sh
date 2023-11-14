@@ -42,7 +42,6 @@ function Git-Pull-Repo() {
         echo -e "GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：${YELLOW} $repo_name ${NC}"
     fi
 
-    echo "$text"
     echo "----------------------------------------------------------------------"
 }
 

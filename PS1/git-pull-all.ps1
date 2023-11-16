@@ -1,4 +1,4 @@
-<# PowerShell Script git pull all #>
+<# PowerShell Script git pull all Repositories #>
 
 <# 記錄當下原始路徑 #>
 $originalLocation = Get-Location

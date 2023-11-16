@@ -18,7 +18,7 @@ if (Test-Path -Path $serverListPath) {
 <# 定義顯示磁碟空間的函數 #>
 function Show-DiskSpace {
     param (
-        [string]$server
+        [string]$伺服器
     )
 
     <# 顯示伺服器名稱和時間戳記 #>

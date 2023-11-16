@@ -1,4 +1,4 @@
-<# PowerShell Script Youtube Downloading #>
+<# PowerShell Script Youtube Download #>
 
 <# 顯示提示訊息 #>
 Write-Host "影片下載工具 yt-dlp" -ForegroundColor Yellow

@@ -28,7 +28,7 @@ function Git-Pull-Repo() {
     if git checkout main; then
         echo -e "${GREEN}已成功切換到主分支${NC}"
     else
-        echo -e "${RED}切換到主分支時出現錯誤${NC}"
+        echo -e "${RED}錯誤：切換到主分支時出現錯誤 $repo_path ${NC}"
         exit 1 # 如果切換失敗，退出，並返回結束碼1
     fi
 

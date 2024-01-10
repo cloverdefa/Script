@@ -7,7 +7,7 @@ YELLOW='\033[0;33m' # 黄色
 NC='\033[0m'     # 重置颜色
 
 # 定義Oh My Posh 系統平台
-POSH=posh-linux-amd64 # posh-linux-arm64
+POSH=posh-linux-amd64
 
 # 定義版本比較函式
 version_compare() {

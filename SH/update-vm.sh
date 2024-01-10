@@ -12,7 +12,7 @@ function update_vm_on_server {
   echo -e "${YELLOW}連接到 $server${NC}"
   
   # 透過 SSH 連接至遠端伺服器，執行一系列指令
-  ssh "$server" 'update-vm'
+  ssh "$server" 'do-update'
 
   ssh_result=$?
   

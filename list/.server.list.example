@@ -1,0 +1,6 @@
+# 放置 .server.list 檔案到 $HOME\.config\list 目錄下
+server_name_1
+server_name_2
+server_name_3
+server_name_4
+server_name_5

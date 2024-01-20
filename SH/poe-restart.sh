@@ -22,7 +22,7 @@ CONFIG_COMMANDS=(
 
 # 使用SSH金鑰認證連接和配置遠程設備
 ssh -i "$SSH_KEY" "$SSH_USER"@"$SSH_HOST" << EOF
-    for cmd in "\${CONFIG_COMMANDS[@]}"; do
+    for cmd in "${CONFIG_COMMANDS[@]}"; do
         echo "\$cmd"
         sleep 1
     done

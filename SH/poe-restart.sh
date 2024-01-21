@@ -3,7 +3,7 @@
 # 遠程設備的SSH設定
 SSH_HOST="switch-core"  # 設定SSH主機名稱或IP地址
 SSH_USER="cloverdefa"  # 設定SSH用戶名
-SSH_KEY="~/.ssh/id_rsa"  # 私鑰文件的路徑
+SSH_KEY="$HOME/.ssh/id_rsa"  # 私鑰文件的路徑
 
 # 設置命令
 CONFIG_COMMANDS=(
@@ -23,8 +23,13 @@ CONFIG_COMMANDS=(
 # 使用SSH金鑰認證連接和配置遠程設備
 ssh -i "$SSH_KEY" "$SSH_USER"@"$SSH_HOST" << EOF
     for cmd in "${CONFIG_COMMANDS[@]}"; do
-        echo "\$cmd"
+        echo "$cmd"
         sleep 1
+        $cmd
+        if [ $? -ne 0 ]; then
+            echo "命令 '$cmd' 執行失敗。"
+            exit 1
+        fi
     done
     exit
 EOF

@@ -23,10 +23,10 @@ function Git-Pull-Repo() {
     local text="$repo_name$ 拉取遠端資料"
 
     cd "$repo_path" || exit 1 # 切換到存儲庫目錄如果切換失敗，退出，並返回結束碼1
+    echo -e "${GREEN}儲存庫名稱 $repo_name ${NC}"
 
     # 切換到主分支
     if git checkout main; then
-        echo -e "${GREEN}儲存庫名稱 $repo_name ${NC}"
         echo -e "${GREEN}已成功切換到主分支${NC}"
     else
         echo -e "${RED}錯誤：切換到主分支時出現錯誤 $repo_path ${NC}"

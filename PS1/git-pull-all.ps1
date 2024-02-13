@@ -25,6 +25,8 @@ foreach ($repository in $repositories) {
     <# 構建完整的儲存庫路徑 #>
     $localRepositoryPath = Join-Path -Path $localRepositoryRoot -ChildPath $repository
 
+    Set-Location -Path $localRepositoryPath
+
     <# 检查是否需要切换到 main 分支 #>
     $currentBranch = git rev-parse --abbrev-ref HEAD
 

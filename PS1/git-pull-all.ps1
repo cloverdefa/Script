@@ -25,6 +25,12 @@ foreach ($repository in $repositories) {
     <# 構建完整的儲存庫路徑 #>
     $localRepositoryPath = Join-Path -Path $localRepositoryRoot -ChildPath $repository
 
+    # 檢查目錄是否存在，如果不存在就創建
+    if (-not (Test-Path $localRepositoryPath)) {
+        Write-Host "創建目錄: $localRepositoryPath" -ForegroundColor Cyan
+        New-Item -ItemType Directory -Force -Path $localRepositoryPath
+    }
+
     Set-Location -Path $localRepositoryPath
 
     <# 检查是否需要切换到 main 分支 #>

@@ -33,7 +33,7 @@ function Git-Pull-Repo() {
         exit 1 # 如果切換失敗，退出程式，並返回結束碼1
     fi
 
-    if git remote update -p && git status -uno | grep -q 'Your branch is behind'; then
+    if git remote update -p && git status -uno | grep -q '您的分支落後'; then
         if git pull; then
             echo -e "$text 完成，存儲庫名稱：${YELLOW}$repo_name ${NC}"
         else

@@ -9,7 +9,7 @@ cache_path = os.path.join(home_path, 'hath', 'cache')
 def copy_and_rename_files(folder_path):
     rename_folder = os.path.join(folder_path, 'rename')
 
-    # Create 'rename' folder if it doesn't exist
+    # 如果不存在，則創建“rename”文件夾。
     if not os.path.exists(rename_folder):
         os.makedirs(rename_folder)
 
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         copy_and_rename_files(cache_path)
         print("檔案複製成功。")
         
-        # Now rename the copied files
+        # 現在重新命名複製的文件。
         rename_files(cache_path)
         print("任務成功完成。")
     else:

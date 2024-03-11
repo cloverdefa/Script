@@ -11,15 +11,10 @@ NC='\033[0m'     # 重置颜色
 yt_dlp_path="$HOME/github/Script/SH/yt-dlp_linux"
 
 # 設定下載路徑 download 資料夾
-download_path="/mnt/c/Users/clove/Desktop"
+windows_desktop_path="$(wslpath "$(wslvar USERPROFILE)")/Desktop"
+download_path="$windows_desktop_path"
 
-# 顯示資料夾是否存在的消息
-if [ ! -d "$download_path" ]; then
-    echo -e "${YELLOW}資料夾 $download_path 不存在...${NC}"
-    exit 1
-else
-    echo -e "${GREEN}切換至影片下載資料夾${NC}"
-fi
+echo -e "${GREEN}切換至影片下載資料夾${NC}"
 
 if [ -f "$yt_dlp_path" ] && [ -x "$yt_dlp_path" ]; then
     echo -e "${GREEN}影片下載工具已安裝${NC}"
@@ -36,11 +31,6 @@ read -p '輸入影片網址:' domain
 if [ -z "$domain" ]; then
     echo -e "${RED}錯誤: 影片網址不能為空${NC}"
     exit 1
-fi
-
-# 確保目錄存在，發生錯誤則提示
-if [ ! -d "$download_path" ]; then
-    echo -e "${YELLOW}下載路徑不存在請檢察路徑  ${NC}"
 fi
 
 # 下載影片至使用者的 download 目錄

@@ -32,14 +32,14 @@ if [ -z "$domain" ]; then
     exit 1
 fi
 
-# 下載影片至使用者的 download 目錄
-"$yt_dlp_path" "$domain" -S "ext:mp4:m4a" -o "$download_path/%(title)s.%(ext)s"
+# 下載影片及簡體中文字幕至使用者的 download 目錄
+"$yt_dlp_path" "$domain" -S "ext:mp4:m4a" --write-sub --sub-lang zh-Hans -o "$download_path/%(title)s.%(ext)s"
 
 # 檢查 yt-dlp 命令是否成功執行
 if [ $? -eq 0 ]; then
-    echo -e "${GREEN}影片下載完成${NC}"
+    echo -e "${GREEN}影片及字幕下載完成${NC}"
 else
-    echo -e "${RED}錯誤: 影片下載失敗${NC}"
+    echo -e "${RED}錯誤: 影片及字幕下載失敗${NC}"
     exit 1
 fi
 

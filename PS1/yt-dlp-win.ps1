@@ -6,9 +6,7 @@ Write-Host "輸入 Ctrl+C 取消下載"
 
 # 檢查 yt-dlp.exe 是否存在於 $HOME\OneDrive\文件\.bin
 $ytDlpPath = Join-Path $env:USERPROFILE 'OneDrive\文件\.bin\yt-dlp.exe'
-if (Test-Path $ytDlpPath) {
-    Write-Host "yt-dlp.exe 已經存在於 $ytDlpPath" -ForegroundColor Green
-} else {
+if (-not (Test-Path $ytDlpPath)) {
     Write-Host "錯誤: yt-dlp.exe 未找到於 $ytDlpPath" -ForegroundColor Yellow
     Exit 1
 }

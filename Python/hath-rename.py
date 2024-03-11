@@ -3,7 +3,7 @@ import shutil
 import re
 
 home_path = os.path.expanduser("~")
-cache_path = os.path.join(home_path, 'hath', 'cache')
+cache_path = os.path.join(home_path, 'Downloads', 'hath', 'cache')
 
 # 新增路徑檢查
 if not os.path.exists(cache_path):

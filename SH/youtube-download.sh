@@ -11,8 +11,7 @@ NC='\033[0m'     # 重置颜色
 yt_dlp_path="$HOME/github/Script/SH/yt-dlp_linux"
 
 # 設定下載路徑 download 資料夾
-windows_desktop_path=$(wsl wslpath "$(cmd.exe /c echo %USERPROFILE%)")/Desktop
-download_path="$windows_desktop_path"
+download_path="/mnt/c/Users/clove/Desktop"
 
 echo -e "${GREEN}切換至影片下載資料夾${NC}"
 

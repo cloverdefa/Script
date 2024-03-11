@@ -38,8 +38,8 @@ if [ -z "$domain" ]; then
     exit 1
 fi
 
-# 確保目錄存在，不存在則創建
-if [ !-d "$download_path" ]; then
+# 確保目錄存在，發生錯誤則提示
+if [ ! -d "$download_path" ]; then
     echo -e "${YELLOW}下載路徑不存在請檢察路徑  ${NC}"
 fi
 

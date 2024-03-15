@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# 提示用户输入 CodeGPT 下载链接
+# 提示使用者輸入 CodeGPT 下載連結
 read -p "請輸入 CodeGPT 下載的連結: " url
 
-# 获取远程文件的版本信息
+# 獲取遠端CodeGPT版本
 remote_version=$(wget -qO- $url | grep -o 'x-amz-meta-version: [0-9.]*' | cut -d ' ' -f 2)
 
-# 获取本地文件的版本信息
+# 獲取本地CodeGPT版本
 local_version=$(codegpt version | awk '{print $3}')
 
-# 比较远程版本和本地版本
+# 比較遠端與本地的版本
 IFS='.' read -ra remote_parts <<< "$remote_version"
 IFS='.' read -ra local_parts <<< "$local_version"
 update_needed=false
@@ -24,16 +24,16 @@ for i in "${!remote_parts[@]}"; do
 done
 
 if [ "$update_needed" = true ]; then
-    # 下载文件并命名为codegpt
+    # 下載檔案並命名為codegpt
     wget -O codegpt "$url"
 
-    # 赋予可执行权限
+    # 賦予可執行權限
     chmod +x codegpt
 
-    # 将文件移动到/usr/local/bin路径
+    # 將檔案移動到/usr/local/bin路徑下
     sudo mv codegpt /usr/local/bin/
 
-    echo "已下载新版本的 CodeGPT，并已移动到 /usr/local/bin 路径下"
+    echo "已下载新版本的 CodeGPT，並移動到 /usr/local/bin 路徑下"
 else
-    echo "已存在本地最新版本的 CodeGPT，无需更新"
+    echo "已存在本地最新版本的 CodeGPT，無須更新"
 fi

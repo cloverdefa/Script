@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 # 提示使用者輸入 CodeGPT 下載連結
 read -p "請輸入 CodeGPT 下載的連結: " url

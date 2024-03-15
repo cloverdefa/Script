@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 # 定義顏色代碼
 RED='\033[0;31m' # 红色

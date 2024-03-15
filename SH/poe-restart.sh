@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 # 遠程設備的SSH設定
 SSH_HOST="switch-core"  # 設定SSH主機名稱或IP地址

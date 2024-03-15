@@ -1,4 +1,5 @@
-#!/bin/bash
+#! /usr/bin/env bash
+
 set -e
 
 # 定義顏色代碼

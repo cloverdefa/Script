@@ -10,7 +10,7 @@ remote_version=$(wget -qO- $url | grep -o 'x-amz-meta-version: [0-9.]*' | cut -d
 local_version=$(codegpt version | awk '{print $3}')
 
 # 比較遠端版本與本地版本
-if [[ "$(printf '%s\n' "$remote_version" "$local_version" | sort -V | head -n1)" == "$remote_version" ]]; then
+if (( $(echo "$remote_version > $local_version" | bc -l) )); then
     # 下載檔案並命名為codegpt
     wget -O codegpt "$url"
 
@@ -20,7 +20,7 @@ if [[ "$(printf '%s\n' "$remote_version" "$local_version" | sort -V | head -n1)"
     # 將檔案移動到/usr/local/bin路徑下
     sudo mv codegpt /usr/local/bin/
 
-    echo "已下载新版本的 CodeGPT，并已移动到 /usr/local/bin 路徑下"
+    echo "已下载新版本的 CodeGPT，并已移动到 /usr/local/bin 路径下"
 else
     echo "已存在本地最新版本的 CodeGPT，无需更新"
 fi

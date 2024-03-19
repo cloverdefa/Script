@@ -1,5 +1,6 @@
 # 忽略檔案
 *.list
+.python-version
 portry.lock
 pyproject.toml
 

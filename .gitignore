@@ -1,2 +1,7 @@
 # 忽略檔案
 *.list
+portry.lock
+pyproject.toml
+
+# 忽略資料夾
+.venv/

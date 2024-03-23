@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # 比較遠端與本地的版本
 IFS='.' read -ra remote_parts <<< "$remote_version"
 IFS='.' read -ra local_parts <<< "$local_version"

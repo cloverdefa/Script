@@ -1,4 +1,4 @@
-#! /usr/bin/env bash
+#!/usr/bin/env bash
 
 # Update all packages of operating system to latest.
 # for displaying upgradeable package count at startup

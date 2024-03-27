@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+# 提示使用者輸入 CodeGPT 下載連結
+read -p "請輸入 CodeGPT 下載的連結: " url
+
+# 獲取遠端CodeGPT版本
+remote_version=$(wget -qO- $url | grep -o 'x-amz-meta-version: [0-9.]*' | cut -d ' ' -f 2)
+
+# 獲取本地CodeGPT版本
+local_version=$(codegpt version | awk '{print $3}')
+
 # 比較遠端與本地的版本
 IFS='.' read -ra remote_parts <<< "$remote_version"
 IFS='.' read -ra local_parts <<< "$local_version"

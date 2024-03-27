@@ -14,16 +14,17 @@ IFS='.' read -ra remote_parts <<< "$remote_version"
 IFS='.' read -ra local_parts <<< "$local_version"
 update_needed=false
 
-# 比較主要版本號
-if [[ "${remote_parts[0]}" -gt "${local_parts[0]}" ]]; then
+# 比較主要版本號碼
+if [ "${remote_parts[0]}" -gt "${local_parts[0]}" ]; then
     update_needed=true
-# 如果主要版本號相同，則比較次要版本號
-elif [[ "${remote_parts[0]}" -eq "${local_parts[0]}" && "${remote_parts[1]}" -gt "${local_parts[1]}" ]]; then
+# 如果主要版本號碼相同，比較次要版本號碼
+elif [ "${remote_parts[0]}" -eq "${local_parts[0]}" ] && [ "${remote_parts[1]}" -gt "${local_parts[1]}" ]; then
     update_needed=true
-# 如果次要版本號也相同，則比較修訂版本號
-elif [[ "${remote_parts[0]}" -eq "${local_parts[0]}" && "${remote_parts[1]}" -eq "${local_parts[1]}" && "${remote_parts[2]}" -gt "${local_parts[2]}" ]]; then
+# 如果次要版本號碼相同，比較修訂版本號碼
+elif [ "${remote_parts[0]}" -eq "${local_parts[0]}" ] && [ "${remote_parts[1]}" -eq "${local_parts[1]}" ] && [ "${remote_parts[2]}" -gt "${local_parts[2]}" ]; then
     update_needed=true
 fi
+
 
 if [ "$update_needed" = true ]; then
     # 下載檔案並命名為codegpt

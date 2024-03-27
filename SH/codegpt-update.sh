@@ -4,22 +4,28 @@
 read -p "請輸入 CodeGPT 下載的連結: " url
 
 # 獲取遠端 CodeGPT 版本
+echo "正在從遠端獲取版本號..."
 remote_version=$(wget -qO- "$url" | grep -o 'x-amz-meta-version: [0-9.]*' | cut -d ' ' -f 2)
 
-# 检查远程版本是否成功获取
+# 檢查是否成功獲取遠端版本號
 if [ -z "$remote_version" ]; then
-    echo "无法获取远程版本号，请检查链接和网络连接。"
+    echo "無法從遠端獲取版本號，請檢查連結和網路連接。"
     exit 1
 fi
+
+echo "遠端版本號為: $remote_version"
 
 # 獲取本地 CodeGPT 版本
+echo "正在獲取本地版本號..."
 local_version=$(codegpt version | awk '{print $3}')
 
-# 检查本地版本是否成功获取
+# 檢查是否成功獲取本地版本號
 if [ -z "$local_version" ]; then
-    echo "无法获取本地版本号，请确保 codegpt 命令可用。"
+    echo "無法從本地獲取版本號，請確保 codegpt 命令可用。"
     exit 1
 fi
+
+echo "本地版本號為: $local_version"
 
 # 比較遠端與本地的版本
 IFS='.' read -ra remote_parts <<< "$remote_version"

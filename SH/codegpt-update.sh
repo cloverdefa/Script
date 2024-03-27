@@ -1,32 +1,30 @@
 #!/usr/bin/env bash
 
-# 比較遠端與本地的版本
-IFS='.' read -ra remote_parts <<< "$remote_version"
-IFS='.' read -ra local_parts <<< "$local_version"
-update_needed=false
+# 提示使用者輸入 CodeGPT 下載連結
+read -p "請輸入 CodeGPT 下載的連結: " url
 
-# 比較主要版本號
-if [[ "${remote_parts[0]}" -gt "${local_parts[0]}" ]]; then
-    update_needed=true
-# 如果主要版本號相同，則比較次要版本號
-elif [[ "${remote_parts[0]}" -eq "${local_parts[0]}" && "${remote_parts[1]}" -gt "${local_parts[1]}" ]]; then
-    update_needed=true
-# 如果次要版本號也相同，則比較修訂版本號
-elif [[ "${remote_parts[0]}" -eq "${local_parts[0]}" && "${remote_parts[1]}" -eq "${local_parts[1]}" && "${remote_parts[2]}" -gt "${local_parts[2]}" ]]; then
-    update_needed=true
+# 提取版本號碼
+version=$(echo "$url" | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+')
+
+# 檢查版本號碼是否成功提取
+if [ -z "$version" ]; then
+    echo "無法從連結中提取版本號碼，請確保連結格式正確。"
+    exit 1
 fi
 
-if [ "$update_needed" = true ]; then
-    # 下載檔案並命名為codegpt
-    wget -O codegpt "$url"
+echo "遠端版本號碼為: $version"
 
-    # 賦予可執行權限
+# 本地版本號碼
+local_version="0.9.0"  # 這裡使用示例版本號碼，實際情況應該是你的本地版本號碼
+
+# 比較遠端與本地的版本
+if [ "$version" != "$local_version" ]; then
+    # 下載檔案並移動到 /usr/local/bin
+    wget -qO codegpt "$url"
     chmod +x codegpt
-
-    # 將檔案移動到/usr/local/bin路徑下
     sudo mv codegpt /usr/local/bin/
 
-    echo "已下载新版本的 CodeGPT，並移動到 /usr/local/bin 路徑下"
+    echo "已下載新版本的 CodeGPT，並移動到 /usr/local/bin 路徑下"
 else
-    echo "已存在本地最新版本的 CodeGPT，無須更新"
+    echo "本地已是最新版本的 CodeGPT，無需更新"
 fi

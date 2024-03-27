@@ -23,8 +23,10 @@ url="https://github.com/appleboy/CodeGPT/releases/download/v${version}/CodeGPT-$
 
 echo "下載連結為: $url"
 
-# 本地版本號碼
-local_version="0.9.0"  # 這裡使用示例版本號碼，實際情況應該是你的本地版本號碼
+# 取得本地版本號碼
+local_version=$(codegpt version | awk '{print $2}')
+
+echo "本地版本號碼為: $local_version"
 
 # 比較遠端與本地的版本
 if [ "$version" != "$local_version" ]; then

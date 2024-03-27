@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin//env bash
 
 # 提示使用者輸入版本號碼
 read -p "請輸入 CodeGPT 的版本號碼（例如arm 0.10.0）: " input
@@ -19,7 +19,7 @@ echo "版本號碼為: $version"
 echo "架構為: $arch"
 
 # 組合修改的連結
-url="https://github.com/appleboy/CodeGPT/releases/download/v${version}/CodeGPT-${version}-linux-${arch}"
+url="https://github.com/appleboy/CodeGPT/releases/download/v${version}/CodeGPT-${version}-linux-${arch}64"
 
 echo "下載連結為: $url"
 

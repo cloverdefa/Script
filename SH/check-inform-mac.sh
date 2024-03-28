@@ -3,7 +3,7 @@
 # 檢查檔案是否存在
 if [ -f ~/.config/list/.unifi.list ]; then
     # 讀取檔案內容並存儲到陣列中
-    readarray -t hosts < ~/.config/list/.unifi.list
+    IFS=$'\n' read -r -d '' -a hosts < ~/.config/list/.unifi.list
 
     # 遍歷目標機器清單
     for host in "${hosts[@]}"; do

@@ -44,10 +44,9 @@ if ($version -ne $local_version) {
     $choice = Read-Host "檢測到新版本的 CodeGPT，是否要下載並更新到新版本？(Y/N)"
     if ($choice -eq "Y" -or $choice -eq "y") {
         # 下載檔案並移動到 /usr/local/bin
-        Invoke-WebRequest -Uri $url -OutFile "codegpt.exe"
-        Move-Item -Path "codegpt.exe" -Destination "C:\Users\clove\github\Script\PS1\codegpt.exe"
+        Invoke-WebRequest -Uri $url -OutFile "$env:UserProfile\OneDrive\文件\.bin\codegpt.exe"
 
-        Write-Host "已下載新版本的 CodeGPT，並移動到 C:\Users\clove\github\Script\PS1\codegpt.exe"
+        Write-Host "已下載新版本的 CodeGPT，並移動到 $env:UserProfile\OneDrive\文件\.bin"
     }
     else {
         Write-Host "已取消下載和更新操作"

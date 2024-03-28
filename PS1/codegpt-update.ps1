@@ -1,51 +1,57 @@
+#!/usr/bin/env bash
+
 # 提示使用者輸入版本號碼
-$input = Read-Host "請輸入 CodeGPT 的版本號碼（例如amd 0.10.0）"
+read -p "請輸入 CodeGPT 的版本號碼（例如amd 0.10.0）: " input
 
-# 從輸入中提取版本號碼和架構
-$arch = ($input -split ' ')[0]
-$version = ($input -split ' ')[1]
+# 從輸入中提取版本號碼
+version=$(echo "$input" | awk '{print $2}')
 
-# 構建下載連結
-$url = "https://github.com/appleboy/CodeGPT/releases/download/v$version/CodeGPT-$version-windows-$arch.exe"
+# 檢查版本號碼是否成功提取
+if [[ -z "$version" || ! "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+    echo "無法從輸入中提取版本號碼，請確保輸入格式正確（例如：amd 0.10.0）。"
+    exit 1
+fi
 
-# 獲取本地版本號碼
-$localVersionOutput = & codegpt version
-$localVersion = ($localVersionOutput -split ': ')[1]
+# 提取架構
+arch=$(echo "$input" | awk '{print $1}')
 
-# 比較版本函數
-function Compare-Versions {
-    param($version1, $version2)
-    $version1Parts = $version1 -split '\.'
-    $version2Parts = $version2 -split '\.'
+echo "版本號碼為: $version"
+echo "架構為: $arch"
 
-    for ($i = 0; $i -lt $version1Parts.Count; $i++) {
-        if ($version1Parts[$i] -gt $version2Parts[$i]) {
-            return 1
-        } elseif ($version1Parts[$i] -lt $version2Parts[$i]) {
-            return -1
-        }
-    }
-    return 0
-}
+# 根據架構添加後綴
+if [ "$arch" == "amd" ]; then
+    arch_suffix="amd64.exe"
+elif [ "$arch" == "arm" ]; then
+    arch_suffix="arm64.exe"
+else
+    echo "不支援的架構"
+    exit 1
+fi
 
-# 比較本地版本與用戶輸入的版本
-$compareResult = Compare-Versions $version $localVersion
-if ($compareResult -gt 0) {
-    Write-Host "已檢測到新版本的 CodeGPT"
-    $confirmation = Read-Host "是否要下載並更新到新版本？ (輸入 'y' 確認)"
-    if ($confirmation -eq 'y') {
-        # 下載檔案並保存為 codegpt_new.exe
-        Invoke-WebRequest -Uri $url -OutFile "codegpt_new.exe"
+# 組合修改的連結
+url="https://github.com/appleboy/CodeGPT/releases/download/v${version}/CodeGPT-${version}-windows-${arch_suffix}"
 
-        # 移動新檔案到目標位置
-        $destinationPath = "$env:USERPROFILE\OneDrive\文件\.bin\codegpt.exe"
-        Move-Item -Path "codegpt_new.exe" -Destination $destinationPath -Force
-        Write-Host "已下載新版本的 CodeGPT，並已移動到 '$destinationPath' 路徑下"
-    } else {
-        Write-Host "已取消下載和更新操作"
-    }
-} elseif ($compareResult -eq 0) {
-    Write-Host "本地已是最新版本的 CodeGPT，無需更新"
-} else {
-    Write-Host "本地版本高於輸入版本，邏輯錯誤"
-}
+echo "下載連結為: $url"
+
+# 取得本地版本號碼
+local_version=$(codegpt version | awk '{print $2}')
+
+echo "本地版本號碼為: $local_version"
+
+# 比較遠端與本地的版本
+if [ "$version" != "$local_version" ]; then
+    # 提示使用者是否要下載並更新版本
+    read -p "檢測到新版本的 CodeGPT，是否要下載並更新到新版本？(Y/N): " choice
+    if [[ $choice == "Y" || $choice == "y" ]]; then
+        # 下載檔案並移動到 /usr/local/bin
+        wget -qO codegpt "$url"
+        chmod +x codegpt
+        sudo mv codegpt /usr/local/bin/
+
+        echo "已下載新版本的 CodeGPT，並移動到 /usr/local/bin 路徑下"
+    else
+        echo "已取消下載和更新操作"
+    fi
+else
+    echo "本地已是最新版本的 CodeGPT，無需更新"
+fi

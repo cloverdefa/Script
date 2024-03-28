@@ -53,5 +53,5 @@ if ($version -ne $local_version) {
     }
 }
 else {
-    Write-Host "本地已是最新版本的 CodeGPT，無需更新"
+    Write-Host "本地版本號碼為: $local_version，已是最新版本的 CodeGPT，無需更新"
 }

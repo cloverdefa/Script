@@ -53,5 +53,5 @@ if [ "$version" != "$local_version" ]; then
         echo "已取消下載和更新操作"
     fi
 else
-    echo "本地版本號碼為: ${local_version}，已是最新版本的 CodeGPT，無需更新"
+    echo "本地已是最新版本的 CodeGPT，無需更新"
 fi

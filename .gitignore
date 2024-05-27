@@ -1,0 +1,9 @@
+# 忽略檔案
+*.list
+.python-version
+poetry.lock
+pyproject.toml
+
+# 忽略資料夾
+.venv/
+.vscode/

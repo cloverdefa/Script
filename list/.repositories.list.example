@@ -1,0 +1,6 @@
+# 放置 .repositories.list 檔案到 $HOME\.config\list 目錄下
+repositories 1
+repositories 2
+repositories 3
+repositories 4
+repositories 5

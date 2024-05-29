@@ -4,7 +4,7 @@
 BIN_DIR="$HOME/bin"
 YTDLP_LINUX="$BIN_DIR/yt-dlp_linux"
 YTDLP_LINUX_AARCH64="$BIN_DIR/yt-dlp_linux_aarch64"
-RELEASE_URL="https://github.com/yt-dlp/yt-dlp/releases/latest"
+API_URL="https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest"
 
 # 檢查yt-dlp版本
 check_version() {
@@ -18,7 +18,7 @@ check_version() {
 
 # 取得遠端最新版本號
 get_latest_version() {
-	curl -sL $RELEASE_URL | grep -oP 'yt-dlp/yt-dlp/releases/tag/\K[^\"]+'
+	curl -sL $API_URL | jq -r '.tag_name'
 }
 
 # 下載最新版本

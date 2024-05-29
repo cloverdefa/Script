@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # 設定變數
 BIN_DIR="$HOME/bin"
@@ -6,7 +6,7 @@ YTDLP_LINUX="$BIN_DIR/yt-dlp_linux"
 YTDLP_LINUX_AARCH64="$BIN_DIR/yt-dlp_linux_aarch64"
 RELEASE_URL="https://github.com/yt-dlp/yt-dlp/releases/latest"
 
-# 檢查yt-dlp版本
+# 檢查 yt-dlp 版本
 check_version() {
 	local file=$1
 	if [ -f "$file" ]; then
@@ -18,7 +18,7 @@ check_version() {
 
 # 取得遠端最新版本號
 get_latest_version() {
-	curl -sL "$RELEASE_URL" | grep -oP 'yt-dlp/yt-dlp/releases/tag/\K[^"]+'
+	curl -sL "$RELEASE_URL" | grep -oP 'yt-dlp/releases/tag/\K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1
 }
 
 # 下載最新版本
@@ -64,7 +64,7 @@ if [ "$latest_version" != "$local_version" ]; then
 	if [[ "$response" =~ ^[Yy]$ ]]; then
 		echo "開始下載..."
 		download_latest_version "$arch" "$latest_version"
-		echo "下載完成並更新yt-dlp至最新版本"
+		echo "下載完成並更新 yt-dlp 至最新版本"
 	else
 		echo "取消更新"
 	fi

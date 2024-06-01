@@ -31,7 +31,7 @@ if [ "$latest_version" != "$local_version" ]; then
 			# 下載檔案並移動到 $HOME/bin
 			wget -qO codegpt "$url"
 			chmod +x codegpt
-			mv codegpt "$HOME/bin/"
+			mv codegpt "$HOME/.local/bin/"
 			echo "已下載新版本的 CodeGPT，並移動到 ~/bin 路徑下"
 			break
 			;;

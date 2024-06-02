@@ -9,7 +9,7 @@ YELLOW=$'\033[0;33m' # 黃色
 NC=$'\033[0m'        # 重置顏色
 
 # 設定 yt-dlp 程式位置
-yt_dlp_path="/usr/local/bin/yt-dlp_linux"
+yt_dlp_path="$HOME/.local/bin/yt-dlp_linux"
 
 # 設定下載路徑 download 資料夾
 download_path="/mnt/c/Users/clove/Desktop"

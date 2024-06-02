@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 設定變數
-BIN_DIR="$HOME/bin"
+BIN_DIR="$HOME/.local/bin"
 YTDLP_LINUX="$BIN_DIR/yt-dlp_linux"
 YTDLP_LINUX_AARCH64="$BIN_DIR/yt-dlp_linux_aarch64"
 RELEASE_URL="https://github.com/yt-dlp/yt-dlp/releases/latest"

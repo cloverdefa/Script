@@ -28,11 +28,11 @@ if [ "$latest_version" != "$local_version" ]; then
 		read -r -p "檢測到新版本的 CodeGPT，是否要下載並更新到新版本？(Y/N): " choice
 		case "$choice" in
 		[Yy]*)
-			# 下載檔案並移動到 $HOME/bin
+			# 下載檔案並移動到 $HOME/.local/bin
 			wget -qO codegpt "$url"
 			chmod +x codegpt
 			mv codegpt "$HOME/.local/bin/"
-			echo "已下載新版本的 CodeGPT，並移動到 ~/bin 路徑下"
+			echo "已下載新版本的 CodeGPT，並移動到 ~/.local/bin 路徑下"
 			break
 			;;
 		[Nn]*)

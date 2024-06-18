@@ -8,30 +8,24 @@ NC='\033[0m'     # 重置颜色
 
 # 定義顯示磁碟空間的函數
 function Show-DiskSpace {
-local server="$1"
+    local server="$1"
 
     # 顯示伺服器容量空間的標題
     echo -e "${YELLOW}$server 容量空間${NC}"
 
-    # 使用 gtimeout 設置連接超時為10秒
-    if gtimeout 10s ssh "$server" 'exit 0'; then
-      dfOutput=$(ssh "$server" 'LC_ALL=C df -h')
+    # 嘗試連接伺服器並顯示 df 命令的輸出
+    dfOutput=$(ssh -o ConnectTimeout=10 "$server" 'LC_ALL=C df -h')
 
-      if [[ "$dfOutput" == *"No route to host"* ]]; then
-        # 顯示伺服器不存在的訊息
-        echo -e "${RED}$server 伺服器不存在${NC}"
+    if [[ $? -ne 0 ]]; then
+        # 顯示連接失敗的訊息
+        echo -e "${RED}$server 連接失敗${NC}"
         return 1
-      else
+    else
         # 顯示 df 命令輸出
         echo "$dfOutput"
         sleep 1
-      fi
-    else
-      # 顯示連接超時的訊息
-      echo -e "${RED}$server 連接超時${NC}"
-      return 1
     fi
-  }
+}
 
 # 讀取伺服器清單文件
 server_list="$HOME/.config/list/.server.list"

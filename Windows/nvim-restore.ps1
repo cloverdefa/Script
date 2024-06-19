@@ -2,4 +2,4 @@
 rm -Force "$env:LOCALAPPDATA\nvim"
 rm -Force "$env:LOCALAPPDATA\nvim-data"
 
-gh repo clone nvim-win "$env:LOCALAPPDATA\nvim"
+git clone https://github.com/cloverdefa/nvim-win "$env:LOCALAPPDATA\nvim"

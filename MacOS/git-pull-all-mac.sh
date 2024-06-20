@@ -17,14 +17,14 @@ fi
 repos=($(grep -E -v '^\s*(#|$)' "$repositories_list"))
 
 # 添加 dotfiles 儲存庫
-repos+=("dotfiles")
+repos+=(".dotfiles")
 
 # 使用函數來執行操作更新
 function Git-Pull-Repo {
   local repo_name="$1"
   local repo_path="$HOME/Documents/github/$repo_name" # 使用$HOME環境變數
-  if [ "$repo_name" = "dotfiles" ]; then
-    repo_path="$HOME/$repo_name" # 對於dotfiles儲存庫，路徑是$HOME/dotfiles
+  if [ "$repo_name" = ".dotfiles" ]; then
+    repo_path="$HOME/$repo_name" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
   fi
   local text="$repo_name 拉取遠端資料"
 

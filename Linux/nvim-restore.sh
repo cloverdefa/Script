@@ -7,13 +7,8 @@ sudo rm -r ~/.local/state/nvim 2>/dev/null || true
 sudo rm -r ~/.cache/nvim 2>/dev/null || true
 
 # 安全地切換到 .config 目錄
-if cd ~/.config; then
-    # 如果成功切換目錄，則克隆 nvim 倉庫
-    gh repo clone nvim
-else
-    echo "切換到 ~/.config 目錄失敗" >&2
-    exit 1
+if [ -d ~/.dotfiles/nvim ]; then
+	stow ~/.dotfiles/nvim
 fi
 
 exit 0
-

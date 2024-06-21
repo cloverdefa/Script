@@ -39,10 +39,10 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 source ~/.profile
 
 # 使用 pyenv 安裝 Python 3.12.3
-pyenv install 3.12.3
+pyenv install 3.12.4
 
 # 設定全局 Python 版本為 3.12.3
-pyenv global 3.12.3
+pyenv global 3.12.4
 
 # 安裝 pynvim 和 debugpy
 pip install pynvim debugpy

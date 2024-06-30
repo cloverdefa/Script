@@ -11,6 +11,8 @@ if command -v stow &>/dev/null; then
 	if [ -d ~/.dotfiles/nvim ]; then
 		cd ~/.dotfiles && stow nvim
 	fi
+else
+	echo "未發現安裝STOW"
 fi
 
 exit 0

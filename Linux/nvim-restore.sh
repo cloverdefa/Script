@@ -9,7 +9,7 @@ rm -rf ~/.cache/nvim 2>/dev/null || true
 # 安全地切換到 .config 目錄
 if command -v stow &>/dev/null; then
 	if [ -d ~/.dotfiles/nvim ]; then
-		stow ~/.dotfiles/nvim
+		cd ~/.dotfiles && stow nvim
 	fi
 fi
 

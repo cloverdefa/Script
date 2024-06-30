@@ -59,6 +59,7 @@ if [ "$compare_result" = "gt" ]; then
 	wget "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/${POSH}" -O "${POSH}"
 	chmod +x "${POSH}"
 	mv "${POSH}" ~/.local/bin/oh-my-posh
+	sudo cp ~/.local/bin/oh-my-posh /root/.local/bin/
 	echo -e "${GREEN}Oh My Posh 更新完成${NC}"
 	echo -e "${YELLOW}更新前的版本: $local_version${NC}"
 	echo -e "${YELLOW}更新後的版本: $(oh-my-posh --version)${NC}"

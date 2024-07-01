@@ -19,7 +19,7 @@ directories=(
 )
 
 # 遍歷目錄並更新 git repository
-for dir in "${directories[@]}"; do
+for dir in "${directories[@]}"; then
   if [ -d "$dir" ]; then
     cd "$dir" && git pull
   fi

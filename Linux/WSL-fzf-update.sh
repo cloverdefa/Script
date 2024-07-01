@@ -7,20 +7,40 @@ if ! command -v git &>/dev/null; then
 fi
 
 # 定義要檢查的目錄
-directories=(
+user_directories=(
   "$HOME/.fzf"
   "$HOME/.fzf-git.sh"
   "$HOME/.pyenv"
   "$HOME/.nvm"
+)
+
+root_directories=(
   "/root/.fzf"
   "/root/.fzf-git.sh"
   "/root/.pyenv"
   "/root/.nvm"
 )
 
-# 遍歷目錄並更新 git repository
-for dir in "${directories[@]}"; do
-  if [ -d "$dir" ]; then
-    cd "$dir" && git pull
-  fi
-done
+# 定義一個函數來同步目錄
+sync_directories() {
+  local directories=("$@")
+  local use_sudo=$1
+
+  for dir in "${directories[@]}"; do
+    if [ "$use_sudo" = true ]; then
+      if sudo [ -d "$dir" ]; then
+        sudo bash -c "cd '$dir' && git pull"
+      fi
+    else
+      if [ -d "$dir" ]; then
+        cd "$dir" && git pull
+      fi
+    fi
+  done
+}
+
+# 同步用戶目錄
+sync_directories false "${user_directories[@]}"
+
+# 同步 root 目錄
+sync_directories true "${root_directories[@]}"

@@ -21,18 +21,21 @@ root_directories=(
   "/root/.nvm"
 )
 
-# 定義一個函數來同步目錄
+# 定義函數來同步目錄
 sync_directories() {
-  local directories=("$@")
   local use_sudo=$1
+  shift
+  local directories=("$@")
 
   for dir in "${directories[@]}"; do
     if [ "$use_sudo" = true ]; then
       if sudo [ -d "$dir" ]; then
+        echo "同步目錄: $dir"
         sudo bash -c "cd '$dir' && git pull"
       fi
     else
       if [ -d "$dir" ]; then
+        echo "同步目錄: $dir"
         cd "$dir" && git pull
       fi
     fi

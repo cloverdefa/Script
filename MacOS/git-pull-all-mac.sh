@@ -40,7 +40,7 @@ function Git-Pull-Repo {
   fi
 
   if git remote update -p && git status -uno | grep -q '您的分支落後'; then
-    if git pull; then
+    if git pull --rebase; then
       echo -e "$text 完成，存儲庫名稱：${YELLOW}$repo_name ${NC}"
     else
       echo -e "$text ${RED}更新出現錯誤，存儲庫名稱：$repo_name ${NC}"

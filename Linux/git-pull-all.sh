@@ -9,8 +9,8 @@ NC='\033[0m'        # 重置颜色
 # 檢查 .repositories.list 檔案是否存在
 repositories_list="$HOME/.config/list/.repositories.list"
 if [ ! -f "$repositories_list" ]; then
-	echo -e "${RED}錯誤：檔案 $repositories_list 不存在。請確保檔案存在並重新執行腳本。${NC}"
-	exit 1
+  echo -e "${RED}錯誤：檔案 $repositories_list 不存在。請確保檔案存在並重新執行腳本。${NC}"
+  exit 1
 fi
 
 # 從 .repositories.list 檔案中讀取儲存庫名稱列表，並過濾掉空白行和註解行
@@ -21,39 +21,39 @@ repos+=(".dotfiles")
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {
-	local repo_name="$1"
-	local repo_path="$HOME/github/$repo_name" # 使用$HOME環境變數
-	if [ "$repo_name" == ".dotfiles" ]; then
-		repo_path="$HOME/$repo_name" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
-	fi
-	local text="$repo_name 拉取遠端資料"
+  local repo_name="$1"
+  local repo_path="$HOME/github/$repo_name" # 使用$HOME環境變數
+  if [ "$repo_name" == ".dotfiles" ]; then
+    repo_path="$HOME/$repo_name" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
+  fi
+  local text="$repo_name 拉取遠端資料"
 
-	cd "$repo_path" || exit 1 # 切換到存儲庫目錄如果切換失敗，退出程式，並返回結束碼1
-	echo -e "${GREEN}檢查儲存庫 $repo_name ${NC}"
+  cd "$repo_path" || exit 1 # 切換到存儲庫目錄如果切換失敗，退出程式，並返回結束碼1
+  echo -e "${GREEN}檢查儲存庫 $repo_name ${NC}"
 
-	# 切換到主分支
-	if git checkout main; then
-		echo -e "${GREEN}已成功切換到主分支${NC}"
-	else
-		echo -e "${RED}錯誤：切換到主分支時出現錯誤 $repo_path ${NC}"
-		exit 1 # 如果切換失敗，退出程式，並返回結束碼1
-	fi
+  # 切換到主分支
+  if git checkout main; then
+    echo -e "${GREEN}已成功切換到主分支${NC}"
+  else
+    echo -e "${RED}錯誤：切換到主分支時出現錯誤 $repo_path ${NC}"
+    exit 1 # 如果切換失敗，退出程式，並返回結束碼1
+  fi
 
-	if git remote update -p && git status -uno | grep -q '您的分支落後'; then
-		if git pull; then
-			echo -e "$text 完成，存儲庫名稱：${YELLOW}$repo_name ${NC}"
-		else
-			echo -e "$text ${RED}出現錯誤，存儲庫名稱：$repo_name ${NC}"
-		fi
-	else
-		echo -e "GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：${YELLOW} $repo_name ${NC}"
-	fi
+  if git remote update -p && git status -uno | grep -q '您的分支落後'; then
+    if git pull --rebase; then
+      echo -e "$text 完成，存儲庫名稱：${YELLOW}$repo_name ${NC}"
+    else
+      echo -e "$text ${RED}出現錯誤，存儲庫名稱：$repo_name ${NC}"
+    fi
+  else
+    echo -e "GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：${YELLOW} $repo_name ${NC}"
+  fi
 
-	echo "----------------------------------------------------------------------"
+  echo "----------------------------------------------------------------------"
 }
 
 for repo in "${repos[@]}"; do
-	Git-Pull-Repo "$repo"
+  Git-Pull-Repo "$repo"
 done
 
 # 完成

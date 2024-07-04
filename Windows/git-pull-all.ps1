@@ -36,7 +36,7 @@ foreach ($repository in $repositories) {
     }
 
   <# 检查是否有更新需要拉取 #>
-    $result = git pull
+    $result = git pull --rebase
     if ($result -match "Already up to date.") {
       Write-Host "儲存庫已經是最新的。儲存庫名稱：$repository" -ForegroundColor Green
     } elseif ($result -match "Updating") {

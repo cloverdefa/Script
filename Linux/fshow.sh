@@ -3,7 +3,8 @@
 # Fuzzy search over Git commits
 # Enter will view the commit
 # Ctrl-o will checkout the selected commit
-function fshow() {
+function fshow()
+{
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort --preview \

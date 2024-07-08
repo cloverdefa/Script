@@ -1,26 +1,22 @@
-# PowerShell script to fuzzy search and view Git commits
+# PowerShell script to fuzzy search and view Git commits using fzf
 
 function Show-GitCommits {
     # Get the Git commit log with necessary formatting
-    $log = git log --graph --pretty=format:'%h%d %s %cr' --date=relative --color=always
+    $log = git log --graph --color=always --pretty=format:'%h%d %s %cr'
 
-    # Parse the log into an array of objects for Out-GridView
-    $commits = $log -split "`n" | ForEach-Object {
-        if ($_ -match '(\w{7}) (.*)') {
-            [PSCustomObject]@{
-                Hash = $matches[1]
-                Message = $matches[2]
-            }
+    # Use fzf to select a commit
+    $selectedCommit = $log | fzf --ansi --no-sort --reverse --tiebreak=index --preview 'git show --color=always $(echo {} | grep -o "[a-f0-9]\{7\}")' --preview-window=right:60%
+
+    if ($selectedCommit) {
+        # Extract the commit hash
+        $commitHash = $selectedCommit -match '(\w{7,40})' | Out-Null; $matches[0]
+
+        if ($commitHash) {
+            # Show the selected commit details
+            git show --color=always $commitHash | less -R
         }
-    }
-
-    # Display the commits in Out-GridView for fuzzy searching
-    $selectedCommit = $commits | Out-GridView -Title "Select a Git commit" -PassThru
-
-    if ($null -ne $selectedCommit) {
-        # Show the selected commit details in less
-        git show --color=always $selectedCommit.Hash | less -R
     }
 }
 
 Show-GitCommits
+

@@ -31,7 +31,7 @@ function Show-DiskSpace {
 server_list="$HOME/.config/list/.server.list"
 
 # 檢查清單列表文件是否存在
-if [ ! -f "$server_list" ]; then
+if [[ ! -f "$server_list" ]]; then
   echo -e "${RED}服务器列表文件不存在: $server_list${NC}"
   exit 1
 fi
@@ -43,7 +43,7 @@ for server in $(grep -v '^\s*#' "$server_list" | grep -v '^\s*$'); do
 done
 
 # 完成訊息
-if [ "$error_occurred" = true ]; then
+if [[ "$error_occurred" = true ]]; then
   echo -e "${RED}讀取空間出現錯誤${NC}"
 else
   echo -e "${GREEN}讀取空間資料完成${NC}"

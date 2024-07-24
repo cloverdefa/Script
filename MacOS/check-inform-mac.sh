@@ -19,7 +19,7 @@ if [[ -f "${HOME}/.config/list/.unifi.list" ]]; then
 			feedback=$(ssh "$host" 'mca-cli-op info')
 
 			# 檢查回饋是否為空
-			if [ -z "$feedback" ]; then
+			if [[ -z "$feedback" ]]; then
 				notifications+="警告：來自 $host 的回饋為空\n"
 				notifications+="---------------------------------------------\n"
 				continue # 繼續處理下一個目標機器
@@ -45,7 +45,7 @@ if [[ -f "${HOME}/.config/list/.unifi.list" ]]; then
 
 	# 先顯示其他通知，再顯示包含 http://unifi:8080/inform 的醒目通知
 	echo -e "$notifications"
-	if [ -n "$unifi_notification" ]; then
+	if [[ -n "$unifi_notification" ]]; then
 		echo -e "$unifi_notification"
 	fi
 

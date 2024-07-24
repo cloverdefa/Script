@@ -18,7 +18,7 @@ function update_servers {
   ssh_result=$?
 
   # 檢查 SSH 連接結果
-  if [ $ssh_result -eq 0 ]; then
+  if [[ $ssh_result -eq 0 ]]; then
     echo -e "${GREEN}在 $server 上執行更新指令成功${NC}"
   else
     echo -e "${RED}無法執行 update 因為SSH連接失敗${NC}"
@@ -29,10 +29,10 @@ function update_servers {
 }
 
 # 讀取伺服器清單文件
-server_list="$HOME/.config/list/.server.list"
+server_list="${HOME}/.config/list/.server.list"
 
 # 檢查清單列表文件是否存在
-if [ ! -f "$server_list" ]; then
+if [[ ! -f "$server_list" ]]; then
   echo -e "${RED}伺服器清單文件不存在: $server_list${NC}"
   exit 1
 fi
@@ -46,12 +46,12 @@ for server in $(grep -v '^\s*#' "$server_list" | grep -v '^\s*$'); do
 done
 
 # 根據錯誤情況顯示不同的訊息
-if [ $update_error -eq 0 ]; then
+if [[ $update_error -eq 0 ]]; then
   echo -e "${GREEN}全部機器更新完成${NC}"
 else
   echo -e "${RED}更新過程發生錯誤${NC}"
 fi
 
 # 結束程式
-exit
+exit 0
 

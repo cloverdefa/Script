@@ -8,7 +8,7 @@ NC='\033[0m'        # 重置颜色
 
 # 檢查 .repositories.list 檔案是否存在
 repositories_list="$HOME/.config/list/.repositories.list"
-if [ ! -f "$repositories_list" ]; then
+if [[ ! -f "$repositories_list" ]]; then
   echo -e "${RED}錯誤：檔案 $repositories_list 不存在。請確保檔案存在並重新執行腳本。${NC}"
   exit 1
 fi
@@ -23,7 +23,7 @@ repos+=(".dotfiles")
 function Git-Pull-Repo {
   local repo_name="$1"
   local repo_path="$HOME/Documents/github/$repo_name" # 使用$HOME環境變數
-  if [ "$repo_name" = ".dotfiles" ]; then
+  if [[ "$repo_name" = ".dotfiles" ]]; then
     repo_path="$HOME/$repo_name" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
   fi
   local text="$repo_name 拉取遠端資料"

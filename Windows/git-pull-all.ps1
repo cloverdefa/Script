@@ -61,7 +61,7 @@ foreach ($repository in $repositories) {
 }
 
 <# 同步 nvim 資料夾到使用者目錄\AppData\Local\nvim #>
-$localNvimPath = "$env:USERPROFILE\AppData\Local\nvim"
+$localNvimPath = "$env:LOCALAPPDATA\Local\nvim"
 
 Write-Host "同步 nvim 資料夾到: $localNvimPath" -ForegroundColor Yellow
 

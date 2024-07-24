@@ -6,12 +6,13 @@ rm -rf ~/.local/share/nvim 2>/dev/null || true
 rm -rf ~/.local/state/nvim 2>/dev/null || true
 rm -rf ~/.cache/nvim 2>/dev/null || true
 
-# 確認stow是否安裝，如存在則建立NVIM鏈結
+# 安全地切換到 .config 目錄
 if [[ -n $(command -v stow) ]]; then
   if [[ -d ~/.dotfiles/nvim ]]; then
-    stow ~/.dotfiles/nvim
+    pushd ~/.dotfiles
+    stow -t ~ nvim
+    popd
   fi
 fi
 
 exit 0
-

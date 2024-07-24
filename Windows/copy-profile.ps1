@@ -1,17 +1,15 @@
 # 定義路徑
-$localDocumentsPath = "$env:USERPROFILE\Documents"
 $oneDriveDocumentsPath = "$env:OneDrive\文件"
-$localProfilePath = "$localDocumentsPath\PowerShell"
+$localProfilePath = "$env:USERPROFILE\Documents\PowerShell"
 $oneDriveProfilePath = "$oneDriveDocumentsPath\PowerShell"
 
-# 輸出變數值以便調試
-Write-Output "localDocumentsPath: $localDocumentsPath"
-Write-Output "oneDriveDocumentsPath: $oneDriveDocumentsPath"
-Write-Output "localProfilePath: $localProfilePath"
-Write-Output "oneDriveProfilePath: $oneDriveProfilePath"
+# 獲取目前文件資料夾路徑
+$currentDocumentsPath = [System.Environment]::GetFolderPath('MyDocuments')
 
-# 判斷 Documents 資料夾的實際路徑
-$currentDocumentsPath = (Get-Item -Path $localDocumentsPath).Target
+# 輸出變數值以便調試
+Write-Output "目前文件資料夾路徑: $currentDocumentsPath"
+
+# 判斷 Documents 資料夾是否實際上指向 OneDrive
 if ($currentDocumentsPath -eq $oneDriveDocumentsPath) {
     Write-Output "當前使用者的 Documents 路徑為 OneDrive\文件, 腳本退出不進行拷貝."
     exit

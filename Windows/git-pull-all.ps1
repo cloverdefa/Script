@@ -68,7 +68,7 @@ Write-Host "同步 nvim 資料夾到: $localNvimPath" -ForegroundColor Yellow
 
 if (-not (Test-Path $remoteNvimPath)) {
   Write-Host "nvim 儲存庫目錄不存在，正在克隆 nvim 儲存庫"
-  git clone ".https://github.com/cloverdefa/nvim-win.git" $remoteNvimPath
+  git clone "https://github.com/cloverdefa/nvim-win.git" $remoteNvimPath
 }
 
 Set-Location -Path $remoteNvimPath

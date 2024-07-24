@@ -44,7 +44,7 @@ foreach ($repository in $repositories) {
   }
 
   <# 檢查是否有更新需要拉取 #>
-  $result = git pull --rebase
+  $result = git pull 
   if ($result -match "Already up to date.") {
     Write-Host "儲存庫已經是最新的。儲存庫名稱：$repository" -ForegroundColor Green
   } elseif ($result -match "Updating") {
@@ -66,7 +66,7 @@ $localNvimPath = "$env:USERPROFILE\AppData\Local\nvim"
 
 Write-Host "同步 nvim 資料夾到: $localNvimPath" -ForegroundColor Yellow
 
-if (-not (Test-Path $remoteNvimPath)) {
+if (-not (Test-Path $localNvimPath)) {
   Write-Host "nvim 儲存庫目錄不存在，正在克隆 nvim 儲存庫"
   git clone "https://github.com/cloverdefa/nvim-win.git" $remoteNvimPath
 }

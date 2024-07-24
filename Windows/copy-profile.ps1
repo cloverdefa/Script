@@ -4,8 +4,18 @@ $oneDriveDocumentsPath = "$env:OneDrive\文件"
 $localProfilePath = "$localDocumentsPath\PowerShell"
 $oneDriveProfilePath = "$oneDriveDocumentsPath\PowerShell"
 
-# 檢查當前使用者的 Documents 路徑
-if (Test-Path $localDocumentsPath) {
+# 輸出變數值以便調試
+Write-Output "localDocumentsPath: $localDocumentsPath"
+Write-Output "oneDriveDocumentsPath: $oneDriveDocumentsPath"
+Write-Output "localProfilePath: $localProfilePath"
+Write-Output "oneDriveProfilePath: $oneDriveProfilePath"
+
+# 判斷 Documents 資料夾的實際路徑
+$currentDocumentsPath = (Get-Item -Path $localDocumentsPath).Target
+if ($currentDocumentsPath -eq $oneDriveDocumentsPath) {
+    Write-Output "當前使用者的 Documents 路徑為 OneDrive\文件, 腳本退出不進行拷貝."
+    exit
+} else {
     Write-Output "當前使用者的 Documents 路徑為 USERPROFILE\Documents."
 
     # 檢查當前 PowerShell 配置檔案的路徑
@@ -29,10 +39,5 @@ if (Test-Path $localDocumentsPath) {
     } else {
         Write-Output "Local PowerShell Profile 路徑不存在."
     }
-} elseif (Test-Path $oneDriveDocumentsPath) {
-    Write-Output "當前使用者的 Documents 路徑為 OneDrive\文件, 腳本退出不進行拷貝."
-} else {
-    Write-Output "無法找到有效的 Documents 路徑."
-    exit
 }
 

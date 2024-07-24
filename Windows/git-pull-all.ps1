@@ -65,17 +65,30 @@ $localNvimPath = "$env:LOCALAPPDATA\nvim"
 
 Write-Host "同步 nvim 資料夾到: $localNvimPath" -ForegroundColor Yellow
 
+
 if (-not (Test-Path $localNvimPath)) {
   Write-Host "nvim 儲存庫目錄不存在，正在克隆 nvim 儲存庫"
   git clone "https://github.com/cloverdefa/nvim-win.git" $localNvimPath
 } else {
-  Write-Host "nvim 資料夾已存在，正在執行 git pull"
+  Write-Host "nvim 資料夾已存在，正在嘗試切換到 main 分支"
   Set-Location -Path $localNvimPath
-  git pull --rebase
+
+  # 嘗試切換到 main 分支
+  git checkout main
   if ($?) {
-    Write-Host "nvim 資料夾更新完成。" -ForegroundColor Green
+    Write-Host "成功切換到 main 分支。" -ForegroundColor Green
+
+    # 更新儲存庫
+    Write-Host "正在執行 git pull"
+    git pull --rebase
+    if ($?) {
+      Write-Host "nvim 資料夾更新完成。" -ForegroundColor Green
+    } else {
+      Write-Host "nvim 資料夾更新失敗。" -ForegroundColor Red
+    }
   } else {
-    Write-Host "nvim 資料夾更新失敗。" -ForegroundColor Red
+    Write-Host "切換到 main 分支失敗，正在克隆 nvim 儲存庫" -ForegroundColor Red
+    git clone "https://github.com/cloverdefa/nvim-win.git" $localNvimPath
   }
 }
 

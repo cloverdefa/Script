@@ -7,11 +7,12 @@ rm -rf ~/.local/state/nvim 2>/dev/null || true
 rm -rf ~/.cache/nvim 2>/dev/null || true
 
 # 安全地切換到 .config 目錄
-if [[ command -v stow &>/dev/null ]]; then
+if [[ -n $(command -v stow) ]]; then
   if [[ -d ~/.dotfiles/nvim ]]; then
-    stow ~/.dotfiles/nvim
+    pushd ~/.dotfiles
+    stow -t ~ nvim
+    popd
   fi
 fi
 
 exit 0
-

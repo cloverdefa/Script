@@ -23,8 +23,7 @@ function Update-VM {
     Write-Host "更新 $hostname 伺服器" -ForegroundColor Yellow
 
     <# 使用 SSH 命令執行伺服器更新作業 #>
-    ssh $hostname 'sudo nala update && sudo nala upgrade 
-    --assume-yes && sudo nala autoremove --assume-yes && sudo nala clean'
+    ssh $hostname 'sudo nala update && sudo nala upgrade --assume-yes && sudo nala autoremove --assume-yes && sudo nala clean'
 
     <# 檢查是否有更新錯誤，如果有，顯示錯誤訊息 #>
     if ($LASTEXITCODE -ne 0) {

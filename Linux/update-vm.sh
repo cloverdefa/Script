@@ -13,8 +13,8 @@ function update_servers {
 
   # 透過 SSH 連接至遠端伺服器，執行一系列指令
   if ssh -n "$server" 'sudo nala update && sudo nala \
-    upgrade -y && sudo nala autoremove -y \
-    && sudo nala clean -y'; then
+    upgrade  && sudo nala autoremove  \
+    && sudo nala clean'; then
     echo -e "${GREEN}在 $server 上執行更新指令成功${NC}"
   else
     echo -e "${RED}無法執行更新因為 SSH 連接失敗${NC}"

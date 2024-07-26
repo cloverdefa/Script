@@ -2,7 +2,7 @@
 
 # Define lengths of A and B
 A_length = 147
-B_length = 173
+B_length = 172
 
 # Prompt the user to enter the length of C
 C_length = int(input("請輸入白鐵管長度: "))

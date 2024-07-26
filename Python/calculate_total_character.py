@@ -7,8 +7,8 @@
 以此來計算是否超過閾值.
 """
 # Given path string
-path_string = r"test"
+path_string = input("請輸入需要計算長度字元: ")
 
 # Calculate the total number of characters in the path string
 num_characters = len(path_string)
-print(num_characters)
+print(f"計算後字元總長度為: {num_characters}")

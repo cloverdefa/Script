@@ -14,8 +14,6 @@ if ($currentDocumentsPath -eq $oneDriveDocumentsPath) {
     Write-Output "當前使用者的 Documents 路徑為 OneDrive\文件, 腳本退出不進行拷貝."
     exit
 } else {
-    Write-Output "當前使用者的 Documents 路徑為 USERPROFILE\Documents."
-
     # 檢查當前 PowerShell 配置檔案的路徑
     if (Test-Path $localProfilePath) {
         Write-Output "Local PowerShell Profile 路徑存在."

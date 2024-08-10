@@ -56,7 +56,7 @@ if "$yt_dlp_path" -f "$format_code" -o "$download_path/%(title)s.%(ext)s" "$doma
   echo "${GREEN}影片及字幕下載完成${NC}"
   echo "${YELLOW}按任意鍵繼續...${NC}"
   exec </dev/tty
-  read -r -n1 -s # 等待用戶按下任意鍵，不回顯輸入
+  read -r -s -k1 # 等待用戶按下任意鍵，不回顯輸入
 else
   echo "${RED}錯誤: 影片及字幕下載失敗${NC}"
   exit 1

@@ -25,7 +25,11 @@ fi
 
 echo "${GREEN}影片下載工具${NC}"
 echo "${YELLOW}輸入 Ctrl+C 取消下載${NC}"
-read -r -p '請輸入影片網址: ' domain
+
+# 輸入影片網址
+echo -n '請輸入影片網址: '
+exec </dev/tty # 確保從終端讀取輸入
+read -r domain
 
 # 驗證輸入的影片網址是否為空
 if [ -z "$domain" ]; then
@@ -38,7 +42,9 @@ fi
 
 # 提示使用者選擇的格式，預設為 MP4 最優畫質
 echo "${YELLOW}預設下載格式為MP4最優畫質${NC}"
-read -r -p '請輸入要下載的格式編號 (按 Enter 使用預設格式):' format_code
+echo -n '請輸入要下載的格式編號 (按 Enter 使用預設格式): '
+exec </dev/tty
+read -r format_code
 
 # 如果使用者沒有輸入格式，使用默認MP4最優畫質來進行下載
 if [ -z "$format_code" ]; then
@@ -49,6 +55,7 @@ fi
 if "$yt_dlp_path" -f "$format_code" -o "$download_path/%(title)s.%(ext)s" "$domain"; then
   echo "${GREEN}影片及字幕下載完成${NC}"
   echo "${YELLOW}按任意鍵繼續...${NC}"
+  exec </dev/tty
   read -r -n1 -s # 等待用戶按下任意鍵，不回顯輸入
 else
   echo "${RED}錯誤: 影片及字幕下載失敗${NC}"

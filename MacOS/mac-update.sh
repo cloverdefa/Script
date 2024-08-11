@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# 加載 .zshrc 或 .zprofile
+source ~/.zshrc
+
 # 更新 Homebrew
 if command -v brew &>/dev/null; then
   brew update
@@ -24,4 +27,9 @@ if command -v mas &>/dev/null; then
   else
     echo "No Mac App Store apps need upgrading."
   fi
+fi
+
+# Zinit update
+if command -v zinit &>/dev/null; then
+  zinit update
 fi

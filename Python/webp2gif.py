@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import shutil
 import subprocess
@@ -13,6 +15,11 @@ def convert_webp_to_gif():
     if not check_command("webp2gif"):
         print("找不到 webp2gif 指令，請安裝後再試。")
         return
+    
+    # 創建 converted_gifs 資料夾
+    output_dir = "converted_gifs"
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
     
     # 獲取當下目錄下所有的 webp 檔案
     webp_files = [f for f in os.listdir('.') if f.endswith('.webp')]
@@ -34,6 +41,8 @@ def convert_webp_to_gif():
         if result.returncode == 0 and os.path.exists(gif_file):
             # 計算轉換後的檔案大小
             total_size += os.path.getsize(gif_file)
+            # 將 gif 檔案搬移至 converted_gifs 資料夾
+            shutil.move(gif_file, os.path.join(output_dir, gif_file))
             # 刪除原始的 webp 檔案
             os.remove(webp_file)
             converted_count += 1

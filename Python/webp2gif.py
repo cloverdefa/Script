@@ -23,24 +23,29 @@ def convert_webp_to_gif():
     
     start_time = time.time()  # 開始計時
     total_size = 0  # 記錄全部檔案總容量
-    converted_count = 0  # 記錄轉換檔案數量
+    converted_count = 0  # 記錄成功轉換檔案數量
     
     for webp_file in webp_files:
         gif_file = webp_file.replace('.webp', '.gif')
         # 使用 webp2gif 指令將 webp 轉換為 gif
-        subprocess.run(["webp2gif", webp_file, gif_file])
-        # 計算轉換後的檔案大小
-        total_size += os.path.getsize(gif_file)
-        # 刪除原始的 webp 檔案
-        os.remove(webp_file)
-        converted_count += 1
+        result = subprocess.run(["webp2gif", webp_file, gif_file])
+        
+        # 檢查轉換是否成功
+        if result.returncode == 0 and os.path.exists(gif_file):
+            # 計算轉換後的檔案大小
+            total_size += os.path.getsize(gif_file)
+            # 刪除原始的 webp 檔案
+            os.remove(webp_file)
+            converted_count += 1
+        else:
+            print(f"轉換失敗：{webp_file}")
     
     # 計算完成時間
     end_time = time.time()
     elapsed_time = end_time - start_time
     
     # 報告結果
-    print(f"轉換完成！共轉換了 {converted_count} 個檔案。")
+    print(f"轉換完成！共成功轉換了 {converted_count} 個檔案。")
     print(f"全部檔案總容量為 {total_size / (1024 * 1024):.2f} MB。")
     print(f"總耗時 {elapsed_time:.2f} 秒。")
 

@@ -13,6 +13,13 @@ if [ ! -f "$repositories_list" ]; then
   exit 1
 fi
 
+# 檢查本地 GitHub 根目錄是否存在，若不存在則跳過並通知
+github_root="$HOME/github"
+if [ ! -d "$github_root" ]; then
+  echo -e "${YELLOW}警告：本地 GitHub 根目錄不存在，路徑：$github_root${NC}"
+  exit 0
+fi
+
 # 從 .repositories.list 檔案中讀取儲存庫名稱列表，並過濾掉空白行和註解行
 mapfile -t repos < <(grep -E -v '^\s*(#|$)' "$repositories_list")
 
@@ -22,7 +29,7 @@ repos+=(".dotfiles")
 # 函數來執行Git操作
 function Git-Pull-Repo() {
   local repo_name="$1"
-  local repo_path="$HOME/github/$repo_name" # 使用$HOME環境變數
+  local repo_path="$github_root/$repo_name" # 使用$HOME/github 根目錄
   if [ "$repo_name" == ".dotfiles" ]; then
     repo_path="$HOME/$repo_name" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
   fi

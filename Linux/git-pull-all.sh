@@ -28,6 +28,13 @@ function Git-Pull-Repo() {
   fi
   local text="$repo_name 拉取遠端資料"
 
+  # 檢查目錄是否存在，若不存在則跳過
+  if [ ! -d "$repo_path" ]; then
+    echo -e "${YELLOW}目錄不存在，跳過儲存庫：$repo_name${NC}"
+    echo "----------------------------------------------------------------------"
+    return
+  fi
+
   cd "$repo_path" || exit 1 # 切換到存儲庫目錄如果切換失敗，退出程式，並返回結束碼1
   echo -e "${GREEN}檢查儲存庫 $repo_name ${NC}"
 

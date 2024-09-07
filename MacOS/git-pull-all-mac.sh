@@ -31,7 +31,7 @@ function Git-Pull-Repo {
   local repo_name="$1"
   local repo_path="$github_root/$repo_name" # 使用$HOME/Documents/github 根目錄
   if [[ "$repo_name" = ".dotfiles" ]]; then
-    repo_path="$HOME/$repo_name" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
+    repo_path="${HOME}/.dotfiles" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
   fi
   local text="$repo_name 拉取遠端資料"
 

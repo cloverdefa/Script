@@ -34,7 +34,7 @@ function Update-VM {
     Write-Host "連接到 $hostname 中..." -ForegroundColor Yellow
 
     <# 使用 SSH 命令執行伺服器更新作業 #>
-    ssh -n -o BatchMode=yes -o ConnectTimeout=5 $hostname 'sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean'
+    ssh $hostname 'sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean'
 
     <# 檢查是否有更新錯誤，如果有，顯示錯誤訊息 #>
     if ($LASTEXITCODE -ne 0) {

@@ -12,10 +12,10 @@ function update_servers {
   echo -e "${YELLOW}連接到 $server${NC}"
 
   # 透過 SSH 連接至遠端伺服器，執行一系列指令
-  ssh "$server" 'sudo apt update && \
-    sudo apt dist-upgrade -y \
-    && sudo apt autoremove -y \
-    && sudo apt autoclean'
+  ssh "$server" 'sudo apt-get update && \
+    sudo apt-get dist-upgrade -y \
+    && sudo apt-get autoremove -y \
+    && sudo apt-get autoclean'
 
   ssh_result=$?
 

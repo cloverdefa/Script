@@ -47,8 +47,6 @@ function Update-VM {
 
     <# 顯示空行 #>
     Write-Host ""
-
-    return $true
 }
 
 <# 初始化成功標誌 #>

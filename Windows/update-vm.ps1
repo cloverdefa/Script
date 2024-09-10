@@ -23,7 +23,7 @@ function Update-VM {
     Write-Host "更新 $hostname 伺服器" -ForegroundColor Yellow
 
     <# 使用 SSH 命令執行伺服器更新作業 #>
-    ssh $hostname 'sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove -y && sudo apt autoclean'
+    ssh $hostname 'sudo apt-get update && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get autoclean'
 
     <# 檢查是否有更新錯誤，如果有，顯示錯誤訊息 #>
     if ($LASTEXITCODE -ne 0) {

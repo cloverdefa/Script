@@ -55,10 +55,11 @@ function Update-VM {
 $success = $true
 
 <# 遍歷伺服器名稱列表並呼叫 Update-VM 函數以執行更新作業 #>
-$updateCommand = "update-vm"
+$updateCommand = "update-vm" # 替換為實際的更新命令路徑
 
 $hostnames | ForEach-Object {
   Update-VM -hostname $_ -updateCommand 'update-vm'
+    <# 檢查是否有更新錯誤,如果有,將成功標誌設置為false#>
     if ($LASTEXITCODE -ne 0) {
 
       $success = $false

@@ -1,29 +1,32 @@
 #!/usr/bin/env zsh
 
 # 定義顏色代碼
-RED='\033[0;31m' # 红色
-GREEN='\033[0;32m' # 绿色
-YELLOW='\033[0;33m' # 黄色 
-NC='\033[0m'     # 重置颜色
+RED='\033[0;31m'    # 紅色
+GREEN='\033[0;32m'  # 綠色
+YELLOW='\033[0;33m' # 黃色 
+NC='\033[0m'        # 重置顏色
 
-# 建立函數用於執行SSH連接和執行更新命令
+# 建立函數用於執行 SSH 連接和執行更新命令
 function update_servers {
   local server="$1"
-  echo -e "${YELLOW}連接到 $server${NC}"
+  echo -e "${YELLOW}嘗試連接到 $server${NC}"
+
+  # 使用 SSH 進行連接測試
+  if ! ssh -n -o BatchMode=yes -o ConnectTimeout=5 "$server" exit; then
+    echo -e "${RED}無法連接到 $server，跳過${NC}"
+    return 1  # 返回失敗狀態碼，表示無法連接
+  fi
+
+  echo -e "${YELLOW}連接到 $server 中...${NC}"
 
   # 透過 SSH 連接至遠端伺服器，執行一系列指令
-  ssh "$server" 'sudo apt-get update && \
-    sudo apt-get dist-upgrade -y \
+  if ssh -n -o BatchMode=yes "$server" 'sudo apt-get update \
+    && sudo apt-get dist-upgrade -y \
     && sudo apt-get autoremove -y \
-    && sudo apt-get autoclean'
-
-  ssh_result=$?
-
-  # 檢查 SSH 連接結果
-  if [[ $ssh_result -eq 0 ]]; then
+    && sudo apt-get autoclean' </dev/null; then
     echo -e "${GREEN}在 $server 上執行更新指令成功${NC}"
   else
-    echo -e "${RED}無法執行 update 因為SSH連接失敗${NC}"
+    echo -e "${RED}無法執行更新因為 SSH 連接失敗${NC}"
     update_error=1  # 標記更新錯誤
   fi
   # 顯示空行

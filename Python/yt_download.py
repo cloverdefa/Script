@@ -18,22 +18,31 @@ def main():
     如果在下載過程中遇到任何錯誤（如 subprocess 的呼叫錯誤或操作系統錯誤），
     將會打印相應的錯誤訊息。
     """
+    # 檢查程式是否在打包環境中運行
     if getattr(sys, "frozen", False):
         base_path = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
     else:
         base_path = os.path.dirname(os.path.abspath(__file__))
 
-    yt_dlp_path = os.path.join(base_path, "yt-dlp")
-    ffmpeg_path = os.path.join(base_path, "ffmpeg")
+    # 根據操作系統動態設置 yt-dlp 和 ffmpeg 的路徑
+    if os.name == "nt":  # Windows
+        yt_dlp_path = os.path.join(base_path, "yt-dlp", "yt-dlp.exe")
+        ffmpeg_path = os.path.join(base_path, "ffmpeg", "ffmpeg.exe")
+    else:  # Linux 或 macOS
+        yt_dlp_path = os.path.join(base_path, "yt-dlp", "yt-dlp")
+        ffmpeg_path = os.path.join(base_path, "ffmpeg", "ffmpeg")
 
+    # 將 ffmpeg 路徑加入系統環境變數
     os.environ["PATH"] += os.pathsep + os.path.dirname(ffmpeg_path)
 
+    # 請求輸入影片的 URL
     video_url = input("請輸入影片 URL 網址：")
     if not video_url:
         print("錯誤：影片 URL 不能為空")
         input("請按任意鍵退出...")
         return
 
+    # 獲取影片格式
     print("正在獲取可用的影片格式...")
     list_command = [yt_dlp_path, "-F", video_url]
     try:
@@ -42,13 +51,19 @@ def main():
         print("獲取影片格式失敗，請檢查影片 URL 是否正確")
         input("請按任意鍵退出...")
         return
+    except OSError as e:
+        print(f"操作系統錯誤（檢查 yt-dlp 是否可執行）：{e}")
+        input("請按任意鍵退出...")
+        return
 
+    # 請求輸入格式代碼
     format_code = input(
         "請輸入希望下載的影片格式代碼（直接按 Enter 選擇畫質最高的 MP4）："
     )
     if format_code.strip() == "":
         format_code = "bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4"
 
+    # 嘗試下載影片
     try:
         command = [
             yt_dlp_path,
@@ -71,4 +86,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as e:
+        print(f"發生未處理的錯誤: {e}")
+        input("按任意鍵退出...")

@@ -45,3 +45,10 @@ else
   echo "$fzf_git_script is not a Git repository or does not exist. Skipping update."
 fi
 
+# Nvim Lazy Update
+if command -v nvim &>/dev/null; then
+  nvim --headless "+Lazy! sync" +qa
+else
+  echo "Nvim未安裝或正確設定,因此略過更新"
+fi
+

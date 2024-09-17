@@ -46,8 +46,8 @@ else
 fi
 
 # Nvim Lazy Update
-if [[ command -v nvim ]]; then
-nvim --headless "+Lazy! sync" +qa
+if command -v nvim &>/dev/null; then
+  nvim --headless "+Lazy! sync" +qa
 else
   echo "Nvim未安裝或正確設定,因此略過更新"
 fi

@@ -50,5 +50,5 @@ sync_directories true "${root_directories[@]}"
 
 # 更新 NVIM Lazy
 if command -v &>/dev/null; then
-  nvim --headless "+lazy! sync" +qa
+  nvim --headless "+Lazy! sync" +qa
 fi

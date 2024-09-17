@@ -47,3 +47,8 @@ sync_directories false "${user_directories[@]}"
 
 # 同步 root 目錄
 sync_directories true "${root_directories[@]}"
+
+# 更新 NVIM Lazy
+if command -v &>/dev/null; then
+  nvim --headless "+lazy! sync" +qa
+fi

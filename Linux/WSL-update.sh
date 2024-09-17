@@ -49,7 +49,8 @@ sync_directories false "${user_directories[@]}"
 sync_directories true "${root_directories[@]}"
 
 # 更新 NVIM Lazy
-if [ -f "/opt/nvim-linux64/bin/nvim" ]; then
+nvim="/opt/nvim-linux64/bin/nvim"
+if [ -f $nvim ]; then
   nvim --headless "+Lazy! sync" +qa
-  sudo /opt/nvim-linux64/bin/nvim --headless "+Lazy! sync" +qa
+  sudo $nvim --headless "+Lazy! sync" +qa
 fi

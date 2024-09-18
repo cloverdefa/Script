@@ -7,6 +7,12 @@ wsl --update
 # 使用指定的 pip 路徑來更新 Python 套件：debugpy、hererocks、pip 和 pynvim
 C:\Users\clove\AppData\Local\Programs\Python\Python312\Scripts\pip.exe install --upgrade debugpy hererocks pip pynvim
 
+# 檢查更新CodeGPT
+codegpt-update.ps1
+
+# 檢查更新yt-dlp
+yt-dlp-update.ps1
+
 # 啟動 Neovim 進行無頭（不開啟視窗）模式下的插件同步，並在完成後退出
 nvim --headless "+Lazy! sync" +qa
 

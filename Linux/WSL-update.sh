@@ -49,15 +49,19 @@ sync_directories false "${user_directories[@]}"
 sync_directories true "${root_directories[@]}"
 
 # 更新 pip 模組 (普通用戶)
-if [ -f "$HOME/.pyenv/shims/pip" ]; then
+if [ -f "$HOME/.pyenv/shims/pip" ] && [ -x "$HOME/.pyenv/shims/pip" ]; then
   echo "升級普通用戶的 pip 模組"
   "$HOME/.pyenv/shims/pip" install --upgrade debugpy pip pynvim
+else
+  echo "普通用戶的 pip 不存在或不可執行，跳過更新"
 fi
 
 # 更新 pip 模組 (root 用戶)
-if sudo [ -f "/root/.pyenv/shims/pip" ]; then
+if sudo [ -f "/root/.pyenv/shims/pip" ] && sudo [ -x "/root/.pyenv/shims/pip" ]; then
   echo "升級 root 用戶的 pip 模組"
   sudo /root/.pyenv/shims/pip install --upgrade debugpy pip pynvim
+else
+  echo "root 用戶的 pip 不存在或不可執行，跳過更新"
 fi
 
 # 更新 NVIM Lazy

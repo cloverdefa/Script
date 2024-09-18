@@ -17,8 +17,9 @@ winget update --all
 wsl --update
 
 # 檢查是否安裝 pip 在指定的路徑
-if (Test-Path "C:\Users\clove\AppData\Local\Programs\Python\Python312\Scripts\pip.exe") {
-    C:\Users\clove\AppData\Local\Programs\Python\Python312\Scripts\pip.exe install --upgrade debugpy hererocks pip pynvim
+$pipPath = Join-Path $HOME "AppData\Local\Programs\Python\Python312\Scripts\pip.exe"
+if (Test-Path $pipPath) {
+    & $pipPath install --upgrade debugpy hererocks pip pynvim
 } else {
     Write-Host "pip 未安裝或 pip 路徑不正確"
 }
@@ -53,4 +54,3 @@ if (Get-Command nvim -ErrorAction SilentlyContinue) {
 } else {
     Write-Host "Neovim 未安裝"
 }
-

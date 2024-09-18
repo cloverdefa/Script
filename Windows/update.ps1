@@ -2,7 +2,7 @@
 # 檢查系統內是否安裝 git 並且在路徑 $HOME\github\Script\Windows 下是否有 git-pull-all.ps1 這個腳本
 if (Get-Command git -ErrorAction SilentlyContinue) {
     if (Test-Path "$HOME\github\Script\Windows\git-pull-all.ps1") {
-        . "$HOME\github\Script\Windows\git-ppull-all.ps1"
+        . "$HOME\github\Script\Windows\git-pull-all.ps1"
     } else {
         Write-Host "git-pull-all.ps1 腳本未找到"
     }

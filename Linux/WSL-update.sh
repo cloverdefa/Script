@@ -70,3 +70,9 @@ if [ -f $nvim ]; then
   nvim --headless "+Lazy! sync" +qa
   sudo $nvim --headless "+Lazy! sync" +qa
 fi
+
+# 更新 Mason 已安裝的工具
+if [ -f $nvim ]; then
+  nvim --headless -c "MasonUpdate" -c "q"
+  sudo $nvim --headless -c "MasonUpdate" -c "q"
+fi

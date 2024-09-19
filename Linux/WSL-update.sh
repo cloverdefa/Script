@@ -48,6 +48,28 @@ sync_directories false "${user_directories[@]}"
 # 同步 root 目錄
 sync_directories true "${root_directories[@]}"
 
+# 更新CodeGPT
+if command -v codegpt &>/dev/null; then
+  if [ -f "$HOME/github/Script/Linux/codegpt-update.sh" ]; then
+    codegpt-update.sh
+  else
+    echo "codegpt-update.sh腳本路徑未發現，略過更新"
+  fi
+else
+  echo "codegpt未安裝或正確設定，略過更新"
+fi
+
+# 更新yt-dlp
+if command -v yt-dlp &>/dev/null; then
+  if [ -f "$HOME/github/Script/Linux/yt-dlp-update.sh" ]; then
+    yt-dlp-update.sh
+  else
+    echo "yt-dlp-update.sh腳本路徑未發現，略過更新"
+  fi
+else
+  echo "yt-dlp未安裝或正確設定，略過更新"
+fi
+
 # 更新 pip 模組 (普通用戶)
 if [ -f "$HOME/.pyenv/shims/pip" ] && [ -x "$HOME/.pyenv/shims/pip" ]; then
   echo "升級普通用戶的 pip 模組"

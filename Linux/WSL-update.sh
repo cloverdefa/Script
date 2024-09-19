@@ -60,7 +60,7 @@ else
 fi
 
 # 更新yt-dlp
-if command -v yt-dlp &>/dev/null; then
+if command -v yt-dlp_linux &>/dev/null; then
   if [ -f "$HOME/github/Script/Linux/yt-dlp-update.sh" ]; then
     yt-dlp-update.sh
   else

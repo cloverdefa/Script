@@ -24,6 +24,15 @@ if (Test-Path $pipPath) {
     Write-Host "pip 未安裝或 pip 路徑不正確"
 }
 
+# 檢查更新Oh My Posh
+if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
+    if (Test-Path "$env:USERPROFILE\AppData\Local\oh-my-posh") {
+        . "oh-my-posh --upgrade"
+    } else {
+        Write-Host "Oh-my-posh 未安裝或路徑不正確"
+    }
+}
+
 # 檢查更新 CodeGPT
 # 檢查是否有安裝 codegpt 並且在路徑 $env:USERPROFILE\github\Script\Windows 下是否有 codegpt-update.ps1 這個腳本
 if (Get-Command codegpt -ErrorAction SilentlyContinue) {

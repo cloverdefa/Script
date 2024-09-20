@@ -27,7 +27,7 @@ if (Test-Path $pipPath) {
 # 檢查更新Oh My Posh
 if (Get-Command oh-my-posh -ErrorAction SilentlyContinue) {
     if (Test-Path "$env:USERPROFILE\AppData\Local\oh-my-posh") {
-        "oh-my-posh --upgrade"
+        "oh-my-posh upgrade"
     } else {
         Write-Host "Oh-my-posh 未安裝或路徑不正確"
     }

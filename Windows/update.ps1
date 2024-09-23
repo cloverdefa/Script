@@ -59,7 +59,7 @@ if (Get-Command yt-dlp -ErrorAction SilentlyContinue) {
 
 # 檢查是否安裝 nvim，並在條件滿足時執行插件同步
 if (Get-Command nvim -ErrorAction SilentlyContinue) {
-    nvim --headless "+Lazy! sync" +qa
+    nvim --headless "+Lazy! update" +qa
 } else {
     Write-Host "Neovim 未安裝"
 }

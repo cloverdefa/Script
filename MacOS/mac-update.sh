@@ -34,17 +34,6 @@ if command -v zinit &>/dev/null; then
   zinit update
 fi
 
-# 同步 $HOME/.fzf-git.sh
-fzf_git_script="$HOME/.fzf-git.sh"
-fzf_git_dir="$HOME/.fzf-git.sh/.git"
-if [[ -d $fzf_git_script && -d $fzf_git_dir ]]; then
-  echo "==> Pulling latest changes for $fzf_git_script..."
-  (cd $fzf_git_script && git pull origin main)
-  echo "Updated $fzf_git_script."
-else
-  echo "$fzf_git_script is not a Git repository or does not exist. Skipping update."
-fi
-
 # Update pip
 if command -v pip &>/dev/null; then
   pip install --upgrade debugpy hererocks pip pynvim

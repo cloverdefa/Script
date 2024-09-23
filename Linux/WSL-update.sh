@@ -12,7 +12,6 @@ user_directories=(
   "$HOME/.fzf-git.sh"
   "$HOME/.pyenv"
   "$HOME/.nvm"
-  "$HOME/.dotfiles"
 )
 
 root_directories=(

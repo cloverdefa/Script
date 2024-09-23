@@ -36,6 +36,10 @@ function Git-Pull-Repo() {
     repo_path="$HOME/$repo_name" # 對於 fzf-git.sh 儲存庫，路徑是 $HOME/.fzf-git.sh
   elif [ "$repo_name" == ".fzf-git.sh" ]; then
     repo_path="$HOME/$repo_name" # 對於 fzf 儲存庫，路徑是 $HOME/.fzf
+  elif [ "$repo_name" == ".pyenv" ]; then
+    repo_path="$HOME/.pyenv" # 對於 pyenv 儲存庫，路徑是 $HOME/.pyenv
+  elif [ "$repo_name" == ".nvm" ]; then
+    repo_path="$HOME/.nvm" # 對於 nvm 儲存庫，路徑是 $HOME/.nvm
   fi
   local text="$repo_name 拉取遠端資料"
 

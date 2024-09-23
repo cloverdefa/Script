@@ -20,18 +20,20 @@ if [[ ! -d "$github_root" ]]; then
   exit 0
 fi
 
-# 從 .repositories.list 檔案中讀取伺服器名稱列表，並過濾掉空白以及注釋行
+# 從 .repositories.list 檔案中讀取儲存庫名稱列表，並過濾掉空白以及注釋行
 repos=($(grep -E -v '^\s*(#|$)' "$repositories_list"))
 
-# 添加 dotfiles 儲存庫
-repos+=(".dotfiles")
+# 添加 dotfiles 和 fzf-git 儲存庫
+repos+=(".dotfiles" ".fzf-git")
 
 # 使用函數來執行操作更新
 function Git-Pull-Repo {
   local repo_name="$1"
   local repo_path="$github_root/$repo_name" # 使用$HOME/Documents/github 根目錄
   if [[ "$repo_name" = ".dotfiles" ]]; then
-    repo_path="${HOME}/.dotfiles" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
+    repo_path="${HOME}/.dotfiles" # 對於 dotfiles 儲存庫，路徑是 $HOME/.dotfiles
+  elif [[ "$repo_name" = ".fzf-git" ]]; then
+    repo_path="${HOME}/.fzf-git"  # 對於 fzf-git 儲存庫，路徑是 $HOME/.fzf-git
   fi
   local text="$repo_name 拉取遠端資料"
 
@@ -55,12 +57,12 @@ function Git-Pull-Repo {
 
   if git remote update -p && git status -uno | grep -q '您的分支落後'; then
     if git pull --rebase; then
-      echo -e "$text 完成，存儲庫名稱：${YELLOW}$repo_name ${NC}"
+      echo -e "$text 完成，儲存庫名稱：${YELLOW}$repo_name ${NC}"
     else
-      echo -e "$text ${RED}更新出現錯誤，存儲庫名稱：$repo_name ${NC}"
+      echo -e "$text ${RED}更新出現錯誤，儲存庫名稱：$repo_name ${NC}"
     fi
   else
-    echo -e "GitHub 遠端資料庫無變更或本地資料不需要更新，存儲庫名稱：${YELLOW} $repo_name ${NC}"
+    echo -e "GitHub 遠端資料庫無變更或本地資料不需要更新，儲存庫名稱：${YELLOW} $repo_name ${NC}"
   fi
 
   echo "----------------------------------------------------------------------"
@@ -72,4 +74,3 @@ done
 
 # 完成
 exit 0
-

@@ -89,6 +89,6 @@ fi
 # 更新 NVIM Lazy
 nvim="/opt/nvim-linux64/bin/nvim"
 if [ -f $nvim ]; then
-  nvim --headless "+Lazy! sync" +qa
-  sudo $nvim --headless "+Lazy! sync" +qa
+  nvim --headless "+Lazy! update" +qa
+  sudo $nvim --headless "+Lazy! update" +qa
 fi

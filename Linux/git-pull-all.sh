@@ -23,15 +23,19 @@ fi
 # 從 .repositories.list 檔案中讀取儲存庫名稱列表，並過濾掉空白行和註解行
 mapfile -t repos < <(grep -E -v '^\s*(#|$)' "$repositories_list")
 
-# 添加 dotfiles 儲存庫
-repos+=(".dotfiles")
+# 添加 dotfiles、fzf-git.sh 和 fzf 儲存庫
+repos+=(".dotfiles" ".fzf-git.sh" ".fzf")
 
 # 函數來執行Git操作
 function Git-Pull-Repo() {
   local repo_name="$1"
   local repo_path="$github_root/$repo_name" # 使用$HOME/github 根目錄
   if [ "$repo_name" == ".dotfiles" ]; then
-    repo_path="$HOME/$repo_name" # 對於dotfiles儲存庫，路徑是$HOME/.dotfiles
+    repo_path="$HOME/$repo_name" # 對於 dotfiles 儲存庫，路徑是 $HOME/.dotfiles
+  elif [ "$repo_name" == ".fzf" ]; then
+    repo_path="$HOME/$repo_name" # 對於 fzf-git.sh 儲存庫，路徑是 $HOME/.fzf-git.sh
+  elif [ "$repo_name" == ".fzf-git.sh" ]; then
+    repo_path="$HOME/$repo_name" # 對於 fzf 儲存庫，路徑是 $HOME/.fzf
   fi
   local text="$repo_name 拉取遠端資料"
 

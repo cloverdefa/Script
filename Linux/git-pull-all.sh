@@ -24,7 +24,7 @@ fi
 mapfile -t repos < <(grep -E -v '^\s*(#|$)' "$repositories_list")
 
 # 添加 dotfiles、fzf-git.sh 和 fzf 儲存庫
-repos+=(".dotfiles" ".fzf-git.sh" ".fzf")
+repos+=(".dotfiles")
 
 # 函數來執行 Git 操作
 function git_pull_repo() {

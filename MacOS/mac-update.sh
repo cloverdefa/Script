@@ -32,19 +32,21 @@ fi
 # Zinit update
 if command -v zinit &>/dev/null; then
   zinit update
+else
+  echo "zinit未正確設定，因此略過更新"
 fi
 
 # Update pip
 if command -v pip &>/dev/null; then
   pip install --upgrade debugpy hererocks pip pynvim
 else
-  echo "pip未安裝或正確設定,因此略過更新"
+  echo "pip未安裝或正確設定，因此略過更新"
 fi
 
 # Nvim Lazy Update
 if command -v nvim &>/dev/null; then
   nvim --headless "+Lazy! update" +qa
 else
-  echo "Nvim未安裝或正確設定,因此略過更新"
+  echo "Nvim未安裝或正確設定，因此略過更新"
 fi
 

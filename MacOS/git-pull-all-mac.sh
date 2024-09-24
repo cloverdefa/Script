@@ -33,7 +33,7 @@ function Git-Pull-Repo {
   if [[ "$repo_name" = ".dotfiles" ]]; then
     repo_path="${HOME}/.dotfiles" # 對於 dotfiles 儲存庫，路徑是 $HOME/.dotfiles
   elif [[ "$repo_name" = ".fzf-git.sh" ]]; then
-    repo_path="${HOME}/.fzf-git"  # 對於 fzf-git 儲存庫，路徑是 $HOME/.fzf-git
+    repo_path="${HOME}/.fzf-git.sh"  # 對於 fzf-git 儲存庫，路徑是 $HOME/.fzf-git
   fi
   local text="$repo_name 拉取遠端資料"
 

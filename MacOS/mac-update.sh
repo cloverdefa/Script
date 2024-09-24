@@ -13,19 +13,19 @@ if command -v brew &>/dev/null; then
     brew autoremove
     brew cleanup
   else
-    echo "No Homebrew packages need upgrading."
+    echo "沒有 Homebrew 軟體需要更新."
   fi
 fi
 
 # 更新 Mac App Store 應用程式
 if command -v mas &>/dev/null; then
-  echo "==> Checking for Mac App Store updates..."
+  echo "==> 檢查 Mac App Store 更新..."
   outdated_apps=$(mas outdated)
   
   if [[ -n $outdated_apps ]]; then
     mas upgrade
   else
-    echo "No Mac App Store apps need upgrading."
+    echo "沒有 Mac App Store apps 需要更新."
   fi
 fi
 

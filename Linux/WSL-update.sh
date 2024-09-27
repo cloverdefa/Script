@@ -7,10 +7,10 @@ fi
 
 # 定義要檢查的目錄
 user_directories=(
-  "$HOME/.fzf"
-  "$HOME/.fzf-git.sh"
-  "$HOME/.pyenv"
-  "$HOME/.nvm"
+  "${HOME}/.fzf"
+  "${HOME}/.fzf-git.sh"
+  "${HOME}/.pyenv"
+  "${HOME}/.nvm"
 )
 root_directories=(
   "/root/.fzf"
@@ -43,15 +43,15 @@ sync_directories false "${user_directories[@]}"
 sync_directories true "${root_directories[@]}"
 
 # 更新 Oh My Posh
-if command -v oh-my-posh &>/dev/null; then
+if [[ -x "$(command -v oh-my-posh)" ]]; then
   oh-my-posh upgrade
 else
   echo "Oh My Posh未安裝或正確設定,因此略過更新"
 fi
 
 # 更新CodeGPT
-if command -v codegpt &>/dev/null; then
-  if [ -f "$HOME/github/Script/Linux/codegpt-update.sh" ]; then
+if [[ -x "$(command -v codegpt)" ]]; then
+  if [ -f "${HOME}/github/Script/Linux/codegpt-update.sh" ]; then
     codegpt-update.sh
   else
     echo "codegpt-update.sh腳本路徑未發現，略過更新"
@@ -61,8 +61,8 @@ else
 fi
 
 # 更新yt-dlp
-if command -v yt-dlp_linux &>/dev/null; then
-  if [ -f "$HOME/github/Script/Linux/yt-dlp-update.sh" ]; then
+if [[ -x "$(command -v yt-dlp_linux)" ]]; then
+  if [ -f "${HOME}/github/Script/Linux/yt-dlp-update.sh" ]; then
     yt-dlp-update.sh
   else
     echo "yt-dlp-update.sh腳本路徑未發現，略過更新"
@@ -72,9 +72,9 @@ else
 fi
 
 # 更新 pip 模組 (普通用戶)
-if [ -f "$HOME/.pyenv/shims/pip" ] && [ -x "$HOME/.pyenv/shims/pip" ]; then
+if [ -f "${HOME}/.pyenv/shims/pip" ] && [ -x "${HOME}/.pyenv/shims/pip" ]; then
   echo "升級普通用戶的 pip 模組"
-  "$HOME/.pyenv/shims/pip" install --upgrade debugpy pip pynvim
+  "${HOME}/.pyenv/shims/pip" install --upgrade debugpy pip pynvim
 else
   echo "普通用戶的 pip 不存在或不可執行，跳過更新"
 fi
@@ -89,7 +89,7 @@ fi
 
 # 更新 NVIM Lazy
 nvim="/opt/nvim-linux64/bin/nvim"
-if [ -f $nvim ]; then
-  nvim --headless "+Lazy! update" +qa
-  sudo $nvim --headless "+Lazy! update" +qa
+if [ -f ${nvim} ]; then
+  ${nvim} --headless "+Lazy! update" +qa
+  sudo ${nvim} --headless "+Lazy! update" +qa
 fi

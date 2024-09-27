@@ -74,9 +74,9 @@ def main():
     d_length = int(input("請輸入白鐵管材料長度: "))
 
     # 允許使用者選擇是否計算每種類的數量
-    calculate_a = input("是否計算63x100的數量 (y/n): ").strip().lower() == "y"
-    calculate_b = input("是否計算63x125的數量 (y/n): ").strip().lower() == "y"
-    calculate_c = input("是否計算63x150的數量 (y/n): ").strip().lower() == "y"
+    calculate_a = input("是否計算63x100的數量 (y/n): ").strip().lower() in ["y", "yes"]
+    calculate_b = input("是否計算63x125的數量 (y/n): ").strip().lower() in ["y", "yes"]
+    calculate_c = input("是否計算63x150的數量 (y/n): ").strip().lower() in ["y", "yes"]
 
     # 呼叫計算函式並輸出結果
     result = calculate_optimal_combination(

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Module Name: calculate_optimal_combination
 
 """
 模組功能說明:

@@ -15,16 +15,16 @@ C_LENGTH = 197  # 63x150的長度
 
 
 def calculate_optimal_combination(
-    D_LENGTH, calculate_A=True, calculate_B=True, calculate_C=True
+    d_length, calculate_a=True, calculate_b=True, calculate_c=True
 ):
     """
     計算最佳的63x100、63x125和63x150的數量組合，使總長度不超過指定的材料長度D。
 
     參數:
-        D_LENGTH (int): 白鐵管材料總長度
-        calculate_A (bool): 是否計算63x100的數量
-        calculate_B (bool): 是否計算63x125的數量
-        calculate_C (bool): 是否計算63x150的數量
+        d_length (int): 白鐵管材料總長度
+        calculate_a (bool): 是否計算63x100的數量
+        calculate_b (bool): 是否計算63x125的數量
+        calculate_c (bool): 是否計算63x150的數量
 
     回傳:
         dict: 包含63x100、63x125、63x150的最佳數量和總長度的字典
@@ -37,22 +37,22 @@ def calculate_optimal_combination(
     best_total_length = 0  # 最佳總長度
 
     # 使用三層迴圈計算各種類的數量組合
-    for x in range(D_LENGTH // A_LENGTH + 1):
-        for y in range(D_LENGTH // B_LENGTH + 1):
-            for z in range(D_LENGTH // C_LENGTH + 1):
+    for x in range(d_length // A_LENGTH + 1):
+        for y in range(d_length // B_LENGTH + 1):
+            for z in range(d_length // C_LENGTH + 1):
                 current_total_length = 0  # 計算當前組合的總長度
 
                 # 根據是否選擇計算來累加總長度
-                if calculate_A:
+                if calculate_a:
                     current_total_length += A_LENGTH * x
-                if calculate_B:
+                if calculate_b:
                     current_total_length += B_LENGTH * y
-                if calculate_C:
+                if calculate_c:
                     current_total_length += C_LENGTH * z
 
                 # 更新最佳解 (即總長度最接近但不超過D)
                 if (
-                    current_total_length <= D_LENGTH
+                    current_total_length <= d_length
                     and current_total_length > best_total_length
                 ):
                     best_total_length = current_total_length
@@ -74,23 +74,23 @@ def main():
     測試用主函式，允許使用者輸入參數並輸出最佳結果。
     """
     # 允許使用者輸入白鐵管材料的長度
-    D_LENGTH = int(input("請輸入白鐵管材料長度: "))
+    d_length = int(input("請輸入白鐵管材料長度: "))
 
     # 允許使用者選擇是否計算每種類的數量
-    calculate_A = input("是否計算63x100的數量 (y/n): ").strip().lower() == "y"
-    calculate_B = input("是否計算63x125的數量 (y/n): ").strip().lower() == "y"
-    calculate_C = input("是否計算63x150的數量 (y/n): ").strip().lower() == "y"
+    calculate_a = input("是否計算63x100的數量 (y/n): ").strip().lower() == "y"
+    calculate_b = input("是否計算63x125的數量 (y/n): ").strip().lower() == "y"
+    calculate_c = input("是否計算63x150的數量 (y/n): ").strip().lower() == "y"
 
     # 呼叫計算函式並輸出結果
     result = calculate_optimal_combination(
-        D_LENGTH, calculate_A, calculate_B, calculate_C
+        d_length, calculate_a, calculate_b, calculate_c
     )
 
-    if calculate_A:
+    if calculate_a:
         print(f"63x100的數量: {result['63x100']}")
-    if calculate_B:
+    if calculate_b:
         print(f"63x125的數量: {result['63x125']}")
-    if calculate_C:
+    if calculate_c:
         print(f"63x150的數量: {result['63x150']}")
     print(f"總長度: {result['total_length']}")
 

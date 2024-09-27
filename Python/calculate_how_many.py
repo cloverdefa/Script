@@ -51,10 +51,7 @@ def calculate_optimal_combination(
                     current_total_length += C_LENGTH * z
 
                 # 更新最佳解 (即總長度最接近但不超過D)
-                if (
-                    current_total_length <= d_length
-                    and current_total_length > best_total_length
-                ):
+                if best_total_length < current_total_length <= d_length:
                     best_total_length = current_total_length
                     best_x = x
                     best_y = y

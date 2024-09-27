@@ -86,7 +86,14 @@ def should_calculate(prompt):
     回傳:
         bool: 使用者是否選擇計算該類的數量
     """
-    return input(prompt).strip().lower() in ["y", "yes"]
+    while True:
+        user_input = input(prompt).strip().lower()
+        if user_input in ["y", "yes"]:
+            return True
+        elif user_input in ["n", "no"]:
+            return False
+        else:
+            print("無效輸入，請輸入 'Yes' 或 'No'。")
 
 
 def main():

@@ -98,7 +98,7 @@ def main():
         print(f"63x125的數量: {result['63x125']}")
     if calculate_c:
         print(f"63x150的數量: {result['63x150']}")
-    print(f"總長度: {result['total_length']}")
+    print(f"加工材料使用總長度: {result['total_length']}")
 
 
 # 當作為主程式執行時，運行main()函式

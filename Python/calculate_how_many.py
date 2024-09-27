@@ -71,7 +71,7 @@ def main():
     測試用主函式，允許使用者輸入參數並輸出最佳結果。
     """
     # 允許使用者輸入白鐵管材料的長度
-    d_length = int(input("請輸入白鐵管材料長度: "))
+    d_length = int(input("請輸入白鐵管材料長度(單位:mm): "))
 
     # 允許使用者選擇是否計算每種類的數量
     calculate_a = input("是否計算63x100的數量 (Yes/No): ").strip().lower() in [

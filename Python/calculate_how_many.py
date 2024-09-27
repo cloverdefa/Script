@@ -32,6 +32,14 @@ def calculate_optimal_combination(
         dict: 包含⌀63x100、⌀63x125、⌀63x150的最佳數量和總長度的字典
     """
 
+    # 檢查長度是否足夠進行計算
+    if calculate_a and d_length < A_LENGTH:
+        return {"error": "材料長度不足以計算⌀63x100的數量。"}
+    if calculate_b and d_length < B_LENGTH:
+        return {"error": "材料長度不足以計算⌀63x125的數量。"}
+    if calculate_c and d_length < C_LENGTH:
+        return {"error": "材料長度不足以計算⌀63x150的數量。"}
+
     # 初始化變數以儲存最佳解
     best_x = 0  # 最佳⌀63x100數量
     best_y = 0  # 最佳⌀63x125數量
@@ -91,6 +99,8 @@ def main():
                 d_length = int(input(f"請輸入白鐵管材料長度(單位:{LENGTH_UNIT}): "))
                 if d_length <= 0:
                     raise ValueError("長度必須為正整數。")
+                if d_length < 147:
+                    raise ValueError("長度必須至少為 147 mm。")
                 break
             except ValueError as e:
                 print(f"輸入錯誤: {e}")
@@ -104,17 +114,21 @@ def main():
             d_length, calculate_a, calculate_b, calculate_c
         )
 
-        output_strings = []
-        if calculate_a:
-            output_strings.append(f"⌀63x100的數量: {result['⌀63x100']}")
-        if calculate_b:
-            output_strings.append(f"⌀63x125的數量: {result['⌀63x125']}")
-        if calculate_c:
-            output_strings.append(f"⌀63x150的數量: {result['⌀63x150']}")
-        output_strings.append(
-            f"加工材料使用總長度(單位:{LENGTH_UNIT}): {result['total_length']}"
-        )
-        print("\n".join(output_strings))
+        # 檢查是否有錯誤訊息
+        if "error" in result:
+            print(result["error"])
+        else:
+            output_strings = []
+            if calculate_a:
+                output_strings.append(f"⌀63x100的數量: {result['⌀63x100']}")
+            if calculate_b:
+                output_strings.append(f"⌀63x125的數量: {result['⌀63x125']}")
+            if calculate_c:
+                output_strings.append(f"⌀63x150的數量: {result['⌀63x150']}")
+            output_strings.append(
+                f"加工材料使用總長度(單位:{LENGTH_UNIT}): {result['total_length']}"
+            )
+            print("\n".join(output_strings))
 
     except KeyboardInterrupt:
         print("\n程式已被中斷，感謝使用，再見！")

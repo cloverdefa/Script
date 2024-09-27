@@ -90,6 +90,8 @@ fi
 # 更新 NVIM Lazy
 nvim="/opt/nvim-linux64/bin/nvim"
 if [ -f ${nvim} ]; then
+  echo "更新普通帳號NVIM"
   ${nvim} --headless "+Lazy! update" +qa
+  echo "更新ROOT帳號NVIM"
   sudo ${nvim} --headless "+Lazy! update" +qa
 fi

@@ -13,6 +13,7 @@
 A_LENGTH = 147  # 63x100的長度
 B_LENGTH = 172  # 63x125的長度
 C_LENGTH = 197  # 63x150的長度
+LENGTH_UNIT = "mm"
 
 
 def calculate_optimal_combination(
@@ -67,39 +68,50 @@ def calculate_optimal_combination(
     }
 
 
+def should_calculate(prompt):
+    """
+    判斷使用者是否選擇計算某一類的數量。
+
+    參數:
+        prompt (str): 要顯示給使用者的提示訊息
+
+    回傳:
+        bool: 使用者是否選擇計算該類的數量
+    """
+    return input(prompt).strip().lower() in ["y", "yes"]
+
+
 def main():
     """
     測試用主函式，允許使用者輸入參數並輸出最佳結果。
     """
-    # 允許使用者輸入白鐵管材料的長度
-    d_length = int(input("請輸入白鐵管材料長度(單位:mm): "))
+    while True:
+        try:
+            d_length = int(input(f"請輸入白鐵管材料長度(單位:{LENGTH_UNIT}): "))
+            if d_length <= 0:
+                raise ValueError("長度必須為正整數。")
+            break
+        except ValueError as e:
+            print(f"輸入錯誤: {e}")
 
-    # 允許使用者選擇是否計算每種類的數量
-    calculate_a = input("是否計算63x100的數量 (Yes/No): ").strip().lower() in [
-        "y",
-        "yes",
-    ]
-    calculate_b = input("是否計算63x125的數量 (Yes/No): ").strip().lower() in [
-        "y",
-        "yes",
-    ]
-    calculate_c = input("是否計算63x150的數量 (Yes/No): ").strip().lower() in [
-        "y",
-        "yes",
-    ]
+    calculate_a = should_calculate("是否計算63x100的數量 (Yes/No): ")
+    calculate_b = should_calculate("是否計算63x125的數量 (Yes/No): ")
+    calculate_c = should_calculate("是否計算63x150的數量 (Yes/No): ")
 
     # 呼叫計算函式並輸出結果
     result = calculate_optimal_combination(
         d_length, calculate_a, calculate_b, calculate_c
     )
 
+    output_strings = []
     if calculate_a:
-        print(f"63x100的數量: {result['63x100']}")
+        output_strings.append(f"63x100的數量: {result['63x100']}")
     if calculate_b:
-        print(f"63x125的數量: {result['63x125']}")
+        output_strings.append(f"63x125的數量: {result['63x125']}")
     if calculate_c:
-        print(f"63x150的數量: {result['63x150']}")
-    print(f"加工材料使用總長度: {result['total_length']}")
+        output_strings.append(f"63x150的數量: {result['63x150']}")
+    output_strings.append(f"加工材料使用總長度: {result['total_length']}")
+    print("\n".join(output_strings))
 
 
 # 當作為主程式執行時，運行main()函式

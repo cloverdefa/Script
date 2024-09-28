@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 # Fuzzy search over Git commits
 # Enter will view the commit

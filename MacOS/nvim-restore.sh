@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 # 安全地移除 Neovim 目錄，先檢查它們是否存在
 rm -rf ~/.config/nvim 2>/dev/null || true

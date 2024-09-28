@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/zsh
 
 # 加載 .zshrc 或 .zprofile
 source ~/.zshrc

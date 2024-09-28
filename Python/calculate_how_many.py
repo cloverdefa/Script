@@ -90,7 +90,7 @@ def should_calculate(prompt):
         user_input = input(prompt).strip().lower()
         if user_input in ["y", "yes"]:
             return True
-        elif user_input in ["n", "no"]:
+        if user_input in ["n", "no"]:
             return False
         else:
             print("無效輸入，請輸入 'Yes/Y' 或 'No/N'。")

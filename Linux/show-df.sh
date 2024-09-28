@@ -37,7 +37,7 @@ show_disk_space() {
 }
 
 # 讀取伺服器列表文件
-server_list="$HOME/.config/list/.server.list"
+server_list="${HOME}/.config/list/.server.list"
 
 # 檢查列表文件是否存在
 if [ ! -f "$server_list" ]; then
@@ -60,4 +60,3 @@ fi
 
 # 結束程序
 exit 0
-

@@ -30,7 +30,7 @@ if [[ -x "$(command -v mas)" ]]; then
 fi
 
 # Zinit update
-if [[ -x "$(command -v zinit)" ]]; then
+if command -v zinit &>/dev/null; then
   zinit update
 else
   echo "zinit未正確設定，因此略過更新"

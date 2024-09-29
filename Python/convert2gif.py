@@ -11,6 +11,7 @@ import os
 import shutil
 import subprocess
 import time
+from tqdm import tqdm  # 用於顯示進度條
 
 
 def check_command(cmd):
@@ -39,7 +40,8 @@ def convert_webp_to_gif():
     total_size = 0  # 總檔案大小
     converted_count = 0  # 成功轉換的檔案數量
 
-    for webp_file in webp_files:
+    # 使用 tqdm 顯示進度條
+    for webp_file in tqdm(webp_files, desc="轉換中", unit="檔案"):
         gif_file = webp_file.replace(".webp", ".gif")
         result = subprocess.run(["webp2gif", webp_file, gif_file])
 
@@ -54,7 +56,7 @@ def convert_webp_to_gif():
     elapsed_time = time.time() - start_time
 
     # 顯示轉換結果
-    print(f"轉換完成！共成功轉換了 {converted_count} 個檔案。")
+    print(f"\n轉換完成！共成功轉換了 {converted_count} 個檔案。")
     print(f"全部檔案總容量為 {total_size / (1024 * 1024):.2f} MB。")
     print(f"總耗時 {elapsed_time:.2f} 秒。")
 

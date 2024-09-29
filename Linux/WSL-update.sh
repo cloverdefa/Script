@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if [[ -x "$(command -v git)" ]]; then
+if ! command -v git &>/dev/null; then
   echo "請檢查 GIT 是否安裝"
   exit 1
 fi

@@ -26,9 +26,26 @@ fi
 start_time=$(date +%s) # 開始計時
 total_size=0           # 記錄全部檔案總容量
 converted_count=0      # 記錄成功轉換檔案數量
+total_files=${#webp_files[@]}  # 總檔案數量
 
-for webp_file in "${webp_files[@]}"; do
+# 顯示進度條的函數
+show_progress() {
+  local current=$1
+  local total=$2
+  local width=50  # 進度條寬度
+  local progress=$((current * width / total))
+  local remaining=$((width - progress))
+
+  printf "\r["
+  printf "%0.s#" $(seq 1 $progress)
+  printf "%0.s-" $(seq 1 $remaining)
+  printf "] %d%% (%d/%d)" $((current * 100 / total)) $current $total
+}
+
+for i in "${!webp_files[@]}"; do
+  webp_file="${webp_files[$i]}"
   gif_file="${webp_file%.webp}.gif"
+  
   # 使用 webp2gif 指令將 webp 轉換為 gif
   if webp2gif "$webp_file" "$gif_file"; then
     # 計算轉換後的檔案大小
@@ -42,7 +59,12 @@ for webp_file in "${webp_files[@]}"; do
   else
     echo "轉換失敗：$webp_file"
   fi
+  
+  # 更新進度條
+  show_progress $((i+1)) $total_files
 done
+
+echo # 換行，避免進度條與後續輸出重疊
 
 end_time=$(date +%s)
 elapsed_time=$((end_time - start_time))
@@ -51,3 +73,4 @@ elapsed_time=$((end_time - start_time))
 echo "轉換完成！共成功轉換了 $converted_count 個檔案。"
 echo "全部檔案總容量為 $(echo "scale=2; $total_size / 1048576" | bc) MB。"
 echo "總耗時 $elapsed_time 秒。"
+

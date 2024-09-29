@@ -36,7 +36,7 @@ for ((mount_cnt = 1; mount_cnt <= mount_attempts; mount_cnt++)); do
   else
     echo "掛載失敗，嘗試喚醒伺服器。"
     # 測試是否已安裝 Wake-on-LAN：
-    if ! command -v wakeonlan >/dev/null 2>&1; then
+    if [[ -x "$(command -v wakeonlan)" ]]; then
       echo "錯誤: wakeonlan 未安裝 .. 中止操作。" >&2
       exit 1
     fi
@@ -45,7 +45,7 @@ for ((mount_cnt = 1; mount_cnt <= mount_attempts; mount_cnt++)); do
     # Ping 直到伺服器就緒：
     echo -n "Ping 嘗試 ."
     for ((ping_cnt = 1; ping_cnt <= ping_attempts; ping_cnt++)); do
-      if ping -c 1 "$target_ip" >/dev/null; then
+      if [[ -x "$(ping -c 1 "$target_ip")" ]]; then
         echo " 成功。"
         break
       else
@@ -58,4 +58,3 @@ done
 
 echo "錯誤: 無法掛載文件夾。"
 exit 1
-

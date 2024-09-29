@@ -2,7 +2,7 @@
 
 # 檢查指令是否存在
 check_command() {
-  command -v "$1" >/dev/null 2>&1
+  [[ -x "$(command -v "$1")" ]]
 }
 
 # 檢查是否有 webp2gif 這個指令

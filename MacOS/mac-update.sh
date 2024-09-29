@@ -4,7 +4,7 @@
 source ~/.zshrc
 
 # 更新 Homebrew
-if command -v brew &>/dev/null; then
+if [[ -x "$(command -v brew)" ]]; then
   brew update
   outdated_packages=$(brew outdated)
   
@@ -18,7 +18,7 @@ if command -v brew &>/dev/null; then
 fi
 
 # 更新 Mac App Store 應用程式
-if command -v mas &>/dev/null; then
+if [[ -x "$(command -v mas)" ]]; then
   echo "==> 檢查 Mac App Store 更新..."
   outdated_apps=$(mas outdated)
   
@@ -30,21 +30,21 @@ if command -v mas &>/dev/null; then
 fi
 
 # Zinit update
-if command -v zinit &>/dev/null; then
+if [[ -x "$(command -v zinit)" ]]; then
   zinit update
 else
   echo "zinit未正確設定，因此略過更新"
 fi
 
 # Update pip
-if command -v pip &>/dev/null; then
-  pip install --upgrade debugpy hererocks pip pynvim
+if [[ -x "$(command -v pip)" ]]; then
+  pip install --upgrade debugpy hererocks pip pynvim tqdm
 else
   echo "pip未安裝或正確設定，因此略過更新"
 fi
 
 # Nvim Lazy Update
-if command -v nvim &>/dev/null; then
+if [[ -x "$(command -v nvim)" ]]; then
   nvim --headless "+Lazy! update" +qa
 else
   echo "Nvim未安裝或正確設定，因此略過更新"

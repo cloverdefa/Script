@@ -18,7 +18,7 @@ if [[ -x "$(command -v brew)" ]]; then
 fi
 
 # 更新 Mac App Store 應用程式
-if [[ -x "$(command -v mas)" ]]; then
+if command -v mas &>/dev/null; then
   echo "==> 檢查 Mac App Store 更新..."
   outdated_apps=$(mas outdated)
   
@@ -37,14 +37,14 @@ else
 fi
 
 # Update pip
-if [[ -x "$(command -v pip)" ]]; then
+if command -v pip &>/dev/null; then
   pip install --upgrade debugpy hererocks pip pynvim 
 else
   echo "pip未安裝或正確設定，因此略過更新"
 fi
 
 # Nvim Lazy Update
-if [[ -x "$(command -v nvim)" ]]; then
+if command -v nvim &>/dev/null; then
   nvim --headless "+Lazy! update" +qa
 else
   echo "Nvim未安裝或正確設定，因此略過更新"

@@ -19,7 +19,7 @@ function backup_pi {
 }
 
 # 讀取伺服器清單文件
-server_list="$HOME/.config/list/.pi.list"
+server_list="${HOME}/.config/list/.pi.list"
 
 # 檢查清單列表文件是否存在
 if [ ! -f "$server_list" ]; then
@@ -32,7 +32,7 @@ backup_error=0
 
 # 使用迴圈循環對伺服器清單內的每一台機器調用函數執行命令
 while IFS= read -r server; do
-  [ -z "$server" ] && continue  # Skip empty lines
+  [ -z "$server" ] && continue # Skip empty lines
   backup_pi "$server"
 done < <(grep -v '^\s*#' "$server_list" | grep -v '^\s*$')
 
@@ -46,4 +46,3 @@ fi
 # 提示使用者按任意鍵繼續
 echo -e "${YELLOW}按任意鍵繼續...${NC}"
 read -r -n1 -s
-

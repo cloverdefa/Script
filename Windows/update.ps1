@@ -1,3 +1,6 @@
+# 載入PowerShell最新Profile
+copy-profile
+
 # 更新 git repo
 # 檢查系統內是否安裝 git 並且在路徑 $env:USERPROFILE\github\Script\Windows 下是否有 git-pull-all.ps1 這個腳本
 if (Get-Command git -ErrorAction SilentlyContinue) {

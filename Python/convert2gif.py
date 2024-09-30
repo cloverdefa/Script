@@ -3,15 +3,39 @@
 """
 功能說明:
 此 Python 腳本的功能是將當前目錄中的所有 .webp 檔案轉換為 .gif 格式，並將轉換後的 .gif 檔案移動到
-一個名為 'converted_gifs' 的資料夾內。轉換成功後，會刪除原始的 .webp 檔案，最後顯示轉換過程中
-的統計資訊，包括成功轉換的檔案數量、總檔案大小和花費的總時間。
+一個名為 'converted_gifs' 的資料夾內。轉換成功後，會刪除原始的 .webp 檔案，最後顯示轉換過程中的統計
+資訊，包括成功轉換的檔案數量、總檔案大小和花費的總時間。
 """
 
 import os
 import shutil
 import subprocess
+import sys
 import time
-from tqdm import tqdm  # 用於顯示進度條
+
+# 檢查並安裝 tqdm 套件
+try:
+    from tqdm import tqdm  # 用於顯示進度條
+except ImportError:
+
+    def install_package(package_name):
+        """安裝指定的 Python 套件"""
+        print(f"檢測到系統尚未安裝 {package_name} 套件。")
+        choice = input(f"是否自動安裝 {package_name}? (y/n): ").strip().lower()
+        if choice == "y":
+            subprocess.check_call(
+                [sys.executable, "-m", "pip", "install", package_name]
+            )
+            print(f"{package_name} 套件安裝成功！")
+            global tqdm
+            from tqdm import tqdm  # 再次導入
+        else:
+            print(
+                f"請手動安裝 {package_name}，如需安裝請執行: pip install {package_name}"
+            )
+            sys.exit(1)
+
+    install_package("tqdm")
 
 
 def check_command(cmd):
@@ -23,7 +47,10 @@ def convert_webp_to_gif():
     """將當前目錄中的所有 .webp 檔案轉換為 .gif 並刪除原始檔案"""
     if not check_command("webp2gif"):
         print("找不到 webp2gif 指令，請安裝後再試。")
-        return
+        choice = input("是否自動安裝 webp2gif 工具？ (y/n): ").strip().lower()
+        if choice == "y":
+            print("請手動安裝 webp2gif，請參考官方指引安裝該工具。")
+        sys.exit(1)
 
     output_dir = "converted_gifs"  # 轉換後檔案的儲存目錄
     if not os.path.exists(output_dir):

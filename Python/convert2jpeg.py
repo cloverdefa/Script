@@ -2,17 +2,44 @@
 
 """
 功能說明:
-這個腳本會將當前目錄下的所有 .webp 檔案轉換成 .jpeg，並將它們移動到 converted_jpegs 資料夾中。
-轉換後會刪除原始的 .webp 檔案。
-使用 Pillow (PIL) 套件進行圖片格式轉換，因此需要先安裝該套件，可以使用以下指令安裝：
-pip install pillow
+此 Python 腳本的功能是將當前目錄中的所有 .webp 檔案轉換為 .jpeg 格式，並將轉換後的 .jpeg 檔案移動到
+一個名為 'converted_jpegs' 的資料夾內。轉換成功後，會刪除原始的 .webp 檔案，最後顯示轉換過程中的統計
+資訊，包括成功轉換的檔案數量、總檔案大小和花費的總時間。
 """
 
 import os
 import shutil
+import subprocess
+import sys
 import time
-from tqdm import tqdm  # 用於顯示進度條
-from PIL import Image  # 用於圖片轉換
+
+
+# 檢查並安裝所需套件的函數
+def install_package(package_name):
+    """安裝指定的 Python 套件"""
+    print(f"檢測到系統尚未安裝 {package_name} 套件。")
+    choice = input(f"是否自動安裝 {package_name}? (y/n): ").strip().lower()
+    if choice == "y":
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
+        print(f"{package_name} 套件安裝成功！")
+    else:
+        print(f"請手動安裝 {package_name}，如需安裝請執行: pip install {package_name}")
+        sys.exit(1)
+
+
+# 檢查是否安裝 tqdm 套件
+try:
+    from tqdm import tqdm  # 用於顯示進度條
+except ImportError:
+    install_package("tqdm")
+    from tqdm import tqdm  # 再次導入
+
+# 檢查是否安裝 Pillow 套件
+try:
+    from PIL import Image  # 用於圖片轉換
+except ImportError:
+    install_package("Pillow")
+    from PIL import Image  # 再次導入
 
 
 def convert_webp_to_jpeg():

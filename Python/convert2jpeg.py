@@ -12,30 +12,34 @@ import shutil
 import subprocess
 import sys
 import time
-from tqdm import tqdm  # 用於顯示進度條
 
+
+# 檢查並安裝所需套件的函數
+def install_package(package_name):
+    """安裝指定的 Python 套件"""
+    print(f"檢測到系統尚未安裝 {package_name} 套件。")
+    choice = input(f"是否自動安裝 {package_name}? (y/n): ").strip().lower()
+    if choice == "y":
+        subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
+        print(f"{package_name} 套件安裝成功！")
+    else:
+        print(f"請手動安裝 {package_name}，如需安裝請執行: pip install {package_name}")
+        sys.exit(1)
+
+
+# 檢查是否安裝 tqdm 套件
+try:
+    from tqdm import tqdm  # 用於顯示進度條
+except ImportError:
+    install_package("tqdm")
+    from tqdm import tqdm  # 再次導入
+
+# 檢查是否安裝 Pillow 套件
 try:
     from PIL import Image  # 用於圖片轉換
 except ImportError:
-
-    def install_package(package_name):
-        """安裝指定的 Python 套件"""
-        print(f"檢測到系統尚未安裝 {package_name} 套件。")
-        choice = input(f"是否自動安裝 {package_name}? (y/n): ").strip().lower()
-        if choice == "y":
-            subprocess.check_call(
-                [sys.executable, "-m", "pip", "install", package_name]
-            )
-            print(f"{package_name} 套件安裝成功！")
-            global Image
-            from PIL import Image  # 再次導入
-        else:
-            print(
-                f"請手動安裝 {package_name}，如需安裝請執行: pip install {package_name}"
-            )
-            sys.exit(1)
-
     install_package("Pillow")
+    from PIL import Image  # 再次導入
 
 
 def convert_webp_to_jpeg():

@@ -27,19 +27,12 @@ def install_package(package_name):
         sys.exit(1)
 
 
-# 檢查是否安裝 tqdm 套件
-try:
-    from tqdm import tqdm  # 用於顯示進度條
-except ImportError:
-    install_package("tqdm")
-    from tqdm import tqdm  # 再次導入
-
 # 檢查是否安裝 Pillow 套件
 try:
-    from PIL import Image  # 用於圖片轉換
+    from PIL import Image, UnidentifiedImageError  # 用於圖片轉換和捕捉識別錯誤
 except ImportError:
     install_package("Pillow")
-    from PIL import Image  # 再次導入
+    from PIL import Image, UnidentifiedImageError  # Pillow 安裝後重新導入
 
 
 def convert_webp_to_jpeg():
@@ -59,8 +52,8 @@ def convert_webp_to_jpeg():
     total_size = 0  # 總檔案大小
     converted_count = 0  # 成功轉換的檔案數量
 
-    # 使用 tqdm 顯示進度條
-    for webp_file in tqdm(webp_files, desc="轉換中", unit="檔案"):
+    # 轉換檔案
+    for webp_file in webp_files:
         jpeg_file = webp_file.replace(".webp", ".jpeg")
 
         try:
@@ -72,8 +65,12 @@ def convert_webp_to_jpeg():
             shutil.move(jpeg_file, os.path.join(output_dir, jpeg_file))
             os.remove(webp_file)
             converted_count += 1
-        except Exception as e:
-            print(f"轉換失敗：{webp_file}, 錯誤：{e}")
+        except FileNotFoundError:
+            print(f"檔案未找到：{webp_file}")
+        except UnidentifiedImageError:
+            print(f"無法識別的圖片格式：{webp_file}")
+        except OSError as e:
+            print(f"文件處理錯誤：{webp_file}, 錯誤訊息：{e}")
 
     elapsed_time = time.time() - start_time
 

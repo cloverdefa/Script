@@ -74,7 +74,7 @@ fi
 # 更新 pip 模組 (普通用戶)
 if [ -f "${HOME}/.pyenv/shims/pip" ] && [ -x "${HOME}/.pyenv/shims/pip" ]; then
   echo "升級普通用戶的 pip 模組"
-  "${HOME}/.pyenv/shims/pip" install --upgrade debugpy pip pynvim tqdm
+  "${HOME}/.pyenv/shims/pip" install --upgrade debugpy pip pynvim
 else
   echo "普通用戶的 pip 不存在或不可執行，跳過更新"
 fi

@@ -13,30 +13,6 @@ import subprocess
 import sys
 import time
 
-# 檢查並安裝 tqdm 套件
-try:
-    from tqdm import tqdm  # 用於顯示進度條
-except ImportError:
-
-    def install_package(package_name):
-        """安裝指定的 Python 套件"""
-        print(f"檢測到系統尚未安裝 {package_name} 套件。")
-        choice = input(f"是否自動安裝 {package_name}? (y/n): ").strip().lower()
-        if choice == "y":
-            subprocess.check_call(
-                [sys.executable, "-m", "pip", "install", package_name]
-            )
-            print(f"{package_name} 套件安裝成功！")
-            global tqdm
-            from tqdm import tqdm  # 再次導入
-        else:
-            print(
-                f"請手動安裝 {package_name}，如需安裝請執行: pip install {package_name}"
-            )
-            sys.exit(1)
-
-    install_package("tqdm")
-
 
 def check_command(cmd):
     """檢查指定的指令是否存在於系統中"""
@@ -67,17 +43,15 @@ def convert_webp_to_gif():
     total_size = 0  # 總檔案大小
     converted_count = 0  # 成功轉換的檔案數量
 
-    # 使用 tqdm 顯示進度條
-    for webp_file in tqdm(webp_files, desc="轉換中", unit="檔案"):
+    for webp_file in webp_files:
         gif_file = webp_file.replace(".webp", ".gif")
-        result = subprocess.run(["webp2gif", webp_file, gif_file])
-
-        if result.returncode == 0 and os.path.exists(gif_file):
+        try:
+            subprocess.run(["webp2gif", webp_file, gif_file], check=True)
             total_size += os.path.getsize(gif_file)
             shutil.move(gif_file, os.path.join(output_dir, gif_file))
             os.remove(webp_file)
             converted_count += 1
-        else:
+        except subprocess.CalledProcessError:
             print(f"轉換失敗：{webp_file}")
 
     elapsed_time = time.time() - start_time

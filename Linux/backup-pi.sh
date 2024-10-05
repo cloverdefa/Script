@@ -11,7 +11,7 @@ function backup_pi {
   local server="$1"
   local backup="${HOME}/sh/backup-to-nas.sh"
   echo -e "${YELLOW}連接到 $server${NC}"
-  if ssh -n "$server" "$backup"; then
+  if timeout 60 ssh -n "$server" "$backup"; then
     echo -e "${GREEN}在 $server 上執行備份指令成功${NC}"
   else
     echo -e "${RED}無法執行備份因為 SSH 連接超時${NC}"

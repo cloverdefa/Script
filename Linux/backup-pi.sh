@@ -9,8 +9,9 @@ NC='\033[0m'        # 重置顏色
 # 建立函數用於執行 SSH 連接和執行備份命令
 function backup_pi {
   local server="$1"
+  local backup="${HOME}/sh/backup-to-nas.sh"
   echo -e "${YELLOW}連接到 $server${NC}"
-  if timeout 30 ssh -n "$server" 'bn'; then
+  if ssh -n "$server" "$backup"; then
     echo -e "${GREEN}在 $server 上執行備份指令成功${NC}"
   else
     echo -e "${RED}無法執行備份因為 SSH 連接超時${NC}"

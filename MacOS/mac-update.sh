@@ -38,7 +38,7 @@ fi
 
 # Update pip
 if [[ -x "$(command -v pip)" ]]; then
-  pip install --upgrade debugpy hererocks pip pynvim 
+  pip install --upgrade debugpy hererocks pip pynvim setuptools
 else
   echo "pip未安裝或正確設定，因此略過更新"
 fi

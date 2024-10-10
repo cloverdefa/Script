@@ -19,14 +19,27 @@ def check_command(cmd):
     return shutil.which(cmd) is not None
 
 
-def convert_webp_to_gif():
-    """將當前目錄中的所有 .webp 檔案轉換為 .gif 並刪除原始檔案"""
+def ensure_tools():
+    """確保所需的工具都已安裝"""
     if not check_command("webp2gif"):
         print("找不到 webp2gif 指令，請安裝後再試。")
         choice = input("是否自動安裝 webp2gif 工具？ (y/n): ").strip().lower()
         if choice == "y":
             print("請手動安裝 webp2gif，請參考官方指引安裝該工具。")
         sys.exit(1)
+
+    # 檢查 ImageMagick 是否已安裝，並確保使用 magick 而非 convert
+    if not check_command("magick"):
+        print("找不到 ImageMagick 的 magick 指令，請安裝後再試。")
+        choice = input("是否自動安裝 ImageMagick 工具？ (y/n): ").strip().lower()
+        if choice == "y":
+            print("請手動安裝 ImageMagick，請參考官方指引安裝該工具。")
+        sys.exit(1)
+
+
+def convert_webp_to_gif():
+    """將當前目錄中的所有 .webp 檔案轉換為 .gif 並刪除原始檔案"""
+    ensure_tools()  # 確保工具已安裝
 
     output_dir = "converted_gifs"  # 轉換後檔案的儲存目錄
     if not os.path.exists(output_dir):
@@ -46,6 +59,7 @@ def convert_webp_to_gif():
     for webp_file in webp_files:
         gif_file = webp_file.replace(".webp", ".gif")
         try:
+            # 使用 webp2gif 轉換 .webp 為 .gif
             subprocess.run(["webp2gif", webp_file, gif_file], check=True)
             total_size += os.path.getsize(gif_file)
             shutil.move(gif_file, os.path.join(output_dir, gif_file))

@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # 加載 .zshrc 或 .zprofile
-source ~/.zshrc
+[[ ! -f "${HOME}/.zshrc" ]] || source "${HOME}/.zshrc"
 
 # 更新 Homebrew
 if [[ -x "$(command -v brew)" ]]; then

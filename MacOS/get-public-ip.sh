@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 if [[ -x "$(command -v dig)" ]]; then
   echo "Public IP Now Is"
